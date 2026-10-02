@@ -5,7 +5,6 @@ on:
     branches: [main]
     paths:
       - 'web/**'
-      - 'docs/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -23,20 +22,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.12'
-          cache: pip
-          cache-dependency-path: web/requirements.txt
-      - run: pip install -r web/requirements.txt
-      - name: Generar el sitio cifrado
+          node-version: '20'
+      - name: Cifrar la página con la contraseña
         working-directory: web
         env:
-          SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
-        run: mkdocs build
+          STATICRYPT_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+        run: |
+          if [ -z "$STATICRYPT_PASSWORD" ]; then
+            echo "::error::Falta el secreto SITE_PASSWORD: la página no se publica sin cifrar."
+            exit 1
+          fi
+          npx -y staticrypt@3 index.html -d ../publicar --short --remember 30 \
+            --template-title "Informes de calidad UCA" \
+            --template-instructions "Sitio de uso interno de la Universidad de Cádiz. Introduce la contraseña facilitada por el equipo del proyecto." \
+            --template-placeholder "Contraseña" \
+            --template-button "Acceder" \
+            --template-remember "Recordarme en este dispositivo" \
+            --template-error "Contraseña incorrecta" \
+            --template-toggle-show "Mostrar contraseña" \
+            --template-toggle-hide "Ocultar contraseña" \
+            --template-color-primary "#1f3a6e"
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: web/site
+          path: publicar
 
   deploy:
     needs: build

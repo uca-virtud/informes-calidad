@@ -17,21 +17,16 @@
 - Al cambiar una skill, actualiza las referencias afectadas junto con su documento
   principal, y el estado de las lecciones en [`docs/EVALUACIONES.md`](docs/EVALUACIONES.md).
 - No añadas pruebas automatizadas sin que el usuario haya dado su consentimiento.
-- Mantén al día el sitio web del proyecto (`web/`, MkDocs). `VISION.md` y `EVALUACIONES.md`
-  se incluyen desde `docs/` y se actualizan solos. Cuando cambie
-  el estado de una fase, la skill o cualquier documento de `docs/`, revisa `web/docs/index.md`,
-  `hoja-de-ruta.md`, `como-funciona.md` y `colectivos.md`, y añade una entrada fechada en
-  `novedades.md`. Si creas un documento en `docs/` que deba publicarse, inclúyelo en `web/`
-  y añádelo al `nav` de `web/mkdocs.yml`. El sitio se genera en GitHub Actions, así que solo
-  puede incluir ficheros versionados: nunca incluyas nada de `docs/peticiones-cartera/`,
-  que no se sube al repositorio.
-- En el sitio no se publican nunca datos personales (nombres, correos, teléfonos) ni
-  documentos (PDF, DOCX, Excel): solo resúmenes y métricas. El hook `web/hooks/proteccion.py`
-  exige la contraseña, cifra todas las páginas y bloquea los documentos, pero no detecta datos
-  personales: revísalos tú.
-- Para previsualizar el sitio, crea un entorno virtual temporal con `web/requirements.txt` y
-  ejecuta `SITE_PASSWORD=<contraseña de prueba> mkdocs serve` en `web/`. El despliegue lo
-  hace `.github/workflows/pages.yml` con el secreto `SITE_PASSWORD`.
+- Mantén al día la web de avance del proyecto: una única página estática, `web/index.html`.
+  Cuando cambie el estado de una fase o haya un avance relevante (en `docs/`, en la skill o
+  comunicado por el usuario), actualiza el estado de la fase, añade una entrada en
+  «Novedades» y cambia la fecha de «Última actualización».
+- En la web no se publican nunca datos personales (nombres, correos, teléfonos), documentos
+  (PDF, DOCX, Excel) ni contenido de `docs/peticiones-cartera/`: solo el avance resumido.
+- Para ver la web en local, abre `web/index.html` en el navegador. El despliegue lo hace
+  `.github/workflows/pages.yml`, que la cifra con StatiCrypt usando el secreto `SITE_PASSWORD`
+  y falla si no existe. `web/.staticrypt.json` guarda la sal (no es secreta); no la cambies,
+  o se invalidará el «Recordarme» de quienes ya accedieron.
 - Los scripts de la skill necesitan `python-docx`, que no está en el Python del sistema;
   para probarlos crea un entorno virtual temporal.
 - Para leer los PDF de `docs/`, usa `pypdf` en un entorno virtual temporal; `pdftotext`

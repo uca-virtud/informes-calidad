@@ -13,19 +13,12 @@ de la Universidad de Cádiz.
 - Solicitud de la fase 1 al Sistema de Información (`docs/peticiones-cartera/`, no se
   versiona): modelo de datos e informe agregado de indicadores del Anexo I.
 
-## Sitio web del proyecto
+## Web de avance del proyecto
 
-El sitio `web/` (MkDocs + Material) difunde el proyecto entre los colectivos implicados de
-la UCA. Se publica en GitHub Pages con todas las páginas cifradas con una contraseña
-compartida, y no contiene documentos ni datos personales. Se despliega automáticamente al
-hacer push a `main` (`.github/workflows/pages.yml`).
-
-Vista previa local:
-
-```bash
-python3 -m venv /tmp/venv-web && /tmp/venv-web/bin/pip install -r web/requirements.txt
-cd web && SITE_PASSWORD=<contraseña de prueba> /tmp/venv-web/bin/mkdocs serve
-```
+`web/index.html` es una página estática que muestra el avance del proyecto a los colectivos
+implicados de la UCA. Al hacer push a `main`, `.github/workflows/pages.yml` la cifra con una
+contraseña compartida (StatiCrypt, secreto `SITE_PASSWORD`) y la publica en GitHub Pages.
+Para verla en local, abre `web/index.html` en el navegador.
 
 ## Estructura del repositorio
 
@@ -36,4 +29,4 @@ cd web && SITE_PASSWORD=<contraseña de prueba> /tmp/venv-web/bin/mkdocs serve
 | `evals/` | Evaluaciones por título: datos de partida, borrador de la IA, autoinforme humano y cotejo. Solo local: contiene documentos con datos personales. |
 | `samples/` | Autoinformes reales de ejemplo (seguimiento y renovación). Solo local. |
 | `docs/` | Visión del proyecto, evaluaciones, y, solo en local, peticiones de cartera de los centros y solicitud de la fase 1 al SI. |
-| `web/` | Sitio web del proyecto (MkDocs), publicado en GitHub Pages con contraseña. |
+| `web/` | Página web de avance del proyecto, publicada en GitHub Pages con contraseña. |

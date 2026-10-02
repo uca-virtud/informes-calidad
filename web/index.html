@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Informes de calidad UCA · Avance del proyecto</title>
+<style>
+  :root { --azul: #1f3a6e; --gris: #5f6b7a; --fondo: #f5f7fa; --hecho: #2e7d32; --curso: #ef8f00; --pend: #9aa5b1; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1d2733; background: var(--fondo); }
+  header { background: var(--azul); color: #fff; padding: 2.5rem 1.5rem; }
+  header h1 { margin: 0 0 .4rem; font-size: 1.8rem; }
+  header p { margin: 0; opacity: .9; }
+  main { max-width: 860px; margin: 0 auto; padding: 1.5rem; }
+  section { background: #fff; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  h2 { margin-top: 0; color: var(--azul); font-size: 1.3rem; }
+  .fases { list-style: none; margin: 0; padding: 0; }
+  .fases li { display: grid; grid-template-columns: 2rem 1fr auto; gap: .8rem; align-items: start; padding: .9rem 0; border-top: 1px solid #e6eaf0; }
+  .fases li:first-child { border-top: 0; }
+  .num { width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 600; }
+  .fases strong { display: block; }
+  .fases small { color: var(--gris); }
+  .estado { font-size: .8rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; color: #fff; white-space: nowrap; }
+  .hecho { background: var(--hecho); } .curso { background: var(--curso); } .pend { background: var(--pend); }
+  .leyenda { color: var(--gris); font-size: .9rem; }
+  ul.novedades { padding-left: 1.2rem; margin: 0; }
+  ul.novedades li { margin-bottom: .5rem; }
+  footer { text-align: center; color: var(--gris); font-size: .85rem; padding: 0 1.5rem 2rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Informes de calidad UCA</h1>
+  <p>Avance del proyecto de elaboración asistida por IA de los autoinformes de calidad de los títulos</p>
+</header>
+
+<main>
+  <section>
+    <h2>El proyecto</h2>
+    <p>Cada año, las coordinaciones de los títulos rellenan a mano los autoinformes de seguimiento y de
+      renovación de la acreditación (modelo ACCUA/DEVA), recopilando indicadores de LinceBI y documentación
+      interna. El objetivo es que la Unidad de Calidad les envíe un <strong>borrador ya generado con ayuda de la
+      IA</strong>, que la coordinación revisa, completa y aprueba.</p>
+  </section>
+
+  <section>
+    <h2>Fases</h2>
+    <p class="leyenda">
+      <span class="estado hecho">Hecho</span>
+      <span class="estado curso">En curso</span>
+      <span class="estado pend">Pendiente</span>
+    </p>
+    <ol class="fases">
+      <li>
+        <span class="num curso">1</span>
+        <div><strong>Datos de calidad en LinceBI</strong>
+          <small>Modelo de datos e informe agregado con todos los indicadores del Anexo I. Solicitado al Sistema
+            de Información; puesta en marcha deseada en noviembre de 2026.</small></div>
+        <span class="estado curso">Solicitada</span>
+      </li>
+      <li>
+        <span class="num hecho">2</span>
+        <div><strong>Conexión de la IA con LinceBI</strong>
+          <small>Servidor MCP que permite a la IA consultar los indicadores.</small></div>
+        <span class="estado hecho">Desarrollada</span>
+      </li>
+      <li>
+        <span class="num curso">3</span>
+        <div><strong>Asistente de redacción de autoinformes</strong>
+          <small>Disponible para seguimiento y renovación de la acreditación. Evaluado con tres grados de la ESI;
+            pendiente de validar las últimas mejoras.</small></div>
+        <span class="estado curso">En evaluación</span>
+      </li>
+      <li>
+        <span class="num pend">4</span>
+        <div><strong>Procedimiento de trabajo</strong>
+          <small>Organización entre la unidad técnica informática, la Unidad de Calidad y las coordinaciones.</small></div>
+        <span class="estado pend">Pendiente</span>
+      </li>
+      <li>
+        <span class="num pend">5</span>
+        <div><strong>Pilotaje</strong>
+          <small>Escuela Superior de Ingeniería y Facultad de Filosofía y Letras.</small></div>
+        <span class="estado pend">Pendiente</span>
+      </li>
+      <li>
+        <span class="num pend">6</span>
+        <div><strong>Despliegue</strong>
+          <small>Resto de facultades y escuelas.</small></div>
+        <span class="estado pend">Pendiente</span>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Novedades</h2>
+    <ul class="novedades">
+      <li><strong>Octubre de 2026.</strong> El asistente incorpora las lecciones de las tres primeras
+        evaluaciones y cubre ya seguimiento y renovación de la acreditación.</li>
+      <li><strong>Octubre de 2026.</strong> Se traslada al Sistema de Información la solicitud de la fase 1.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>Uso interno de la Universidad de Cádiz · Última actualización: 2 de octubre de 2026</footer>
+</body>
+</html>
