@@ -1,0 +1,9 @@
+# Salida y caché del sitio web (la caché contiene claves derivadas de la contraseña)
+web/site/
+web/encryptcontent.cache
+
+__pycache__/
+.DS_Store
+
+# Configuración personal del IDE
+.idea/workspace.xml

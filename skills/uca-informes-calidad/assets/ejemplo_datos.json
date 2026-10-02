@@ -1,0 +1,41 @@
+{
+  "encabezado": {
+    "curso": "2024/25",
+    "convocatoria": "2026",
+    "titulo": "GRADO EN <DENOMINACIÓN>",
+    "centro": "<Facultad / Escuela>"
+  },
+  "identificacion": {
+    "Universidad": "Universidad de Cádiz",
+    "ID Ministerio": "",
+    "Denominación del título": "Grado en <denominación>",
+    "Curso académico de implantación": "",
+    "Web de la titulación": "",
+    "Oferta de título doble": "NO",
+    "En su caso, especificar la/las titulación/es y el/los centro/s": "",
+    "En caso de ser un título conjunto, especificar las universidades donde se imparte": "",
+    "Modalidad de enseñanza (presencial, semipresencial-híbrida, virtual, a distancia)": "Presencial",
+    "En su caso, fecha de la última renovación de la acreditación": "",
+    "En su caso, créditos prácticos obligatorios": "",
+    "En su caso, estructuras curriculares específicas": ""
+  },
+  "anios": ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25"],
+  "anios_egresados": ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24"],
+  "extraccion": {"entorno": "data.uca.es", "fecha": "2026-03-01"},
+  "indicadores": {
+    "ISGC-P04-01": {"titulo": {"2020-21": "", "2021-22": "", "2022-23": "", "2023-24": "", "2024-25": ""}, "centro": {}},
+    "ISGC-P04-04": {"titulo": {}, "centro": {}},
+    "ISGC-P04-09|Movilidad entrante internacional": {"titulo": {}, "centro": {}},
+    "ISGC-P04-09|Movilidad saliente internacional": {"titulo": {}, "centro": {}},
+    "ISGC-P07-02": {"titulo": {}, "centro": {}},
+    "ISGC-P07-05": {"titulo": {"2023-24": ""}, "centro": {}}
+  },
+  "puntos": {
+    "1": {"fuertes": [], "debiles": []},
+    "6": {"fuertes": [], "debiles": [{"punto": "", "acciones": [""]}]}
+  },
+  "plan_mejora": [
+    {"origen": "", "accion": "", "evidencia": "", "prioridad": "Alta",
+     "responsable": "", "inicio": "", "fin": "", "indicador": ""}
+  ]
+}

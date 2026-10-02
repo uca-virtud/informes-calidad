@@ -1,0 +1,63 @@
+{
+  "tipo": "renovacion",
+  "identificacion": {
+    "Universidad": "Cádiz",
+    "ID Ministerio": "2503077",
+    "Denominación del título": "Graduado o Graduada en Ingeniería Mecánica por la Universidad de Cádiz",
+    "Curso académico de implantación": "2014-2015",
+    "Modalidad de enseñanza (presencial, híbrida o virtual)": "Presencial",
+    "En su caso, créditos prácticos obligatorios": "---",
+    "Centro o centros donde se imparte el título": "Escuela Superior de Ingeniería / Escuela Técnica Superior de Ingeniería de Algeciras",
+    "En caso de ser un título conjunto, universidades donde se imparte": "---",
+    "En su caso, anteriores convocatorias de renovación de acreditación": "2019-2020",
+    "En caso de títulos dobles, especificar la titulación y la universidad": "---",
+    "En su caso, estructuras curriculares específicas": "---",
+    "Web del título": "ESI: https://esingenieria.uca.es/docencia/grados/gim/\nETSIA: https://etsingenieria.uca.es/estudios/gim/"
+  },
+  "anios": ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25"],
+  "anios_egresados": ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24"],
+  "extraccion": {"entorno": "data.uca.es", "fecha": "2026-03-01"},
+  "indicadores": {
+    "ISGC-P01-01": {"titulo": {"2020-21": "3,25", "2021-22": "3,4", "2022-23": "3,57", "2023-24": "3,49", "2024-25": "3,37"}, "centro": {}},
+    "ISGC-P01-02": {"titulo": {"2020-21": "4,12", "2021-22": "4,12", "2022-23": "4,18", "2023-24": "4,5"}, "centro": {}}
+  },
+  "puntos": {
+    "1": {
+      "fuertes": {
+        "2023/24": ["PF-ESI/ETSIA-1.1: El informe de evaluación de la agencia otorgó la calificación de \"Se alcanza\" en este criterio."],
+        "2024/25": ["PF-ETSIA-1.1: El indicador de satisfacción del PDI con la IPD ha aumentado en los últimos tres años (4,56/5)."]
+      },
+      "debiles": [
+        {
+          "curso": "2020/21",
+          "punto": "PD-ESI-1.1: La información disponible en la web de la ESI necesita mostrarse mejor estructurada y actualizada.",
+          "propuestas": "AM-ESI-1.1: Modificar la web de la ESI para hacerla más dinámica, accesible y actualizada.",
+          "impacto": "ISGC-P01-01: 20/21: 3,25 · 21/22: 3,4 · 22/23: 3,57 · 23/24: 3,49 · 24/25: 3,37"
+        }
+      ]
+    },
+    "2": {"fuertes": {}, "debiles": []}
+  },
+  "recomendaciones_renovacion": [
+    {
+      "rec": "Se recomienda analizar en detalle la declarada no disponibilidad de personal técnico de laboratorio en la ESI y establecer acciones correctoras, en su caso.",
+      "accion": "Incorporación de 3 PTGAS de dedicación exclusiva a la ESI.",
+      "evidencia": "[PENDIENTE: enlace UCADrive]",
+      "impacto": "ISGC-P07-04 Satisfacción global del PAS con el Centro"
+    }
+  ],
+  "recomendaciones_seguimiento": [
+    {
+      "convocatoria": "Convocatoria 22/23",
+      "rec": "Recomendación 1.1: Se recomienda incluir en la página web información básica del perfil de profesorado que imparte en la titulación.",
+      "accion": "En la web del título se ha incluido el enlace a un PDF con los perfiles básicos del profesorado.",
+      "evidencia": "Web del título > Plan de estudios",
+      "impacto": "Actualización de la página web del título."
+    }
+  ],
+  "evidencias": {
+    "5": [
+      {"nombre": "Listado del personal de apoyo", "enlace": "[PENDIENTE: enlace a Colabora/UCADrive]"}
+    ]
+  }
+}
