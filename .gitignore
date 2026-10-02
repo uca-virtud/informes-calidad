@@ -6,4 +6,11 @@ __pycache__/
 .DS_Store
 
 # Configuración personal del IDE
-.idea/workspace.xml
+.idea/
+*.iml
+
+# Documentos internos que no se versionan
+docs/peticiones-cartera/
+evals/
+samples/
+old-skills/

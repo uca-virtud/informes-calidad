@@ -10,8 +10,8 @@ de la Universidad de Cádiz.
   elaboración, recursos y criterios de entrega.
 - [Evaluaciones](docs/EVALUACIONES.md): resultados de la skill frente a autoinformes
   reales, lecciones aprendidas y su estado.
-- [Solicitud de la fase 1 al Sistema de Información](docs/peticiones-cartera/solicitud-SI-fase1.md):
-  modelo de datos e informe agregado de indicadores del Anexo I.
+- Solicitud de la fase 1 al Sistema de Información (`docs/peticiones-cartera/`, no se
+  versiona): modelo de datos e informe agregado de indicadores del Anexo I.
 
 ## Sitio web del proyecto
 
@@ -32,8 +32,8 @@ cd web && SITE_PASSWORD=<contraseña de prueba> /tmp/venv-web/bin/mkdocs serve
 | Carpeta | Contenido |
 |---|---|
 | `skills/uca-informes-calidad/` | Skill vigente (seguimiento y renovación de la acreditación). |
-| `old-skills/autoinforme-seguimiento-uca/` | Versión anterior de la skill, solo de seguimiento, usada en las evaluaciones. |
-| `evals/` | Evaluaciones por título: datos de partida, borrador de la IA, autoinforme humano y cotejo. |
-| `samples/` | Autoinformes reales de ejemplo (seguimiento y renovación). |
-| `docs/` | Visión del proyecto, evaluaciones, peticiones de cartera de los centros y solicitud de la fase 1 al SI. |
+| `old-skills/autoinforme-seguimiento-uca/` | Versión anterior de la skill, solo de seguimiento, usada en las evaluaciones. Solo local. |
+| `evals/` | Evaluaciones por título: datos de partida, borrador de la IA, autoinforme humano y cotejo. Solo local: contiene documentos con datos personales. |
+| `samples/` | Autoinformes reales de ejemplo (seguimiento y renovación). Solo local. |
+| `docs/` | Visión del proyecto, evaluaciones, y, solo en local, peticiones de cartera de los centros y solicitud de la fase 1 al SI. |
 | `web/` | Sitio web del proyecto (MkDocs), publicado en GitHub Pages con contraseña. |

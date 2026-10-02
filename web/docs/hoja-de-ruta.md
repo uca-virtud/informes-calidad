@@ -18,5 +18,4 @@ La fase 1 aporta los datos estructurados; la fase 2 permite que la IA los consul
 los convierte en un borrador redactado. Las fases 4 a 6 definen quién hace qué y cómo se
 extiende a toda la universidad.
 
-Más contexto en la [visión del proyecto](VISION.md) y en la
-[solicitud de la fase 1](peticiones-cartera/solicitud-SI-fase1.md).
+Más contexto en la [visión del proyecto](VISION.md).

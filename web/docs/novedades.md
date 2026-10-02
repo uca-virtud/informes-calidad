@@ -12,5 +12,5 @@ Registro de los avances del proyecto, del más reciente al más antiguo.
   evaluaciones. Ver [evaluaciones](EVALUACIONES.md).
 - La skill cubre ya los dos tipos de autoinforme: **seguimiento** y **renovación de la
   acreditación**.
-- Se traslada al Sistema de Información la [solicitud de la fase 1](peticiones-cartera/solicitud-SI-fase1.md),
-  con puesta en marcha deseada en noviembre de 2026.
+- Se traslada al Sistema de Información la solicitud de la fase 1 (modelo de datos e informe
+  agregado de indicadores), con puesta en marcha deseada en noviembre de 2026.

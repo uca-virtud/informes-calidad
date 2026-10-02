@@ -17,12 +17,14 @@
 - Al cambiar una skill, actualiza las referencias afectadas junto con su documento
   principal, y el estado de las lecciones en [`docs/EVALUACIONES.md`](docs/EVALUACIONES.md).
 - No añadas pruebas automatizadas sin que el usuario haya dado su consentimiento.
-- Mantén al día el sitio web del proyecto (`web/`, MkDocs). `VISION.md`, `EVALUACIONES.md`
-  y la solicitud de la fase 1 se incluyen desde `docs/` y se actualizan solos. Cuando cambie
+- Mantén al día el sitio web del proyecto (`web/`, MkDocs). `VISION.md` y `EVALUACIONES.md`
+  se incluyen desde `docs/` y se actualizan solos. Cuando cambie
   el estado de una fase, la skill o cualquier documento de `docs/`, revisa `web/docs/index.md`,
   `hoja-de-ruta.md`, `como-funciona.md` y `colectivos.md`, y añade una entrada fechada en
   `novedades.md`. Si creas un documento en `docs/` que deba publicarse, inclúyelo en `web/`
-  y añádelo al `nav` de `web/mkdocs.yml`.
+  y añádelo al `nav` de `web/mkdocs.yml`. El sitio se genera en GitHub Actions, así que solo
+  puede incluir ficheros versionados: nunca incluyas nada de `docs/peticiones-cartera/`,
+  que no se sube al repositorio.
 - En el sitio no se publican nunca datos personales (nombres, correos, teléfonos) ni
   documentos (PDF, DOCX, Excel): solo resúmenes y métricas. El hook `web/hooks/proteccion.py`
   exige la contraseña, cifra todas las páginas y bloquea los documentos, pero no detecta datos
