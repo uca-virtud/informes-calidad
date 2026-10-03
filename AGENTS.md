@@ -16,6 +16,11 @@
   existan en el repositorio.
 - Al cambiar una skill, actualiza las referencias afectadas junto con su documento
   principal, y el estado de las lecciones en [`docs/EVALUACIONES.md`](docs/EVALUACIONES.md).
+- Para evaluar la skill, sigue [`docs/evaluacion/procedimiento.md`](docs/evaluacion/procedimiento.md).
+  No incorpores a la skill datos, frases ni nombres de los títulos usados como casos de
+  evaluación, y no la modifiques durante una evaluación: las lecciones se proponen y las
+  aprueba el responsable. Los ejemplos literales de la skill solo pueden proceder de
+  títulos marcados como `excluido` en `docs/evaluacion/casos.csv`.
 - No añadas pruebas automatizadas sin que el usuario haya dado su consentimiento.
 - Mantén al día la web de avance del proyecto: una única página estática, `web/index.html`.
   Cuando cambie el estado de una fase o haya un avance relevante (en `docs/`, en la skill o

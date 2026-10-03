@@ -72,5 +72,5 @@ centro).
   Relaciones Internacionales orienta y organiza jornadas de acogida (entrantes) e
   informativas (salientes); convalidaciones aprobadas por la CGC.
 - **Empleadores** (P07): si el centro aún no ha implementado la recogida sistemática de
-  satisfacción de empleadores, indícalo explícitamente ("A la fecha, no se ha
-  implementado aún este proceso…") y conviértelo en punto débil / acción de mejora.
+  satisfacción de empleadores, indica explícitamente que ese proceso todavía no está en
+  marcha y conviértelo en punto débil / acción de mejora.

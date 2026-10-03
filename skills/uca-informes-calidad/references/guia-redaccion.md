@@ -25,6 +25,14 @@ interpretación y en las decisiones de mejora que se derivan.
 - **No inventes**. Si falta un dato, escribe `[PENDIENTE: dato de …]`. Si un apartado no
   aplica (p. ej. prácticas externas, enseñanza virtual, título conjunto), indícalo o
   elimínalo según la plantilla.
+- **Propuesta no es hecho**. Una acción del plan de mejora anterior, una recomendación de
+  ACCUA o el texto modelo de la plantilla (reuniones con acta, coordinadores, periodicidades,
+  procedimientos) no se describen como realizados en el curso salvo que la entrada lo
+  acredite. Si no consta su ejecución, escribe que está prevista o en curso, o deja
+  `[PENDIENTE: confirmar si se ha implantado …]`, y no des por resuelta la recomendación.
+- **Datos de identidad, de la memoria**. La habilitación para una profesión regulada, la
+  modalidad, las plazas y los centros se toman de la memoria verificada, sin deducirlos de
+  las competencias, del perfil profesional o de sellos de calidad.
 - **Tono**: institucional, claro y concreto. Evita generalidades vacías; aporta cifras,
   fechas, enlaces y responsables.
 
@@ -75,7 +83,8 @@ aplicaciones [T3].
 3. Indicadores extraídos de producción (`data.uca.es`), con entorno y fecha indicados;
    ningún indicador de satisfacción por encima de 5; misma alineación de cohortes en las
    tablas de egresados del título y del centro.
-4. No queda texto en rojo/azul (instrucciones/directrices) ni marcadores `XXXX`.
+4. No queda texto en rojo/azul (instrucciones/directrices) ni marcadores `XXXX`, tampoco
+   en celdas de tablas ni dentro de párrafos con análisis.
 5. Cada criterio tiene análisis real en todos sus subcriterios aplicables.
 6. Entre 1 y 5 puntos débiles en total; cada uno con su acción de mejora; el plan de
    mejora consolida ACCUA + débiles.
@@ -85,3 +94,5 @@ aplicaciones [T3].
 9. Enlaces reales (web del título, página de la CGC, normativas, actas, rutas UCADrive)
    en lugar de placeholders.
 10. Apartados no aplicables eliminados o marcados como "No aplica".
+11. Ninguna acción propuesta, recomendación o texto modelo aparece como ya ejecutado sin
+    evidencia en la entrada; la habilitación profesional coincide con la memoria.

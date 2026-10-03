@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """Depura el texto de instrucciones de la plantilla del autoinforme.
 
-Elimina los párrafos que son instrucciones de cumplimentación o directrices, para dejar
-un único documento limpio tras redactar el análisis. Criterios de borrado:
-  - Párrafos cuyo texto va en ROJO (instrucciones) o AZUL (directrices ACCUA), según el
-    convenio de colores de la plantilla.
+Elimina las instrucciones de cumplimentación y las directrices, para dejar un único
+documento limpio tras redactar el análisis. Recorre el cuerpo y las celdas de las tablas
+(también las anidadas). Criterios de borrado:
+  - Párrafos cuyo texto va entero en ROJO (instrucciones) o AZUL (directrices ACCUA),
+    según el convenio de colores de la plantilla.
   - Párrafos entre corchetes "[ ... ]" (instrucciones) o con marcadores "XXXX"/"xxxx".
-Conserva el texto en negro (recomendaciones ya reescritas y análisis) y las tablas.
+  - En párrafos mixtos, solo los fragmentos (runs) en rojo o azul.
+Conserva el texto en negro (análisis), las tablas y los marcadores "[PENDIENTE: …]".
+En una celda que se quedaría sin párrafos se vacía el texto en lugar de borrar el último.
 
 Uso:
   python depurar_instrucciones.py --entrada relleno.docx --salida final.docx
@@ -21,6 +24,7 @@ except ImportError:
     sys.exit("Falta python-docx: pip install python-docx --break-system-packages")
 
 XXXX = re.compile(r"[Xx]{3,}")
+PENDIENTE = "[PENDIENTE"
 
 
 def _rgb(run):
@@ -44,22 +48,53 @@ def _is_bluish(rgb):
     return b >= 120 and r < 90 and g < b
 
 
+def _is_colored(run):
+    rgb = _rgb(run)
+    return bool(rgb) and (_is_reddish(rgb) or _is_bluish(rgb))
+
+
 def is_instruction(p):
     t = p.text.strip()
-    if not t:
+    if not t or PENDIENTE in t:
         return False
     if t.startswith("[") or XXXX.search(t):
         return True
     runs = [r for r in p.runs if r.text.strip()]
-    if not runs:
-        return False
-    colored = 0
-    for r in runs:
-        rgb = _rgb(r)
-        if rgb and (_is_reddish(rgb) or _is_bluish(rgb)):
-            colored += 1
-    # todo el texto del párrafo va en rojo/azul -> es instrucción/directriz
-    return colored == len(runs)
+    return bool(runs) and all(_is_colored(r) for r in runs)
+
+
+def depurar_parrafos(parrafos, en_celda=False):
+    """Devuelve (párrafos borrados, fragmentos borrados)."""
+    borrados = fragmentos = 0
+    for p in list(parrafos):
+        if is_instruction(p):
+            if en_celda and len(p._element.getparent().findall(p._element.tag)) == 1:
+                for r in p.runs:
+                    r.text = ""
+            else:
+                p._element.getparent().remove(p._element)
+            borrados += 1
+        elif PENDIENTE not in p.text:
+            for r in p.runs:
+                if r.text.strip() and _is_colored(r):
+                    r.text = ""
+                    fragmentos += 1
+    return borrados, fragmentos
+
+
+def depurar_tablas(tablas):
+    borrados = fragmentos = 0
+    for tabla in tablas:
+        celdas = set()
+        for fila in tabla.rows:
+            for celda in fila.cells:
+                if celda._tc in celdas:
+                    continue
+                celdas.add(celda._tc)
+                b, f = depurar_parrafos(celda.paragraphs, en_celda=True)
+                bt, ft = depurar_tablas(celda.tables)
+                borrados, fragmentos = borrados + b + bt, fragmentos + f + ft
+    return borrados, fragmentos
 
 
 def main():
@@ -68,13 +103,11 @@ def main():
     ap.add_argument("--salida", required=True)
     args = ap.parse_args()
     d = docx.Document(args.entrada)
-    removed = 0
-    for p in list(d.paragraphs):
-        if is_instruction(p):
-            p._element.getparent().remove(p._element)
-            removed += 1
+    borrados, fragmentos = depurar_parrafos(d.paragraphs)
+    bt, ft = depurar_tablas(d.tables)
     d.save(args.salida)
-    print(f"OK: {args.salida} | párrafos de instrucciones eliminados: {removed}")
+    print(f"OK: {args.salida} | párrafos de instrucciones eliminados: {borrados + bt} "
+          f"(en tablas: {bt}) | fragmentos en rojo/azul eliminados: {fragmentos + ft}")
 
 
 if __name__ == "__main__":

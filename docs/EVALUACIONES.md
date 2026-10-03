@@ -4,22 +4,26 @@ Registro de las pruebas de la skill frente a autoinformes reales elaborados por 
 coordinaciones. Cada evaluación se guarda en `evals/` y aquí se resumen sus resultados, las
 lecciones aprendidas y su estado en la skill actual (`skills/uca-informes-calidad`).
 
+Desde octubre de 2026 las evaluaciones siguen el
+[procedimiento sistemático](evaluacion/procedimiento.md): un título por ejecución, rúbrica
+cerrada, autocotejo más segundo corrector de otra familia de modelos y métricas calculadas
+por `tools/evaluacion/evaluacion.py`. Las evals 1-3 se han migrado como línea base
+E01-GII, E02-GIA y E03-GIDIDP (`evals/ejecuciones/`), y su historial está en
+`evals/historial.md`.
+
 ## Método
 
 Cada evaluación es un título de la ESI cuyo autoinforme de seguimiento del curso 2024/25
 (convocatoria 2026) ya había elaborado y aprobado la coordinación. Se ejecutó la skill en
 Claude Desktop y se pidió a la IA que cotejara su borrador con el documento humano.
 
-Estructura de cada carpeta `evals/Eval n. <TÍTULO>/`:
+Sus documentos están ahora en la estructura del procedimiento:
 
-| Carpeta | Contenido |
+| Ubicación | Contenido |
 |---|---|
-| `Datos de partida/` | Documentos aportados a la IA (autoinforme 23/24, memoria verificada, informe ACCUA). Los indicadores los extrajo la IA de LinceBI. |
-| `Resultado obtenido por la IA/` | Borrador `.docx` generado. |
-| `Resultado generado por Humano/` | Autoinforme aprobado por la CGC (referencia). |
-| `Feedback proporcionado por la IA/` | Cotejo IA-humano redactado por la propia IA. |
-
-En las evals 2 y 3 la carpeta de referencia se llama `Resutado generado por Humano/`.
+| `evals/casos/<id>/entrada/` | Documentos aportados a la IA (autoinforme 23/24, memoria verificada, informe ACCUA en GIA). Los indicadores los extrajo la IA de LinceBI. |
+| `evals/casos/<id>/referencia/` | Autoinforme aprobado por la CGC (referencia). |
+| `evals/ejecuciones/E0n-<id>/` | Borrador `.docx` generado y cotejo original redactado por la propia IA (`cotejo-original.*`). En E02 se conserva también el borrador corregido tras el cotejo. |
 
 Las evaluaciones se ejecutaron con la versión anterior de la skill
 (`old-skills/autoinforme-seguimiento-uca`). Entre la eval 1 y las evals 2-3 la IA modificó
@@ -66,6 +70,43 @@ errores del humano: cohortes de egresados desplazadas un año, un valor de P04-1
 la escala 0-5, el objetivo del 50 % asignado a la tasa de éxito en vez de a la de
 rendimiento y recomendaciones ACCUA renumeradas.
 
+### Línea base con la rúbrica (v2)
+
+El 3 de octubre de 2026 el segundo corrector (B, `gpt-6.1-sol`) puntuó E01-E03 con la
+rúbrica v2. Escala 0-2; D4-D7 obtuvieron 1 en los tres títulos.
+
+| Ejecución | D1 | D2 | D3 | Media | Bloqueantes | Discrepancias S | Pendiente de revisión |
+|---|---|---|---|---|---|---|---|
+| E01-GII | 0 | 0 | 0 | 0,57 | B1, B2, B3 | 13 | 5 |
+| E02-GIA | 2 | 0 | 1 | 1,00 | B2, B3 | 13 | 8 |
+| E03-GIDIDP | 2 | 2 | 1 | 1,29 | B1, B2, B3 | 12 | 8 |
+
+B3 aparece en todas porque no se registró el entorno (E02 usó además `datapru`). En D2, B
+comprobó celda a celda menos del 80 % de coincidencia en E01 y E02 (series del título
+copiadas en las tablas del centro y filas vacías), frente al 97 % que daba la métrica
+automática, que desde entonces se presenta solo como cota superior.
+
+Lecciones candidatas observadas en los tres títulos (pendientes de comprobar con la skill
+actual en E04-E06 antes de incorporarlas):
+
+| # | Lección candidata |
+|---|---|
+| C1 | Identificar cada valor por indicador, ámbito (título/centro) y curso; no completar series del centro con las del título. |
+| C2 | Comprobar que cifras, comparaciones y adjetivos de evolución del texto coinciden con las tablas y con toda la serie. |
+| C3 | Distinguir propuestas de actuaciones ejecutadas: una acción del plan anterior no pasa a hecho sin evidencia. Persiste en E04 → incorporada como L16. |
+| C4 | Conciliar recomendaciones de ACCUA y puntos débiles con el plan de mejora, conservando referencias, responsables y plazos. |
+| C5 | No dar por completo un anexo vacío o con solo un enlace; extraer lo disponible o marcarlo pendiente. |
+| C6 | Revisar instrucciones y marcadores en todo el documento, incluidas tablas y portada. Persiste en E04 → incorporada como L17. |
+
+### E04: GII con la skill actual
+
+Primera ejecución completa del procedimiento (A `claude-opus-5.5` y B `gpt-6.1-sol`,
+LinceBI `data.uca.es` el 3 de octubre de 2026). Media 1,43 frente a 0,57 en E01; D1-D3 pasan
+de 0 a 2; desaparecen B2 y B3; las discrepancias S bajan de 13 a 7. Persisten C3 (B1:
+actuaciones propuestas descritas como hechas) y C6, y aparece una habilitación profesional
+deducida de las competencias en contra de la memoria. C1, C2, C4 y C5 no se repiten de forma
+grave en E04; siguen como candidatas hasta E05-E06.
+
 ## Lecciones y estado en la skill
 
 Estado: **Incorporada** (está en la skill actual), **Insuficiente** (está, pero una
@@ -90,24 +131,21 @@ evaluaciones.
 | L13 | Evidencias en el seguimiento: rutas UCADrive por criterio y curso; enlaces externos para los Anexos 2 y 4 | Eval 3 | Incorporada (`estructura-autoinforme.md`) |
 | L14 | Conservar la numeración original de las recomendaciones ACCUA | Eval 3 | Incorporada (`SKILL.md`, `estilo-y-ejemplos.md`) |
 | L15 | Responsables y fechas concretos en el plan de mejora | Eval 1 | Incorporada como documento opcional (plan de mejora vivo) |
+| L16 | Propuesta no es hecho: acciones, recomendaciones y texto modelo no se describen como realizados sin evidencia | E03, E04 | Incorporada el 3-10-2026 (`guia-redaccion.md`, principios y checklist; `SKILL.md`, verificación); validar en E05 |
+| L17 | La depuración cubre celdas de tablas y párrafos mixtos y conserva los `[PENDIENTE]` | E01-E04 | Incorporada el 3-10-2026 (`scripts/depurar_instrucciones.py`, `SKILL.md` 4b, checklist); validar en E05 |
+| L18 | La habilitación profesional y demás datos de identidad se toman de la memoria | E04 (norma: memoria) | Incorporada el 3-10-2026 (`guia-redaccion.md`); validar en E05 |
 
-## Limitaciones de las evaluaciones actuales
+## Limitaciones de las evals 1-3 y cómo las resuelve el procedimiento
 
-- **Sin rúbrica común.** Cada cotejo tiene un formato y una profundidad distintos (la eval 1
-  es un párrafo; la 3, un informe con tablas), así que no son comparables entre sí.
-- **Autoevaluación.** La misma IA que genera el borrador juzga el resultado y, en la eval 1,
-  modificó la skill sin revisión humana.
-- **Referencia imperfecta.** El autoinforme humano contiene errores (evals 2 y 3); no puede
-  tomarse como verdad absoluta celda a celda.
-- **Datos no reproducibles.** Los valores de LinceBI cambian entre la aprobación (marzo) y
-  la ejecución (julio), y no se registró el entorno ni la fecha de extracción.
-- **Cobertura.** Solo seguimiento, solo grados de la ESI; no hay másteres, otros centros ni
-  renovación de la acreditación.
+| Limitación | Respuesta del procedimiento |
+|---|---|
+| **Sin rúbrica común.** Cada cotejo tiene un formato y una profundidad distintos (la eval 1 es un párrafo; la 3, un informe con tablas). | Rúbrica cerrada D1-D7 y plantilla de cotejo fija; al cambiar la rúbrica se vuelven a puntuar las ejecuciones anteriores. |
+| **Autoevaluación.** La misma IA genera y juzga y, en la eval 1, modificó la skill sin revisión humana. | Se mantiene el autocotejo (A) y se añade un corrector independiente de otra familia (B); solo el responsable aprueba cambios en la skill. |
+| **Referencia imperfecta.** El autoinforme humano contiene errores (evals 2 y 3). | Causa **H** en las discrepancias: no penaliza y queda pendiente de revisión experta. |
+| **Datos no reproducibles.** LinceBI cambia entre marzo y julio, y no se registró entorno ni fecha. | La ficha registra host y fecha de extracción; `datapru` es bloqueante (B3); las diferencias por volatilidad son causa **D**. |
+| **Cobertura.** Solo seguimiento de grados de la ESI. | Catálogo `docs/evaluacion/casos.csv`; el siguiente título se elige por variedad (otro centro, máster, renovación). |
+| **Fuga de casos en la skill.** `references/estilo-y-ejemplos.md` contiene ejemplos tomados de los autoinformes de la ESI que se usan como referencia (`medir` detecta 121 frases exclusivas de los tres casos), lo que puede inflar sus notas. | Aviso automático de huellas en `medir`. Resuelto el 3 de octubre de 2026: los extractos se sustituyeron por otros de GIM (excluido de la evaluación) o por plantillas con marcadores. La línea base E01-E03 se obtuvo con la skill anterior y es optimista; E04 medirá ya la skill sin fuga. |
 
 ## Cómo añadir una evaluación
 
-1. Crea `evals/Eval n. <TÍTULO>/` con las cuatro subcarpetas del apartado Método.
-2. Registra la versión de la skill, el cliente usado, el entorno de LinceBI y la fecha de
-   extracción.
-3. Haz el cotejo con la misma rúbrica para todas las evaluaciones.
-4. Añade la fila a la tabla de resultados y actualiza el estado de las lecciones.
+Sigue [docs/evaluacion/procedimiento.md](evaluacion/procedimiento.md).

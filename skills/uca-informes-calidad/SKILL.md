@@ -208,8 +208,10 @@ python scripts/depurar_instrucciones.py --entrada <borrador.docx> --salida <fina
 ```
 
 Borra los párrafos en rojo (instrucciones) y azul (directrices ACCUA), los que van entre
-corchetes `[ … ]` y los marcadores `XXXX`, conservando el texto en negro (análisis) y las
-tablas. Revisa el resultado para asegurarte de que no se ha eliminado contenido útil.
+corchetes `[ … ]` y los marcadores `XXXX`, también dentro de las tablas, y en los párrafos
+mixtos quita solo los fragmentos en rojo o azul. Conserva el texto en negro (análisis),
+las tablas y los `[PENDIENTE: …]`. Revisa el resultado para asegurarte de que no se ha
+eliminado contenido útil.
 En la renovación, ejecútalo sobre cada `Criterio_n.docx`.
 
 El script `rellenar_autoinforme.py` también vuelca la **tabla de recomendaciones de
@@ -241,7 +243,8 @@ las de egresados con las cinco últimas cohortes; que los indicadores proceden d
 producción y la fecha de extracción está indicada; que ningún indicador de satisfacción
 supera 5 y que título y centro alinean igual las cohortes; que no queda texto de
 instrucciones (rojo/azul) ni marcadores `XXXX`; que cada punto débil tiene acción de
-mejora; que los indicadores citados en el análisis coinciden con las tablas del Anexo 1.
+mejora; que los indicadores citados en el análisis coinciden con las tablas del Anexo 1;
+que ninguna acción propuesta o texto modelo figura como realizado sin evidencia.
 Relee `references/guia-redaccion.md` (checklist final) y, en la renovación, el checklist
 de `references/estructura-renovacion.md`.
 
