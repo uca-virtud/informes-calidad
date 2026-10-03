@@ -117,6 +117,17 @@ en azul de la tabla de calificaciones del 6.3: corregido el 3-10-2026 (las etiqu
 cortas en azul de las tablas se conservan). L18 sin incidencias. Se confirman en un segundo
 título C2, C4 y C5 y el uso ambiguo de guiones de E04, que pasan a L19-L22.
 
+### E06: GIDIDP con L16b y L19-L22
+
+Sin incidencias con LinceBI tras la corrección del servidor. Media 1,57, la mejor hasta
+ahora, sin bloqueantes; D1, D2, D5 y D6 = 2. Funcionan L16b, L19 y L21. L20 y L22 se
+cumplen a medias: Anexo IV solo con una selección «a completar si se requiere», adjetivos
+de evolución que la serie no respalda y un objetivo de la memoria aplicado a otra tasa en
+un punto fuerte. Pasan a L23-L27 las lecciones repetidas en dos títulos.
+
+Resumen de la serie con la skill actual: E04 1,43 (B1), E05 1,43 (B1), E06 1,57 (sin
+bloqueantes), frente a 0,57-1,29 y dos o tres bloqueantes por caso en la línea base.
+
 ## Lecciones y estado en la skill
 
 Estado: **Incorporada** (está en la skill actual), **Insuficiente** (está, pero una
@@ -148,7 +159,12 @@ evaluaciones.
 | L19 | Cero no es «sin dato»: sin guiones ambiguos; buscar en la entrada antes de dejar pendiente | E04, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 12; `SKILL.md`); validar en E06 |
 | L20 | Anexos con fuente en LinceBI extraídos del informe previsto; un agregado o enlace genérico no basta (C5) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 12); validar en E06 |
 | L21 | Recomendaciones de informes ACCUA anteriores declaradas abiertas, con número y fecha (C4) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, plan de mejora y checklist 13); validar en E06 |
-| L22 | Concluir solo lo que mide el indicador; sin generalizar sin comprobar (C2) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 14); validar en E06 |
+| L22 | Concluir solo lo que mide el indicador; sin generalizar sin comprobar (C2) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 14); parcial en E06 → L23 |
+| L23 | Refuerzo de L22: adjetivos de evolución contrastados con toda la serie; objetivos de la memoria solo con su tasa, en todas las apariciones | E01-E03, E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 14); validar en E07 |
+| L24 | Contrastar los cursos comunes con el autoinforme anterior; sin analizar la evolución si hay diferencias sistemáticas | E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, principios y checklist 15); validar en E07 |
+| L25 | Ampliación de L16: estado conocido solo por el autoinforme anterior no es vigente; sin juzgar la eficacia sin implantación acreditada | E04, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`); validar en E07 |
+| L26 | Refuerzo de L20: anexo completo o con enlace específico al informe íntegro, nunca condicionado | E01-E03, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`); validar en E07 |
+| L27 | Verificar restos de plantilla en negro: notas de cumplimentación, opciones alternativas, filas de ejemplo, enlaces pegados | E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 16; `SKILL.md`); validar en E07 |
 
 ## Limitaciones de las evals 1-3 y cómo las resuelve el procedimiento
 

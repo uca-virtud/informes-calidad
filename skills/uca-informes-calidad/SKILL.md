@@ -247,7 +247,9 @@ instrucciones (rojo/azul) ni marcadores `XXXX`; que cada punto débil tiene acci
 mejora; que los indicadores citados en el análisis coinciden con las tablas del Anexo 1;
 que ninguna acción propuesta o texto modelo figura como realizado sin evidencia (relee el
 texto modelo conservado en negro); que no quedan celdas con «-» o vacías sin explicación
-ni `[PENDIENTE]` de datos que estén en la entrada o en LinceBI.
+ni `[PENDIENTE]` de datos que estén en la entrada o en LinceBI; que no quedan restos de
+plantilla en negro (notas de cumplimentación, opciones alternativas, filas de ejemplo,
+enlaces pegados al texto).
 Relee `references/guia-redaccion.md` (checklist final) y, en la renovación, el checklist
 de `references/estructura-renovacion.md`.
 

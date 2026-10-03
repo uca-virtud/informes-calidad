@@ -16,6 +16,11 @@ interpretación y en las decisiones de mejora que se derivan.
 - **Analiza la evolución**, no solo el último dato. Comenta tendencias en los años
   disponibles, comparaciones título vs. centro y, si procede, con la media de la
   UCA/rama. Recuerda que las tasas son dinámicas.
+- **Contrasta la serie con la del autoinforme anterior**. En los cursos que aparecen en las
+  dos fuentes, compara los valores de LinceBI con los publicados el año anterior. Si un
+  indicador difiere de forma sistemática (p. ej. a la mitad o en otra escala), no analices
+  su evolución entre esos cursos: explica la diferencia en una nota de fuente y deja
+  `[PENDIENTE: verificar serie de …]`.
 - **Relaciona indicador y decisión**. Todo indicador se comenta: si es favorable, puede
   dar lugar a un punto fuerte; si es desfavorable, explica su causa y si requiere acción.
   Solo se convierte en punto débil si la coordinación puede abordarlo con una acción
@@ -32,7 +37,11 @@ interpretación y en las decisiones de mejora que se derivan.
   `[PENDIENTE: confirmar si se ha implantado …]`, y no des por resuelta la recomendación.
   Quitar el color no basta: relee cada frase del texto modelo que conserves en negro y
   borra o adapta las que no se correspondan con el título (modalidades, estructuras,
-  supuestos condicionales).
+  supuestos condicionales). Del mismo modo, el estado de una estructura o acción que solo
+  conoces por el autoinforme anterior no se da como vigente («según el autoinforme
+  anterior…» y `[PENDIENTE: confirmar estado actual]`). Tampoco se juzga si una acción ha
+  sido eficaz sin evidencia de que se implantó: separa implantación, evolución del
+  indicador y efecto atribuible.
 - **Datos de identidad, de la memoria**. La habilitación para una profesión regulada, la
   modalidad, las plazas y los centros se toman de la memoria verificada, sin deducirlos de
   las competencias, del perfil profesional o de sellos de calidad.
@@ -42,10 +51,15 @@ interpretación y en las decisiones de mejora que se derivan.
   `[PENDIENTE: dato de …]` o «No disponible», indicando el motivo.
 - **Antes de dejar algo pendiente, búscalo**. Un anexo o tabla con fuente en LinceBI se
   extrae del informe previsto en el mapa de indicadores. Un total, un agregado o un enlace
-  genérico a la plataforma no sustituyen la tabla exigida.
+  genérico a la plataforma no sustituyen la tabla exigida. El anexo se entrega completo, o
+  con un enlace específico al informe íntegro del mismo curso; nunca condicionado a «si se
+  requiere».
 - **Concluye solo lo que mide el indicador**. No deduzcas un indicador a partir de otro
   (p. ej. la nota de corte a partir de la preferencia). Evita «garantiza», «todas cumplen»
-  o «en todos los casos» salvo que lo hayas comprobado indicador a indicador.
+  o «en todos los casos» salvo que lo hayas comprobado indicador a indicador. Los adjetivos
+  de evolución («continuado», «por cuarto curso consecutivo») se comprueban con toda la
+  serie, y la comparación con un objetivo de la memoria solo se hace con la tasa que lo
+  tiene, en todas sus apariciones (análisis, puntos fuertes y síntesis).
 - **Tono**: institucional, claro y concreto. Evita generalidades vacías; aporta cifras,
   fechas, enlaces y responsables.
 
@@ -118,4 +132,9 @@ aplicaciones [T3].
 13. Están todas las recomendaciones vivas de ACCUA, también las de informes anteriores que
     el último declara abiertas.
 14. Ninguna conclusión va más allá de lo que mide su indicador ni generaliza sin
-    comprobarlo.
+    comprobarlo; los adjetivos de evolución y las comparaciones con objetivos coinciden
+    con toda la serie y con la memoria en todas sus apariciones.
+15. Los cursos comunes con el autoinforme anterior están contrastados y las diferencias
+    sistemáticas explicadas.
+16. No quedan restos de plantilla en negro: notas de cumplimentación, opciones alternativas
+    («Grado/Máster»), filas de ejemplo ni enlaces pegados al texto siguiente.

@@ -61,6 +61,23 @@ Reglas del orquestador:
 - El orquestador **no modifica la skill**. Las lecciones se aplican después, solo las que
   apruebe el responsable, en un cambio pequeño y con su propia versión.
 
+### Tiempos orientativos
+
+Medidos en E04-E06 (grados de seguimiento) con las fechas de los ficheros de cada ejecución.
+No incluyen caídas de LinceBI ni la revisión del responsable.
+
+| Paso | Duración | Observaciones |
+|---|---|---|
+| 1. `nueva` | Segundos | |
+| 2. Generación (A) | 15-20 min | Unos 11-12 min hasta tener `datos.json` (lectura de entrada y LinceBI); el resto, redacción y depuración del `.docx` |
+| 3 y 4. Autocotejo (A) y corrector (B) | 6-9 min | Se lanzan **a la vez** en cuanto existe `borrador.docx`; cada uno tarda 5-9 min |
+| 5. `medir` | Menos de 1 min | |
+| **Total por título** | **25-30 min** | Más la revisión y decisión del responsable (paso 6) |
+
+El tiempo transcurrido que informa `read_agent` incluye la espera entre turnos del subagente
+y no sirve para medir: usa las fechas de creación de `datos.json`, `borrador.docx` y los
+cotejos.
+
 ## Prompts
 
 Sustituye `<…>` con los datos de la ficha y de `casos.csv`.
