@@ -30,9 +30,22 @@ interpretación y en las decisiones de mejora que se derivan.
   procedimientos) no se describen como realizados en el curso salvo que la entrada lo
   acredite. Si no consta su ejecución, escribe que está prevista o en curso, o deja
   `[PENDIENTE: confirmar si se ha implantado …]`, y no des por resuelta la recomendación.
+  Quitar el color no basta: relee cada frase del texto modelo que conserves en negro y
+  borra o adapta las que no se correspondan con el título (modalidades, estructuras,
+  supuestos condicionales).
 - **Datos de identidad, de la memoria**. La habilitación para una profesión regulada, la
   modalidad, las plazas y los centros se toman de la memoria verificada, sin deducirlos de
   las competencias, del perfil profesional o de sellos de calidad.
+- **Cero no es «sin dato»**. No dejes guiones ni celdas vacías ambiguas. Si el valor
+  no está en LinceBI, búscalo antes en toda la entrada (autoinforme anterior, informes,
+  anexos), con el mismo indicador, ámbito y curso. Si no aparece, escribe
+  `[PENDIENTE: dato de …]` o «No disponible», indicando el motivo.
+- **Antes de dejar algo pendiente, búscalo**. Un anexo o tabla con fuente en LinceBI se
+  extrae del informe previsto en el mapa de indicadores. Un total, un agregado o un enlace
+  genérico a la plataforma no sustituyen la tabla exigida.
+- **Concluye solo lo que mide el indicador**. No deduzcas un indicador a partir de otro
+  (p. ej. la nota de corte a partir de la preferencia). Evita «garantiza», «todas cumplen»
+  o «en todos los casos» salvo que lo hayas comprobado indicador a indicador.
 - **Tono**: institucional, claro y concreto. Evita generalidades vacías; aporta cifras,
   fechas, enlaces y responsables.
 
@@ -64,6 +77,9 @@ interpretación y en las decisiones de mejora que se derivan.
 - Incluye: todas las recomendaciones vivas del último informe ACCUA (hasta que la
   agencia las cierre) + todos los puntos débiles de este autoinforme + los puntos
   débiles no resueltos del plan anterior.
+- Lee entero el informe de ACCUA. Las recomendaciones de informes anteriores que declare
+  no resueltas o resueltas en parte siguen vivas: inclúyelas con su número y fecha
+  originales.
 - Cada acción con prioridad (Alta/Media/Baja), fechas de inicio y fin, y, si procede,
   indicador de seguimiento.
 
@@ -95,4 +111,11 @@ aplicaciones [T3].
    en lugar de placeholders.
 10. Apartados no aplicables eliminados o marcados como "No aplica".
 11. Ninguna acción propuesta, recomendación o texto modelo aparece como ya ejecutado sin
-    evidencia en la entrada; la habilitación profesional coincide con la memoria.
+    evidencia en la entrada; la habilitación profesional coincide con la memoria; el texto
+    modelo conservado en negro se ha releído y se corresponde con el título.
+12. Ninguna celda con «-» o vacía sin explicación; cada `[PENDIENTE]` corresponde a un dato
+    que no está en la entrada ni en el informe de LinceBI previsto.
+13. Están todas las recomendaciones vivas de ACCUA, también las de informes anteriores que
+    el último declara abiertas.
+14. Ninguna conclusión va más allá de lo que mide su indicador ni generaliza sin
+    comprobarlo.

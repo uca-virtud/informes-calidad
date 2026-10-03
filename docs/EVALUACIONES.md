@@ -107,6 +107,16 @@ actuaciones propuestas descritas como hechas) y C6, y aparece una habilitación 
 deducida de las competencias en contra de la memoria. C1, C2, C4 y C5 no se repiten de forma
 grave en E04; siguen como candidatas hasta E05-E06.
 
+### E05: GIA con L16-L18
+
+LinceBI cayó dos veces durante la extracción por un fallo del servidor MCP con llamadas
+simultáneas (corregido en `lincebi-mcp`); la extracción se completó en dos tramos. Media
+1,43, igual que E04; D1, D2 y D5 = 2; B1 por un texto modelo en negro conservado («se
+imparte en varias modalidades») pese a L16. L17 funciona, pero vaciaba los encabezados
+en azul de la tabla de calificaciones del 6.3: corregido el 3-10-2026 (las etiquetas
+cortas en azul de las tablas se conservan). L18 sin incidencias. Se confirman en un segundo
+título C2, C4 y C5 y el uso ambiguo de guiones de E04, que pasan a L19-L22.
+
 ## Lecciones y estado en la skill
 
 Estado: **Incorporada** (está en la skill actual), **Insuficiente** (está, pero una
@@ -133,7 +143,12 @@ evaluaciones.
 | L15 | Responsables y fechas concretos en el plan de mejora | Eval 1 | Incorporada como documento opcional (plan de mejora vivo) |
 | L16 | Propuesta no es hecho: acciones, recomendaciones y texto modelo no se describen como realizados sin evidencia | E03, E04 | Incorporada el 3-10-2026 (`guia-redaccion.md`, principios y checklist; `SKILL.md`, verificación); validar en E05 |
 | L17 | La depuración cubre celdas de tablas y párrafos mixtos y conserva los `[PENDIENTE]` | E01-E04 | Incorporada el 3-10-2026 (`scripts/depurar_instrucciones.py`, `SKILL.md` 4b, checklist); validar en E05 |
-| L18 | La habilitación profesional y demás datos de identidad se toman de la memoria | E04 (norma: memoria) | Incorporada el 3-10-2026 (`guia-redaccion.md`); validar en E05 |
+| L18 | La habilitación profesional y demás datos de identidad se toman de la memoria | E04 (norma: memoria) | Incorporada el 3-10-2026 (`guia-redaccion.md`); sin incidencias en E05 |
+| L16b | Refuerzo de L16: releer el texto modelo conservado en negro y contrastarlo con la memoria | E03-E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 11; `SKILL.md`, verificación); validar en E06 |
+| L19 | Cero no es «sin dato»: sin guiones ambiguos; buscar en la entrada antes de dejar pendiente | E04, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 12; `SKILL.md`); validar en E06 |
+| L20 | Anexos con fuente en LinceBI extraídos del informe previsto; un agregado o enlace genérico no basta (C5) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 12); validar en E06 |
+| L21 | Recomendaciones de informes ACCUA anteriores declaradas abiertas, con número y fecha (C4) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, plan de mejora y checklist 13); validar en E06 |
+| L22 | Concluir solo lo que mide el indicador; sin generalizar sin comprobar (C2) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 14); validar en E06 |
 
 ## Limitaciones de las evals 1-3 y cómo las resuelve el procedimiento
 

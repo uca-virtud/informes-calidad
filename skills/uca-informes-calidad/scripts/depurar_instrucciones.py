@@ -8,6 +8,8 @@ documento limpio tras redactar el análisis. Recorre el cuerpo y las celdas de l
     según el convenio de colores de la plantilla.
   - Párrafos entre corchetes "[ ... ]" (instrucciones) o con marcadores "XXXX"/"xxxx".
   - En párrafos mixtos, solo los fragmentos (runs) en rojo o azul.
+En las celdas, las etiquetas cortas solo en azul (encabezados de ejemplo como
+«Suspensos» o «%») se conservan y pasan a negro: son parte de la estructura de la tabla.
 Conserva el texto en negro (análisis), las tablas y los marcadores "[PENDIENTE: …]".
 En una celda que se quedaría sin párrafos se vacía el texto en lugar de borrar el último.
 
@@ -25,6 +27,7 @@ except ImportError:
 
 XXXX = re.compile(r"[Xx]{3,}")
 PENDIENTE = "[PENDIENTE"
+MAX_PALABRAS_ETIQUETA = 6
 
 
 def _rgb(run):
@@ -63,11 +66,22 @@ def is_instruction(p):
     return bool(runs) and all(_is_colored(r) for r in runs)
 
 
+def is_etiqueta_tabla(p):
+    t = p.text.strip()
+    if not t or t.startswith("[") or XXXX.search(t) or len(t.split()) > MAX_PALABRAS_ETIQUETA:
+        return False
+    colores = [_rgb(r) for r in p.runs if r.text.strip() and _is_colored(r)]
+    return bool(colores) and all(_is_bluish(c) for c in colores)
+
+
 def depurar_parrafos(parrafos, en_celda=False):
     """Devuelve (párrafos borrados, fragmentos borrados)."""
     borrados = fragmentos = 0
     for p in list(parrafos):
-        if is_instruction(p):
+        if en_celda and is_etiqueta_tabla(p):
+            for r in p.runs:
+                r.font.color.rgb = None
+        elif is_instruction(p):
             if en_celda and len(p._element.getparent().findall(p._element.tag)) == 1:
                 for r in p.runs:
                     r.text = ""
