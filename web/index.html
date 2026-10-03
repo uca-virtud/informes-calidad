@@ -24,8 +24,10 @@
   .estado { font-size: .8rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; color: #fff; white-space: nowrap; }
   .hecho { background: var(--hecho); } .curso { background: var(--curso); } .pend { background: var(--pend); }
   .leyenda { color: var(--gris); font-size: .9rem; }
-  ul.novedades { padding-left: 1.2rem; margin: 0; }
-  ul.novedades li { margin-bottom: .5rem; }
+  nav { background: #172d57; padding: 0 1.5rem; }
+  nav a { display: inline-block; color: #fff; text-decoration: none; padding: .7rem 1rem; opacity: .8; }
+  nav a:hover, nav a[aria-current] { opacity: 1; box-shadow: inset 0 -3px 0 #fff; }
+  a { color: var(--azul); }
   footer { text-align: center; color: var(--gris); font-size: .85rem; padding: 0 1.5rem 2rem; }
 </style>
 </head>
@@ -34,6 +36,10 @@
   <h1>Informes de calidad UCA</h1>
   <p>Avance del proyecto de elaboración asistida por IA de los autoinformes de calidad de los títulos</p>
 </header>
+<nav>
+  <a href="index.html" aria-current="page">Avance</a>
+  <a href="evaluacion.html">Evaluación del asistente</a>
+</nav>
 
 <main>
   <section>
@@ -55,9 +61,9 @@
       <li>
         <span class="num curso">1</span>
         <div><strong>Datos de calidad en LinceBI</strong>
-          <small>Modelo de datos e informe agregado con todos los indicadores del Anexo I. Solicitado al Sistema
-            de Información; puesta en marcha deseada en noviembre de 2026.</small></div>
-        <span class="estado curso">Solicitada</span>
+          <small>Modelo de datos e informe agregado con los indicadores del Anexo I. Solicitado al Sistema de
+            Información; puesta en marcha deseada en noviembre de 2026.</small></div>
+        <span class="estado curso">En desarrollo</span>
       </li>
       <li>
         <span class="num hecho">2</span>
@@ -68,42 +74,36 @@
       <li>
         <span class="num curso">3</span>
         <div><strong>Asistente de redacción de autoinformes</strong>
-          <small>Disponible para seguimiento y renovación de la acreditación. Evaluado con tres grados de la ESI;
-            pendiente de validar las últimas mejoras.</small></div>
+          <small>Disponible para seguimiento y renovación de la acreditación. En evaluación con autoinformes
+            reales: <a href="evaluacion.html">ver resultados</a>.</small></div>
         <span class="estado curso">En evaluación</span>
       </li>
       <li>
         <span class="num pend">4</span>
+        <div><strong>Pilotaje</strong>
+          <small>Escuela Superior de Ingeniería y Facultad de Filosofía y Letras, para evaluar y mejorar el
+            asistente y todo el proceso.</small></div>
+        <span class="estado pend">Pendiente</span>
+      </li>
+      <li>
+        <span class="num pend">5</span>
+        <div><strong>Acceso en red con credenciales UCA</strong>
+          <small>Conexión con LinceBI disponible como servicio en red, con autenticación única de la UCA.</small></div>
+        <span class="estado pend">Pendiente</span>
+      </li>
+      <li>
+        <span class="num pend">6</span>
         <div><strong>Procedimiento de trabajo</strong>
           <small>Organización entre la unidad técnica informática, la Unidad de Calidad y las coordinaciones.</small></div>
         <span class="estado pend">Pendiente</span>
       </li>
       <li>
-        <span class="num pend">5</span>
-        <div><strong>Pilotaje</strong>
-          <small>Escuela Superior de Ingeniería y Facultad de Filosofía y Letras.</small></div>
-        <span class="estado pend">Pendiente</span>
-      </li>
-      <li>
-        <span class="num pend">6</span>
+        <span class="num pend">7</span>
         <div><strong>Despliegue</strong>
           <small>Resto de facultades y escuelas.</small></div>
         <span class="estado pend">Pendiente</span>
       </li>
     </ol>
-  </section>
-
-  <section>
-    <h2>Novedades</h2>
-    <ul class="novedades">
-      <li><strong>Octubre de 2026.</strong> Primera evaluación con el nuevo procedimiento: el asistente mejora
-        claramente en identificación, tablas de indicadores y cobertura, y se corrigen tres puntos detectados.</li>
-      <li><strong>Octubre de 2026.</strong> Se pone en marcha un procedimiento sistemático para evaluar
-        el asistente título a título, con criterios de corrección comunes y doble revisión.</li>
-      <li><strong>Octubre de 2026.</strong> El asistente incorpora las lecciones de las tres primeras
-        evaluaciones y cubre ya seguimiento y renovación de la acreditación.</li>
-      <li><strong>Octubre de 2026.</strong> Se traslada al Sistema de Información la solicitud de la fase 1.</li>
-    </ul>
   </section>
 </main>
 

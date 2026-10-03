@@ -21,17 +21,18 @@ informes generados con ayuda de IA.
 1. Desarrollo de un nuevo modelo de datos en LinceBI y un informe agregado para exponer rápidamente los indicadores 
    de calidad (P01–P08) necesarios para rellenar el anexo 1, descargables en su formato. Solicitado al Sistema de 
    Información con puesta en marcha deseada en noviembre de 2026, para usarse en los autoinformes del curso 2025-26; 
-   el cuadro de mando se solicitará más adelante. Detalle en 
+   el cuadro de mando se solicitará más adelante. Actualmente en desarrollo. Detalle en 
    [solicitud-SI-fase1.md](peticiones-cartera/solicitud-SI-fase1.md).
-2. Desarrollar un MCP de conexión con LinceBI (ya desarrollado como un proyecto de Spring Boot con Maven).
+2. Desarrollar un MCP de conexión (stdin) con LinceBI (ya desarrollado como un proyecto de Spring Boot con Maven).
 3. Desarrollar skill para rellenar la plantilla de informes de calidad (disponible en carpeta 
    skills/uca-informes-calidad; cubre seguimiento y renovación de la acreditación). La versión anterior, solo de 
    seguimiento, se ha evaluado con tres grados de la ESI frente a sus autoinformes reales: ver 
    [EVALUACIONES.md](EVALUACIONES.md).
-4. Establecer el entorno procedimental y operativo para la unidad técnica informática, la unidad de calidad y para 
-   los coordinadores de títulos.
-5. Pilotaje en Escuela Superior de Ingeniería y Facultad de Filosofía y Letras, para evaluación y mejora continua de 
+4. Pilotaje en Escuela Superior de Ingeniería y Facultad de Filosofía y Letras, para evaluación y mejora continua de 
    las skills y de todo el proceso.
-6. Despliegue en el resto de facultades y escuelas.
+5. Ampliación del MCP para trabajar en modo HTTP, previa autenticación con SSO/LDAP.
+6. Establecer el entorno procedimental y operativo para la unidad técnica informática, la unidad de calidad y para
+   los coordinadores de títulos.
+7. Despliegue en el resto de facultades y escuelas.
 
 

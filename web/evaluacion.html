@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Informes de calidad UCA · Evaluación del asistente</title>
+<style>
+  :root { --azul: #1f3a6e; --gris: #5f6b7a; --fondo: #f5f7fa; --hecho: #2e7d32; --curso: #ef8f00; --pend: #9aa5b1; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1d2733; background: var(--fondo); }
+  header { background: var(--azul); color: #fff; padding: 2.5rem 1.5rem; }
+  header h1 { margin: 0 0 .4rem; font-size: 1.8rem; }
+  header p { margin: 0; opacity: .9; }
+  nav { background: #172d57; padding: 0 1.5rem; }
+  nav a { display: inline-block; color: #fff; text-decoration: none; padding: .7rem 1rem; opacity: .8; }
+  nav a:hover, nav a[aria-current] { opacity: 1; box-shadow: inset 0 -3px 0 #fff; }
+  main { max-width: 860px; margin: 0 auto; padding: 1.5rem; }
+  section { background: #fff; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  h2 { margin-top: 0; color: var(--azul); font-size: 1.3rem; }
+  a { color: var(--azul); }
+  .leyenda { color: var(--gris); font-size: .9rem; }
+  .cifras { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
+  .cifra { border: 1px solid #e6eaf0; border-radius: 8px; padding: 1rem; }
+  .cifra b { display: block; font-size: 1.6rem; color: var(--azul); line-height: 1.2; }
+  .cifra span { color: var(--gris); font-size: .9rem; }
+  .barras { display: grid; grid-template-columns: 9rem 1fr 3rem; gap: .4rem .8rem; align-items: center; font-size: .9rem; }
+  .barras .grupo { grid-column: 1 / -1; margin-top: .6rem; color: var(--gris); font-weight: 600; }
+  .pista { background: #eef1f5; border-radius: 4px; height: 1.1rem; }
+  .barra { height: 100%; border-radius: 4px; }
+  .anterior { background: var(--pend); } .actual { background: var(--hecho); }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { text-align: left; padding: .6rem .5rem; border-top: 1px solid #e6eaf0; vertical-align: top; }
+  thead th { border-top: 0; color: var(--gris); font-weight: 600; }
+  details { border: 1px solid #e6eaf0; border-radius: 8px; padding: .8rem 1rem; }
+  summary { cursor: pointer; font-weight: 600; color: var(--azul); }
+  .skill { max-height: 70vh; overflow: auto; margin-top: 1rem; font-size: .92rem; }
+  .skill h1 { font-size: 1.3rem; } .skill h2 { font-size: 1.15rem; } .skill h3 { font-size: 1rem; }
+  .skill pre, .skill code { background: #f0f2f5; border-radius: 4px; font-size: .85rem; }
+  .skill pre { padding: .6rem; overflow-x: auto; }
+  footer { text-align: center; color: var(--gris); font-size: .85rem; padding: 0 1.5rem 2rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Informes de calidad UCA</h1>
+  <p>Evaluación del asistente de redacción de autoinformes</p>
+</header>
+<nav>
+  <a href="index.html">Avance</a>
+  <a href="evaluacion.html" aria-current="page">Evaluación del asistente</a>
+</nav>
+
+<main>
+  <section>
+    <h2>Cómo se evalúa</h2>
+    <p>El asistente redacta el autoinforme de seguimiento del curso 2024/25 de tres grados de la Escuela
+      Superior de Ingeniería y su borrador se compara con el autoinforme que elaboró y aprobó cada coordinación.
+      Dos correctores de IA independientes lo puntúan con una rúbrica común de siete aspectos (de 0, no
+      aprovechable, a 2, utilizable con retoques menores) y anotan los errores graves, como datos inventados o
+      contradictorios. Lo aprendido en cada evaluación se incorpora al asistente antes de la siguiente.</p>
+    <p>El asistente tarda unos 15-20 minutos en generar el borrador de un título, la mayor parte consultando
+      los indicadores en LinceBI. Las dos correcciones se hacen a la vez y llevan otros 6-9 minutos, de modo que
+      cada evaluación completa ocupa unos 25-30 minutos, más la revisión de los resultados por el responsable.</p>
+  </section>
+
+  <section>
+    <h2>Resultados</h2>
+    <div class="cifras">
+      <div class="cifra"><b>6</b><span>evaluaciones de 3 títulos</span></div>
+      <div class="cifra"><b>0,95 → 1,48</b><span>nota media sobre 2, versión anterior frente a actual</span></div>
+      <div class="cifra"><b>13 → 7</b><span>discrepancias atribuibles al asistente por título (media)</span></div>
+      <div class="cifra"><b>27</b><span>mejoras incorporadas al asistente</span></div>
+    </div>
+
+    <p class="leyenda">Nota media por evaluación (escala 0-2) y errores graves detectados.</p>
+    <div class="barras">
+      <span class="grupo">Versión anterior del asistente</span>
+      <span>Informática</span><div class="pista"><div class="barra anterior" style="width:28.5%"></div></div><span>0,57</span>
+      <span>Aeroespacial</span><div class="pista"><div class="barra anterior" style="width:50%"></div></div><span>1,00</span>
+      <span>Diseño Industrial</span><div class="pista"><div class="barra anterior" style="width:64.5%"></div></div><span>1,29</span>
+      <span class="grupo">Versión actual</span>
+      <span>Informática</span><div class="pista"><div class="barra actual" style="width:71.5%"></div></div><span>1,43</span>
+      <span>Aeroespacial</span><div class="pista"><div class="barra actual" style="width:71.5%"></div></div><span>1,43</span>
+      <span>Diseño Industrial</span><div class="pista"><div class="barra actual" style="width:78.5%"></div></div><span>1,57</span>
+    </div>
+    <p>Con la versión anterior cada borrador tenía dos o tres errores graves; con la actual, uno en los dos
+      primeros títulos y ninguno en el último. Los datos de identificación y las tablas de indicadores ya se
+      obtienen correctamente. Queda por mejorar sobre todo la calidad del análisis y la limpieza del formato.</p>
+  </section>
+
+  <section>
+    <h2>Material para la revisión por las coordinaciones</h2>
+    <p>Más adelante se pedirá a las coordinaciones de los títulos evaluados que valoren el borrador generado
+      por el asistente. Por ahora el material queda disponible para consulta; todavía no se recogen
+      valoraciones. Los documentos están en el repositorio del proyecto en GitHub y requieren acceso a él.</p>
+
+    <table>
+      <thead><tr><th>Título</th><th>Borrador del asistente</th><th>Autoinforme de la coordinación</th></tr></thead>
+      <tbody>
+        <tr><td>Grado en Ingeniería Informática</td>
+          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/borrador-ia.docx">Descargar (Word)</a></td>
+          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/autoinforme-coordinacion.pdf">Descargar (PDF)</a></td></tr>
+        <tr><td>Grado en Ingeniería Aeroespacial</td>
+          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/borrador-ia.docx">Descargar (Word)</a></td>
+          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/autoinforme-coordinacion.pdf">Descargar (PDF)</a></td></tr>
+        <tr><td>Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto</td>
+          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/borrador-ia.docx">Descargar (Word)</a></td>
+          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/autoinforme-coordinacion.pdf">Descargar (PDF)</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Rúbrica de valoración</h2>
+    <p>Cada aspecto se valora de 1 a 5: <strong>1</strong>, hay que rehacerlo; <strong>3</strong>, aprovechable
+      corrigiendo o completando partes relevantes; <strong>5</strong>, utilizable casi sin cambios.</p>
+    <table>
+      <thead><tr><th>#</th><th>Aspecto</th><th>Pregunta</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Datos</td><td>¿Son correctos los datos del título y los indicadores?</td></tr>
+        <tr><td>2</td><td>Cobertura</td><td>¿Trata todos los apartados que exige la plantilla?</td></tr>
+        <tr><td>3</td><td>Análisis</td><td>¿La interpretación de los resultados es acertada y útil para el título?</td></tr>
+        <tr><td>4</td><td>Mejora</td><td>¿Los puntos fuertes, los puntos débiles y el plan de mejora son realistas y asumibles?</td></tr>
+        <tr><td>5</td><td>Redacción</td><td>¿El estilo y el formato son adecuados para entregarlo tras revisarlo?</td></tr>
+        <tr><td>6</td><td>Esfuerzo</td><td>¿Revisarlo y completarlo cuesta menos que elaborarlo desde cero?</td></tr>
+        <tr><td>7</td><td>Global</td><td>¿Lo usaría como punto de partida para el próximo autoinforme?</td></tr>
+      </tbody>
+    </table>
+    <p class="leyenda">Se acompañará de un comentario libre: qué cambiaría y qué echa en falta.</p>
+  </section>
+
+  <section>
+    <h2>Instrucciones del asistente</h2>
+    <p>Texto con el que trabaja el asistente para elaborar los autoinformes (versión vigente).</p>
+    <details>
+      <summary>Ver las instrucciones</summary>
+      <div class="skill">
+<!-- SKILL_MD -->
+        <p class="leyenda">El texto se incorpora automáticamente al publicar la web.</p>
+<!-- /SKILL_MD -->
+      </div>
+    </details>
+  </section>
+</main>
+
+<footer>Uso interno de la Universidad de Cádiz · Última actualización: 3 de octubre de 2026</footer>
+</body>
+</html>

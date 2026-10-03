@@ -15,10 +15,13 @@ de la Universidad de Cádiz.
 
 ## Web de avance del proyecto
 
-`web/index.html` es una página estática que muestra el avance del proyecto a los colectivos
-implicados de la UCA. Al hacer push a `main`, `.github/workflows/pages.yml` la cifra con una
-contraseña compartida (StatiCrypt, secreto `SITE_PASSWORD`) y la publica en GitHub Pages.
-Para verla en local, abre `web/index.html` en el navegador.
+`web/` contiene dos páginas estáticas para los colectivos implicados de la UCA:
+`index.html`, con el avance del proyecto por fases, y `evaluacion.html`, con los resultados
+globales de la evaluación de la skill, su texto y el material para que las coordinaciones la
+revisen. Al hacer push a `main`, `.github/workflows/pages.yml` incrusta `SKILL.md` en la
+página de evaluación, cifra ambas con una contraseña compartida (StatiCrypt, secreto
+`SITE_PASSWORD`) y las publica en GitHub Pages. Para verlas en local, abre `web/index.html`
+en el navegador.
 
 ## Estructura del repositorio
 
@@ -29,5 +32,5 @@ Para verla en local, abre `web/index.html` en el navegador.
 | `evals/` | Evaluaciones: `casos/<id>/` (entrada y autoinforme humano de referencia), `ejecuciones/Enn-<id>/` (ficha, borrador, cotejos y métricas) e `historial.md`. Solo local: contiene documentos con datos personales. |
 | `tools/evaluacion/` | Script `evaluacion.py` (`nueva`, `medir`) del [procedimiento de evaluación](docs/evaluacion/procedimiento.md). |
 | `samples/` | Autoinformes reales de ejemplo (seguimiento y renovación). Solo local. |
-| `docs/` | Visión del proyecto, evaluaciones (`docs/evaluacion/`: procedimiento, rúbrica, plantillas y catálogo de casos), y, solo en local, peticiones de cartera de los centros y solicitud de la fase 1 al SI. |
-| `web/` | Página web de avance del proyecto, publicada en GitHub Pages con contraseña. |
+| `docs/` | Visión del proyecto, evaluaciones (`docs/evaluacion/`: procedimiento, rúbrica, plantillas, catálogo de casos y `material-coordinaciones/`, con el borrador de la IA y el autoinforme de la coordinación de cada título), y, solo en local, peticiones de cartera de los centros y solicitud de la fase 1 al SI. |
+| `web/` | Web del proyecto (avance y evaluación), publicada en GitHub Pages con contraseña. |

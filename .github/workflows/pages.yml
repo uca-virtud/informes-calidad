@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'web/**'
+      - 'skills/uca-informes-calidad/SKILL.md'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -25,16 +26,34 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Cifrar la página con la contraseña
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Incrustar SKILL.md en la página de evaluación
+        run: |
+          pip install --quiet markdown
+          python - <<'PY'
+          import re, pathlib, markdown
+          texto = pathlib.Path('skills/uca-informes-calidad/SKILL.md').read_text(encoding='utf-8')
+          texto = re.sub(r'\A---\n.*?\n---\n', '', texto, flags=re.S)
+          html = markdown.markdown(texto, extensions=['tables', 'fenced_code', 'sane_lists'])
+          pagina = pathlib.Path('web/evaluacion.html')
+          contenido, n = re.subn(r'<!-- SKILL_MD -->.*?<!-- /SKILL_MD -->', lambda _: html,
+                                 pagina.read_text(encoding='utf-8'), flags=re.S)
+          if n != 1:
+              raise SystemExit('No se encontró el marcador SKILL_MD en web/evaluacion.html')
+          pagina.write_text(contenido, encoding='utf-8')
+          PY
+      - name: Cifrar las páginas con la contraseña
         working-directory: web
         env:
           STATICRYPT_PASSWORD: ${{ secrets.SITE_PASSWORD }}
         run: |
           if [ -z "$STATICRYPT_PASSWORD" ]; then
-            echo "::error::Falta el secreto SITE_PASSWORD: la página no se publica sin cifrar."
+            echo "::error::Falta el secreto SITE_PASSWORD: la web no se publica sin cifrar."
             exit 1
           fi
-          npx -y staticrypt@3 index.html -d ../publicar --short --remember 30 \
+          npx -y staticrypt@3 index.html evaluacion.html -d ../publicar --short --remember 30 \
             --template-title "Informes de calidad UCA" \
             --template-instructions "Sitio de uso interno de la Universidad de Cádiz. Introduce la contraseña facilitada por el equipo del proyecto." \
             --template-placeholder "Contraseña" \
