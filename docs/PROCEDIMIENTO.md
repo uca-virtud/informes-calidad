@@ -194,8 +194,21 @@ orquestador tras cada ejecución, sin esperar a la decisión del responsable. En
 - «Lecciones candidatas»: una fila por candidata nueva, con el siguiente número C libre;
   actualiza «Observada en» de las que se repitan.
 
-Actualiza también `web/evaluacion.html`: cifras globales tomadas de `evals/historial.md` y
-fecha de «Última actualización».
+Actualiza también `web/evaluacion.html`, sin datos personales ni detalles que identifiquen
+documentos internos:
+
+- cifras globales tomadas de `evals/historial.md`;
+- en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, nota y un
+  chip por bloqueante con su motivo generalizado en el tooltip) y su fila desplegable (notas
+  D1-D7, valoración breve, métricas de `medir`, bloqueantes y material);
+- la fila de la ejecución en «Qué ha mejorado y qué falta»;
+- en «Qué aprende el asistente en cada versión», el estado de las lecciones contrastadas
+  (Funciona, Reforzada, A reforzar, Por comprobar), sus recuentos y «Próximos pasos»;
+- la fecha de «Última actualización».
+
+Cuando se aplican lecciones a la skill (ver [después de la
+ejecución](#después-de-la-ejecución-aplicar-lecciones)), añade la nueva versión a la línea
+temporal con su número, commit, fecha y lecciones en «Por comprobar».
 
 Después presenta al responsable un resumen con las notas, los bloqueantes, lo pendiente de
 revisión experta y las lecciones candidatas. El responsable anota en la ficha qué lecciones
@@ -216,8 +229,8 @@ preferir no enviar un borrador con B1 o B2). Si lo aprueba, crea
 | `rubrica-valoracion.xlsx` | Copia de la de otro título cambiando solo las celdas C3 (nombre del título) y C4 («<Tipo>, curso <aaaa/aa> (convocatoria <aaaa>)») |
 
 Si el título ya tenía material de una ejecución anterior, se sustituye por el de la más
-reciente. Después, en la fila de la ejecución de `web/evaluacion.html`, cambia «—» de la
-columna «Material» por los tres enlaces, con el mismo formato que las demás filas.
+reciente. Después, en la fila desplegable de la ejecución de `web/evaluacion.html`, cambia
+«—» del apartado «Material» por los tres enlaces, con el mismo formato que las demás filas.
 
 ### Casos especiales: línea base y cambios de rúbrica
 

@@ -45,6 +45,8 @@ correos, teléfonos), documentos (PDF, DOCX, Excel) ni contenido de
   cuando cambie una fase (en `docs/`, en la skill o porque lo comunique el usuario).
 - `web/evaluacion.html` se actualiza tras cada ejecución (pasos 6 y 7 del procedimiento). El
   texto de `SKILL.md` lo incrusta el workflow en el marcador `SKILL_MD` al publicar.
+- Cada versión nueva de la skill recibe el siguiente número (v5, v6…) en `docs/EVALUACIONES.md`
+  y en la línea temporal de `web/evaluacion.html`.
 - Al modificar una página, cambia su fecha de «Última actualización».
 - La sal de `web/.staticrypt.json` es fija (no es secreta): cambiarla invalida el
   «Recordarme» de quienes ya accedieron.
