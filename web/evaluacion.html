@@ -24,8 +24,12 @@
   .cifra { border: 1px solid #e6eaf0; border-radius: 8px; padding: 1rem; }
   .cifra b { display: block; font-size: 1.6rem; color: var(--azul); line-height: 1.2; }
   .cifra span { color: var(--gris); font-size: .9rem; }
-  .barras { display: grid; grid-template-columns: 9rem 1fr 3rem; gap: .4rem .8rem; align-items: center; font-size: .9rem; }
-  .barras .grupo { grid-column: 1 / -1; margin-top: .6rem; color: var(--gris); font-weight: 600; }
+  h3 { color: var(--azul); font-size: 1.05rem; margin-bottom: .2rem; }
+  .col-nota { width: 10rem; }
+  .nota { display: grid; grid-template-columns: 1fr 2.6rem; gap: .5rem; align-items: center; font-size: .85rem; }
+  .nota b { text-align: right; }
+  .centro { text-align: center; white-space: nowrap; }
+  .material a { display: block; font-size: .9rem; white-space: nowrap; }
   .pista { background: #eef1f5; border-radius: 4px; height: 1.1rem; }
   .barra { height: 100%; border-radius: 4px; }
   .anterior { background: var(--pend); } .actual { background: var(--hecho); }
@@ -73,47 +77,52 @@
       <div class="cifra"><b>27</b><span>mejoras incorporadas al asistente</span></div>
     </div>
 
-    <p class="leyenda">Nota media por evaluación (escala 0-2) y errores graves detectados.</p>
-    <div class="barras">
-      <span class="grupo">Versión anterior del asistente</span>
-      <span>Informática</span><div class="pista"><div class="barra anterior" style="width:28.5%"></div></div><span>0,57</span>
-      <span>Aeroespacial</span><div class="pista"><div class="barra anterior" style="width:50%"></div></div><span>1,00</span>
-      <span>Diseño Industrial</span><div class="pista"><div class="barra anterior" style="width:64.5%"></div></div><span>1,29</span>
-      <span class="grupo">Versión actual</span>
-      <span>Informática</span><div class="pista"><div class="barra actual" style="width:71.5%"></div></div><span>1,43</span>
-      <span>Aeroespacial</span><div class="pista"><div class="barra actual" style="width:71.5%"></div></div><span>1,43</span>
-      <span>Diseño Industrial</span><div class="pista"><div class="barra actual" style="width:78.5%"></div></div><span>1,57</span>
-    </div>
-    <p>Con la versión anterior cada borrador tenía dos o tres errores graves; con la actual, uno en los dos
-      primeros títulos y ninguno en el último. Los datos de identificación y las tablas de indicadores ya se
-      obtienen correctamente. Queda por mejorar sobre todo la calidad del análisis y la limpieza del formato.</p>
-  </section>
-
-  <section>
-    <h2>Material para la revisión por las coordinaciones</h2>
-    <p>Más adelante se pedirá a las coordinaciones de los títulos evaluados que valoren el borrador generado
-      por el asistente. Por ahora el material queda disponible para consulta; todavía no se recogen
-      valoraciones. Los documentos están en el repositorio del proyecto en GitHub y requieren acceso a él.</p>
-    <p>La rúbrica es una hoja de cálculo con siete preguntas (datos, cobertura, análisis, plan de mejora,
-      redacción, esfuerzo de revisión y valoración global) que se puntúan de 1 a 5, y espacio para comentarios.</p>
-
+    <h3>Por ejecución</h3>
+    <p class="leyenda">Cada ejecución es un borrador generado para un grado de la ESI: E01-E03 con la versión anterior del
+      asistente y E04-E06 con la actual. Nota media sobre 2, errores graves detectados y material para la
+      revisión por la coordinación.</p>
     <table>
-      <thead><tr><th>Título</th><th>Borrador del asistente</th><th>Autoinforme de la coordinación</th><th>Rúbrica de valoración</th></tr></thead>
+      <thead><tr><th>Ejecución</th><th>Título</th><th>Versión</th><th class="col-nota">Nota (0-2)</th><th class="centro">Errores graves</th><th>Material</th></tr></thead>
       <tbody>
-        <tr><td>Grado en Ingeniería Informática</td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/borrador-ia.docx">Descargar (Word)</a></td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/autoinforme-coordinacion.pdf">Descargar (PDF)</a></td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/rubrica-valoracion.xlsx">Descargar (Excel)</a></td></tr>
-        <tr><td>Grado en Ingeniería Aeroespacial</td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/borrador-ia.docx">Descargar (Word)</a></td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/autoinforme-coordinacion.pdf">Descargar (PDF)</a></td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/rubrica-valoracion.xlsx">Descargar (Excel)</a></td></tr>
-        <tr><td>Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto</td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/borrador-ia.docx">Descargar (Word)</a></td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/autoinforme-coordinacion.pdf">Descargar (PDF)</a></td>
-          <td><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/rubrica-valoracion.xlsx">Descargar (Excel)</a></td></tr>
+        <tr><td><strong>E01</strong></td><td title="Grado en Ingeniería Informática">Informática</td><td>Anterior</td>
+          <td><div class="nota"><div class="pista"><div class="barra anterior" style="width:28.5%"></div></div><b>0,57</b></div></td>
+          <td class="centro">3</td>
+          <td class="material">—</td></tr>
+        <tr><td><strong>E02</strong></td><td title="Grado en Ingeniería Aeroespacial">Aeroespacial</td><td>Anterior</td>
+          <td><div class="nota"><div class="pista"><div class="barra anterior" style="width:50%"></div></div><b>1,00</b></div></td>
+          <td class="centro">2</td>
+          <td class="material">—</td></tr>
+        <tr><td><strong>E03</strong></td><td title="Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto">Diseño Industrial</td><td>Anterior</td>
+          <td><div class="nota"><div class="pista"><div class="barra anterior" style="width:64.5%"></div></div><b>1,29</b></div></td>
+          <td class="centro">3</td>
+          <td class="material">—</td></tr>
+        <tr><td><strong>E04</strong></td><td title="Grado en Ingeniería Informática">Informática</td><td>Actual</td>
+          <td><div class="nota"><div class="pista"><div class="barra actual" style="width:71.5%"></div></div><b>1,43</b></div></td>
+          <td class="centro">1</td>
+          <td class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/autoinforme-coordinacion.pdf">Autoinforme humano (PDF)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/rubrica-valoracion.xlsx">Rúbrica (Excel)</a></td></tr>
+        <tr><td><strong>E05</strong></td><td title="Grado en Ingeniería Aeroespacial">Aeroespacial</td><td>Actual</td>
+          <td><div class="nota"><div class="pista"><div class="barra actual" style="width:71.5%"></div></div><b>1,43</b></div></td>
+          <td class="centro">1</td>
+          <td class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/autoinforme-coordinacion.pdf">Autoinforme humano (PDF)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/rubrica-valoracion.xlsx">Rúbrica (Excel)</a></td></tr>
+        <tr><td><strong>E06</strong></td><td title="Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto">Diseño Industrial</td><td>Actual</td>
+          <td><div class="nota"><div class="pista"><div class="barra actual" style="width:78.5%"></div></div><b>1,57</b></div></td>
+          <td class="centro">0</td>
+          <td class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/autoinforme-coordinacion.pdf">Autoinforme humano (PDF)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/rubrica-valoracion.xlsx">Rúbrica (Excel)</a></td></tr>
       </tbody>
     </table>
+    <p>Los datos de identificación y las tablas de indicadores ya se obtienen correctamente. Queda por mejorar
+      sobre todo la calidad del análisis y la limpieza del formato.</p>
+    <p>Más adelante se pedirá a las coordinaciones de estos títulos que valoren el borrador más reciente con la rúbrica, una
+      hoja de cálculo con siete preguntas (datos, cobertura, análisis, plan de mejora, redacción, esfuerzo de
+      revisión y valoración global) puntuadas de 1 a 5 y espacio para comentarios. Por ahora el material queda
+      disponible para consulta y todavía no se recogen valoraciones. Los documentos están en el repositorio del
+      proyecto en GitHub y requieren acceso a él.</p>
   </section>
 
   <section>
