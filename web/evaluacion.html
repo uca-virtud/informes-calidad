@@ -37,8 +37,6 @@
   .comparar b { font-size: 1.7rem; line-height: 1.1; color: var(--gris); }
   .comparar .despues b { color: var(--hecho); }
   .comparar .flecha { font-size: 1.4rem; color: var(--gris); padding-bottom: .1rem; }
-  .mini { display: grid; gap: .25rem; }
-  .mini .pista { height: .55rem; }
   .kpi p { margin: 0; font-size: .88rem; }
   .tendencia { align-self: flex-start; font-size: .8rem; font-weight: 700; color: var(--hecho); background: #e3f1e4; border-radius: 999px; padding: .05rem .6rem; }
   .contexto { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding: .8rem 1rem; background: #f9fafc; border-radius: 8px; font-size: .9rem; }
@@ -160,61 +158,42 @@
 <main>
   <section id="resumen">
     <h2>En resumen</h2>
-    <p>Estamos probando un asistente de IA que redacta el <strong>borrador del autoinforme de seguimiento</strong> de
-      un título a partir de la memoria, el autoinforme anterior, el informe de ACCUA y los indicadores de LinceBI. Para
-      saber si es útil, cada borrador se compara con el autoinforme real que elaboró y aprobó la coordinación del
-      título, se corrige con una <a href="procedimiento.html#rubrica">rúbrica</a> y lo aprendido se incorpora al asistente antes de probar el siguiente
-      título (ver el <a href="procedimiento.html">procedimiento de evaluación</a>).</p>
-    <p>Las cifras comparan las <strong>versiones iniciales</strong> del asistente (v0 y v1, evaluaciones E01-E03)
-      con el <strong>asistente actual</strong> (v2 a v5, evaluaciones E04-E07).</p>
+    <p>Cada borrador del asistente se compara con el autoinforme real de la coordinación del título y se corrige con
+      una <a href="procedimiento.html#rubrica">rúbrica</a>. Así ha cambiado del <strong>asistente inicial</strong>
+      (v0-v1) al <strong>actual</strong> (v2-v5):</p>
 
     <div class="kpis">
       <div class="kpi">
         <h3>Calidad del borrador</h3>
-        <span class="sentido">Nota media de la rúbrica, de 0 a 2 · más es mejor</span>
+        <span class="sentido">Nota media de 0 a 2 · más es mejor</span>
         <div class="comparar">
-          <div><small>Versiones iniciales</small><b>0,95</b></div>
+          <div><small>Inicial</small><b>0,95</b></div>
           <span class="flecha" aria-hidden="true">→</span>
-          <div class="despues"><small>Asistente actual</small><b>1,50</b></div>
+          <div class="despues"><small>Actual</small><b>1,50</b></div>
         </div>
-        <div class="mini" aria-hidden="true">
-          <div class="pista"><div class="barra anterior" style="width:47.5%"></div></div>
-          <div class="pista"><div class="barra actual" style="width:75%"></div></div>
-        </div>
-        <p>Un 2 significa que la coordinación podría usar el borrador con retoques menores. Hoy los borradores están
-          entre «aprovechable con correcciones» (1) y ese nivel.</p>
+        <p>Entre «aprovechable con correcciones» (1) y «utilizable con retoques menores» (2).</p>
         <span class="tendencia">+58 %</span>
       </div>
       <div class="kpi">
         <h3>Errores graves</h3>
-        <span class="sentido">Media por borrador · menos es mejor</span>
+        <span class="sentido">Por borrador · menos es mejor</span>
         <div class="comparar">
-          <div><small>Versiones iniciales</small><b>2,7</b></div>
+          <div><small>Inicial</small><b>2,7</b></div>
           <span class="flecha" aria-hidden="true">→</span>
-          <div class="despues"><small>Asistente actual</small><b>0,75</b></div>
+          <div class="despues"><small>Actual</small><b>0,75</b></div>
         </div>
-        <div class="mini" aria-hidden="true">
-          <div class="pista"><div class="barra anterior" style="width:90%"></div></div>
-          <div class="pista"><div class="barra actual" style="width:25%"></div></div>
-        </div>
-        <p>Datos inventados, valores imposibles o contradictorios y datos de origen no garantizado. Ya no aparecen los
-          dos últimos tipos; queda, como mucho, un dato inventado por borrador.</p>
+        <p>Como mucho, un dato inventado por borrador.</p>
         <span class="tendencia">−72 %</span>
       </div>
       <div class="kpi">
         <h3>Diferencias por fallo del asistente</h3>
-        <span class="sentido">Media por borrador · menos es mejor</span>
+        <span class="sentido">Por borrador · menos es mejor</span>
         <div class="comparar">
-          <div><small>Versiones iniciales</small><b>13</b></div>
+          <div><small>Inicial</small><b>13</b></div>
           <span class="flecha" aria-hidden="true">→</span>
-          <div class="despues"><small>Asistente actual</small><b>7</b></div>
+          <div class="despues"><small>Actual</small><b>7</b></div>
         </div>
-        <div class="mini" aria-hidden="true">
-          <div class="pista"><div class="barra anterior" style="width:100%"></div></div>
-          <div class="pista"><div class="barra actual" style="width:54%"></div></div>
-        </div>
-        <p>Diferencias con el autoinforme de la coordinación cuya causa es el asistente. No cuentan las que se deben a
-          datos que aporta el centro, a cambios en LinceBI o a errores del propio autoinforme.</p>
+        <p>Diferencias con la coordinación atribuibles al asistente.</p>
         <span class="tendencia">−46 %</span>
       </div>
     </div>

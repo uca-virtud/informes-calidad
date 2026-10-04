@@ -64,8 +64,12 @@ evaluados. Hay dos formas de preparar el caso:
 ## Pasos de una ejecución
 
 Pídeselo al orquestador con: «Evalúa la skill con el caso `<id>` siguiendo
-docs/PROCEDIMIENTO.md». La tabla resume los pasos; cada uno se detalla después, con su
-prompt cuando lo lleva.
+docs/PROCEDIMIENTO.md». Los pasos forman dos ciclos; las tablas los resumen y cada paso se
+detalla después, con su prompt cuando lo lleva.
+
+**Ciclo de IA (pasos 1-6).** Se completa en una sesión y no espera a la coordinación: la
+consolidación del paso 5 es provisional, solo con los dos correctores de IA, y con ella el
+responsable decide y la skill puede pasar a la siguiente versión.
 
 | Paso | Quién | Acción | Produce |
 |---|---|---|---|
@@ -73,12 +77,21 @@ prompt cuando lo lleva.
 | [2](#paso-2-generación-a) | Subagente A | Genera el borrador | `borrador.docx`, `datos.json`, sección «Generación» de la ficha |
 | [3](#paso-3-autocotejo-a) | Mismo subagente A | Coteja su borrador | `cotejo-A.md` |
 | [4](#paso-4-segundo-corrector-b) | Subagente B | Coteja el borrador | `cotejo-B.md` |
-| [5](#paso-5-medición-y-consolidación) | Orquestador | `evaluacion.py medir Enn` | `metricas.json`, ficha completada, `evals/historial.md` |
+| [5](#paso-5-consolidación-provisional) | Orquestador | `evaluacion.py medir Enn` | `metricas.json`, ficha completada, `evals/historial.md` |
 | [6](#paso-6-registro-y-decisión-del-responsable) | Orquestador → responsable | Registra la ejecución y la resume al responsable, que decide | `docs/EVALUACIONES.md`, `web/evaluacion.html`, decisión en la ficha |
-| [7](#paso-7-material-para-la-coordinación) | Orquestador, **solo si el responsable lo aprueba** | Prepara el material para la coordinación | `docs/evaluacion/material-coordinaciones/<id>/` |
-| [8](#paso-8-valoración-de-la-coordinación) | Orquestador, cuando la coordinación devuelve la hoja | `evaluacion.py valoracion Enn` y propuesta de lecciones | `valoracion.json`, sección de la ficha, columnas del historial |
 
 Los pasos 3 y 4 se lanzan a la vez en cuanto existe `borrador.docx`.
+
+**Ciclo de la coordinación (pasos 7-8), asíncrono.** Empieza tras el paso 6 y puede tardar
+semanas; mientras tanto se siguen evaluando otros títulos y aplicando lecciones. Cuando llega
+la valoración, completa la consolidación de esa ejecución y sus propuestas se deciden junto
+con las de la siguiente ejecución que esté en curso. Si no llega, la ejecución queda
+consolidada solo con la IA.
+
+| Paso | Quién | Acción | Produce |
+|---|---|---|---|
+| [7](#paso-7-material-para-la-coordinación) | Orquestador, **solo si el responsable lo aprueba** | Prepara el material para la coordinación | `docs/evaluacion/material-coordinaciones/<id>/` |
+| [8](#paso-8-valoración-de-la-coordinación-y-consolidación-final) | Orquestador, cuando la coordinación devuelve la hoja | `evaluacion.py valoracion Enn` y propuesta de lecciones | `valoracion.json`, sección de la ficha, columnas del historial |
 
 Reglas del orquestador durante toda la ejecución:
 
@@ -164,10 +177,11 @@ evidencia concreta (apartado y texto o valor). El autoinforme humano no es la ve
 el borrador es correcto y el humano no, la causa es H.
 ```
 
-### Paso 5: medición y consolidación
+### Paso 5: consolidación provisional
 
 Con los dos cotejos escritos, el orquestador ejecuta
-`python tools/evaluacion/evaluacion.py medir Enn`, que consolida así:
+`python tools/evaluacion/evaluacion.py medir Enn`, que consolida así (la valoración de la
+coordinación se añade en el paso 8, si llega):
 
 - La nota final es la de B (o la de A si no hay B).
 - Pasan a «Pendiente de revisión experta» de la ficha: las dimensiones en las que A y B
@@ -241,9 +255,10 @@ Si el título ya tenía material de una ejecución anterior, se sustituye por el
 reciente. Después, en la fila desplegable de la ejecución de `web/evaluacion.html`, cambia
 «—» del apartado «Material» por los tres enlaces, con el mismo formato que las demás filas.
 
-### Paso 8: valoración de la coordinación
+### Paso 8: valoración de la coordinación y consolidación final
 
-Llega semanas después del paso 7, cuando la coordinación devuelve la hoja rellenada. El
+Llega semanas después del paso 7, cuando la coordinación devuelve la hoja rellenada, y no
+detiene el ciclo de IA: la skill puede haber cambiado de versión entretanto. El
 responsable la guarda en `evals/ejecuciones/Enn-<id>/valoracion-coordinacion.xlsx` (con
 sufijo `-1`, `-2`… si valoran varias personas); va en `evals/` porque contiene comentarios
 y el rol de quien valora. El orquestador ejecuta
@@ -277,7 +292,8 @@ Después el orquestador presenta al responsable:
 
 La valoración se refiere a la versión de la skill con la que se generó el borrador: una
 lección que salga de ella se valida, como las demás, con una ejecución posterior de otro
-título. El responsable decide en la ficha como en el paso 6 y el orquestador lo registra en
+título. El responsable decide en la ficha como en el paso 6 (en la siguiente decisión que
+tenga pendiente, sin abrir un ciclo aparte) y el orquestador lo registra en
 `docs/EVALUACIONES.md` (apartado «Valoración de las coordinaciones», con medias y diferencias
 por dimensión) y en `web/evaluacion.html` (nota de la coordinación junto a la de la IA,
 «Esfuerzo» y «Global»), siempre con cifras agregadas y sin comentarios literales.
@@ -300,7 +316,7 @@ No incluyen caídas de LinceBI ni la revisión del responsable.
 | 2. Generación (A) | 15-21 min | Unos 11-12 min hasta tener `datos.json` (lectura de entrada y LinceBI); el resto, redacción y depuración del `.docx` |
 | 3 y 4. Autocotejo (A) y corrector (B) | 6-9 min | En paralelo; cada uno tarda 5-9 min |
 | 5. `medir` | Menos de 1 min | |
-| **Total por título** | **25-30 min** | Más el registro y la decisión del responsable (paso 6) |
+| **Total por título (ciclo de IA)** | **25-30 min** | Más el registro y la decisión del responsable (paso 6); la valoración de la coordinación llega aparte |
 
 Para medir, usa las fechas de creación de `datos.json`, `borrador.docx` y los cotejos: el
 tiempo que informa `read_agent` incluye la espera entre turnos del subagente.

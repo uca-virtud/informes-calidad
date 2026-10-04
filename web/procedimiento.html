@@ -34,6 +34,8 @@
   .proceso li strong { display: block; color: var(--azul); margin-bottom: .2rem; line-height: 1.3; }
   .proceso li .quien { display: block; margin-top: .5rem; color: var(--gris); font-size: .78rem; }
   .proceso li.decide { border-top-color: var(--curso); } .proceso li.decide::before { background: var(--curso); }
+  .proceso.coord { counter-reset: paso 6; grid-template-columns: repeat(2, 1fr); }
+  .proceso.coord li { border-top-color: var(--hecho); } .proceso.coord li::before { background: var(--hecho); }
   .ciclo { text-align: center; color: var(--gris); font-size: .88rem; margin: 0 0 1rem; }
   .dos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
   .caja { background: #f9fafc; border-radius: 8px; padding: 1rem 1.1rem; font-size: .9rem; }
@@ -62,7 +64,7 @@
     .rubrica-scroll { overflow-x: auto; } .rubrica { min-width: 640px; }
   }
   @media (max-width: 760px) {
-    .escala, .proceso { grid-template-columns: 1fr; }
+    .escala, .proceso, .proceso.coord { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -95,21 +97,37 @@
 
   <section id="proceso">
     <h2>Cómo se hace el seguimiento</h2>
+    <p>El seguimiento tiene dos ciclos. El de la IA se completa en una sesión y no espera a nadie; el de la
+      coordinación llega cuando puede y completa los resultados sin detener al primero.</p>
+
+    <h3>Ciclo de IA</h3>
     <ol class="proceso">
-      <li><strong>Se elige un título</strong>Con el autoinforme 2024/25 ya aprobado, que será la
+      <li><strong>Se abre la evaluación de un título</strong>Con el autoinforme 2024/25 ya aprobado, que será la
         referencia.<span class="quien">Responsable del proyecto</span></li>
       <li><strong>El asistente redacta el borrador</strong>Con los documentos de la coordinación e indicadores de
         LinceBI, sin ver la referencia.<span class="quien">Asistente · 15-20 min</span></li>
-      <li><strong>Dos correctores lo puntúan</strong>Dos correctores de IA independientes aplican la
-        <a href="#rubrica">rúbrica</a>.<span class="quien">Correctores de IA · 6-9 min, a la vez</span></li>
-      <li><strong>Se consolidan los resultados</strong>Nota final, métricas y puntos para revisión
+      <li><strong>El asistente revisa su borrador</strong>Lo compara con la referencia y lo puntúa con la
+        <a href="#rubrica">rúbrica</a>.<span class="quien">Corrector de IA 1 · 6-9 min</span></li>
+      <li><strong>Un segundo corrector lo puntúa</strong>Otro modelo de IA, independiente, aplica la misma
+        rúbrica.<span class="quien">Corrector de IA 2 · a la vez que el paso 3</span></li>
+      <li><strong>Consolidación provisional</strong>Nota de la IA, métricas y puntos para revisión
         experta.<span class="quien">Herramienta de evaluación</span></li>
       <li class="decide"><strong>El responsable decide</strong>Aprueba, rechaza o deja en observación las lecciones
         propuestas.<span class="quien">Responsable del proyecto</span></li>
-      <li class="decide"><strong>Nueva versión del asistente</strong>Incorpora las lecciones aprobadas y se prueba con
-        el siguiente título.<span class="quien">Equipo del proyecto</span></li>
     </ol>
-    <p class="ciclo">↻ Vuelta al paso 1 con otro título o con uno ya evaluado, para medir el progreso.</p>
+    <p class="ciclo">↻ Las lecciones aprobadas forman una nueva versión del asistente, que se prueba con otro título
+      o con uno ya evaluado para medir el progreso.</p>
+
+    <h3>Ciclo de la coordinación (asíncrono)</h3>
+    <ol class="proceso coord">
+      <li><strong>Se envía el material</strong>Borrador, autoinforme de referencia y hoja de valoración, si el
+        responsable lo aprueba.<span class="quien">Responsable del proyecto · tras el paso 6</span></li>
+      <li><strong>La coordinación valora y se completa la consolidación</strong>Puntúa los mismos aspectos que la
+        <a href="#coordinacion">rúbrica</a>; su nota se compara con la de la IA y sus comentarios se convierten en
+        propuestas de mejora.<span class="quien">Coordinación del título · cuando puede</span></li>
+    </ol>
+    <p class="ciclo">↻ Sus propuestas se deciden en el siguiente paso 6, aunque el asistente ya haya cambiado de
+      versión. Si la valoración no llega, la evaluación queda con la nota de la IA.</p>
 
     <div class="dos">
       <div class="caja">
@@ -189,6 +207,15 @@
       </tbody>
     </table>
     <p class="leyenda">También se miden, sin puntuar, la extensión, los puntos débiles y los datos pendientes.</p>
+
+    <h3 id="coordinacion">La valoración de la coordinación</h3>
+    <p>Cada coordinación recibe el borrador de su título y una hoja con los mismos siete aspectos, puntuados del 1 al 5,
+      y una pregunta sobre errores graves. Para compararla con la rúbrica, la nota se convierte: 1 equivale a 0, 3 a 1 y
+      5 a 2. La hoja añade dos preguntas que la rúbrica no mide: si revisar el borrador cuesta menos que redactar desde
+      cero y si lo usaría como punto de partida.</p>
+    <p>Cuando la coordinación y la IA difieren un punto o más en un aspecto, se revisa a mano. Si la diferencia se
+      repite en varios títulos, se revisa la rúbrica. Los comentarios se publican solo como cifras agregadas y
+      lecciones generales.</p>
   </section>
 
 </main>
