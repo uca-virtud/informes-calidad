@@ -16,14 +16,14 @@ Notas de B con la rúbrica v2 (escala 0-2, media de D1-D7).
 | Ejecución | Skill | Media | Bloqueantes |
 |---|---|---|---|
 | E01-GII | v0: anterior, inicial (línea base) | 0,57 | B1, B2, B3 |
-| E02-GIA | v0.1: anterior, modificada tras E01 (línea base) | 1,00 | B2, B3 |
-| E03-GIDIDP | v0.1: anterior, modificada tras E01 (línea base) | 1,29 | B1, B2, B3 |
-| [E04-GII](#e04-gii-con-la-skill-actual) | v1 (`d5ed099`): actual | 1,43 | B1 |
-| [E05-GIA](#e05-gia-con-l16-l18) | v2 (`a3157b3`): + L16-L18 | 1,43 | B1 |
-| [E06-GIDIDP](#e06-gididp-con-l16b-y-l19-l22) | v3 (`2816f9e`): + L16b, L19-L22 | 1,57 | — |
-| [E07-GH](#e07-gh-con-l23-l27) | v4 (`4e6da0d`): + L23-L27 | 1,57 | B1 |
+| E02-GIA | v1: anterior, modificada tras E01 (línea base) | 1,00 | B2, B3 |
+| E03-GIDIDP | v1: anterior, modificada tras E01 (línea base) | 1,29 | B1, B2, B3 |
+| [E04-GII](#e04-gii-con-la-skill-actual) | v2 (`d5ed099`): actual | 1,43 | B1 |
+| [E05-GIA](#e05-gia-con-l16-l18) | v3 (`a3157b3`): + L16-L18 | 1,43 | B1 |
+| [E06-GIDIDP](#e06-gididp-con-l16b-y-l19-l22) | v4 (`2816f9e`): + L16b, L19-L22 | 1,57 | — |
+| [E07-GH](#e07-gh-con-l23-l27) | v5 (`4e6da0d`): + L23-L27 | 1,57 | B1 |
 
-Versión vigente, pendiente de evaluar: v5 (`6f9f6cf`): + L11b, L28. Cada versión nueva de la
+Versión vigente, pendiente de evaluar: v6 (`6f9f6cf`): + L11b, L28. Cada versión nueva de la
 skill recibe el siguiente número y se anota aquí con su commit.
 
 Con la skill actual la media sube de 0,57-1,29 a 1,43-1,57 y los bloqueantes bajan de dos o

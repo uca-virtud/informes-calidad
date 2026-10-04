@@ -47,7 +47,7 @@ correos, teléfonos), documentos (PDF, DOCX, Excel) ni contenido de
   procedimiento). `web/procedimiento.html` explica el proceso y la rúbrica: actualízalo cuando
   cambien en `docs/PROCEDIMIENTO.md`. El texto de `SKILL.md` lo incrusta el workflow en su
   marcador `SKILL_MD` al publicar.
-- Cada versión nueva de la skill recibe el siguiente número (v5, v6…) en `docs/EVALUACIONES.md`
+- Cada versión nueva de la skill recibe el siguiente número (v7, v8…) en `docs/EVALUACIONES.md`
   y en la línea temporal de `web/evaluacion.html`.
 - Al modificar una página, cambia su fecha de «Última actualización».
 - La sal de `web/.staticrypt.json` es fija (no es secreta): cambiarla invalida el

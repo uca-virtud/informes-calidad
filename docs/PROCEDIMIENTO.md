@@ -207,7 +207,8 @@ documentos internos:
   aspecto D1-D7, media y un chip con el número de errores graves cuyo tooltip nombra cada uno
   —dato inventado, valor contradictorio u origen no garantizado— con su motivo generalizado; no
   se publican los códigos B1-B3) y su fila desplegable (valoración breve, métricas de `medir`
-  con las etiquetas del glosario «Cómo leer la ficha», errores graves y material);
+  con las mismas etiquetas que las demás fichas, que el script de la página usa para mostrar
+  su ayuda, errores graves y material);
 - la lista «Qué dicen los resultados», si la ejecución la cambia;
 - en «Qué aprende el asistente en cada versión», el estado de las lecciones contrastadas
   (Funciona, Reforzada, A reforzar, Por comprobar), sus recuentos y «Próximos pasos»;
