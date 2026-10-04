@@ -108,7 +108,6 @@
   .ficha dt { display: inline; color: var(--gris); font-size: .8rem; line-height: 1.3; }
   .ficha dt[data-tip] { border-bottom: 1px dotted var(--gris); }
   .ficha dd { display: block; margin: .15rem 0 0; font-weight: 700; font-size: 1.05rem; }
-  .ficha .revision ul { margin: .25rem 0 .6rem; }
   .ficha dl.aspectos { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .4rem; }
   .ficha dl.aspectos > div { padding: .45rem .3rem; }
   .ficha dl.aspectos dt { font-size: .74rem; }
@@ -183,6 +182,17 @@
         <span class="tendencia">+58 %</span>
       </div>
       <div class="kpi">
+        <h3>Diferencias por fallo del asistente</h3>
+        <span class="sentido">Por borrador · menos es mejor</span>
+        <div class="comparar">
+          <div><small>Inicial</small><b>12,7</b></div>
+          <span class="flecha" aria-hidden="true">→</span>
+          <div class="despues"><small>Actual</small><b>7,0</b></div>
+        </div>
+        <p>Diferencias con el autoinforme de la coordinación cuya causa es el asistente.</p>
+        <span class="tendencia">−45 %</span>
+      </div>
+      <div class="kpi">
         <h3>Errores graves</h3>
         <span class="sentido">Por borrador · menos es mejor</span>
         <div class="comparar">
@@ -190,7 +200,7 @@
           <span class="flecha" aria-hidden="true">→</span>
           <div class="despues"><small>Actual</small><b>0,75</b></div>
         </div>
-        <p>Como mucho, un dato inventado por borrador.</p>
+        <p>Datos inventados, contradictorios o de origen no garantizado: fallos que pasarían inadvertidos en una lectura.</p>
         <span class="tendencia">−72 %</span>
       </div>
     </div>
@@ -245,18 +255,17 @@
     </div>
 
     <h3 id="por-ejecucion">Por ejecución</h3>
-    <p class="leyenda">Nota media de la <a href="procedimiento.html#rubrica">rúbrica</a>, diferencias atribuibles al
-      asistente, puntos para revisión experta y errores graves. Pasa el ratón (o pulsa) sobre la versión, las
-      cabeceras o los errores graves para ver el detalle, y despliega cada ejecución para ver su ficha, con la nota de
-      cada aspecto, los puntos para revisión experta y el material; en ella, pasa el ratón sobre cada aspecto para ver
-      qué mide.</p>
+    <p class="leyenda">Nota media de la <a href="procedimiento.html#rubrica">rúbrica</a>, diferencias con el
+      autoinforme de la coordinación por fallo del asistente y, de ellas, los errores graves: las que pasarían
+      inadvertidas en una lectura. Pasa el ratón (o pulsa) sobre la versión, las cabeceras o los errores graves para
+      ver el detalle, y despliega cada ejecución para ver su ficha: la valoración, la nota de cada aspecto (pasa el
+      ratón sobre él para ver qué mide), los errores graves y el material.</p>
     <div class="tabla-scroll">
     <table class="ejecuciones">
       <thead>
         <tr><th>Ejecución</th><th>Título</th><th>Versión</th>
           <th><span tabindex="0" data-tip="Media de la nota (0-2) de los siete aspectos de la rúbrica. El desglose está en la ficha de cada ejecución.">Nota media</span></th>
           <th class="num"><span tabindex="0" data-ayuda="Diferencias por fallo del asistente">Diferencias por fallo del asistente</span></th>
-          <th class="num"><span tabindex="0" data-ayuda="Puntos para revisión experta">Puntos para revisión experta</span></th>
           <th class="ultima">Errores graves</th></tr>
       </thead>
       <tbody>
@@ -264,13 +273,12 @@
           <td title="Grado en Ingeniería Informática">Informática</td>
           <td><a class="chip ver vieja" href="#v0" data-tip="Versión inicial del asistente, solo de seguimiento (julio de 2026).">v0</a></td>
           <td class="media"><b>0,57</b><div class="pista"><div class="barra anterior" style="width:28.5%"></div></div></td>
-          <td class="num">13</td><td class="num">5</td>
+          <td class="num">13</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: atribuye a la memoria objetivos de tasas que no fija.&#10;Valor contradictorio: un indicador del centro con un valor en el análisis y otro en el Anexo I.&#10;Origen no garantizado: no se registró el entorno ni la fecha de extracción.">3 errores</span></td></tr>
-        <tr class="detalle" id="det-E01" hidden><td colspan="7"><div class="ficha">
+        <tr class="detalle" id="det-E01" hidden><td colspan="6"><div class="ficha">
           <div><h4>Valoración</h4><p>Punto de partida. El problema dominante es la falta de contenido: el borrador tiene una quinta parte de la extensión del autoinforme de la coordinación, apenas desarrolla puntos fuertes y no analiza las calificaciones por asignatura.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n0"><dt data-aspecto>Identificación</dt><dd>0</dd></div><div class="n0"><dt data-aspecto>Indicadores</dt><dd>0</dd></div><div class="n0"><dt data-aspecto>Cobertura</dt><dd>0</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: objetivos de tasas atribuidos a la memoria sin que esta los fije.</li><li><b>Valor contradictorio</b>: un indicador del centro con dos valores distintos.</li><li><b>Origen no garantizado</b>: extracción sin entorno ni fecha registrados.</li></ul></div>
-          <div><h4>Puntos para revisión experta</h4><div class="revision"><p>Confirmar el dato correcto, porque el borrador y el autoinforme de la coordinación no coinciden:</p><ul><li>Inserción laboral de los egresados (P07-05) frente a la tasa de respuesta a su encuesta (criterio 7.2).</li><li>Tasa de eficiencia frente al objetivo de la memoria (criterio 6).</li></ul><p>Además, los tres errores graves del apartado anterior.</p></div></div>
           <div><h4>Material</h4><p class="material">—</p></div>
         </div></td></tr>
 
@@ -278,13 +286,12 @@
           <td title="Grado en Ingeniería Aeroespacial">Aeroespacial</td>
           <td><a class="chip ver vieja" href="#v1" data-tip="Versión inicial ajustada por la propia IA con lo aprendido en E01 (julio de 2026).">v1</a></td>
           <td class="media"><b>1,00</b><div class="pista"><div class="barra anterior" style="width:50%"></div></div></td>
-          <td class="num">13</td><td class="num">8</td>
+          <td class="num">13</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Valor contradictorio: dos indicadores del centro con valores distintos en el análisis y en el Anexo I.&#10;Origen no garantizado: indicadores extraídos del entorno de pruebas de LinceBI, sin fecha.">2 errores</span></td></tr>
-        <tr class="detalle" id="det-E02" hidden><td colspan="7"><div class="ficha">
+        <tr class="detalle" id="det-E02" hidden><td colspan="6"><div class="ficha">
           <div><h4>Valoración</h4><p>Borrador mucho más completo (dos tercios de la extensión de la coordinación), pero con exceso de puntos débiles y tablas de indicadores del centro que repetían las series del título.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n0"><dt data-aspecto>Indicadores</dt><dd>0</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Valor contradictorio</b>: dos indicadores del centro con valores distintos en el texto y en el Anexo I.</li><li><b>Origen no garantizado</b>: datos del entorno de pruebas.</li></ul></div>
-          <div><h4>Puntos para revisión experta</h4><div class="revision"><p>Confirmar el dato correcto, porque el borrador y el autoinforme de la coordinación no coinciden:</p><ul><li>Satisfacción y participación en las encuestas (P07) del Anexo I: qué valor corresponde a cada curso.</li><li>Indicadores del centro (P04) del Anexo I: que correspondan al centro y no al título.</li><li>Créditos de prácticas externas obligatorias y optativas (identificación y Anexo III).</li><li>Evolución de las tasas de rendimiento, éxito y eficiencia, y puntos fuertes que se apoyan en ella (criterio 6).</li></ul><p>Datos internos que el asistente no recibió y debe completar el centro:</p><ul><li>Composición de la Comisión de Garantía de Calidad y actas del curso (criterio 2).</li><li>Prácticas curriculares y satisfacción de los empleadores (4.5 y 7.4).</li></ul><p>Además, los dos errores graves del apartado anterior.</p></div></div>
           <div><h4>Material</h4><p class="material">—</p></div>
         </div></td></tr>
 
@@ -292,13 +299,12 @@
           <td title="Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto">Diseño Industrial</td>
           <td><a class="chip ver vieja" href="#v1" data-tip="Versión inicial ajustada por la propia IA con lo aprendido en E01 (julio de 2026).">v1</a></td>
           <td class="media"><b>1,29</b><div class="pista"><div class="barra anterior" style="width:64.5%"></div></div></td>
-          <td class="num">12</td><td class="num">8</td>
+          <td class="num">12</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: presenta como realizadas actuaciones que el autoinforme anterior solo proponía.&#10;Valor contradictorio: un indicador del título con dos valores distintos.&#10;Origen no garantizado: no se registró el entorno ni la fecha de extracción.">3 errores</span></td></tr>
-        <tr class="detalle" id="det-E03" hidden><td colspan="7"><div class="ficha">
+        <tr class="detalle" id="det-E03" hidden><td colspan="6"><div class="ficha">
           <div><h4>Valoración</h4><p>Identificación e indicadores correctos, pero 16 puntos débiles frente a 1 de la coordinación y la serie histórica copiada del autoinforme anterior en lugar de consultarla en LinceBI.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: actuaciones propuestas descritas como hechas.</li><li><b>Valor contradictorio</b>: un indicador del título con dos valores distintos.</li><li><b>Origen no garantizado</b>: extracción sin entorno ni fecha registrados.</li></ul></div>
-          <div><h4>Puntos para revisión experta</h4><div class="revision"><p>Confirmar el dato correcto, porque el borrador y el autoinforme de la coordinación no coinciden:</p><ul><li>Satisfacción de los tutores de las entidades de prácticas del centro (P04-13) en 2024-25, que no puede superar 5 (Anexo I).</li><li>Cursos de la serie de egresados del título (Anexo I) y cohorte que se analiza en los criterios 7.2 y 7.5.</li><li>Tasa a la que se refiere el objetivo de la memoria, rendimiento o éxito (criterio 6.3).</li><li>Satisfacción con la docencia (P05-04) del criterio 4.7 frente a la del Anexo I.</li></ul><p>Datos internos que el asistente no recibió y debe completar el centro:</p><ul><li>Plazas, convenios y tutores de prácticas del curso (Anexo III).</li></ul><p>Además, los tres errores graves del apartado anterior.</p></div></div>
           <div><h4>Material</h4><p class="material">—</p></div>
         </div></td></tr>
 
@@ -306,13 +312,12 @@
           <td title="Grado en Ingeniería Informática">Informática</td>
           <td><a class="chip ver" href="#v2" data-tip="Versión 2, primera del asistente actual (commit d5ed099, 2-10-2026): incorpora L4-L14 y ya no contiene ejemplos de los títulos evaluados.">v2</a></td>
           <td class="media"><b>1,43</b><div class="pista"><div class="barra actual" style="width:71.5%"></div></div></td>
-          <td class="num">7</td><td class="num">9</td>
+          <td class="num">7</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: afirma que el título habilita para una profesión regulada, en contra de la memoria, y describe reuniones con acta sin evidencia de que se celebren.">1 error</span></td></tr>
-        <tr class="detalle" id="det-E04" hidden><td colspan="7"><div class="ficha">
+        <tr class="detalle" id="det-E04" hidden><td colspan="6"><div class="ficha">
           <div><h4>Valoración</h4><p>Mismo título que E01: la nota pasa de 0,57 a 1,43. Identificación e indicadores pasan de 0 a 2 y desaparecen los valores contradictorios y los datos de origen no garantizado. Persisten propuestas descritas como hechas y restos de instrucciones de la plantilla.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: habilitación profesional deducida en contra de la memoria y actuaciones sin evidencia. Origen de las lecciones L16 y L18.</li></ul></div>
-          <div><h4>Puntos para revisión experta</h4><div class="revision"><p>Confirmar el dato correcto, porque el borrador y el autoinforme de la coordinación no coinciden:</p><ul><li>Movilidad internacional entrante del centro (P04-09) en 2023-24 (Anexo I).</li><li>Objetivos de la memoria: qué tasas los tienen y si la eficiencia los cumple (6.2, 6.3 y 7.6).</li></ul><p>Datos internos que el asistente no recibió y debe completar el centro:</p><ul><li>Fechas de elaboración y aprobación del autoinforme y de la Política de Calidad, y repositorio documental (portada y 2.1).</li><li>Prácticas: tutores, convenios, entidades y plazas (4.5, 5.3 y Anexo III).</li><li>Procedimiento de consulta a los empleadores (7.4).</li><li>Evidencias seleccionadas y su ruta (6.1).</li><li>Créditos reconocidos, doble título, orientación y demás datos de gestión del curso (criterios 2 a 5 y 7).</li></ul><p>Además, el error grave del apartado anterior.</p></div></div>
           <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
             <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/autoinforme-coordinacion.pdf">Autoinforme de la coordinación (PDF)</a>
             <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
@@ -323,13 +328,12 @@
           <td title="Grado en Ingeniería Aeroespacial">Aeroespacial</td>
           <td><a class="chip ver" href="#v3" data-tip="Versión 3 (commit a3157b3, 3-10-2026): añade L16-L18.">v3</a></td>
           <td class="media"><b>1,43</b><div class="pista"><div class="barra actual" style="width:71.5%"></div></div></td>
-          <td class="num">7</td><td class="num">15</td>
+          <td class="num">7</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: conserva una frase modelo de la plantilla que afirma que el título se imparte en varias modalidades, cuando solo es presencial.">1 error</span></td></tr>
-        <tr class="detalle" id="det-E05" hidden><td colspan="7"><div class="ficha">
+        <tr class="detalle" id="det-E05" hidden><td colspan="6"><div class="ficha">
           <div><h4>Valoración</h4><p>Mismo título que E02: de 1,00 a 1,43. Mejoran el plan de mejora (pasa a 2) y la limpieza de instrucciones. Se confirman en un segundo título errores de análisis, de anexos y de recomendaciones de ACCUA, que pasan a las lecciones L19-L22.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: texto modelo de la plantilla conservado sin contrastar. Origen de la lección L16b.</li></ul></div>
-          <div><h4>Puntos para revisión experta</h4><div class="revision"><p>Confirmar el dato correcto, porque el borrador y el autoinforme de la coordinación no coinciden:</p><ul><li>Menciones y prácticas optativas en las estructuras curriculares (identificación).</li><li>Indicadores del centro (P04) del Anexo I, incluido P04-08: que correspondan al centro y no al título.</li><li>Satisfacción del alumnado (P07) del Anexo I: qué valor corresponde a cada curso.</li><li>Cohortes de egresados del Anexo I y del criterio 7.</li><li>Profesorado con sexenios (P05-01) en el criterio 4.</li><li>Texto de las recomendaciones de ACCUA, que debe ser el del informe.</li><li>Cifras de los criterios 4, 5 y 6 frente al Anexo I, y puntos fuertes de resultados frente a la evolución de las tasas.</li></ul><p>Datos internos que el asistente no recibió y debe completar el centro:</p><ul><li>Satisfacción de los tutores de las entidades de prácticas del centro (P04-13) de 2020-21 a 2022-23, que LinceBI ofrece con la escala mal aplicada.</li><li>Fechas de la Política de Calidad, de la Comisión de Garantía de Calidad y de la Junta de Centro, repositorio documental y estado del sistema de garantía de calidad.</li><li>Prácticas (estudiantes, plazas, convenios y tutores) y créditos reconocidos (3.3, 5.3 y Anexo III).</li></ul><p>Además, el error grave del apartado anterior.</p></div></div>
           <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
             <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/autoinforme-coordinacion.pdf">Autoinforme de la coordinación (PDF)</a>
             <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
@@ -340,13 +344,12 @@
           <td title="Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto">Diseño Industrial</td>
           <td><a class="chip ver" href="#v4" data-tip="Versión 4 (commit 2816f9e, 3-10-2026): añade L16b y L19-L22.">v4</a></td>
           <td class="media"><b>1,57</b><div class="pista"><div class="barra actual" style="width:78.5%"></div></div></td>
-          <td class="num">8</td><td class="num">12</td>
+          <td class="num">8</td>
           <td class="ultima"><span class="chip limpio">Ninguno</span></td></tr>
-        <tr class="detalle" id="det-E06" hidden><td colspan="7"><div class="ficha">
+        <tr class="detalle" id="det-E06" hidden><td colspan="6"><div class="ficha">
           <div><h4>Valoración</h4><p>Mismo título que E03: de 1,29 a 1,57 y primer borrador sin errores graves. Funcionan el contraste del texto modelo y las recomendaciones de ACCUA abiertas. Fallan un anexo incompleto y adjetivos de evolución que la serie no respalda.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><p>Ninguno.</p></div>
-          <div><h4>Puntos para revisión experta</h4><div class="revision"><p>Confirmar el dato correcto, porque el borrador y el autoinforme de la coordinación no coinciden:</p><ul><li>Tasa de graduación del título (P04-05) en 2023-24 (Anexo I y plan de mejora).</li><li>Satisfacción de los tutores de las entidades de prácticas del centro (P04-13) en 2024-25, que no puede superar 5 (Anexo I).</li><li>Cohortes de egresados del título (Anexo I) y cohorte que se analiza en los criterios 7.2 y 7.5.</li><li>Tasa a la que se refiere el objetivo de la memoria, rendimiento o éxito (criterios 1 y 6.3).</li><li>Profesorado (P05-01) y otras cifras del criterio 5 frente al Anexo I.</li><li>Numeración de las recomendaciones de ACCUA (criterio 2 y plan de mejora).</li></ul><p>Datos internos que el asistente no recibió y debe completar el centro:</p><ul><li>Créditos reconocidos en 2024-25 (criterio 3).</li><li>Prácticas: plazas, entidades y tutores (4.5, 5.3 y Anexo III).</li><li>Relación del profesorado (Anexo II).</li><li>Fechas de aprobación por la Comisión de Garantía de Calidad y la Junta de Centro.</li></ul></div></div>
           <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
             <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/autoinforme-coordinacion.pdf">Autoinforme de la coordinación (PDF)</a>
             <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
@@ -357,13 +360,12 @@
           <td title="Grado en Historia">Historia</td>
           <td><a class="chip ver" href="#v5" data-tip="Versión 5 (commit 4e6da0d, 3-10-2026): añade L23-L27.">v5</a></td>
           <td class="media"><b>1,57</b><div class="pista"><div class="barra actual" style="width:78.5%"></div></div></td>
-          <td class="num">6</td><td class="num">12</td>
+          <td class="num">6</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: valores sin dato en LinceBI («-») consignados como 0 % y uno de ellos narrado como ausencia de actividad.">1 error</span></td></tr>
-        <tr class="detalle" id="det-E07" hidden><td colspan="7"><div class="ficha">
+        <tr class="detalle" id="det-E07" hidden><td colspan="6"><div class="ficha">
           <div><h4>Valoración</h4><p>Primer título fuera de la ESI: mantiene la nota de E06. Funcionan el Anexo IV completo y la advertencia de series que no cuadran con el autoinforme anterior. Fallan los guiones convertidos en 0 %, una evolución con el signo cambiado y notas de la plantilla en un anexo. El autoinforme de la coordinación es mucho más extenso que los de la ESI.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: «sin dato» tratado como cero, pese a la lección L19, que habrá que reforzar.</li></ul></div>
-          <div><h4>Puntos para revisión experta</h4><div class="revision"><p>Confirmar el dato correcto, porque el borrador y el autoinforme de la coordinación no coinciden:</p><ul><li>Satisfacción de los tutores de las entidades de prácticas del centro (P04-13) en 2024-25, que no puede superar 5 (Anexo I).</li><li>Egresados del centro en el Anexo I: cohortes de P07-09 y P07-10 y tasa de respuesta (P07-01_03) de 2023-24.</li><li>Cohorte de egresados que se analiza en el criterio 7.5.</li><li>Tasa de graduación de 2024-25 (criterio 6.3 y Anexo I).</li><li>Objetivos de la memoria para la eficiencia y el éxito (criterio 6.3).</li></ul><p>Datos internos que el asistente no recibió y debe completar el centro:</p><ul><li>Satisfacción de los empleadores: la encuesta del centro es posterior al curso evaluado (criterios 1, 2 y 7 y plan de mejora).</li><li>Créditos reconocidos, sesiones de la Comisión de Garantía de Calidad, auditorías, resultados de primer curso y rutas de evidencias (criterios 1 a 3 y 6.3).</li><li>Relación nominal del profesorado (Anexo II).</li><li>Prácticas: plazas, convenios y tutores (7.4 y Anexo III).</li><li>Fechas de aprobación (portada).</li></ul><p>Además, el error grave del apartado anterior.</p></div></div>
           <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GH-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
             <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GH-seg-2425/autoinforme-coordinacion.pdf">Autoinforme de la coordinación (PDF)</a>
             <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GH-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
@@ -488,8 +490,7 @@
 <footer>Uso interno de la Universidad de Cádiz · Última actualización: 4 de octubre de 2026</footer>
 <script>
   var AYUDA_TABLA = {
-    'Diferencias por fallo del asistente': 'Diferencias con el autoinforme de la coordinación cuya causa es el asistente. No cuentan las debidas a LinceBI, a datos internos del centro, a errores del autoinforme ni a la redacción (ver «Qué diferencias cuentan» en el procedimiento).',
-    'Puntos para revisión experta': 'Cuestiones que debe mirar una persona: errores graves, aspectos en los que los dos correctores discrepan mucho y posibles errores del autoinforme de la coordinación o datos que faltaban en la entrada. La ficha de cada ejecución los agrupa por tema, sin repetir los errores graves, así que su lista puede ser más corta que esta cifra: los dos correctores pueden señalar el mismo punto.'
+    'Diferencias por fallo del asistente': 'Diferencias con el autoinforme de la coordinación cuya causa es el asistente. No cuentan las debidas a LinceBI, a datos internos del centro, a errores del autoinforme ni a la redacción (ver «Qué diferencias cuentan» en el procedimiento).'
   };
   var AYUDA_ASPECTO = {
     'Identificación': 'Tabla de identificación del título: denominación, centro, créditos, fechas…',

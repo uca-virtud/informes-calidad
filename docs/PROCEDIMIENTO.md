@@ -219,15 +219,12 @@ documentos internos:
 - en «Resultados», la barra de la ejecución en «Evolución de la nota» y, si repite un título, su
   par en «Mismo título, antes y después»;
 - en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, nota media,
-  diferencias por fallo del asistente, puntos para revisión experta y un chip con el número de
+  diferencias por fallo del asistente y un chip con el número de
   errores graves cuyo tooltip nombra cada uno —dato inventado, valor contradictorio u origen no
   garantizado— con su motivo generalizado; no se publican los códigos B1-B3) y su fila
-  desplegable (valoración breve, nota de cada aspecto D1-D7, errores graves, puntos para revisión
-  experta y material). Los puntos para revisión experta salen de la sección homónima de la ficha:
-  se agrupan por tema sin repetir los de los dos cotejos ni los errores graves (que se remiten a su
-  apartado), en dos listas —datos que no coinciden con el autoinforme de la coordinación (causa H y
-  dimensiones con notas A y B muy distintas) y datos internos que debe completar el centro (causa
-  I)— y con redacción neutra, sin códigos ni valores; la cifra de la columna se mantiene;
+  desplegable (valoración breve, nota de cada aspecto D1-D7, errores graves y material). Los
+  puntos pendientes de revisión experta se quedan en la ficha de la ejecución y no se publican:
+  no miden al asistente, porque incluyen errores del autoinforme y datos que faltaban;
 - la lista «Qué dicen los resultados», si la ejecución la cambia;
 - en «Qué aprende el asistente en cada versión», el estado de las lecciones contrastadas
   (Funciona, Reforzada, A reforzar, Por comprobar), sus recuentos y «Próximos pasos»;
