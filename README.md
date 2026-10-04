@@ -30,7 +30,8 @@ en el navegador.
 | `skills/uca-informes-calidad/` | Skill vigente (seguimiento y renovación de la acreditación). |
 | `old-skills/autoinforme-seguimiento-uca/` | Versión anterior de la skill, solo de seguimiento, usada en las evaluaciones. Solo local. |
 | `evals/` | Evaluaciones: `casos/<id>/` (entrada y autoinforme humano de referencia), `ejecuciones/Enn-<id>/` (ficha, borrador, cotejos y métricas) e `historial.md`. Solo local: contiene documentos con datos personales. |
-| `tools/evaluacion/` | Script `evaluacion.py` (`nueva`, `medir`) del [procedimiento de evaluación](docs/evaluacion/procedimiento.md). |
+| `tools/evaluacion/` | Script `evaluacion.py` (`enlaces`, `caso`, `nueva`, `medir`) del [procedimiento de evaluación](docs/evaluacion/procedimiento.md). |
+| `.github/skills/preparar-caso/` | Skill de proyecto que prepara un caso de evaluación a partir del nombre del título, buscando sus documentos en la web del centro. |
 | `samples/` | Autoinformes reales de ejemplo (seguimiento y renovación). Solo local. |
 | `docs/` | Visión del proyecto, evaluaciones (`docs/evaluacion/`: procedimiento, rúbrica, plantillas, catálogo de casos y `material-coordinaciones/`, con el borrador de la IA, el autoinforme de la coordinación y la rúbrica de valoración en Excel de cada título), y, solo en local, peticiones de cartera de los centros y solicitud de la fase 1 al SI. |
 | `web/` | Web del proyecto (avance y evaluación), publicada en GitHub Pages con contraseña. |

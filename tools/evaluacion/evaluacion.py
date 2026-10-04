@@ -2,6 +2,8 @@
 """Organiza y mide las ejecuciones de evaluación de la skill de autoinformes.
 
 Uso (desde la raíz del repositorio):
+  python tools/evaluacion/evaluacion.py enlaces <url> [--todos]
+  python tools/evaluacion/evaluacion.py caso <fuentes.json> [--sin-descarga]
   python tools/evaluacion/evaluacion.py nueva <id> [--modelo-a M] [--modelo-b M]
   python tools/evaluacion/evaluacion.py medir <Enn>
 
@@ -28,7 +30,13 @@ MODELO_A = "claude-opus-5.5"
 MODELO_B = "gpt-6.1-sol"
 DIMENSIONES = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"]
 CAUSAS = ["S", "D", "I", "H", "E"]
-ENTRADA_OBLIGATORIA = {"seguimiento": ["autoinforme-anterior.pdf", "memoria.pdf"]}
+ENTRADA_OBLIGATORIA = {"seguimiento": ["autoinforme-anterior", "memoria"]}
+ROLES = {"autoinforme-humano": "referencia", "autoinforme-anterior": "entrada", "memoria": "entrada",
+         "informe-accua": "entrada", "plan-mejora": "entrada"}
+VALORES_CASO = {"nivel": {"grado", "máster"}, "tipo": {"seguimiento", "renovación"},
+                "conjunto": {"aprendizaje", "reserva"}}
+FORMATO_CASO = {"id": r"[A-Za-z0-9]+(-[A-Za-z0-9]+)*", "curso": r"\d{4}-\d{2}", "convocatoria": r"\d{4}"}
+DOMINIOS_DESCARGA = ("uca.es", "juntadeandalucia.es")
 
 RE_CODIGO = re.compile(r"\b(PF|PD|AM)[\s\-–]*[A-Z]{2,6}[\s\-–]*\d+(?:\.\d+)*\b")
 RE_INDICADOR = re.compile(r"\bP0\d[\-_ ]?\d{2}")
@@ -66,7 +74,7 @@ def version_skill():
 def comprobar_caso(caso):
     base = CASOS_DIR / caso["id"]
     entrada, referencia = base / "entrada", base / "referencia"
-    faltan = [n for n in ENTRADA_OBLIGATORIA.get(caso["tipo"], []) if not (entrada / n).exists()]
+    faltan = [n + ".*" for n in ENTRADA_OBLIGATORIA.get(caso["tipo"], []) if not list(entrada.glob(n + ".*"))]
     if not entrada.is_dir() or not any(entrada.iterdir()):
         faltan.append("entrada/ (vacía)")
     if not list(referencia.glob("autoinforme-humano.*")):
@@ -107,6 +115,193 @@ def cmd_nueva(args):
     print(f"Creada {carpeta.relative_to(RAIZ)}")
     print(f"  entrada:    {(CASOS_DIR / caso['id'] / 'entrada').relative_to(RAIZ)}")
     print(f"  referencia: {(CASOS_DIR / caso['id'] / 'referencia').relative_to(RAIZ)} (no se da a A al generar)")
+
+
+# --- caso ----------------------------------------------------------------------
+
+def leer_manifiesto(ruta, sin_descarga):
+    try:
+        man = json.loads(Path(ruta).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        error(f"no se puede leer el manifiesto {ruta}: {e}")
+    with open(DOC_EVAL / "casos.csv", encoding="utf-8") as f:
+        columnas = next(csv.reader(f))
+    faltan = [c for c in columnas if c != "seguimiento_accua" and not str(man.get(c, "")).strip()]
+    if faltan:
+        error(f"faltan campos en el manifiesto: {', '.join(faltan)}")
+    for campo, permitidos in VALORES_CASO.items():
+        if man[campo] not in permitidos:
+            error(f"{campo} = «{man[campo]}»; valores admitidos: {', '.join(sorted(permitidos))}")
+    for campo, patron in FORMATO_CASO.items():
+        if not re.fullmatch(patron, man[campo]):
+            error(f"{campo} = «{man[campo]}» no tiene el formato esperado ({patron})")
+    if man["id"] in leer_casos():
+        error(f"el caso {man['id']} ya está en docs/evaluacion/casos.csv")
+    documentos = man.get("documentos", [])
+    roles = [d.get("rol") for d in documentos]
+    desconocidos = [r for r in roles if r not in ROLES]
+    if desconocidos:
+        error(f"roles desconocidos: {desconocidos}; admitidos: {', '.join(ROLES)}")
+    if len(set(roles)) != len(roles):
+        error("hay roles repetidos en documentos: elige un único documento por rol")
+    if not sin_descarga:
+        necesarios = ["autoinforme-humano"] + ENTRADA_OBLIGATORIA.get(man["tipo"], [])
+        ausentes = [r for r in necesarios if r not in roles]
+        if ausentes:
+            error(f"faltan documentos obligatorios en el manifiesto: {', '.join(ausentes)}")
+        for d in documentos:
+            comprobar_url(d.get("url", ""))
+    return man, columnas, documentos
+
+
+def comprobar_url(url):
+    from urllib.parse import urlparse
+    partes = urlparse(url)
+    host = partes.hostname or ""
+    if partes.scheme != "https" or not any(host == d or host.endswith("." + d) for d in DOMINIOS_DESCARGA):
+        error(f"URL no admitida (solo https de {', '.join(DOMINIOS_DESCARGA)}): {url}")
+
+
+def leer_url(url):
+    from urllib.parse import quote
+    from urllib.request import Request, urlopen
+    comprobar_url(url)
+    peticion = Request(quote(url, safe=":/?&=%#~+@,;"), headers={"User-Agent": "uca-informes-calidad/evaluacion"})
+    try:
+        with urlopen(peticion, timeout=60) as r:
+            comprobar_url(r.geturl())
+            return r.read(), r.headers.get_content_type(), r.headers.get_content_charset() or "utf-8", r.geturl()
+    except OSError as e:
+        error(f"no se pudo descargar {url}: {e}")
+
+
+def descargar(url):
+    datos, tipo, _, _ = leer_url(url)
+    if datos.startswith(b"%PDF"):
+        return datos, ".pdf"
+    if datos.startswith(b"PK") and ("wordprocessingml" in tipo or url.lower().endswith(".docx")):
+        return datos, ".docx"
+    error(f"{url} no es un PDF ni un DOCX (tipo {tipo}); busca el enlace directo al fichero")
+
+
+def avisos_pdf(ruta):
+    try:
+        import pypdf
+        lector = pypdf.PdfReader(str(ruta))
+        muestra = "".join((p.extract_text() or "") for p in lector.pages[:3])
+    except Exception as e:  # pypdf lanza excepciones propias muy variadas
+        return [f"{ruta.name}: no se pudo leer con pypdf ({e})"]
+    if len(muestra.strip()) < 200:
+        return [f"{ruta.name}: apenas tiene texto extraíble (¿escaneado?)"]
+    return []
+
+
+def escribir_fuentes(base, man, filas):
+    lineas = [f"# Fuentes del caso {man['id']}", "",
+              f"{man['titulo']} · {man['centro']} · {man['tipo']} {man['curso']} (convocatoria {man['convocatoria']})",
+              "", "| Rol | Fichero | URL | Página de origen | Descarga | Tamaño | SHA-256 |",
+              "|---|---|---|---|---|---|---|"]
+    lineas += ["| " + " | ".join(f) + " |" for f in filas]
+    if man.get("notas"):
+        lineas += ["", "## Notas", "", man["notas"]]
+    (base / "fuentes.md").write_text("\n".join(lineas) + "\n", encoding="utf-8")
+
+
+def anadir_fila_csv(man, columnas):
+    ruta = DOC_EVAL / "casos.csv"
+    contenido = ruta.read_text(encoding="utf-8")
+    with open(ruta, "a", encoding="utf-8", newline="") as f:
+        if contenido and not contenido.endswith("\n"):
+            f.write("\n")
+        csv.DictWriter(f, fieldnames=columnas, lineterminator="\n").writerow(
+            {c: str(man.get(c, "")).strip() for c in columnas})
+
+
+RE_ENLACE_DOC = re.compile(r"\.(pdf|docx?)(\?|$)|/wp-content/uploads/", re.I)
+RE_ENLACE_CALIDAD = re.compile(r"autoinform|informe|memoria|plan[- ]de[- ]mejora|calidad|seguimiento|"
+                               r"acreditaci|verificaci|modificaci|datos[- ]generales", re.I)
+RE_ENLACE_SOCIAL = re.compile(r"^https?://([^/]+\.)?(facebook\.com|twitter\.com|x\.com|linkedin\.com|wa\.me)/", re.I)
+
+
+def enlaces_de(html_texto, base_url):
+    from html.parser import HTMLParser
+    from urllib.parse import urljoin
+
+    class Lector(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.enlaces, self.actual = [], None
+
+        def handle_starttag(self, tag, attrs):
+            href = dict(attrs).get("href")
+            if tag == "a" and href and not href.startswith(("#", "mailto:", "javascript:")):
+                self.actual = [urljoin(base_url, href), []]
+
+        def handle_data(self, data):
+            if self.actual:
+                self.actual[1].append(data)
+
+        def handle_endtag(self, tag):
+            if tag == "a" and self.actual:
+                self.enlaces.append((self.actual[0], " ".join(" ".join(self.actual[1]).split())))
+                self.actual = None
+
+    lector = Lector()
+    lector.feed(html_texto)
+    return list(dict.fromkeys(lector.enlaces))
+
+
+def cmd_enlaces(args):
+    datos, tipo, juego, url_final = leer_url(args.url)
+    if tipo != "text/html":
+        error(f"{args.url} no es una página HTML (tipo {tipo})")
+    for url, texto in enlaces_de(datos.decode(juego, errors="replace"), url_final):
+        if RE_ENLACE_SOCIAL.match(url):
+            continue
+        es_doc = bool(RE_ENLACE_DOC.search(url))
+        if args.todos or es_doc or RE_ENLACE_CALIDAD.search(url + " " + texto):
+            print(f"{'DOC' if es_doc else 'PÁG'} | {texto or '(sin texto)'} | {url}")
+
+
+def cmd_caso(args):
+    import hashlib
+    man, columnas, documentos = leer_manifiesto(args.manifiesto, args.sin_descarga)
+    base = CASOS_DIR / man["id"]
+    if args.sin_descarga:
+        comprobar_caso(man)
+    hoy = date.today().isoformat()
+    descargas = []
+    if not args.sin_descarga:
+        for d in documentos:
+            carpeta = base / ROLES[d["rol"]]
+            if list(carpeta.glob(d["rol"] + ".*")):
+                error(f"ya existe {carpeta.relative_to(RAIZ)}/{d['rol']}.*; no se sobrescribe")
+        for d in documentos:
+            print(f"Descargando {d['rol']}: {d['url']}")
+            descargas.append((d, *descargar(d["url"])))
+    filas, avisos = [], []
+    for d, datos, ext in descargas:
+        ruta = base / ROLES[d["rol"]] / (d["rol"] + ext)
+        ruta.parent.mkdir(parents=True, exist_ok=True)
+        ruta.write_bytes(datos)
+        if ext == ".pdf":
+            avisos += avisos_pdf(ruta)
+        filas.append([d["rol"], str(ruta.relative_to(base)), d["url"], d.get("pagina", ""), hoy,
+                      f"{len(datos) / 1024:.0f} KB", hashlib.sha256(datos).hexdigest()])
+    if args.sin_descarga:
+        for rol, sub in ROLES.items():
+            for ruta in sorted((base / sub).glob(rol + ".*")):
+                datos = ruta.read_bytes()
+                filas.append([rol, str(ruta.relative_to(base)), "aportado a mano", "", hoy,
+                              f"{len(datos) / 1024:.0f} KB", hashlib.sha256(datos).hexdigest()])
+    base.mkdir(parents=True, exist_ok=True)
+    escribir_fuentes(base, man, filas)
+    comprobar_caso(man)
+    anadir_fila_csv(man, columnas)
+    print(f"Añadido {man['id']} a docs/evaluacion/casos.csv y creado {(base / 'fuentes.md').relative_to(RAIZ)}")
+    for aviso in avisos:
+        print("AVISO: " + aviso)
+    print(f"Caso listo: python tools/evaluacion/evaluacion.py nueva {man['id']}")
 
 
 # --- extracción de texto ------------------------------------------------------
@@ -413,6 +608,15 @@ def cmd_medir(args):
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="orden", required=True)
+    e = sub.add_parser("enlaces", help="lista los enlaces a documentos y páginas de calidad de una página web")
+    e.add_argument("url")
+    e.add_argument("--todos", action="store_true", help="muestra todos los enlaces, sin filtrar")
+    e.set_defaults(func=cmd_enlaces)
+    c = sub.add_parser("caso", help="da de alta un caso y descarga sus documentos desde un manifiesto JSON")
+    c.add_argument("manifiesto", help="p. ej. evals/casos/<id>/fuentes.json")
+    c.add_argument("--sin-descarga", action="store_true",
+                   help="los documentos ya están copiados a mano en entrada/ y referencia/")
+    c.set_defaults(func=cmd_caso)
     n = sub.add_parser("nueva", help="crea la carpeta y la ficha de una ejecución")
     n.add_argument("id")
     n.add_argument("--modelo-a", default=MODELO_A)

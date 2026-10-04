@@ -15,6 +15,7 @@ Piezas:
 | `docs/evaluacion/plantilla-ficha.md` | Ficha de cada ejecución (la crea el script). |
 | `evals/casos/<id>/entrada/` | Lo que recibiría la skill: autoinforme anterior, memoria, informe ACCUA… |
 | `evals/casos/<id>/referencia/autoinforme-humano.*` | Autoinforme presentado por la coordinación. **Nunca** lo ve A al generar. |
+| `evals/casos/<id>/fuentes.md` | Procedencia de los documentos del caso (URL, fecha, SHA-256), si se preparó con `caso`. |
 | `evals/ejecuciones/Enn-<id>/` | Ficha, borrador, cotejos y métricas de la ejecución. |
 | `evals/historial.md` | Tabla con todas las ejecuciones (la regenera `medir`). |
 
@@ -33,11 +34,21 @@ cifras agregadas y lecciones generalizadas.
 
 ## Antes de la ejecución: el caso
 
-1. Añade una fila a `casos.csv` (o reutiliza la existente). Elige el título **por
-   variedad** (otro centro, máster, renovación…) frente a los ya evaluados.
-2. Copia los documentos en `evals/casos/<id>/entrada/` (`autoinforme-anterior.*`,
-   `memoria.*`, opcionalmente `informe-accua.*` y `plan-mejora.*`) y el autoinforme humano
-   en `evals/casos/<id>/referencia/autoinforme-humano.*`.
+Elige el título **por variedad** (otro centro, máster, renovación…) frente a los ya
+evaluados. Hay dos formas de preparar el caso:
+
+- **Automática** (recomendada): pide al agente «Prepara un caso con el `<título>`». Sigue la
+  skill de proyecto [`.github/skills/preparar-caso/`](../../.github/skills/preparar-caso/SKILL.md):
+  localiza en la web del centro el último autoinforme publicado (referencia) y los
+  documentos de entrada anteriores a él, te pregunta ante cualquier duda y por el
+  `conjunto`, y ejecuta `python tools/evaluacion/evaluacion.py caso <fuentes.json>`. El
+  subcomando añade la fila a `casos.csv`, descarga los documentos y deja su procedencia en
+  `evals/casos/<id>/fuentes.md`.
+- **Manual**: añade una fila a `casos.csv` y copia los documentos en
+  `evals/casos/<id>/entrada/` (`autoinforme-anterior.*`, `memoria.*`, opcionalmente
+  `informe-accua.*` y `plan-mejora.*`) y el autoinforme humano en
+  `evals/casos/<id>/referencia/autoinforme-humano.*`. Para dejar también constancia en
+  `fuentes.md`, usa `caso` con `--sin-descarga`.
 
 ## Pasos de una ejecución
 

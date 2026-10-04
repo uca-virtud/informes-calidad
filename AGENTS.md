@@ -21,6 +21,8 @@
   evaluación, y no la modifiques durante una evaluación: las lecciones se proponen y las
   aprueba el responsable. Los ejemplos literales de la skill solo pueden proceder de
   títulos marcados como `excluido` en `docs/evaluacion/casos.csv`.
+- Para preparar un caso de evaluación a partir del nombre del título, sigue
+  [`.github/skills/preparar-caso/SKILL.md`](.github/skills/preparar-caso/SKILL.md).
 - No añadas pruebas automatizadas sin que el usuario haya dado su consentimiento.
 - Mantén al día la web del proyecto, dos páginas estáticas en `web/`:
   - `index.html` (avance): las siete fases de `docs/VISION.md`. Cuando cambie el estado de
