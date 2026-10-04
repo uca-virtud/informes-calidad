@@ -23,6 +23,7 @@ se envía material a la coordinación; todo lo demás lo hacen el orquestador y 
 | `evals/historial.md` | Tabla con todas las ejecuciones (la regenera `medir`). |
 | `docs/EVALUACIONES.md` | Registro versionado: resumen de cada ejecución y estado de las lecciones. |
 | `web/evaluacion.html` | Página pública con las cifras globales. |
+| `web/procedimiento.html` | Página pública con el proceso de evaluación y la rúbrica. |
 
 `evals/` contiene datos personales y no se versiona: al repositorio y a la web solo llegan
 cifras agregadas, lecciones generalizadas y, si el responsable lo aprueba, el material del
@@ -242,7 +243,8 @@ reciente. Después, en la fila desplegable de la ejecución de `web/evaluacion.h
 
 Para ejecuciones anteriores al protocolo (E01–E03) o cuando cambia la versión de la
 rúbrica, solo se lanza B (paso 4) sobre el borrador existente y después `medir` (paso 5).
-Si la ficha no tiene sección «Generación», se quita esa línea del prompt de B.
+Si la ficha no tiene sección «Generación», se quita esa línea del prompt de B. Un cambio de
+rúbrica se refleja también en «La rúbrica de evaluación» de `web/procedimiento.html`.
 
 ## Tiempos orientativos
 

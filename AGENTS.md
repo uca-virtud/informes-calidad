@@ -43,8 +43,10 @@ correos, teléfonos), documentos (PDF, DOCX, Excel) ni contenido de
 
 - `web/index.html` refleja el estado de las siete fases de `docs/VISION.md`: actualízalo
   cuando cambie una fase (en `docs/`, en la skill o porque lo comunique el usuario).
-- `web/evaluacion.html` se actualiza tras cada ejecución (pasos 6 y 7 del procedimiento). El
-  texto de `SKILL.md` lo incrusta el workflow en el marcador `SKILL_MD` al publicar.
+- `web/evaluacion.html` (resultados) se actualiza tras cada ejecución (pasos 6 y 7 del
+  procedimiento). `web/procedimiento.html` explica el proceso y la rúbrica: actualízalo cuando
+  cambien en `docs/PROCEDIMIENTO.md`. El texto de `SKILL.md` lo incrusta el workflow en su
+  marcador `SKILL_MD` al publicar.
 - Cada versión nueva de la skill recibe el siguiente número (v5, v6…) en `docs/EVALUACIONES.md`
   y en la línea temporal de `web/evaluacion.html`.
 - Al modificar una página, cambia su fecha de «Última actualización».

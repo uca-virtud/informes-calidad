@@ -35,15 +35,17 @@ no se versionan.
 
 ## Web del proyecto
 
-`web/` contiene dos páginas estáticas para los colectivos implicados de la UCA:
+`web/` contiene tres páginas estáticas para los colectivos implicados de la UCA:
 
 - `index.html`: avance del proyecto por fases.
-- `evaluacion.html`: seguimiento de la evaluación de la skill para los implicados: resumen de
-  resultados, proceso de evaluación, rúbrica, evolución de la nota, tabla por ejecución (nota
-  de cada aspecto, media, errores graves y ficha resumida), lecciones aprendidas en cada
-  versión, próximos pasos, texto de la skill y material para que las coordinaciones la revisen.
+- `procedimiento.html`: cómo se evalúa la skill: proceso de evaluación, rúbrica y texto de la
+  skill.
+- `evaluacion.html`: resultados de la evaluación: resumen de cifras, evolución de la nota,
+  tabla por ejecución (nota de cada aspecto, media, errores graves y ficha resumida),
+  lecciones aprendidas en cada versión, próximos pasos y material para que las coordinaciones
+  la revisen.
 
-Al hacer push a `main`, `.github/workflows/pages.yml` incrusta `SKILL.md` en la página de
-evaluación, cifra ambas con una contraseña compartida (StatiCrypt, secreto `SITE_PASSWORD`;
+Al hacer push a `main`, `.github/workflows/pages.yml` incrusta `SKILL.md` en la página del
+procedimiento, cifra las tres con una contraseña compartida (StatiCrypt, secreto `SITE_PASSWORD`;
 sin él el despliegue falla) y las publica en GitHub Pages. Para verlas en local, abre
 `web/index.html` en el navegador.
