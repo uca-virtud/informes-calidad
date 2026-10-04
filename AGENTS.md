@@ -1,48 +1,58 @@
 # Instrucciones para agentes
 
-## Referencias
+Repositorio de la skill que redacta autoinformes de calidad de títulos de la Universidad de
+Cádiz y de su evaluación frente a autoinformes reales. Contexto, objetivo y fases:
+[`docs/VISION.md`](docs/VISION.md). Escribe en español de España, salvo que el usuario pida
+otro idioma.
 
-- Consulta [`docs/VISION.md`](docs/VISION.md) para el contexto y el estado del proyecto.
-- Para elaborar o revisar un autoinforme, sigue
-  [`skills/uca-informes-calidad/SKILL.md`](skills/uca-informes-calidad/SKILL.md);
-  consulta sus referencias según el flujo definido allí.
-- Escribe en español de España, salvo que el usuario solicite otro idioma.
+## Dónde está cada cosa
 
-## Criterios de trabajo
+Cada contenido vive en una sola fuente: enlázala en lugar de copiarla.
 
-- Mantén cada contenido en su fuente: visión en `docs/VISION.md`, procedimiento en la
-  skill y sus referencias, e instrucciones de trabajo aquí.
-- Antes de usar o documentar comandos de build, pruebas o despliegue, comprueba que
-  existan en el repositorio.
-- Al cambiar una skill, actualiza las referencias afectadas junto con su documento
-  principal, y el estado de las lecciones en [`docs/EVALUACIONES.md`](docs/EVALUACIONES.md).
-- Para evaluar la skill, sigue [`docs/PROCEDIMIENTO.md`](docs/PROCEDIMIENTO.md).
-  No incorpores a la skill datos, frases ni nombres de los títulos usados como casos de
-  evaluación, y no la modifiques durante una evaluación: las lecciones se proponen y las
-  aprueba el responsable. Tras cada ejecución, regístrala en `docs/EVALUACIONES.md` (paso 6
-  del procedimiento): `medir` no lo actualiza. Los ejemplos literales de la skill solo pueden proceder de
-  títulos marcados como `excluido` en `evals/casos.csv`.
-- Para preparar un caso de evaluación a partir del nombre del título, sigue
-  [`.github/skills/preparar-caso/SKILL.md`](.github/skills/preparar-caso/SKILL.md).
-- No añadas pruebas automatizadas sin que el usuario haya dado su consentimiento.
-- Mantén al día la web del proyecto, dos páginas estáticas en `web/`:
-  - `index.html` (avance): las siete fases de `docs/VISION.md`. Cuando cambie el estado de
-    una fase (en `docs/`, en la skill o comunicado por el usuario), actualízalo.
-  - `evaluacion.html` (evaluación de la skill): cifras globales, sin detalle, tomadas de
-    `evals/historial.md`; actualízalas tras cada ejecución. El texto de `SKILL.md` lo
-    incrusta el workflow al publicar (marcador `SKILL_MD`); no lo copies a mano.
-  - En ambas, cambia la fecha de «Última actualización» al modificarlas.
-- En la web no se publican nunca datos personales (nombres, correos, teléfonos), documentos
-  (PDF, DOCX, Excel) ni contenido de `docs/peticiones-cartera/`. La única excepción son los
-  enlaces de `evaluacion.html` al material de revisión de las coordinaciones, que se guarda
-  en el repositorio (`docs/evaluacion/material-coordinaciones/<caso>/`), no en la web. Tras
-  cada ejecución, ese material se prepara según el paso 7 de
-  [`docs/PROCEDIMIENTO.md`](docs/PROCEDIMIENTO.md).
-- Para ver la web en local, abre `web/index.html` en el navegador. El despliegue lo hace
-  `.github/workflows/pages.yml`, que cifra ambas páginas con StatiCrypt usando el secreto
-  `SITE_PASSWORD` y falla si no existe. `web/.staticrypt.json` guarda la sal (no es secreta);
-  no la cambies, o se invalidará el «Recordarme» de quienes ya accedieron.
-- Los scripts de la skill necesitan `python-docx`, que no está en el Python del sistema;
-  para probarlos crea un entorno virtual temporal.
-- Para leer los PDF de `docs/`, usa `pypdf` en un entorno virtual temporal; `pdftotext`
-  no está instalado.
+| Tarea | Fuente |
+|---|---|
+| Elaborar o revisar un autoinforme | [`skills/uca-informes-calidad/SKILL.md`](skills/uca-informes-calidad/SKILL.md) y las referencias que indique su flujo |
+| Preparar un caso de evaluación a partir del nombre de un título | [`.github/skills/preparar-caso/SKILL.md`](.github/skills/preparar-caso/SKILL.md) |
+| Evaluar la skill: ejecución, registro de resultados y material para las coordinaciones | [`docs/PROCEDIMIENTO.md`](docs/PROCEDIMIENTO.md) |
+| Resultados de las evaluaciones y estado de las lecciones | [`docs/EVALUACIONES.md`](docs/EVALUACIONES.md) |
+| Estructura del repositorio y funcionamiento de la web | [`README.md`](README.md) |
+
+## Cambiar la skill
+
+- La skill cambia solo con lecciones aprobadas por el responsable y fuera de una evaluación:
+  durante una ejecución queda congelada y las lecciones se proponen.
+- Cumple las [reglas contra el sobreajuste](docs/PROCEDIMIENTO.md#reglas-contra-el-sobreajuste):
+  los ejemplos literales proceden solo de títulos con `conjunto = excluido` en
+  `evals/casos.csv`.
+- En el mismo cambio, actualiza `SKILL.md`, las referencias afectadas y la tabla de lecciones
+  de `docs/EVALUACIONES.md`.
+
+## Datos personales
+
+`evals/`, `samples/`, `old-skills/` y `docs/peticiones-cartera/` contienen datos personales y
+solo existen en local (`.gitignore`). De ellos llegan al repositorio y a la web únicamente
+cifras agregadas, lecciones generalizadas y el material aprobado del paso 7 del
+procedimiento.
+
+La web publica solo el avance y cifras globales. Nunca publica datos personales (nombres,
+correos, teléfonos), documentos (PDF, DOCX, Excel) ni contenido de
+`docs/peticiones-cartera/`. Única excepción: los enlaces de `evaluacion.html` al material de
+`docs/evaluacion/material-coordinaciones/`, que está en el repositorio, no en `web/`.
+
+## Web
+
+- `web/index.html` refleja el estado de las siete fases de `docs/VISION.md`: actualízalo
+  cuando cambie una fase (en `docs/`, en la skill o porque lo comunique el usuario).
+- `web/evaluacion.html` se actualiza tras cada ejecución (pasos 6 y 7 del procedimiento). El
+  texto de `SKILL.md` lo incrusta el workflow en el marcador `SKILL_MD` al publicar.
+- Al modificar una página, cambia su fecha de «Última actualización».
+- La sal de `web/.staticrypt.json` es fija (no es secreta): cambiarla invalida el
+  «Recordarme» de quienes ya accedieron.
+
+## Entorno
+
+- Comprueba que un comando exista en el repositorio antes de usarlo o documentarlo.
+- Pide consentimiento al usuario antes de añadir pruebas automatizadas.
+- El Python del sistema no trae las librerías necesarias y no hay `pdftotext`. Usa un entorno
+  virtual temporal con `python-docx` para los scripts de la skill, `pypdf` para leer PDF y
+  `tools/evaluacion/requirements.txt` para `evaluacion.py`.

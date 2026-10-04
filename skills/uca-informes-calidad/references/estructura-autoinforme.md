@@ -50,7 +50,7 @@ Subcriterios (numeración de la plantilla):
 - 3.1 Diseño actualizado y revisado periódicamente.
 - 3.2 Modalidad de enseñanza ajustada a memoria.
 - 3.3 Gestión e implantación de normativa: reconocimiento de créditos (nº de créditos
-  reconocidos en el curso, de LinceBI o del centro), TFG/TFM, permanencia, complementos
+  reconocidos en el curso, dato del centro), TFG/TFM, permanencia, complementos
   formativos.
 - 3.4 Criterios de admisión, perfil de ingreso y nº de plazas (para máster: procedencia
   del alumnado y % con >15% créditos reconocidos).
@@ -89,7 +89,8 @@ Proceso **P04**. Subcriterios:
 - Tabla de calificaciones globales y por asignatura [T21] (Anexo IV).
 - Satisfacción con asignaturas/programa.
 Resultados globales de los últimos seis años: tasa de rendimiento (P04-01), eficiencia
-(P04-06), graduación (P04-05), abandono (P04-04); y resultados de primer curso.
+(P04-06), graduación (P04-05), abandono (P04-04); y resultados de primer curso. El sexto
+curso, fuera de la ventana de LinceBI, procede del autoinforme anterior.
 
 ### Criterio 7 — Orientación académica, profesional y empleabilidad [T24/T25]
 Procesos **P06** y **P07**. Subcriterios:

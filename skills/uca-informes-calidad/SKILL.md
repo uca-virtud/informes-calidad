@@ -95,7 +95,8 @@ autoinforme). Suelen ser innecesarios si se dispone del autoinforme anterior.
 están en LinceBI y que las coordinaciones sí incluyen: plazas del título doble; prácticas
 curriculares (créditos y plazas ofertadas, estudiantes que las han realizado por curso,
 convenios con plazas y tutores, tutores académicos con su dedicación); créditos
-reconocidos y resultados de primer curso si no aparecen en LinceBI; y las rutas de
+reconocidos del curso (LinceBI no los publica); resultados de primer curso si no aparecen
+en LinceBI; y las rutas de
 UCADrive de las evidencias de cada criterio. Lo que no se aporte queda `[PENDIENTE]`.
 
 Para la **composición de la CGC** (criterio 2) no hace falta pedir la lista de miembros:
@@ -140,7 +141,9 @@ duplicarse). Registra el entorno y la fecha en el bloque `extraccion` del JSON.
 
 **Serie en vivo.** Extrae de LinceBI todos los cursos de cada tabla, no solo el último;
 usa el autoinforme anterior únicamente para las columnas que LinceBI ya no muestra y
-para valores vivos incoherentes, según la "Regla de la serie histórica" del mapa. Las
+para valores vivos incoherentes, según la "Regla de la serie histórica" del mapa. Eso
+incluye el sexto curso de los resultados globales del 6.3: tómalo del autoinforme anterior
+en vez de dejarlo pendiente. Las
 cohortes de egresados son las cinco últimas con datos (convocatoria 2026:
 `2019-20 … 2023-24`).
 

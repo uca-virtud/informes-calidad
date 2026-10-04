@@ -34,7 +34,9 @@ deja `[PENDIENTE]`.
   **cinco últimas cohortes con datos en LinceBI**, aunque la plantilla traiga otras. Para
   la convocatoria 2026: `2019-20 … 2023-24`. Comprueba en LinceBI cuál es la última
   cohorte encuestada; si aún no tiene datos, desplaza la ventana un año atrás y avísalo.
-- Resultados globales de las tasas (criterio 6): se piden los **últimos seis años**.
+- Resultados globales de las tasas (criterio 6): se piden los **últimos seis años**, uno
+  más que la ventana de LinceBI. El curso más antiguo se toma del autoinforme anterior,
+  citándolo como fuente.
 
 `rellenar_autoinforme.py` sustituye los años de las cabeceras de la plantilla por los de
 `anios` y `anios_egresados` del JSON, así que basta con fijarlos ahí.
@@ -45,8 +47,9 @@ deja `[PENDIENTE]`.
   autoinforme anterior: la coordinación prioriza el dato vigente sobre la continuidad con
   el documento anterior.
 - Usa el autoinforme anterior **solo** para: (a) columnas que LinceBI ya no muestra por la
-  ventana móvil de cinco cursos (p. ej. columnas de centro antiguas) y (b) indicadores
-  cuyo valor vivo es incoherente (p. ej. fuera de escala). Indícalo en el análisis.
+  ventana móvil de cinco cursos (p. ej. columnas de centro antiguas y el sexto curso de
+  resultados globales del criterio 6) y (b) indicadores cuyo valor vivo es incoherente
+  (p. ej. fuera de escala). Indícalo en el análisis.
 - **Registra el entorno y la fecha** de extracción en el bloque `extraccion` del JSON y
   menciónalos al usuario. Las tasas son dinámicas: la **tasa de graduación (P04-05)** puede
   variar varios puntos en pocos meses. Si hay que comparar con un documento ya aprobado,
@@ -140,18 +143,18 @@ Ruta: `P07 - Medición de Resultados/` y `Encuestas Egresados/Encuesta de Egresa
   `P05-01 Evolución del personal académico del título`.
 - **Calificaciones por asignatura (Anexo 4 / T44 y T21)**: `P04 - Gest. Procesos de
   Enseñanza-Aprendizaje/Porcentaje de Calificaciones por Asignatura y Plan`.
-- **Créditos reconocidos (criterio 3)**: `Datos Académicos/Alumnado > Informe de
-  créditos reconocidos por curso académico y plan de estudios`. Si la ruta no responde,
-  búscalo con `lincebi_search_resources` («créditos reconocidos», «reconocimiento») antes
-  de marcarlo como pendiente; en ese caso pide el dato al centro.
 
 ## Datos que no están en LinceBI
 
 Son datos de gestión del centro; pídelos al usuario desde el principio (ver `SKILL.md`):
 plazas del título doble, prácticas curriculares (créditos, plazas ofertadas, estudiantes
-por curso, convenios con plazas y tutores, tutores académicos con dedicación), resultados
-de primer curso si no se encuentran en LinceBI, y columnas de centro que ya no muestre
-LinceBI.
+por curso, convenios con plazas y tutores, tutores académicos con dedicación), **créditos
+reconocidos del curso** (criterio 3; LinceBI no publica ese informe), resultados de primer
+curso si no se encuentran en LinceBI, y columnas de centro que ya no muestre LinceBI.
+
+Si el autoinforme anterior cita la fuente de uno de estos datos (p. ej. la ruta de un
+informe del Sistema de Información), reprodúcela en el `[PENDIENTE]` para que la
+coordinación lo obtenga, y cita el valor del curso anterior solo como antecedente fechado.
 
 ## Esquema del JSON de datos (entrada del script de relleno)
 

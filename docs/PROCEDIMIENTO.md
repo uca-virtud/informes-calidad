@@ -181,20 +181,26 @@ Con los dos cotejos escritos, el orquestador ejecuta
 ### Paso 6: registro y decisión del responsable
 
 `medir` solo actualiza `evals/`, que no se versiona; el registro público lo hace el
-orquestador tras cada ejecución, sin esperar a la decisión del responsable:
+orquestador tras cada ejecución, sin esperar a la decisión del responsable. En
+`docs/EVALUACIONES.md`, sin datos del título más allá de su sigla:
 
-- `docs/EVALUACIONES.md`: una sección «### Enn: <título> con <lecciones a validar>» al final
-  de «Resultados», sin datos del título. Recoge la media, las dimensiones con 2, los
-  bloqueantes y su causa, las lecciones validadas o insuficientes y las nuevas candidatas.
-  Actualiza también el párrafo «Resumen de la serie».
-- En la tabla «Lecciones y estado en la skill» del mismo documento, sustituye cada
-  «validar en Enn» por «validada en Enn» o «insuficiente en Enn (<motivo>)».
-- `web/evaluacion.html`: cifras globales tomadas de `evals/historial.md` y fecha de
-  «Última actualización».
+- «Resumen de la serie»: una fila con la ejecución, las lecciones a validar, la media y los
+  bloqueantes; revisa la frase de conclusión bajo la tabla.
+- «Ejecuciones»: una sección «### Enn: <sigla> con <lecciones a validar>» al final, con la
+  media, las dimensiones con 2, los bloqueantes y su causa, las lecciones validadas o
+  insuficientes, las nuevas candidatas y la línea «Decisión del responsable: pendiente.».
+- «Lecciones incorporadas»: en la columna «Estado», sustituye cada «validar en Enn» por
+  «validada en Enn» o «insuficiente en Enn (<motivo>)».
+- «Lecciones candidatas»: una fila por candidata nueva, con el siguiente número C libre;
+  actualiza «Observada en» de las que se repitan.
+
+Actualiza también `web/evaluacion.html`: cifras globales tomadas de `evals/historial.md` y
+fecha de «Última actualización».
 
 Después presenta al responsable un resumen con las notas, los bloqueantes, lo pendiente de
 revisión experta y las lecciones candidatas. El responsable anota en la ficha qué lecciones
-aprueba, rechaza o deja como candidatas.
+aprueba, rechaza o deja como candidatas, y el orquestador copia la decisión a la sección de
+la ejecución en `docs/EVALUACIONES.md`.
 
 ### Paso 7: material para la coordinación
 
@@ -213,7 +219,13 @@ Si el título ya tenía material de una ejecución anterior, se sustituye por el
 reciente. Después, en la fila de la ejecución de `web/evaluacion.html`, cambia «—» de la
 columna «Material» por los tres enlaces, con el mismo formato que las demás filas.
 
-### Tiempos orientativos
+### Casos especiales: línea base y cambios de rúbrica
+
+Para ejecuciones anteriores al protocolo (E01–E03) o cuando cambia la versión de la
+rúbrica, solo se lanza B (paso 4) sobre el borrador existente y después `medir` (paso 5).
+Si la ficha no tiene sección «Generación», se quita esa línea del prompt de B.
+
+## Tiempos orientativos
 
 Medidos en E04-E07 (grados de seguimiento) con las fechas de los ficheros de cada ejecución.
 No incluyen caídas de LinceBI ni la revisión del responsable.
@@ -226,29 +238,24 @@ No incluyen caídas de LinceBI ni la revisión del responsable.
 | 5. `medir` | Menos de 1 min | |
 | **Total por título** | **25-30 min** | Más el registro y la decisión del responsable (paso 6) |
 
-No midas con el tiempo transcurrido que informa `read_agent`, porque incluye la espera entre
-turnos del subagente; usa las fechas de creación de `datos.json`, `borrador.docx` y los
-cotejos.
-
-### Casos especiales: línea base y cambios de rúbrica
-
-Para ejecuciones anteriores al protocolo (E01–E03) o cuando cambia la versión de la
-rúbrica, solo se lanza B (paso 4) sobre el borrador existente y después `medir` (paso 5).
-Si la ficha no tiene sección «Generación», se quita esa línea del prompt de B.
+Para medir, usa las fechas de creación de `datos.json`, `borrador.docx` y los cotejos: el
+tiempo que informa `read_agent` incluye la espera entre turnos del subagente.
 
 ## Después de la ejecución: aplicar lecciones
 
 Las lecciones que apruebe el responsable se aplican a la skill en un cambio pequeño y con su
-propia versión, fuera de la ejecución. Después, el orquestador las añade a la tabla
-«Lecciones y estado en la skill» de `docs/EVALUACIONES.md` con su origen y el estado
-«Incorporada … (validar en Enn)», donde Enn es la siguiente ejecución de otro título.
+propia versión, fuera de la ejecución. Después, el orquestador las añade a «Lecciones
+incorporadas» de `docs/EVALUACIONES.md` con su origen, dónde están en la skill y el estado
+«Incorporada el <fecha>; validar en Enn», donde Enn es la siguiente ejecución de otro
+título. Si procede de una candidata, su fila en «Lecciones candidatas» pasa a «Incorporada
+como Lnn».
 
-Estados de una lección en esa tabla:
+Ciclo de vida de una lección:
 
-1. **Candidata**: aún no está en la skill.
+1. **Candidata**: observada, aún fuera de la skill (tabla «Lecciones candidatas»).
 2. **Incorporada**, con «validar en Enn» mientras espera contraste.
-3. **Validada en Enn** o **insuficiente en Enn**. Una lección insuficiente se refuerza con
-   una nueva (p. ej. L16 → L16b) que vuelve a validarse.
+3. **Validada en Enn** o **insuficiente en Enn (<motivo>)**. Una lección insuficiente se
+   refuerza con una nueva (p. ej. L16 → L16b) que vuelve a empezar en el estado 2.
 
 ## Reglas contra el sobreajuste
 

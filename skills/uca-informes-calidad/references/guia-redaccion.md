@@ -109,7 +109,8 @@ aplicaciones [T3].
 
 1. Encabezado con curso y convocatoria correctos; tabla de identificación completa.
 2. Columnas de años de las tablas de indicadores acordes a la convocatoria, y las de
-   egresados con las cinco últimas cohortes con datos.
+   egresados con las cinco últimas cohortes con datos; los resultados globales del 6.3
+   cubren seis cursos (el más antiguo, del autoinforme anterior).
 3. Indicadores extraídos de producción (`data.uca.es`), con entorno y fecha indicados;
    ningún indicador de satisfacción por encima de 5; misma alineación de cohortes en las
    tablas de egresados del título y del centro.
