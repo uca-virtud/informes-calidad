@@ -7,7 +7,7 @@ Uso (desde la raíz del repositorio):
   python tools/evaluacion/evaluacion.py nueva <id> [--modelo-a M] [--modelo-b M]
   python tools/evaluacion/evaluacion.py medir <Enn>
 
-Ver docs/evaluacion/procedimiento.md.
+Ver docs/PROCEDIMIENTO.md.
 """
 import argparse
 import csv
@@ -23,6 +23,7 @@ DOC_EVAL = RAIZ / "docs" / "evaluacion"
 EVALS = RAIZ / "evals"
 CASOS_DIR = EVALS / "casos"
 EJEC_DIR = EVALS / "ejecuciones"
+CASOS_CSV = EVALS / "casos.csv"
 SKILL_DIR = RAIZ / "skills" / "uca-informes-calidad"
 PLANTILLA_DOCX = SKILL_DIR / "assets" / "plantilla_autoinforme_seguimiento.docx"
 
@@ -49,7 +50,7 @@ def error(msg):
 
 
 def leer_casos():
-    with open(DOC_EVAL / "casos.csv", encoding="utf-8") as f:
+    with open(CASOS_CSV, encoding="utf-8") as f:
         return {fila["id"]: fila for fila in csv.DictReader(f)}
 
 
@@ -90,7 +91,7 @@ def siguiente_numero():
 
 def cmd_nueva(args):
     casos = leer_casos()
-    caso = casos.get(args.id) or error(f"el caso {args.id} no está en docs/evaluacion/casos.csv")
+    caso = casos.get(args.id) or error(f"el caso {args.id} no está en evals/casos.csv")
     if caso["conjunto"] == "excluido":
         error(f"{args.id} está excluido: la skill usa textos suyos como ejemplos")
     comprobar_caso(caso)
@@ -124,7 +125,7 @@ def leer_manifiesto(ruta, sin_descarga):
         man = json.loads(Path(ruta).read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:
         error(f"no se puede leer el manifiesto {ruta}: {e}")
-    with open(DOC_EVAL / "casos.csv", encoding="utf-8") as f:
+    with open(CASOS_CSV, encoding="utf-8") as f:
         columnas = next(csv.reader(f))
     faltan = [c for c in columnas if c != "seguimiento_accua" and not str(man.get(c, "")).strip()]
     if faltan:
@@ -136,7 +137,7 @@ def leer_manifiesto(ruta, sin_descarga):
         if not re.fullmatch(patron, man[campo]):
             error(f"{campo} = «{man[campo]}» no tiene el formato esperado ({patron})")
     if man["id"] in leer_casos():
-        error(f"el caso {man['id']} ya está en docs/evaluacion/casos.csv")
+        error(f"el caso {man['id']} ya está en evals/casos.csv")
     documentos = man.get("documentos", [])
     roles = [d.get("rol") for d in documentos]
     desconocidos = [r for r in roles if r not in ROLES]
@@ -208,7 +209,7 @@ def escribir_fuentes(base, man, filas):
 
 
 def anadir_fila_csv(man, columnas):
-    ruta = DOC_EVAL / "casos.csv"
+    ruta = CASOS_CSV
     contenido = ruta.read_text(encoding="utf-8")
     with open(ruta, "a", encoding="utf-8", newline="") as f:
         if contenido and not contenido.endswith("\n"):
@@ -298,7 +299,7 @@ def cmd_caso(args):
     escribir_fuentes(base, man, filas)
     comprobar_caso(man)
     anadir_fila_csv(man, columnas)
-    print(f"Añadido {man['id']} a docs/evaluacion/casos.csv y creado {(base / 'fuentes.md').relative_to(RAIZ)}")
+    print(f"Añadido {man['id']} a evals/casos.csv y creado {(base / 'fuentes.md').relative_to(RAIZ)}")
     for aviso in avisos:
         print("AVISO: " + aviso)
     print(f"Caso listo: python tools/evaluacion/evaluacion.py nueva {man['id']}")

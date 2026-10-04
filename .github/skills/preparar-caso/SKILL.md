@@ -4,7 +4,7 @@ description: >-
   Prepara un caso nuevo de evaluación de la skill de autoinformes a partir del nombre de
   un título de la Universidad de Cádiz: localiza en la web de su facultad o escuela el
   autoinforme presentado y los documentos de entrada (memoria, autoinforme anterior,
-  informe ACCUA/DEVA, plan de mejora), da de alta la fila en docs/evaluacion/casos.csv y
+  informe ACCUA/DEVA, plan de mejora), da de alta la fila en evals/casos.csv y
   los descarga en evals/casos/<id>/entrada/ y referencia/. Úsala cuando el usuario pida
   «preparar», «dar de alta» o «añadir» un caso o un título para evaluar.
 ---
@@ -12,9 +12,9 @@ description: >-
 # Preparar un caso de evaluación
 
 Entrada: el nombre de un título de la UCA (p. ej. «Grado en Historia»). Salida: el caso dado
-de alta en `docs/evaluacion/casos.csv`, con sus documentos en `evals/casos/<id>/` y su
+de alta en `evals/casos.csv`, con sus documentos en `evals/casos/<id>/` y su
 procedencia en `fuentes.md`, listo para `evaluacion.py nueva <id>` (ver
-[`docs/evaluacion/procedimiento.md`](../../../docs/evaluacion/procedimiento.md)).
+[`docs/PROCEDIMIENTO.md`](../../../docs/PROCEDIMIENTO.md)).
 
 El alta y la descarga las hace el script `tools/evaluacion/evaluacion.py`; tu trabajo es
 **encontrar y elegir** los documentos con criterio, porque cada centro publica de forma

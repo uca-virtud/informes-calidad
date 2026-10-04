@@ -16,11 +16,12 @@
   existan en el repositorio.
 - Al cambiar una skill, actualiza las referencias afectadas junto con su documento
   principal, y el estado de las lecciones en [`docs/EVALUACIONES.md`](docs/EVALUACIONES.md).
-- Para evaluar la skill, sigue [`docs/evaluacion/procedimiento.md`](docs/evaluacion/procedimiento.md).
+- Para evaluar la skill, sigue [`docs/PROCEDIMIENTO.md`](docs/PROCEDIMIENTO.md).
   No incorpores a la skill datos, frases ni nombres de los títulos usados como casos de
   evaluación, y no la modifiques durante una evaluación: las lecciones se proponen y las
-  aprueba el responsable. Los ejemplos literales de la skill solo pueden proceder de
-  títulos marcados como `excluido` en `docs/evaluacion/casos.csv`.
+  aprueba el responsable. Tras cada ejecución, regístrala en `docs/EVALUACIONES.md` (paso 6
+  del procedimiento): `medir` no lo actualiza. Los ejemplos literales de la skill solo pueden proceder de
+  títulos marcados como `excluido` en `evals/casos.csv`.
 - Para preparar un caso de evaluación a partir del nombre del título, sigue
   [`.github/skills/preparar-caso/SKILL.md`](.github/skills/preparar-caso/SKILL.md).
 - No añadas pruebas automatizadas sin que el usuario haya dado su consentimiento.
@@ -34,7 +35,9 @@
 - En la web no se publican nunca datos personales (nombres, correos, teléfonos), documentos
   (PDF, DOCX, Excel) ni contenido de `docs/peticiones-cartera/`. La única excepción son los
   enlaces de `evaluacion.html` al material de revisión de las coordinaciones, que se guarda
-  en el repositorio (`docs/evaluacion/material-coordinaciones/<caso>/`), no en la web.
+  en el repositorio (`docs/evaluacion/material-coordinaciones/<caso>/`), no en la web. Tras
+  cada ejecución, ese material se prepara según el paso 7 de
+  [`docs/PROCEDIMIENTO.md`](docs/PROCEDIMIENTO.md).
 - Para ver la web en local, abre `web/index.html` en el navegador. El despliegue lo hace
   `.github/workflows/pages.yml`, que cifra ambas páginas con StatiCrypt usando el secreto
   `SITE_PASSWORD` y falla si no existe. `web/.staticrypt.json` guarda la sal (no es secreta);

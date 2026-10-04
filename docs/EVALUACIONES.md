@@ -5,7 +5,7 @@ coordinaciones. Cada evaluación se guarda en `evals/` y aquí se resumen sus re
 lecciones aprendidas y su estado en la skill actual (`skills/uca-informes-calidad`).
 
 Desde octubre de 2026 las evaluaciones siguen el
-[procedimiento sistemático](evaluacion/procedimiento.md): un título por ejecución, rúbrica
+[procedimiento sistemático](PROCEDIMIENTO.md): un título por ejecución, rúbrica
 cerrada, autocotejo más segundo corrector de otra familia de modelos y métricas calculadas
 por `tools/evaluacion/evaluacion.py`. Las evals 1-3 se han migrado como línea base
 E01-GII, E02-GIA y E03-GIDIDP (`evals/ejecuciones/`), y su historial está en
@@ -125,13 +125,34 @@ cumplen a medias: Anexo IV solo con una selección «a completar si se requiere�
 de evolución que la serie no respalda y un objetivo de la memoria aplicado a otra tasa en
 un punto fuerte. Pasan a L23-L27 las lecciones repetidas en dos títulos.
 
+### E07: GH con L23-L27
+
+Primer título fuera de la ESI (Facultad de Filosofía y Letras). Sin incidencias con LinceBI,
+aunque no expone la relación nominal del PDI ni informes de créditos reconocidos o de
+resultados de primer curso. Media 1,57, igual que E06; D1, D2, D5 y D6 = 2; D3, D4 y D7 = 1.
+Extensión del 35 % frente a una referencia mucho más larga que las de la ESI, con 77
+`[PENDIENTE]`. B1 porque los guiones de LinceBI se consignaron como 0 % y uno se narró como
+ausencia de actividad, en contra de L19 (que funcionó en E06).
+
+Funcionan L24 (series discrepantes con el autoinforme anterior advertidas sin analizar su
+evolución), L26 (Anexo IV completo) y la parte de L23 sobre objetivos de la memoria. Se
+quedan cortas L19 (también deja pendientes datos disponibles en la memoria y el autoinforme
+anterior), L23 (una evolución del centro descrita con el signo cambiado), L25 (eficacia de
+acciones juzgada sin implantación acreditada) y L27 (notas de cumplimentación en la tabla del
+Anexo II). Nuevas candidatas, solo en este título: una fila por recomendación de ACCUA aunque
+el informe no las numere, y causas explicativas sin fuente redactadas como hipótesis. `medir`
+avisa de tres frases de la skill compartidas con referencias de casos (GH y GIDIDP),
+pendientes de revisar. Decisión del responsable pendiente.
+
 Resumen de la serie con la skill actual: E04 1,43 (B1), E05 1,43 (B1), E06 1,57 (sin
-bloqueantes), frente a 0,57-1,29 y dos o tres bloqueantes por caso en la línea base.
+bloqueantes), E07 1,57 (B1), frente a 0,57-1,29 y dos o tres bloqueantes por caso en la línea
+base.
 
 ## Lecciones y estado en la skill
 
-Estado: **Incorporada** (está en la skill actual), **Insuficiente** (está, pero una
-evaluación posterior muestra que no basta) o **Pendiente**. Las lecciones L4-L14 se
+Estado: **Incorporada** (está en la skill actual), **validada en Enn** (una ejecución
+posterior de otro título confirma que funciona), **insuficiente en Enn** (está, pero esa
+ejecución muestra que no basta) o **Pendiente**. Las lecciones L4-L14 se
 incorporaron el 2 de octubre de 2026 y están pendientes de validar con una nueva ronda de
 evaluaciones.
 
@@ -156,15 +177,15 @@ evaluaciones.
 | L17 | La depuración cubre celdas de tablas y párrafos mixtos y conserva los `[PENDIENTE]` | E01-E04 | Incorporada el 3-10-2026 (`scripts/depurar_instrucciones.py`, `SKILL.md` 4b, checklist); validar en E05 |
 | L18 | La habilitación profesional y demás datos de identidad se toman de la memoria | E04 (norma: memoria) | Incorporada el 3-10-2026 (`guia-redaccion.md`); sin incidencias en E05 |
 | L16b | Refuerzo de L16: releer el texto modelo conservado en negro y contrastarlo con la memoria | E03-E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 11; `SKILL.md`, verificación); validar en E06 |
-| L19 | Cero no es «sin dato»: sin guiones ambiguos; buscar en la entrada antes de dejar pendiente | E04, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 12; `SKILL.md`); validar en E06 |
+| L19 | Cero no es «sin dato»: sin guiones ambiguos; buscar en la entrada antes de dejar pendiente | E04, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 12; `SKILL.md`); validada en E06; insuficiente en E07 (B1: guiones como 0 %; pendientes con dato en la entrada) |
 | L20 | Anexos con fuente en LinceBI extraídos del informe previsto; un agregado o enlace genérico no basta (C5) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 12); validar en E06 |
 | L21 | Recomendaciones de informes ACCUA anteriores declaradas abiertas, con número y fecha (C4) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, plan de mejora y checklist 13); validar en E06 |
 | L22 | Concluir solo lo que mide el indicador; sin generalizar sin comprobar (C2) | E01-E03, E05 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 14); parcial en E06 → L23 |
-| L23 | Refuerzo de L22: adjetivos de evolución contrastados con toda la serie; objetivos de la memoria solo con su tasa, en todas las apariciones | E01-E03, E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 14); validar en E07 |
-| L24 | Contrastar los cursos comunes con el autoinforme anterior; sin analizar la evolución si hay diferencias sistemáticas | E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, principios y checklist 15); validar en E07 |
-| L25 | Ampliación de L16: estado conocido solo por el autoinforme anterior no es vigente; sin juzgar la eficacia sin implantación acreditada | E04, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`); validar en E07 |
-| L26 | Refuerzo de L20: anexo completo o con enlace específico al informe íntegro, nunca condicionado | E01-E03, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`); validar en E07 |
-| L27 | Verificar restos de plantilla en negro: notas de cumplimentación, opciones alternativas, filas de ejemplo, enlaces pegados | E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 16; `SKILL.md`); validar en E07 |
+| L23 | Refuerzo de L22: adjetivos de evolución contrastados con toda la serie; objetivos de la memoria solo con su tasa, en todas las apariciones | E01-E03, E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 14); insuficiente en E07 (evolución del centro con el signo cambiado; objetivos de la memoria correctos) |
+| L24 | Contrastar los cursos comunes con el autoinforme anterior; sin analizar la evolución si hay diferencias sistemáticas | E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, principios y checklist 15); validada en E07 |
+| L25 | Ampliación de L16: estado conocido solo por el autoinforme anterior no es vigente; sin juzgar la eficacia sin implantación acreditada | E04, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`); insuficiente en E07 (eficacia juzgada sin implantación acreditada) |
+| L26 | Refuerzo de L20: anexo completo o con enlace específico al informe íntegro, nunca condicionado | E01-E03, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`); validada en E07 |
+| L27 | Verificar restos de plantilla en negro: notas de cumplimentación, opciones alternativas, filas de ejemplo, enlaces pegados | E05, E06 | Incorporada el 3-10-2026 (`guia-redaccion.md`, checklist 16; `SKILL.md`); insuficiente en E07 (notas de cumplimentación en la tabla del Anexo II) |
 
 ## Limitaciones de las evals 1-3 y cómo las resuelve el procedimiento
 
@@ -174,9 +195,9 @@ evaluaciones.
 | **Autoevaluación.** La misma IA genera y juzga y, en la eval 1, modificó la skill sin revisión humana. | Se mantiene el autocotejo (A) y se añade un corrector independiente de otra familia (B); solo el responsable aprueba cambios en la skill. |
 | **Referencia imperfecta.** El autoinforme humano contiene errores (evals 2 y 3). | Causa **H** en las discrepancias: no penaliza y queda pendiente de revisión experta. |
 | **Datos no reproducibles.** LinceBI cambia entre marzo y julio, y no se registró entorno ni fecha. | La ficha registra host y fecha de extracción; `datapru` es bloqueante (B3); las diferencias por volatilidad son causa **D**. |
-| **Cobertura.** Solo seguimiento de grados de la ESI. | Catálogo `docs/evaluacion/casos.csv`; el siguiente título se elige por variedad (otro centro, máster, renovación). |
+| **Cobertura.** Solo seguimiento de grados de la ESI. | Catálogo `evals/casos.csv`; el siguiente título se elige por variedad (otro centro, máster, renovación). |
 | **Fuga de casos en la skill.** `references/estilo-y-ejemplos.md` contiene ejemplos tomados de los autoinformes de la ESI que se usan como referencia (`medir` detecta 121 frases exclusivas de los tres casos), lo que puede inflar sus notas. | Aviso automático de huellas en `medir`. Resuelto el 3 de octubre de 2026: los extractos se sustituyeron por otros de GIM (excluido de la evaluación) o por plantillas con marcadores. La línea base E01-E03 se obtuvo con la skill anterior y es optimista; E04 medirá ya la skill sin fuga. |
 
 ## Cómo añadir una evaluación
 
-Sigue [docs/evaluacion/procedimiento.md](evaluacion/procedimiento.md).
+Sigue [docs/PROCEDIMIENTO.md](PROCEDIMIENTO.md).

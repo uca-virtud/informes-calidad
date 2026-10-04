@@ -2,7 +2,7 @@
 
 Patrones extraídos de autoinformes de seguimiento reales de la UCA ya presentados.
 Los extractos literales proceden de títulos que no se usan como casos de evaluación de
-la skill (ver `docs/evaluacion/procedimiento.md`); el resto son plantillas con marcadores
+la skill (ver `docs/PROCEDIMIENTO.md`); el resto son plantillas con marcadores
 `<…>`. Reprodúcelos para que el borrador "suene" como los que
 elabora la coordinación. Adapta siempre los datos concretos al título en cuestión.
 

@@ -1,0 +1,268 @@
+# Procedimiento de evaluación de la skill
+
+Cómo evaluar `skills/uca-informes-calidad` de forma sistemática. Cada **ejecución** evalúa
+**un título** y se orquesta entera desde GitHub Copilot CLI: el agente principal
+(orquestador) lanza dos subagentes y ejecuta el script `tools/evaluacion/evaluacion.py`.
+
+El responsable del proyecto valida el caso, decide qué lecciones se aplican a la skill y si
+se envía material a la coordinación; todo lo demás lo hacen el orquestador y los subagentes.
+
+## Piezas
+
+| Pieza | Qué es |
+|---|---|
+| `tools/evaluacion/evaluacion.py` | Script con los subcomandos `enlaces`, `caso`, `nueva` y `medir`. |
+| `evals/casos.csv` | Catálogo de casos (`id`, `titulo`, `nivel`, `centro`, `tipo`, `curso`, `convocatoria`, `seguimiento_accua` y `conjunto`: `aprendizaje`, `reserva` o `excluido`). |
+| `docs/evaluacion/rubrica.md` | Rúbrica cerrada: D1–D7 (0-1-2), bloqueantes B1–B3, causas S/D/I/H/E. |
+| `docs/evaluacion/plantilla-cotejo.md` | Formato obligatorio de `cotejo-A.md` y `cotejo-B.md`. |
+| `docs/evaluacion/plantilla-ficha.md` | Ficha de cada ejecución (la crea el script). |
+| `evals/casos/<id>/entrada/` | Lo que recibiría la skill: autoinforme anterior, memoria, informe ACCUA… |
+| `evals/casos/<id>/referencia/autoinforme-humano.*` | Autoinforme presentado por la coordinación. **Nunca** lo ve A al generar. |
+| `evals/casos/<id>/fuentes.md` | Procedencia de los documentos del caso (URL, fecha, SHA-256), si se preparó con `caso`. |
+| `evals/ejecuciones/Enn-<id>/` | Ficha, borrador, cotejos y métricas de la ejecución. |
+| `evals/historial.md` | Tabla con todas las ejecuciones (la regenera `medir`). |
+| `docs/EVALUACIONES.md` | Registro versionado: resumen de cada ejecución y estado de las lecciones. |
+| `web/evaluacion.html` | Página pública con las cifras globales. |
+
+`evals/` contiene datos personales y no se versiona: al repositorio y a la web solo llegan
+cifras agregadas, lecciones generalizadas y, si el responsable lo aprueba, el material del
+paso 7.
+
+## Requisitos previos (una vez)
+
+1. MCP de LinceBI configurado en Copilot CLI contra `data.uca.es` (lo configura el
+   responsable; el agente no ve las credenciales).
+2. Entorno Python con `pip install -r tools/evaluacion/requirements.txt`.
+3. Modelos fijos: **A** = `claude-opus-5.5` (genera y se autocoteja); **B** = `gpt-6.1-sol`
+   (segundo corrector, de otra familia). Si cambian, se anota en la ficha (campos «Modelo A» y
+   «Modelo B») y en la sección de la ejecución en `docs/EVALUACIONES.md`.
+4. Que Copilot use la skill del repositorio (`skills/uca-informes-calidad/SKILL.md`), no una
+   copia global antigua.
+
+## Antes de la ejecución: el caso
+
+Elige el título **por variedad** (otro centro, máster, renovación…) frente a los ya
+evaluados. Hay dos formas de preparar el caso:
+
+- **Automática** (recomendada): pide al agente «Prepara un caso con el `<título>`». El agente
+  sigue la skill de proyecto
+  [`.github/skills/preparar-caso/`](../.github/skills/preparar-caso/SKILL.md):
+  1. Localiza en la web del centro el último autoinforme publicado (la referencia) y los
+     documentos de entrada anteriores a él.
+  2. Te pregunta ante cualquier duda y por el `conjunto`.
+  3. Ejecuta `python tools/evaluacion/evaluacion.py caso <fuentes.json>`, que añade la fila
+     a `casos.csv`, descarga los documentos y deja su procedencia en
+     `evals/casos/<id>/fuentes.md`.
+- **Manual**: añade una fila a `casos.csv` y copia:
+  - en `evals/casos/<id>/entrada/`: `autoinforme-anterior.*`, `memoria.*` y, si existen,
+    `informe-accua.*` y `plan-mejora.*`;
+  - en `evals/casos/<id>/referencia/`: `autoinforme-humano.*`.
+
+  Para registrar también la procedencia en `fuentes.md`, ejecuta `caso` con `--sin-descarga`.
+
+## Pasos de una ejecución
+
+Pídeselo al orquestador con: «Evalúa la skill con el caso `<id>` siguiendo
+docs/PROCEDIMIENTO.md». La tabla resume los pasos; cada uno se detalla después, con su
+prompt cuando lo lleva.
+
+| Paso | Quién | Acción | Produce |
+|---|---|---|---|
+| [1](#paso-1-abrir-la-ejecución) | Orquestador | `evaluacion.py nueva <id>` | `Enn-<id>/ficha.md` |
+| [2](#paso-2-generación-a) | Subagente A | Genera el borrador | `borrador.docx`, `datos.json`, sección «Generación» de la ficha |
+| [3](#paso-3-autocotejo-a) | Mismo subagente A | Coteja su borrador | `cotejo-A.md` |
+| [4](#paso-4-segundo-corrector-b) | Subagente B | Coteja el borrador | `cotejo-B.md` |
+| [5](#paso-5-medición-y-consolidación) | Orquestador | `evaluacion.py medir Enn` | `metricas.json`, ficha completada, `evals/historial.md` |
+| [6](#paso-6-registro-y-decisión-del-responsable) | Orquestador → responsable | Registra la ejecución y la resume al responsable, que decide | `docs/EVALUACIONES.md`, `web/evaluacion.html`, decisión en la ficha |
+| [7](#paso-7-material-para-la-coordinación) | Orquestador, **solo si el responsable lo aprueba** | Prepara el material para la coordinación | `docs/evaluacion/material-coordinaciones/<id>/` |
+
+Los pasos 3 y 4 se lanzan a la vez en cuanto existe `borrador.docx`.
+
+Reglas del orquestador durante toda la ejecución:
+
+- A no recibe la ruta de `referencia/` hasta el paso 3 (por eso el prompt del paso 2 solo le
+  permite leer `entrada/`). B no recibe `cotejo-A.md`.
+- Si A detecta `datapru.uca.es`, se detiene la ejecución (bloqueante B3) y se avisa al
+  responsable; nunca se continúa con datos de pruebas. Si LinceBI deja de responder, se
+  reintenta; si no se recupera, se detiene y se avisa igualmente.
+- El orquestador **no modifica la skill**. Las lecciones se aplican después (ver
+  [Después de la ejecución](#después-de-la-ejecución-aplicar-lecciones)).
+- En los prompts, sustituye `<…>` con los datos de la ficha y de `casos.csv`.
+
+### Paso 1: abrir la ejecución
+
+El orquestador ejecuta `python tools/evaluacion/evaluacion.py nueva <id>`, que asigna el
+número `Enn` y crea `evals/ejecuciones/Enn-<id>/ficha.md`.
+
+### Paso 2: generación (A)
+
+El orquestador lanza el subagente A (`general-purpose`, `claude-opus-5.5`, en segundo
+plano) con este prompt:
+
+```text
+Eres el subagente generador de una evaluación de la skill. Trabaja en la raíz del
+repositorio uca-informes-calidad. Lee y sigue skills/uca-informes-calidad/SKILL.md (no uses
+ninguna otra skill de autoinformes instalada) para redactar el autoinforme de <tipo> del
+<titulo>, curso <curso>, convocatoria <convocatoria>.
+
+No puedes preguntar al usuario. Estas son sus respuestas a lo que la skill pregunta:
+- Tipo: <tipo>. ¿Seguimiento ACCUA?: <sí/no/no consta: asume sí y anótalo>.
+- Indicadores: LinceBI (data.uca.es) mediante las herramientas lincebi_*.
+- Documentos aportados: los de evals/casos/<id>/entrada/ (lístalos).
+- Datos internos del centro: no se aportan; déjalos [PENDIENTE] como indica la skill.
+Si la skill pidiera algo más, toma el supuesto más razonable y anótalo.
+
+Prohibido: leer de evals/casos/<id>/ nada que no esté en entrada/; leer las carpetas de
+otras ejecuciones en evals/ejecuciones/; modificar ficheros de skills/. Si el host de
+LinceBI no es data.uca.es, detente y explícalo.
+
+Escribe en evals/ejecuciones/Enn-<id>/: borrador.docx (entregable de la skill) y
+datos.json (el JSON de datos con el bloque extraccion). Completa la sección
+«Generación» de ficha.md (host, fecha de extracción, documentos usados, supuestos,
+decisiones, incidencias). Termina con un resumen breve; no hagas todavía ningún cotejo.
+```
+
+### Paso 3: autocotejo (A)
+
+Cuando existe `borrador.docx`, el orquestador envía al mismo subagente A (con
+`write_agent`) este prompt:
+
+```text
+Ahora coteja tu borrador con el autoinforme presentado por la coordinación:
+evals/casos/<id>/referencia/autoinforme-humano.*. No modifiques el borrador.
+
+Puntúa con docs/evaluacion/rubrica.md y escribe evals/ejecuciones/Enn-<id>/cotejo-A.md
+con el formato exacto de docs/evaluacion/plantilla-cotejo.md (no cambies los títulos de
+sección ni las columnas de las tablas). Para cada discrepancia relevante asigna una causa
+S/D/I/H/E; el autoinforme humano no es la verdad: si el borrador es correcto, la causa es
+H. Propón lecciones solo para causas S: reglas generales sin datos del título, indicando
+su respaldo (norma, otros títulos o «ninguno aún»). No edites la skill.
+```
+
+### Paso 4: segundo corrector (B)
+
+A la vez que el paso 3, el orquestador lanza el subagente B (`general-purpose`,
+`gpt-6.1-sol`) con este prompt:
+
+```text
+Eres un corrector independiente. Evalúa un borrador de autoinforme de calidad de la
+Universidad de Cádiz generado por IA, comparándolo con el que presentó la coordinación.
+
+- Borrador: evals/ejecuciones/Enn-<id>/borrador.docx (y datos.json si existe).
+- Autoinforme humano: evals/casos/<id>/referencia/autoinforme-humano.*.
+- Documentos de entrada que tuvo la IA: evals/casos/<id>/entrada/.
+- Contexto de la generación: sección «Generación» de evals/ejecuciones/Enn-<id>/ficha.md.
+- Reglas que debía seguir: skills/uca-informes-calidad/ (para decidir si una
+  discrepancia es de causa S).
+
+No leas cotejo-A.md ni otras ejecuciones. No modifiques nada salvo el fichero de salida.
+Puntúa con docs/evaluacion/rubrica.md y escribe evals/ejecuciones/Enn-<id>/cotejo-B.md con
+el formato exacto de docs/evaluacion/plantilla-cotejo.md. Justifica cada nota con una
+evidencia concreta (apartado y texto o valor). El autoinforme humano no es la verdad: si
+el borrador es correcto y el humano no, la causa es H.
+```
+
+### Paso 5: medición y consolidación
+
+Con los dos cotejos escritos, el orquestador ejecuta
+`python tools/evaluacion/evaluacion.py medir Enn`, que consolida así:
+
+- La nota final es la de B (o la de A si no hay B).
+- Pasan a «Pendiente de revisión experta» de la ficha: las dimensiones en las que A y B
+  difieren 2 puntos, los bloqueantes y las discrepancias de causa H o I de ambos cotejos.
+- Las métricas automáticas (extensión, PF/PD/AM, `[PENDIENTE]`, Anexo I) son aproximadas.
+  La del Anexo I cuenta los valores del borrador que aparecen en cualquier parte del texto
+  humano, así que es solo una cota superior: en la línea base dio 97 % donde B comprobó
+  menos del 80 % celda a celda. La nota de D2 la pone B comparando por celda.
+- Avisa de **huellas**: frases de 8 palabras que solo aparecen en la referencia de un
+  título y también en la skill. Indican que la skill contiene texto de un caso de
+  evaluación, lo que infla sus notas en ese caso.
+
+### Paso 6: registro y decisión del responsable
+
+`medir` solo actualiza `evals/`, que no se versiona; el registro público lo hace el
+orquestador tras cada ejecución, sin esperar a la decisión del responsable:
+
+- `docs/EVALUACIONES.md`: una sección «### Enn: <título> con <lecciones a validar>» al final
+  de «Resultados», sin datos del título. Recoge la media, las dimensiones con 2, los
+  bloqueantes y su causa, las lecciones validadas o insuficientes y las nuevas candidatas.
+  Actualiza también el párrafo «Resumen de la serie».
+- En la tabla «Lecciones y estado en la skill» del mismo documento, sustituye cada
+  «validar en Enn» por «validada en Enn» o «insuficiente en Enn (<motivo>)».
+- `web/evaluacion.html`: cifras globales tomadas de `evals/historial.md` y fecha de
+  «Última actualización».
+
+Después presenta al responsable un resumen con las notas, los bloqueantes, lo pendiente de
+revisión experta y las lecciones candidatas. El responsable anota en la ficha qué lecciones
+aprueba, rechaza o deja como candidatas.
+
+### Paso 7: material para la coordinación
+
+Este paso copia a la parte versionada documentos de `evals/` que verán terceros. Por eso el
+orquestador pregunta antes al responsable e indica si la ejecución tiene bloqueantes (puede
+preferir no enviar un borrador con B1 o B2). Si lo aprueba, crea
+`docs/evaluacion/material-coordinaciones/<id>/` con:
+
+| Fichero | Origen |
+|---|---|
+| `borrador-ia.docx` | `evals/ejecuciones/Enn-<id>/borrador.docx`, sin cambios |
+| `autoinforme-coordinacion.pdf` | `evals/casos/<id>/referencia/autoinforme-humano.*` (convertido a PDF si no lo es) |
+| `rubrica-valoracion.xlsx` | Copia de la de otro título cambiando solo las celdas C3 (nombre del título) y C4 («<Tipo>, curso <aaaa/aa> (convocatoria <aaaa>)») |
+
+Si el título ya tenía material de una ejecución anterior, se sustituye por el de la más
+reciente. Después, en la fila de la ejecución de `web/evaluacion.html`, cambia «—» de la
+columna «Material» por los tres enlaces, con el mismo formato que las demás filas.
+
+### Tiempos orientativos
+
+Medidos en E04-E07 (grados de seguimiento) con las fechas de los ficheros de cada ejecución.
+No incluyen caídas de LinceBI ni la revisión del responsable.
+
+| Paso | Duración | Observaciones |
+|---|---|---|
+| 1. `nueva` | Segundos | |
+| 2. Generación (A) | 15-21 min | Unos 11-12 min hasta tener `datos.json` (lectura de entrada y LinceBI); el resto, redacción y depuración del `.docx` |
+| 3 y 4. Autocotejo (A) y corrector (B) | 6-9 min | En paralelo; cada uno tarda 5-9 min |
+| 5. `medir` | Menos de 1 min | |
+| **Total por título** | **25-30 min** | Más el registro y la decisión del responsable (paso 6) |
+
+No midas con el tiempo transcurrido que informa `read_agent`, porque incluye la espera entre
+turnos del subagente; usa las fechas de creación de `datos.json`, `borrador.docx` y los
+cotejos.
+
+### Casos especiales: línea base y cambios de rúbrica
+
+Para ejecuciones anteriores al protocolo (E01–E03) o cuando cambia la versión de la
+rúbrica, solo se lanza B (paso 4) sobre el borrador existente y después `medir` (paso 5).
+Si la ficha no tiene sección «Generación», se quita esa línea del prompt de B.
+
+## Después de la ejecución: aplicar lecciones
+
+Las lecciones que apruebe el responsable se aplican a la skill en un cambio pequeño y con su
+propia versión, fuera de la ejecución. Después, el orquestador las añade a la tabla
+«Lecciones y estado en la skill» de `docs/EVALUACIONES.md` con su origen y el estado
+«Incorporada … (validar en Enn)», donde Enn es la siguiente ejecución de otro título.
+
+Estados de una lección en esa tabla:
+
+1. **Candidata**: aún no está en la skill.
+2. **Incorporada**, con «validar en Enn» mientras espera contraste.
+3. **Validada en Enn** o **insuficiente en Enn**. Una lección insuficiente se refuerza con
+   una nueva (p. ej. L16 → L16b) que vuelve a validarse.
+
+## Reglas contra el sobreajuste
+
+1. Cada título nuevo contrasta las lecciones anteriores: una lección solo pasa a
+   **validada** cuando mejora (o no empeora) un título distinto evaluado después.
+2. Filtro de admisión: la lección procede de la normativa o la guía, se observó en 2 o más
+   títulos de 2 o más coordinaciones, o la aprueba la Unidad de Calidad. Si no, queda como
+   **candidata**.
+3. La skill no contiene datos, frases ni nombres de los casos de evaluación. Sus ejemplos
+   literales proceden solo de títulos marcados como `conjunto = excluido` en `casos.csv`
+   (hoy, GIM, cuyos autoinformes están en `samples/`), que nunca se evalúan. El aviso de
+   huellas de `medir` lo comprueba; una frase suelta compartida con un título excluido del
+   mismo centro es redacción común y puede quedarse.
+4. El autoinforme humano es una referencia, no la verdad.
+5. Elige el siguiente título por variedad; reserva algunos (`conjunto = reserva`) que no
+   se usan para aprender y se evalúan en los hitos para detectar regresiones.
+6. Cambios en la skill pequeños, versionados y aprobados por el responsable.
