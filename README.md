@@ -38,9 +38,10 @@ no se versionan.
 `web/` contiene dos páginas estáticas para los colectivos implicados de la UCA:
 
 - `index.html`: avance del proyecto por fases.
-- `evaluacion.html`: resultados de la evaluación de la skill por ejecución (versión, nota,
-  errores graves y ficha resumida), nota de cada aspecto de la rúbrica, lecciones aprendidas
-  en cada versión, texto de la skill y material para que las coordinaciones la revisen.
+- `evaluacion.html`: seguimiento de la evaluación de la skill para los implicados: resumen de
+  resultados, proceso de evaluación, rúbrica, evolución de la nota, tabla por ejecución (nota
+  de cada aspecto, media, errores graves y ficha resumida), lecciones aprendidas en cada
+  versión, próximos pasos, texto de la skill y material para que las coordinaciones la revisen.
 
 Al hacer push a `main`, `.github/workflows/pages.yml` incrusta `SKILL.md` en la página de
 evaluación, cifra ambas con una contraseña compartida (StatiCrypt, secreto `SITE_PASSWORD`;

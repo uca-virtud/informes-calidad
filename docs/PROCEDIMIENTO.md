@@ -197,11 +197,17 @@ orquestador tras cada ejecución, sin esperar a la decisión del responsable. En
 Actualiza también `web/evaluacion.html`, sin datos personales ni detalles que identifiquen
 documentos internos:
 
-- cifras globales tomadas de `evals/historial.md`;
-- en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, nota y un
-  chip por bloqueante con su motivo generalizado en el tooltip) y su fila desplegable (notas
-  D1-D7, valoración breve, métricas de `medir`, bloqueantes y material);
-- la fila de la ejecución en «Qué ha mejorado y qué falta»;
+- cifras globales tomadas de `evals/historial.md`, en las tarjetas de «En resumen» (versiones
+  iniciales frente a asistente actual, con sus barras y porcentaje de cambio) y en la línea de
+  contexto;
+- en «Resultados», la barra de la ejecución en «Evolución de la nota» y, si repite un título, su
+  par en «Mismo título, antes y después»;
+- en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, nota de cada
+  aspecto D1-D7, media y un chip con el número de errores graves cuyo tooltip nombra cada uno
+  —dato inventado, valor contradictorio u origen no garantizado— con su motivo generalizado; no
+  se publican los códigos B1-B3) y su fila desplegable (valoración breve, métricas de `medir`
+  con las etiquetas del glosario «Cómo leer la ficha», errores graves y material);
+- la lista «Qué dicen los resultados», si la ejecución la cambia;
 - en «Qué aprende el asistente en cada versión», el estado de las lecciones contrastadas
   (Funciona, Reforzada, A reforzar, Por comprobar), sus recuentos y «Próximos pasos»;
 - la fecha de «Última actualización».
