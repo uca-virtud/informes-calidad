@@ -26,7 +26,7 @@ no se versionan.
 | `.github/skills/preparar-caso/` | Skill de proyecto que prepara un caso de evaluación a partir del nombre del título, buscando sus documentos en la web del centro. |
 | `tools/evaluacion/` | Script `evaluacion.py` (`enlaces`, `caso`, `nueva`, `medir`, `valoracion`) del procedimiento de evaluación. |
 | `docs/` | Visión, procedimiento y registro de evaluaciones. |
-| `docs/evaluacion/` | Rúbrica, plantillas de cotejo y ficha, y `material-coordinaciones/<caso>/` (borrador de la IA, autoinforme de la coordinación y rúbrica de valoración en Excel de cada título). |
+| `docs/evaluacion/` | Rúbrica, plantillas de cotejo y ficha, y `material-coordinaciones/<caso>/` (borrador de la IA y sus datos en JSON, autoinforme de la coordinación y rúbrica de valoración en Excel de cada título). |
 | `docs/peticiones-cartera/` | Peticiones de cartera de los centros y solicitud de la fase 1 al Sistema de Información (modelo de datos e informe de indicadores del Anexo I). *Solo local.* |
 | `evals/` | Catálogo de casos (`casos.csv`), `casos/<id>/` (entrada y autoinforme humano de referencia), `ejecuciones/Enn-<id>/` (ficha, borrador, cotejos y métricas) e `historial.md`. *Solo local.* |
 | `samples/` | Autoinformes reales de ejemplo (seguimiento y renovación). *Solo local.* |

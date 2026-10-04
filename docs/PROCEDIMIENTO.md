@@ -248,12 +248,13 @@ preferir no enviar un borrador con B1 o B2). Si lo aprueba, crea
 | Fichero | Origen |
 |---|---|
 | `borrador-ia.docx` | `evals/ejecuciones/Enn-<id>/borrador.docx`, sin cambios |
+| `datos-ia.json` | `evals/ejecuciones/Enn-<id>/datos.json`, sin cambios (si la ejecución lo tiene) |
 | `autoinforme-coordinacion.pdf` | `evals/casos/<id>/referencia/autoinforme-humano.*` (convertido a PDF si no lo es) |
 | `rubrica-valoracion.xlsx` | Copia de la de otro título cambiando solo las celdas C3 (nombre del título) y C4 («<Tipo>, curso <aaaa/aa> (convocatoria <aaaa>)») |
 
 Si el título ya tenía material de una ejecución anterior, se sustituye por el de la más
 reciente. Después, en la fila desplegable de la ejecución de `web/evaluacion.html`, cambia
-«—» del apartado «Material» por los tres enlaces, con el mismo formato que las demás filas.
+«—» del apartado «Material» por un enlace a cada fichero, con el mismo formato que las demás filas.
 
 ### Paso 8: valoración de la coordinación y consolidación final
 

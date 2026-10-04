@@ -35,7 +35,7 @@ cifras agregadas, lecciones generalizadas y el material aprobado del paso 7 del
 procedimiento.
 
 La web publica solo el avance y cifras globales. Nunca publica datos personales (nombres,
-correos, teléfonos), documentos (PDF, DOCX, Excel) ni contenido de
+correos, teléfonos), documentos (PDF, DOCX, Excel, JSON) ni contenido de
 `docs/peticiones-cartera/`. Única excepción: los enlaces de `evaluacion.html` al material de
 `docs/evaluacion/material-coordinaciones/`, que está en el repositorio, no en `web/`.
 
