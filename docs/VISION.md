@@ -24,12 +24,11 @@ informes generados con ayuda de IA.
    el cuadro de mando se solicitará más adelante. Actualmente en desarrollo. Detalle en 
    [solicitud-SI-fase1.md](peticiones-cartera/solicitud-SI-fase1.md).
 2. Desarrollar un MCP de conexión (stdin) con LinceBI (ya desarrollado como un proyecto de Spring Boot con Maven).
-3. Desarrollar skill para rellenar la plantilla de informes de calidad (disponible en carpeta 
-   skills/uca-informes-calidad; cubre seguimiento y renovación de la acreditación). La versión anterior, solo de 
-   seguimiento, se ha evaluado con tres grados de la ESI frente a sus autoinformes reales: ver 
-   [EVALUACIONES.md](EVALUACIONES.md).
+3. Desarrollar skill para rellenar la plantilla de informes de calidad (desarrollada en carpeta 
+   skills/uca-informes-calidad; cubre seguimiento y renovación de la acreditación).
 4. Pilotaje en Escuela Superior de Ingeniería y Facultad de Filosofía y Letras, para evaluación y mejora continua de 
-   las skills y de todo el proceso.
+   las skills y de todo el proceso. En curso: la skill se evalúa frente a los autoinformes reales de los títulos; 
+   ver [EVALUACIONES.md](EVALUACIONES.md).
 5. Ampliación del MCP para trabajar en modo HTTP, previa autenticación con SSO/LDAP.
 6. Establecer el entorno procedimental y operativo para la unidad técnica informática, la unidad de calidad y para
    los coordinadores de títulos.

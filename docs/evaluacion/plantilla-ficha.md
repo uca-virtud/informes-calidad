@@ -34,10 +34,17 @@
 <!-- medir:inicio -->
 <!-- medir:fin -->
 
+## Valoración de la coordinación (completa `evaluacion.py valoracion`)
+
+<!-- valoracion:inicio -->
+Pendiente de recibir la hoja de valoración (paso 8).
+<!-- valoracion:fin -->
+
 ## Pendiente de revisión experta
 
 <Dimensiones con notas A y B que difieren en 2, discrepancias de causa H o I y bloqueantes. Las
-lista `medir`; el responsable puede añadir o quitar.>
+lista `medir`; `valoracion` añade las dimensiones en las que la coordinación y la IA difieren
+1 punto o más y los desacuerdos sobre errores graves. El responsable puede añadir o quitar.>
 
 ## Decisión del responsable
 

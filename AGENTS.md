@@ -45,8 +45,9 @@ correos, teléfonos), documentos (PDF, DOCX, Excel) ni contenido de
   cuando cambie una fase (en `docs/`, en la skill o porque lo comunique el usuario).
 - `web/evaluacion.html` (resultados) se actualiza tras cada ejecución (pasos 6 y 7 del
   procedimiento). `web/procedimiento.html` explica el proceso y la rúbrica: actualízalo cuando
-  cambien en `docs/PROCEDIMIENTO.md`. El texto de `SKILL.md` lo incrusta el workflow en su
-  marcador `SKILL_MD` al publicar.
+  cambien en `docs/PROCEDIMIENTO.md`. `web/asistente.html` explica qué es el asistente y cómo
+  funciona: actualízalo cuando cambien la skill o el MCP. El texto de `SKILL.md` lo incrusta el workflow en
+  el marcador `SKILL_MD` de `web/asistente.html` al publicar.
 - Cada versión nueva de la skill recibe el siguiente número (v7, v8…) en `docs/EVALUACIONES.md`
   y en la línea temporal de `web/evaluacion.html`.
 - Al modificar una página, cambia su fecha de «Última actualización».

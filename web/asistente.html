@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Informes de calidad UCA · El asistente</title>
+<style>
+  :root { --azul: #1f3a6e; --gris: #5f6b7a; --fondo: #f5f7fa; --linea: #e6eaf0; --curso: #ef8f00; --hecho: #2e7d32; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1d2733; background: var(--fondo); }
+  header { background: var(--azul); color: #fff; padding: 2.5rem 1.5rem; }
+  header h1 { margin: 0 0 .4rem; font-size: 1.8rem; }
+  header p { margin: 0; opacity: .9; }
+  nav { background: #172d57; padding: 0 1.5rem; }
+  nav a { display: inline-block; color: #fff; text-decoration: none; padding: .7rem 1rem; opacity: .8; }
+  nav a:hover, nav a[aria-current] { opacity: 1; box-shadow: inset 0 -3px 0 #fff; }
+  main { max-width: 1060px; margin: 0 auto; padding: 1.5rem; }
+  section { background: #fff; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  h2 { margin-top: 0; color: var(--azul); font-size: 1.3rem; }
+  h4 { margin: 0 0 .5rem; font-size: .95rem; color: var(--azul); }
+  a { color: var(--azul); }
+  .leyenda { color: var(--gris); font-size: .9rem; }
+  .aviso { border-left: 4px solid var(--curso); background: #fff7ea; border-radius: 0 8px 8px 0; padding: .7rem 1rem; font-size: .92rem; margin: 1rem 0 0; }
+
+  .piezas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }
+  .pieza { background: #f9fafc; border-radius: 8px; border-top: 4px solid var(--azul); padding: .9rem 1rem; font-size: .9rem; }
+  .pieza h4 { margin-bottom: .3rem; }
+  .pieza.mcp { border-top-color: var(--hecho); } .pieza.agente { border-top-color: var(--curso); }
+  .flecha { text-align: center; color: var(--gris); font-size: .9rem; margin: 0; }
+
+
+  details { border: 1px solid var(--linea); border-radius: 8px; padding: .8rem 1rem; }
+  summary { cursor: pointer; font-weight: 600; color: var(--azul); }
+  .skill { max-height: 70vh; overflow: auto; margin-top: 1rem; font-size: .92rem; }
+  .skill h1 { font-size: 1.3rem; } .skill h2 { font-size: 1.15rem; } .skill h3 { font-size: 1rem; }
+  .skill pre, .skill code { background: #f0f2f5; border-radius: 4px; font-size: .85rem; }
+  .skill pre { padding: .6rem; overflow-x: auto; }
+  .skill table { width: 100%; border-collapse: collapse; }
+  .skill th, .skill td { text-align: left; padding: .4rem; border-top: 1px solid var(--linea); vertical-align: top; }
+  footer { text-align: center; color: var(--gris); font-size: .85rem; padding: 0 1.5rem 2rem; }
+  @media (max-width: 760px) { .piezas { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Informes de calidad UCA</h1>
+  <p>El asistente de redacción de autoinformes: qué es y cómo funciona</p>
+</header>
+<nav>
+  <a href="index.html">Avance</a>
+  <a href="asistente.html" aria-current="page">El asistente</a>
+  <a href="procedimiento.html">Procedimiento de evaluación</a>
+  <a href="evaluacion.html">Resultados de la evaluación</a>
+</nav>
+
+<main>
+  <section id="presentacion">
+    <h2>Qué es</h2>
+    <p>Un asistente de IA que redacta el <strong>borrador del autoinforme</strong> de seguimiento o de renovación de
+      la acreditación de un título (modelo ACCUA/DEVA): rellena la plantilla oficial con los indicadores de LinceBI y
+      redacta el análisis. La coordinación revisa, completa y aprueba el borrador.</p>
+    <p class="aviso">Desarrollado y en <strong>pilotaje</strong> en la ESI y la Facultad de Filosofía y Letras:
+      <a href="procedimiento.html">cómo se evalúa</a> y <a href="evaluacion.html">resultados</a>.</p>
+  </section>
+
+  <section id="piezas">
+    <h2>Cómo funciona</h2>
+    <div class="piezas">
+      <div class="pieza agente"><h4>Agente de IA</h4>Conversa con quien lo usa, lee los documentos aportados y
+        redacta el borrador.</div>
+      <div class="pieza"><h4>Skill de autoinformes</h4>Instrucciones, plantillas oficiales y scripts que le indican
+        al agente cómo elaborar cada autoinforme.</div>
+      <div class="pieza mcp"><h4>MCP de LinceBI</h4>Conexión que permite al agente consultar los indicadores de
+        calidad con las credenciales UCA del usuario.</div>
+    </div>
+    <p class="flecha">Agente + skill + MCP → autoinforme en Word, con los datos pendientes marcados
+      <code>[PENDIENTE]</code></p>
+  </section>
+
+  <section id="instrucciones">
+    <h2>Instrucciones del asistente</h2>
+    <details>
+      <summary>Ver el texto de la skill (versión vigente)</summary>
+      <div class="skill">
+<!-- SKILL_MD -->
+        <p class="leyenda">El texto se incorpora automáticamente al publicar la web.</p>
+<!-- /SKILL_MD -->
+      </div>
+    </details>
+  </section>
+</main>
+
+<footer>Uso interno de la Universidad de Cádiz · Última actualización: 4 de octubre de 2026</footer>
+</body>
+</html>

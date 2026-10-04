@@ -6,6 +6,7 @@ Uso (desde la raíz del repositorio):
   python tools/evaluacion/evaluacion.py caso <fuentes.json> [--sin-descarga]
   python tools/evaluacion/evaluacion.py nueva <id> [--modelo-a M] [--modelo-b M]
   python tools/evaluacion/evaluacion.py medir <Enn>
+  python tools/evaluacion/evaluacion.py valoracion <Enn>
 
 Ver docs/PROCEDIMIENTO.md.
 """
@@ -43,6 +44,15 @@ RE_CODIGO = re.compile(r"\b(PF|PD|AM)[\s\-–]*[A-Z]{2,6}[\s\-–]*\d+(?:\.\d+)*
 RE_INDICADOR = re.compile(r"\bP0\d[\-_ ]?\d{2}")
 RE_NUMERO = re.compile(r"(?<![\w.,])-?\d{1,3}(?:\.\d{3})*(?:,\d+)?(?:\.\d+)?(?![\w])")
 MARCA_INI, MARCA_FIN = "<!-- medir:inicio -->", "<!-- medir:fin -->"
+MARCA_VAL_INI, MARCA_VAL_FIN = "<!-- valoracion:inicio -->", "<!-- valoracion:fin -->"
+SECCION_VALORACION = "## Valoración de la coordinación (completa `evaluacion.py valoracion`)"
+# Aspecto de la hoja de valoración → claves que puntúa ("Datos" es de la hoja anterior a D1/D2 separados).
+ASPECTOS_HOJA = {"identificación": ["D1"], "indicadores": ["D2"], "datos": ["D1", "D2"], "cobertura": ["D3"],
+                 "análisis": ["D4"], "mejora": ["D5"], "recomendaciones": ["D6"], "redacción": ["D7"],
+                 "esfuerzo": ["Esfuerzo"], "global": ["Global"]}
+TEXTOS_HOJA = {"¿qué cambiaría del borrador?": "Qué cambiaría", "¿qué echa en falta?": "Qué echa en falta",
+               "otros comentarios": "Otros comentarios"}
+UTILIDAD = ["Esfuerzo", "Global"]
 
 
 def error(msg):
@@ -528,7 +538,7 @@ def actualizar_ficha(carpeta, r):
     txt = ficha.read_text(encoding="utf-8")
     txt = re.sub(re.escape(MARCA_INI) + ".*?" + re.escape(MARCA_FIN),
                  lambda _: f"{MARCA_INI}\n{bloque_resultado(r)}\n{MARCA_FIN}", txt, flags=re.S)
-    pend = r["pendientes"] or ["Nada pendiente."]
+    pend = r["pendientes"] + pendientes_valoracion(carpeta) or ["Nada pendiente."]
     txt = re.sub(r"(## Pendiente de revisión experta\n\n).*?(?=\n## )",
                  lambda m: m.group(1) + "\n".join(f"- {p}" for p in pend) + "\n", txt, flags=re.S)
     ficha.write_text(txt, encoding="utf-8")
@@ -551,16 +561,22 @@ def actualizar_historial():
             continue
         r = json.loads(f.read_text(encoding="utf-8"))
         b, h = r["borrador"], r["referencia"]
+        v = leer_json(carpeta / "valoracion.json")
+        coord = v["media"] if v else None
+        dif = round(coord - r["media"], 2) if v and coord is not None and r["media"] is not None else None
         filas.append([carpeta.name, campo_ficha(carpeta, "Fecha"), campo_ficha(carpeta, "Versión de la skill"),
                       r["rubrica"]] + [nota(r["final"][d]) for d in DIMENSIONES]
                      + [nota(r["media"]), ", ".join(r["bloqueantes"]) or "—",
                         f"{round(100 * b['palabras'] / h['palabras'])} %", f"{b['pd']} / {h['pd']}",
                         b["pendientes"], f"{r['anexo']['porcentaje']} %" if r["anexo"] else "—",
-                        r["causas_b"]["S"], len(r["pendientes"])])
+                        r["causas_b"]["S"], len(r["pendientes"]) + len(v["pendientes"] if v else []),
+                        nota(coord), nota(dif)] + [nota(v["utilidad"].get(u) if v else None) for u in UTILIDAD])
     cab = ["Ejecución", "Fecha", "Skill", "Rúbrica"] + DIMENSIONES + [
-        "Media", "Bloq.", "Extensión", "PD IA/hum.", "[PEND.]", "Anexo I (cota sup.)", "Causas S", "Pend. revisión"]
+        "Media", "Bloq.", "Extensión", "PD IA/hum.", "[PEND.]", "Anexo I (cota sup.)", "Causas S", "Pend. revisión",
+        "Coord.", "Δ coord.−IA"] + [f"{u} (1-5)" for u in UTILIDAD]
     (EVALS / "historial.md").write_text(
-        "# Historial de ejecuciones\n\nGenerado por `evaluacion.py medir`; no editar a mano.\n\n"
+        "# Historial de ejecuciones\n\nGenerado por `evaluacion.py medir` y `valoracion`; no editar a mano. "
+        "«Coord.» es la media de la coordinación pasada a 0-2.\n\n"
         + tabla_md(cab, filas) + "\n", encoding="utf-8")
 
 
@@ -606,6 +622,146 @@ def cmd_medir(args):
     print(f"\nActualizados {carpeta.name}/metricas.json, ficha.md y evals/historial.md")
 
 
+# --- valoración de la coordinación -----------------------------------------------
+
+def leer_json(ruta):
+    return json.loads(ruta.read_text(encoding="utf-8")) if ruta.exists() else None
+
+
+def pendientes_valoracion(carpeta):
+    v = leer_json(carpeta / "valoracion.json")
+    return v["pendientes"] if v else []
+
+
+def a_escala_rubrica(nota_1_5):
+    return round((nota_1_5 - 1) / 2, 2)
+
+
+def decimal(x):
+    if x is None:
+        return "—"
+    return str(int(x) if float(x).is_integer() else x).replace(".", ",")
+
+
+def media(valores):
+    validos = [x for x in valores if x is not None]
+    return round(sum(validos) / len(validos), 2) if validos else None
+
+
+def leer_hoja_valoracion(ruta):
+    import openpyxl
+    ws = openpyxl.load_workbook(ruta, data_only=True).active
+    hoja = {"fichero": ruta.name, "rol": ws["C5"].value, "fecha": str(ws["C6"].value or "") or None,
+            "notas": {}, "comentarios": {}, "graves": None, "comentario_graves": None, "textos": {}}
+    formato_anterior = False
+    for fila in range(1, ws.max_row + 1):
+        etiqueta = str(ws.cell(fila, 2).value or "").strip().lower()
+        texto_a = str(ws.cell(fila, 1).value or "").strip().lower()
+        valor, comentario = ws.cell(fila, 4).value, ws.cell(fila, 5).value
+        if etiqueta == "errores graves":
+            respuesta = str(valor or "").strip().lower()
+            hoja["graves"] = {"sí": True, "si": True, "no": False}.get(respuesta)
+            hoja["comentario_graves"] = comentario
+        elif etiqueta in ASPECTOS_HOJA:
+            formato_anterior |= etiqueta == "datos"
+            if valor not in (None, "") and not (isinstance(valor, (int, float)) and 1 <= valor <= 5 and valor == int(valor)):
+                print(f"AVISO: {ruta.name}, fila {fila}: «{valor}» no es una nota de 1 a 5; se ignora.")
+                valor = None
+            for clave in ASPECTOS_HOJA[etiqueta]:
+                hoja["notas"][clave] = None if valor in (None, "") else int(valor)
+                if comentario:
+                    hoja["comentarios"][clave] = str(comentario).strip()
+        elif texto_a in TEXTOS_HOJA:
+            contenido = ws.cell(fila + 1, 1).value
+            if contenido:
+                hoja["textos"][TEXTOS_HOJA[texto_a]] = str(contenido).strip()
+    if not hoja["notas"]:
+        error(f"{ruta.name} no tiene el formato de la hoja de valoración")
+    if formato_anterior:
+        print(f"AVISO: {ruta.name} usa la hoja anterior: «Datos» puntúa D1 y D2 a la vez; no hay D6 ni errores graves.")
+    return hoja
+
+
+def consolidar_valoracion(hojas, metricas):
+    claves = DIMENSIONES + UTILIDAD
+    notas_1_5 = {k: media([h["notas"].get(k) for h in hojas]) for k in claves}
+    notas_0_2 = {d: None if notas_1_5[d] is None else a_escala_rubrica(notas_1_5[d]) for d in DIMENSIONES}
+    respuestas = [h["graves"] for h in hojas if h["graves"] is not None]
+    graves = None if not respuestas else any(respuestas)
+    pendientes = []
+    for d in DIMENSIONES:
+        ia = metricas["final"].get(d)
+        if notas_0_2[d] is not None and ia is not None and abs(notas_0_2[d] - ia) >= 1:
+            pendientes.append(f"Coordinación {d}: coordinación={decimal(notas_0_2[d])}, IA={decimal(ia)}")
+    graves_ia = [b for b in metricas["bloqueantes"] if b in ("B1", "B2")]
+    if graves and not graves_ia:
+        pendientes.append("Coordinación: señala errores graves y la IA no anotó B1 ni B2")
+    elif graves is False and graves_ia:
+        pendientes.append(f"Coordinación: no aprecia errores graves y la IA anotó {', '.join(graves_ia)}")
+    return {"hojas": hojas, "notas_1_5": {d: notas_1_5[d] for d in DIMENSIONES}, "notas": notas_0_2,
+            "media": media(notas_0_2.values()), "utilidad": {u: notas_1_5[u] for u in UTILIDAD},
+            "graves": graves, "pendientes": pendientes}
+
+
+def bloque_valoracion(v, metricas):
+    fmt = decimal
+    filas = []
+    for d in DIMENSIONES:
+        c, ia = v["notas"][d], metricas["final"].get(d)
+        dif = None if c is None or ia is None else round(c - ia, 2)
+        filas.append([d, fmt(v["notas_1_5"][d]), fmt(c), fmt(ia), fmt(dif)])
+    dif_media = None if v["media"] is None or metricas["media"] is None else round(v["media"] - metricas["media"], 2)
+    graves = {True: "sí", False: "no", None: "sin respuesta"}[v["graves"]]
+    partes = [
+        "Valoraciones: " + "; ".join(f"`{h['fichero']}` ({h['rol'] or 'rol sin indicar'}, {h['fecha'] or 'sin fecha'})"
+                                     for h in v["hojas"]) + ".",
+        "",
+        tabla_md(["Dim.", "Coordinación (1-5)", "Equivale (0-2)", "IA (final)", "Diferencia"], filas),
+        f"\nMedia: coordinación {fmt(v['media'])}, IA {fmt(metricas['media'])} (diferencia {fmt(dif_media)}). "
+        + " ".join(f"{u} (1-5): {fmt(v['utilidad'][u])}." for u in UTILIDAD)
+        + f" Errores graves según la coordinación: {graves}.",
+    ]
+    for h in v["hojas"]:
+        detalle = [f"- {k}: {t}" for k, t in h["comentarios"].items()]
+        if h["comentario_graves"]:
+            detalle.append(f"- Errores graves: {h['comentario_graves']}")
+        detalle += [f"- {k}: {t}" for k, t in h["textos"].items()]
+        if detalle:
+            partes += ["", f"Comentarios de `{h['fichero']}`:", *detalle]
+    return "\n".join(partes)
+
+
+def escribir_valoracion_en_ficha(carpeta, v, metricas):
+    ficha = carpeta / "ficha.md"
+    if not ficha.exists():
+        return
+    txt = ficha.read_text(encoding="utf-8")
+    bloque = f"{MARCA_VAL_INI}\n{bloque_valoracion(v, metricas)}\n{MARCA_VAL_FIN}"
+    if MARCA_VAL_INI in txt:
+        txt = re.sub(re.escape(MARCA_VAL_INI) + ".*?" + re.escape(MARCA_VAL_FIN), lambda _: bloque, txt, flags=re.S)
+    else:
+        txt = txt.replace("## Pendiente de revisión experta", f"{SECCION_VALORACION}\n\n{bloque}\n\n"
+                          "## Pendiente de revisión experta", 1)
+    ficha.write_text(txt, encoding="utf-8")
+    actualizar_ficha(carpeta, metricas)
+
+
+def cmd_valoracion(args):
+    carpeta = buscar_ejecucion(args.ejecucion)
+    metricas = leer_json(carpeta / "metricas.json")
+    if metricas is None:
+        error(f"falta {carpeta.name}/metricas.json: ejecuta antes `medir`")
+    rutas = sorted(carpeta.glob("valoracion-coordinacion*.xlsx"))
+    if not rutas:
+        error(f"no hay valoracion-coordinacion*.xlsx en {carpeta.name}")
+    v = consolidar_valoracion([leer_hoja_valoracion(r) for r in rutas], metricas)
+    (carpeta / "valoracion.json").write_text(json.dumps(v, ensure_ascii=False, indent=2), encoding="utf-8")
+    escribir_valoracion_en_ficha(carpeta, v, metricas)
+    actualizar_historial()
+    print(bloque_valoracion(v, metricas))
+    print(f"\nActualizados {carpeta.name}/valoracion.json, ficha.md y evals/historial.md")
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="orden", required=True)
@@ -626,6 +782,9 @@ def main():
     m = sub.add_parser("medir", help="calcula métricas, consolida cotejos y actualiza el historial")
     m.add_argument("ejecucion", help="prefijo de la ejecución, p. ej. E04")
     m.set_defaults(func=cmd_medir)
+    v = sub.add_parser("valoracion", help="incorpora las hojas de valoración devueltas por la coordinación")
+    v.add_argument("ejecucion", help="prefijo de la ejecución, p. ej. E04")
+    v.set_defaults(func=cmd_valoracion)
     args = p.parse_args()
     args.func(args)
 

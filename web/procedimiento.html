@@ -57,12 +57,6 @@
   thead th { border-top: 0; color: var(--gris); font-weight: 600; }
   .n0 { background: var(--n0); } .n1 { background: var(--n1); } .n2 { background: var(--n2); }
 
-  details { border: 1px solid var(--linea); border-radius: 8px; padding: .8rem 1rem; }
-  summary { cursor: pointer; font-weight: 600; color: var(--azul); }
-  .skill { max-height: 70vh; overflow: auto; margin-top: 1rem; font-size: .92rem; }
-  .skill h1 { font-size: 1.3rem; } .skill h2 { font-size: 1.15rem; } .skill h3 { font-size: 1rem; }
-  .skill pre, .skill code { background: #f0f2f5; border-radius: 4px; font-size: .85rem; }
-  .skill pre { padding: .6rem; overflow-x: auto; }
   footer { text-align: center; color: var(--gris); font-size: .85rem; padding: 0 1.5rem 2rem; }
   @media (max-width: 960px) {
     .rubrica-scroll { overflow-x: auto; } .rubrica { min-width: 640px; }
@@ -79,6 +73,7 @@
 </header>
 <nav>
   <a href="index.html">Avance</a>
+  <a href="asistente.html">El asistente</a>
   <a href="procedimiento.html" aria-current="page">Procedimiento de evaluación</a>
   <a href="evaluacion.html">Resultados de la evaluación</a>
 </nav>
@@ -86,63 +81,54 @@
 <main>
   <section id="presentacion">
     <h2>Cómo se evalúa el asistente</h2>
-    <p>Estamos probando un asistente de IA que redacta el <strong>borrador del autoinforme de seguimiento</strong> de
-      un título a partir de la memoria, el autoinforme anterior, el informe de ACCUA y los indicadores de LinceBI. Esta
-      página explica cómo se comprueba si es útil: cada borrador se compara con el autoinforme real que elaboró y
-      aprobó la coordinación del título, se corrige con una rúbrica y lo aprendido se incorpora al asistente antes de
-      probar el siguiente título.</p>
-    <p>Las notas obtenidas, su evolución y las lecciones aprendidas están en
+    <p>El asistente redacta el <strong>borrador del autoinforme de seguimiento</strong> de un título. Para medir su
+      utilidad, cada borrador se compara con el autoinforme real aprobado por la coordinación, se puntúa con una
+      rúbrica y lo aprendido mejora el asistente antes del siguiente título. Los resultados están en
       <a href="evaluacion.html">Resultados de la evaluación</a>.</p>
 
     <ul class="indice" aria-label="En esta página">
       <li><a href="#proceso">Cómo se hace el seguimiento</a></li>
       <li><a href="#rubrica">La rúbrica</a></li>
-      <li><a href="#instrucciones">Instrucciones del asistente</a></li>
+      <li><a href="asistente.html#instrucciones">Instrucciones del asistente</a></li>
     </ul>
   </section>
 
   <section id="proceso">
     <h2>Cómo se hace el seguimiento</h2>
-    <p>Cada evaluación sigue los mismos pasos y termina, si hay algo que aprender, con una versión nueva del asistente
-      que se pone a prueba en la evaluación siguiente.</p>
     <ol class="proceso">
-      <li><strong>Se elige un título</strong>Un grado cuyo autoinforme de seguimiento 2024/25 ya está aprobado por la
-        coordinación. Ese autoinforme será la referencia.<span class="quien">Responsable del proyecto</span></li>
-      <li><strong>El asistente redacta el borrador</strong>Solo con lo que tendría la coordinación: memoria, autoinforme
-        anterior, informe de ACCUA, plan de mejora e indicadores de LinceBI. No ve el autoinforme de
-        referencia.<span class="quien">Asistente · 15-20 min</span></li>
-      <li><strong>Dos correctores lo puntúan</strong>Dos correctores de IA independientes comparan el borrador con la
-        referencia y la normativa usando la <a href="#rubrica">rúbrica</a>. Ninguno ve la corrección del
-        otro.<span class="quien">Correctores de IA · 6-9 min, a la vez</span></li>
-      <li><strong>Se consolidan los resultados</strong>Nota final, métricas automáticas y lista de puntos para revisión
-        experta: errores graves, desacuerdos entre correctores y posibles errores de la
-        referencia.<span class="quien">Herramienta de evaluación</span></li>
-      <li class="decide"><strong>El responsable decide</strong>Revisa los resultados y aprueba, rechaza o deja en
-        observación las lecciones propuestas.<span class="quien">Responsable del proyecto</span></li>
-      <li class="decide"><strong>Nueva versión del asistente</strong>Las lecciones aprobadas se incorporan y la versión
-        nueva se comprueba con el siguiente título.<span class="quien">Equipo del proyecto</span></li>
+      <li><strong>Se elige un título</strong>Con el autoinforme 2024/25 ya aprobado, que será la
+        referencia.<span class="quien">Responsable del proyecto</span></li>
+      <li><strong>El asistente redacta el borrador</strong>Con los documentos de la coordinación e indicadores de
+        LinceBI, sin ver la referencia.<span class="quien">Asistente · 15-20 min</span></li>
+      <li><strong>Dos correctores lo puntúan</strong>Dos correctores de IA independientes aplican la
+        <a href="#rubrica">rúbrica</a>.<span class="quien">Correctores de IA · 6-9 min, a la vez</span></li>
+      <li><strong>Se consolidan los resultados</strong>Nota final, métricas y puntos para revisión
+        experta.<span class="quien">Herramienta de evaluación</span></li>
+      <li class="decide"><strong>El responsable decide</strong>Aprueba, rechaza o deja en observación las lecciones
+        propuestas.<span class="quien">Responsable del proyecto</span></li>
+      <li class="decide"><strong>Nueva versión del asistente</strong>Incorpora las lecciones aprobadas y se prueba con
+        el siguiente título.<span class="quien">Equipo del proyecto</span></li>
     </ol>
-    <p class="ciclo">↻ Y vuelta al paso 1 con otro título o con uno ya evaluado, para medir el progreso.</p>
+    <p class="ciclo">↻ Vuelta al paso 1 con otro título o con uno ya evaluado, para medir el progreso.</p>
 
     <div class="dos">
       <div class="caja">
         <h4>Para que la evaluación sea justa</h4>
         <ul>
-          <li>Durante una evaluación el asistente no cambia: las lecciones se aplican después.</li>
-          <li>Una lección solo se da por buena cuando funciona en un título <em>distinto</em> del que la originó.</li>
-          <li>El asistente no contiene ejemplos copiados de los títulos que se evalúan, para que no «se sepa» las
-            respuestas.</li>
-          <li>Repetir un título con una versión posterior (Informática, Aeroespacial y Diseño Industrial) permite ver
-            el progreso con el mismo punto de comparación.</li>
+          <li>El asistente no cambia durante una evaluación.</li>
+          <li>Una lección vale solo si funciona en otro título.</li>
+          <li>El asistente no contiene ejemplos de los títulos evaluados.</li>
+          <li>Algunos títulos se repiten para medir el progreso.</li>
         </ul>
       </div>
       <div class="caja">
-        <h4>Qué papel tienen las coordinaciones</h4>
+        <h4>Papel de las coordinaciones</h4>
         <ul>
-          <li>Su autoinforme aprobado es la referencia, aunque no se toma como verdad absoluta: cuando el borrador
-            acierta y el autoinforme no, se anota como hallazgo y no resta.</li>
-          <li>Más adelante se les pedirá que valoren el borrador de su título; el material ya está preparado
-            (ver <a href="evaluacion.html#proximos">Próximos pasos</a>).</li>
+          <li>Su autoinforme es la referencia, no la verdad absoluta: si el borrador acierta y el autoinforme no, no
+            resta.</li>
+          <li>Valoran el borrador de su título con una hoja que sigue los mismos aspectos que la rúbrica. Su nota se
+            compara con la de los correctores de IA y sus comentarios se convierten en propuestas de mejora del
+            asistente.</li>
         </ul>
       </div>
     </div>
@@ -150,80 +136,61 @@
 
   <section id="rubrica">
     <h2>La rúbrica de evaluación</h2>
-    <p>Los correctores puntúan siete aspectos del borrador. Cada uno recibe una nota y la nota del borrador es la media
-      de los siete. La rúbrica valora lo que el borrador dice frente a la normativa (plantilla oficial, guía de ACCUA,
-      procedimientos del Sistema de Garantía de Calidad y memoria verificada) y a los datos verificables, no que se
-      parezca al autoinforme de la coordinación.</p>
+    <p>Se puntúan siete aspectos y la nota es su media. Se valora el borrador frente a la normativa y los datos
+      verificables, no su parecido con el autoinforme de la coordinación.</p>
 
     <div class="escala">
-      <div class="n2"><b>2</b>Correcto: la coordinación podría usarlo con retoques menores.</div>
-      <div class="n1"><b>1</b>Aprovechable: hay que corregir o completar algo relevante.</div>
-      <div class="n0"><b>0</b>No aprovechable: hay que rehacerlo, o falta.</div>
+      <div class="n2"><b>2</b>Correcto: usable con retoques menores.</div>
+      <div class="n1"><b>1</b>Aprovechable: hay que corregir algo relevante.</div>
+      <div class="n0"><b>0</b>No aprovechable o ausente.</div>
     </div>
 
     <h3>Los siete aspectos</h3>
     <div class="rubrica-scroll">
     <table class="rubrica">
-      <thead><tr><th>Aspecto</th><th>Qué se evalúa</th><th class="n2">Para un 2</th><th class="n1">Se queda en 1 si…</th><th class="n0">Es un 0 si…</th></tr></thead>
+      <thead><tr><th>Aspecto</th><th>Qué se evalúa</th><th class="n2">2</th><th class="n1">1</th><th class="n0">0</th></tr></thead>
       <tbody>
-        <tr><td>Identificación</td><td>Tabla de identificación del título: denominación, centro, créditos, fechas…</td>
-          <td>Todos los campos correctos según la memoria y el autoinforme anterior.</td><td>1 o 2 campos erróneos o pendientes sin necesidad.</td><td>3 o más campos erróneos.</td></tr>
-        <tr><td>Indicadores</td><td>Valores de las tablas de indicadores del Anexo I y sus cabeceras de cursos y cohortes.</td>
-          <td>Al menos el 95 % de los valores coinciden y los cursos están bien alineados.</td><td>Entre el 80 y el 95 %, o una tabla desalineada.</td><td>Menos del 80 %, o varias tablas desalineadas.</td></tr>
-        <tr><td>Cobertura</td><td>Que todos los criterios y subcriterios tengan contenido.</td>
-          <td>Todo tiene análisis; solo quedan pendientes los datos internos del centro.</td><td>Algún subcriterio vacío o un pendiente que se podía resolver.</td><td>Varios subcriterios vacíos o falta un apartado obligatorio.</td></tr>
-        <tr><td>Análisis</td><td>Interpretación de los indicadores: evolución, comparación con los objetivos de la memoria y causas.</td>
-          <td>Interpreta la evolución, compara con el objetivo correcto y da causas coherentes con los datos.</td><td>Descriptivo, sin causas o con alguna comparación incorrecta.</td><td>Ausente, genérico o contradictorio con los datos.</td></tr>
-        <tr><td>Plan de mejora</td><td>Puntos fuertes, puntos débiles y acciones de mejora.</td>
-          <td>Puntos concretos del curso; cada punto débil es abordable por la coordinación y tiene acción, responsable y plazo.</td><td>Puntos genéricos, no abordables o acciones sin enlazar.</td><td>Faltan, o el plan no recoge los puntos débiles.</td></tr>
-        <tr><td>ACCUA</td><td>Recomendaciones de los informes de ACCUA que siguen abiertas.</td>
-          <td>Están todas, con su numeración original y su estado o acción.</td><td>Falta alguna o se renumeran.</td><td>No se recogen o se inventan.</td></tr>
-        <tr><td>Formato</td><td>Fidelidad a la plantilla, códigos de los puntos fuertes, débiles y acciones, y registro formal.</td>
-          <td>Documento limpio y fiel a la plantilla.</td><td>Quedan instrucciones de la plantilla, códigos irregulares o estilo impropio.</td><td>Plantilla alterada o documento difícil de usar.</td></tr>
+        <tr><td>Identificación</td><td>Tabla de identificación del título.</td>
+          <td>Todos los campos correctos.</td><td>1-2 campos erróneos.</td><td>3 o más erróneos.</td></tr>
+        <tr><td>Indicadores</td><td>Valores y cursos de las tablas del Anexo I.</td>
+          <td>≥ 95 % correctos y bien alineados.</td><td>80-95 %, o una tabla desalineada.</td><td>&lt; 80 %, o varias desalineadas.</td></tr>
+        <tr><td>Cobertura</td><td>Contenido en todos los subcriterios.</td>
+          <td>Completo; solo faltan datos internos del centro.</td><td>Algún hueco evitable.</td><td>Varios huecos o falta un apartado.</td></tr>
+        <tr><td>Análisis</td><td>Interpretación de los indicadores.</td>
+          <td>Evolución, objetivo correcto y causas coherentes.</td><td>Descriptivo o sin causas.</td><td>Ausente, genérico o contradictorio.</td></tr>
+        <tr><td>Plan de mejora</td><td>Puntos fuertes, débiles y acciones.</td>
+          <td>Concretos, con acción, responsable y plazo.</td><td>Genéricos o sin enlazar.</td><td>Ausente o incompleto.</td></tr>
+        <tr><td>ACCUA</td><td>Recomendaciones abiertas.</td>
+          <td>Todas, con su numeración y estado.</td><td>Falta alguna o se renumeran.</td><td>Ausentes o inventadas.</td></tr>
+        <tr><td>Formato</td><td>Plantilla, códigos y registro.</td>
+          <td>Limpio y fiel a la plantilla.</td><td>Restos de plantilla o estilo impropio.</td><td>Plantilla alterada.</td></tr>
       </tbody>
     </table>
     </div>
 
     <h3>Errores graves</h3>
-    <p>Se señalan aparte, sea cual sea la nota, porque impiden usar el borrador sin revisarlo a fondo:</p>
+    <p>Se señalan aparte, sea cual sea la nota:</p>
     <div class="graves">
-      <div><strong>Dato inventado</strong>Un valor, nombre o hecho que no procede de los documentos, de LinceBI ni de
-        la normativa. Por ejemplo, presentar como realizada una acción que solo estaba propuesta.</div>
-      <div><strong>Valor imposible o contradictorio</strong>Un valor que su definición no permite (una satisfacción
-        mayor que 5, una tasa de éxito mayor que el 100 %) o el mismo indicador con dos valores distintos.</div>
-      <div><strong>Datos de origen no garantizado</strong>Indicadores tomados del entorno de pruebas de LinceBI, o sin
-        registrar de dónde y cuándo se extrajeron.</div>
+      <div><strong>Dato inventado</strong>Sin respaldo en los documentos, LinceBI o la normativa.</div>
+      <div><strong>Valor imposible o contradictorio</strong>Por ejemplo, una tasa mayor del 100 %.</div>
+      <div><strong>Origen no garantizado</strong>Datos del entorno de pruebas o sin fuente registrada.</div>
     </div>
 
     <h3 id="causas">Qué diferencias cuentan</h3>
-    <p>El borrador y el autoinforme de la coordinación siempre difieren en algo. Antes de puntuar, el corrector decide
-      por qué; solo las diferencias causadas por el asistente bajan la nota.</p>
+    <p>Solo bajan la nota las diferencias causadas por el asistente.</p>
     <table class="causas">
       <thead><tr><th>Causa de la diferencia</th><th>¿Baja la nota?</th></tr></thead>
       <tbody>
-        <tr><td><strong>El asistente</strong>: le falta una instrucción, la tiene mal o no la siguió.</td><td>Sí</td></tr>
-        <tr><td><strong>LinceBI</strong>: el dato cambió entre la consulta de la coordinación y la del asistente.</td><td>No</td></tr>
-        <tr><td><strong>Dato interno del centro</strong> que no se le dio (prácticas, convenios…), si lo deja pendiente.</td><td>No</td></tr>
-        <tr><td><strong>Error del autoinforme de la coordinación</strong>: el borrador acierta. Se anota como hallazgo.</td><td>No</td></tr>
-        <tr><td><strong>Redacción</strong>: la misma información, dicha de otra forma o en otro orden.</td><td>No</td></tr>
+        <tr><td><strong>El asistente</strong>: instrucción ausente, errónea o incumplida.</td><td>Sí</td></tr>
+        <tr><td><strong>LinceBI</strong>: el dato cambió entre consultas.</td><td>No</td></tr>
+        <tr><td><strong>Dato interno del centro</strong> no disponible, si se deja pendiente.</td><td>No</td></tr>
+        <tr><td><strong>Error del autoinforme</strong>: se anota como hallazgo.</td><td>No</td></tr>
+        <tr><td><strong>Redacción</strong> distinta con la misma información.</td><td>No</td></tr>
       </tbody>
     </table>
-    <p class="leyenda">Además se miden, sin puntuarlas, la extensión del borrador, el número de puntos débiles y los
-      datos que quedan pendientes: un borrador más corto o con datos que debe aportar el centro puede ser correcto.</p>
+    <p class="leyenda">También se miden, sin puntuar, la extensión, los puntos débiles y los datos pendientes.</p>
   </section>
 
-  <section id="instrucciones">
-    <h2>Instrucciones del asistente</h2>
-    <p>Texto con el que trabaja el asistente para elaborar los autoinformes (versión vigente).</p>
-    <details>
-      <summary>Ver las instrucciones</summary>
-      <div class="skill">
-<!-- SKILL_MD -->
-        <p class="leyenda">El texto se incorpora automáticamente al publicar la web.</p>
-<!-- /SKILL_MD -->
-      </div>
-    </details>
-  </section>
 </main>
 
 <footer>Uso interno de la Universidad de Cádiz · Última actualización: 4 de octubre de 2026</footer>

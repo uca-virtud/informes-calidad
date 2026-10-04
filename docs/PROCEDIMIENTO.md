@@ -11,7 +11,7 @@ se envía material a la coordinación; todo lo demás lo hacen el orquestador y 
 
 | Pieza | Qué es |
 |---|---|
-| `tools/evaluacion/evaluacion.py` | Script con los subcomandos `enlaces`, `caso`, `nueva` y `medir`. |
+| `tools/evaluacion/evaluacion.py` | Script con los subcomandos `enlaces`, `caso`, `nueva`, `medir` y `valoracion`. |
 | `evals/casos.csv` | Catálogo de casos (`id`, `titulo`, `nivel`, `centro`, `tipo`, `curso`, `convocatoria`, `seguimiento_accua` y `conjunto`: `aprendizaje`, `reserva` o `excluido`). |
 | `docs/evaluacion/rubrica.md` | Rúbrica cerrada: D1–D7 (0-1-2), bloqueantes B1–B3, causas S/D/I/H/E. |
 | `docs/evaluacion/plantilla-cotejo.md` | Formato obligatorio de `cotejo-A.md` y `cotejo-B.md`. |
@@ -76,6 +76,7 @@ prompt cuando lo lleva.
 | [5](#paso-5-medición-y-consolidación) | Orquestador | `evaluacion.py medir Enn` | `metricas.json`, ficha completada, `evals/historial.md` |
 | [6](#paso-6-registro-y-decisión-del-responsable) | Orquestador → responsable | Registra la ejecución y la resume al responsable, que decide | `docs/EVALUACIONES.md`, `web/evaluacion.html`, decisión en la ficha |
 | [7](#paso-7-material-para-la-coordinación) | Orquestador, **solo si el responsable lo aprueba** | Prepara el material para la coordinación | `docs/evaluacion/material-coordinaciones/<id>/` |
+| [8](#paso-8-valoración-de-la-coordinación) | Orquestador, cuando la coordinación devuelve la hoja | `evaluacion.py valoracion Enn` y propuesta de lecciones | `valoracion.json`, sección de la ficha, columnas del historial |
 
 Los pasos 3 y 4 se lanzan a la vez en cuanto existe `borrador.docx`.
 
@@ -239,6 +240,47 @@ preferir no enviar un borrador con B1 o B2). Si lo aprueba, crea
 Si el título ya tenía material de una ejecución anterior, se sustituye por el de la más
 reciente. Después, en la fila desplegable de la ejecución de `web/evaluacion.html`, cambia
 «—» del apartado «Material» por los tres enlaces, con el mismo formato que las demás filas.
+
+### Paso 8: valoración de la coordinación
+
+Llega semanas después del paso 7, cuando la coordinación devuelve la hoja rellenada. El
+responsable la guarda en `evals/ejecuciones/Enn-<id>/valoracion-coordinacion.xlsx` (con
+sufijo `-1`, `-2`… si valoran varias personas); va en `evals/` porque contiene comentarios
+y el rol de quien valora. El orquestador ejecuta
+`python tools/evaluacion/evaluacion.py valoracion Enn`, que:
+
+- lee las notas 1-5, los comentarios, la respuesta a «Errores graves» y los textos libres
+  (las celdas vacías son NA; con varias hojas, media por aspecto y errores graves si alguien
+  responde «Sí»);
+- convierte las notas a la escala de la rúbrica con (nota − 1) / 2: 1→0, 3→1, 5→2;
+  «Esfuerzo» y «Global» se quedan en 1-5 porque no tienen equivalente en la rúbrica;
+- escribe `valoracion.json` y la sección «Valoración de la coordinación» de la ficha, y
+  añade al historial la media de la coordinación, su diferencia con la de la IA, «Esfuerzo»
+  y «Global»;
+- añade a «Pendiente de revisión experta» las dimensiones en las que coordinación e IA
+  difieren 1 punto o más, y los desacuerdos entre «Errores graves» y los bloqueantes B1/B2.
+  `medir` los conserva si se vuelve a ejecutar.
+
+Una hoja anterior a la separación de D1 y D2 se acepta con aviso: «Datos» puntúa ambas y no
+hay D6 ni errores graves.
+
+Después el orquestador presenta al responsable:
+
+- **Lecciones candidatas** a partir de los comentarios y los textos libres, generalizadas
+  sin frases ni nombres del título (regla 3 contra el sobreajuste). Lo que pidan dos
+  coordinaciones distintas cumple el filtro de admisión.
+- **Hallazgos**: errores del autoinforme humano (causa H) o datos internos (causa I) que la
+  coordinación confirme o desmienta.
+- **Calibración de la rúbrica**: si en 3 o más títulos la coordinación y la IA difieren
+  1 punto o más en la misma dimensión y en el mismo sentido, se propone revisarla (ver
+  [cambios de rúbrica](#casos-especiales-línea-base-y-cambios-de-rúbrica)).
+
+La valoración se refiere a la versión de la skill con la que se generó el borrador: una
+lección que salga de ella se valida, como las demás, con una ejecución posterior de otro
+título. El responsable decide en la ficha como en el paso 6 y el orquestador lo registra en
+`docs/EVALUACIONES.md` (apartado «Valoración de las coordinaciones», con medias y diferencias
+por dimensión) y en `web/evaluacion.html` (nota de la coordinación junto a la de la IA,
+«Esfuerzo» y «Global»), siempre con cifras agregadas y sin comentarios literales.
 
 ### Casos especiales: línea base y cambios de rúbrica
 

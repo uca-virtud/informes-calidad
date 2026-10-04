@@ -24,7 +24,7 @@ no se versionan.
 |---|---|
 | `skills/uca-informes-calidad/` | Skill vigente (seguimiento y renovación de la acreditación). |
 | `.github/skills/preparar-caso/` | Skill de proyecto que prepara un caso de evaluación a partir del nombre del título, buscando sus documentos en la web del centro. |
-| `tools/evaluacion/` | Script `evaluacion.py` (`enlaces`, `caso`, `nueva`, `medir`) del procedimiento de evaluación. |
+| `tools/evaluacion/` | Script `evaluacion.py` (`enlaces`, `caso`, `nueva`, `medir`, `valoracion`) del procedimiento de evaluación. |
 | `docs/` | Visión, procedimiento y registro de evaluaciones. |
 | `docs/evaluacion/` | Rúbrica, plantillas de cotejo y ficha, y `material-coordinaciones/<caso>/` (borrador de la IA, autoinforme de la coordinación y rúbrica de valoración en Excel de cada título). |
 | `docs/peticiones-cartera/` | Peticiones de cartera de los centros y solicitud de la fase 1 al Sistema de Información (modelo de datos e informe de indicadores del Anexo I). *Solo local.* |
@@ -35,17 +35,18 @@ no se versionan.
 
 ## Web del proyecto
 
-`web/` contiene tres páginas estáticas para los colectivos implicados de la UCA:
+`web/` contiene cuatro páginas estáticas para los colectivos implicados de la UCA:
 
 - `index.html`: avance del proyecto por fases.
-- `procedimiento.html`: cómo se evalúa la skill: proceso de evaluación, rúbrica y texto de la
-  skill.
+- `asistente.html`: qué es el asistente, cómo funciona (agente de IA, skill y MCP de LinceBI) y
+  el texto de la skill.
+- `procedimiento.html`: cómo se evalúa la skill: proceso de evaluación y rúbrica.
 - `evaluacion.html`: resultados de la evaluación: resumen de cifras, evolución de la nota,
   tabla por ejecución (nota de cada aspecto, media, errores graves y ficha resumida),
   lecciones aprendidas en cada versión, próximos pasos y material para que las coordinaciones
   la revisen.
 
 Al hacer push a `main`, `.github/workflows/pages.yml` incrusta `SKILL.md` en la página del
-procedimiento, cifra las tres con una contraseña compartida (StatiCrypt, secreto `SITE_PASSWORD`;
+asistente, cifra las cuatro con una contraseña compartida (StatiCrypt, secreto `SITE_PASSWORD`;
 sin él el despliegue falla) y las publica en GitHub Pages. Para verlas en local, abre
 `web/index.html` en el navegador.
