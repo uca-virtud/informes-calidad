@@ -218,12 +218,16 @@ documentos internos:
   contexto;
 - en «Resultados», la barra de la ejecución en «Evolución de la nota» y, si repite un título, su
   par en «Mismo título, antes y después»;
-- en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, nota de cada
-  aspecto D1-D7, media y un chip con el número de errores graves cuyo tooltip nombra cada uno
-  —dato inventado, valor contradictorio u origen no garantizado— con su motivo generalizado; no
-  se publican los códigos B1-B3) y su fila desplegable (valoración breve, métricas de `medir`
-  con las mismas etiquetas que las demás fichas, que el script de la página usa para mostrar
-  su ayuda, errores graves y material);
+- en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, nota media,
+  diferencias por fallo del asistente, puntos para revisión experta y un chip con el número de
+  errores graves cuyo tooltip nombra cada uno —dato inventado, valor contradictorio u origen no
+  garantizado— con su motivo generalizado; no se publican los códigos B1-B3) y su fila
+  desplegable (valoración breve, nota de cada aspecto D1-D7, errores graves, puntos para revisión
+  experta y material). Los puntos para revisión experta salen de la sección homónima de la ficha:
+  se agrupan por tema sin repetir los de los dos cotejos ni los errores graves (que se remiten a su
+  apartado), en dos listas —datos que no coinciden con el autoinforme de la coordinación (causa H y
+  dimensiones con notas A y B muy distintas) y datos internos que debe completar el centro (causa
+  I)— y con redacción neutra, sin códigos ni valores; la cifra de la columna se mantiene;
 - la lista «Qué dicen los resultados», si la ejecución la cambia;
 - en «Qué aprende el asistente en cada versión», el estado de las lecciones contrastadas
   (Funciona, Reforzada, A reforzar, Por comprobar), sus recuentos y «Próximos pasos»;
@@ -248,7 +252,7 @@ preferir no enviar un borrador con B1 o B2). Si lo aprueba, crea
 | Fichero | Origen |
 |---|---|
 | `borrador-ia.docx` | `evals/ejecuciones/Enn-<id>/borrador.docx`, sin cambios |
-| `datos-ia.json` | `evals/ejecuciones/Enn-<id>/datos.json`, sin cambios (si la ejecución lo tiene) |
+| `ficha-ia.md` | Secciones «Ejecución» y «Generación» de `evals/ejecuciones/Enn-<id>/ficha.md` (esta, sin «(completa el subagente A)»); el resto de la ficha es interno |
 | `autoinforme-coordinacion.pdf` | `evals/casos/<id>/referencia/autoinforme-humano.*` (convertido a PDF si no lo es) |
 | `rubrica-valoracion.xlsx` | Copia de la de otro título cambiando solo las celdas C3 (nombre del título) y C4 («<Tipo>, curso <aaaa/aa> (convocatoria <aaaa>)») |
 
