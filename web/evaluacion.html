@@ -78,6 +78,7 @@
   .chip { display: inline-block; font-size: .78rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; white-space: nowrap; line-height: 1.5; }
   .ver { background: #e3e9f4; color: var(--azul); text-decoration: none; }
   .ver.vieja { background: #eceff3; color: var(--gris); }
+  .modelo { background: #eef1f5; color: #1d2733; font-weight: 500; } .modelo.vieja { color: var(--gris); }
   .grave { background: var(--grave); color: #fff; }
   .limpio { background: #e3f1e4; color: var(--hecho); }
   .ok { background: var(--hecho); color: #fff; } .reforzada { background: #7e57c2; color: #fff; }
@@ -140,7 +141,7 @@
   footer { text-align: center; color: var(--gris); font-size: .85rem; padding: 0 1.5rem 2rem; }
   @media (max-width: 960px) {
     .tabla-scroll { overflow-x: auto; }
-    .ejecuciones { min-width: 640px; }
+    .ejecuciones { min-width: 760px; }
   }
   @media (max-width: 760px) {
     .par { grid-template-columns: 1fr; }
@@ -255,15 +256,16 @@
     </div>
 
     <h3 id="por-ejecucion">Por ejecución</h3>
-    <p class="leyenda">Nota media de la <a href="procedimiento.html#rubrica">rúbrica</a>, diferencias con el
+    <p class="leyenda">Modelo de IA que generó el borrador, nota media de la <a href="procedimiento.html#rubrica">rúbrica</a>, diferencias con el
       autoinforme de la coordinación por fallo del asistente y, de ellas, los errores graves: las que pasarían
-      inadvertidas en una lectura. Pasa el ratón (o pulsa) sobre la versión, las cabeceras o los errores graves para
+      inadvertidas en una lectura. Pasa el ratón (o pulsa) sobre la versión, el modelo, las cabeceras o los errores graves para
       ver el detalle, y despliega cada ejecución para ver su ficha: la valoración, la nota de cada aspecto (pasa el
       ratón sobre él para ver qué mide), los errores graves y el material.</p>
     <div class="tabla-scroll">
     <table class="ejecuciones">
       <thead>
         <tr><th>Ejecución</th><th>Título</th><th>Versión</th>
+          <th><span tabindex="0" data-tip="Modelo de IA que generó el borrador con el asistente. El segundo corrector, de otra familia, es siempre gpt-6.1-sol.">Modelo</span></th>
           <th><span tabindex="0" data-tip="Media de la nota (0-2) de los siete aspectos de la rúbrica. El desglose está en la ficha de cada ejecución.">Nota media</span></th>
           <th class="num"><span tabindex="0" data-ayuda="Diferencias por fallo del asistente">Diferencias por fallo del asistente</span></th>
           <th class="ultima">Errores graves</th></tr>
@@ -272,10 +274,11 @@
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E01">E01</button></td>
           <td title="Grado en Ingeniería Informática">Informática</td>
           <td><a class="chip ver vieja" href="#v0" data-tip="Versión inicial del asistente, solo de seguimiento (julio de 2026).">v0</a></td>
+          <td><span class="chip modelo vieja" tabindex="0" data-tip="claude-opus-4.8, en Claude Desktop: generó el borrador y lo cotejó con el autoinforme de la coordinación.">Claude Opus 4.8</span></td>
           <td class="media"><b>0,57</b><div class="pista"><div class="barra anterior" style="width:28.5%"></div></div></td>
           <td class="num">13</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: atribuye a la memoria objetivos de tasas que no fija.&#10;Valor contradictorio: un indicador del centro con un valor en el análisis y otro en el Anexo I.&#10;Origen no garantizado: no se registró el entorno ni la fecha de extracción.">3 errores</span></td></tr>
-        <tr class="detalle" id="det-E01" hidden><td colspan="6"><div class="ficha">
+        <tr class="detalle" id="det-E01" hidden><td colspan="7"><div class="ficha">
           <div><h4>Valoración</h4><p>Punto de partida. El problema dominante es la falta de contenido: el borrador tiene una quinta parte de la extensión del autoinforme de la coordinación, apenas desarrolla puntos fuertes y no analiza las calificaciones por asignatura.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n0"><dt data-aspecto>Identificación</dt><dd>0</dd></div><div class="n0"><dt data-aspecto>Indicadores</dt><dd>0</dd></div><div class="n0"><dt data-aspecto>Cobertura</dt><dd>0</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: objetivos de tasas atribuidos a la memoria sin que esta los fije.</li><li><b>Valor contradictorio</b>: un indicador del centro con dos valores distintos.</li><li><b>Origen no garantizado</b>: extracción sin entorno ni fecha registrados.</li></ul></div>
@@ -285,10 +288,11 @@
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E02">E02</button></td>
           <td title="Grado en Ingeniería Aeroespacial">Aeroespacial</td>
           <td><a class="chip ver vieja" href="#v1" data-tip="Versión inicial ajustada por la propia IA con lo aprendido en E01 (julio de 2026).">v1</a></td>
+          <td><span class="chip modelo vieja" tabindex="0" data-tip="claude-opus-4.8, en Claude Desktop: generó el borrador y lo cotejó con el autoinforme de la coordinación.">Claude Opus 4.8</span></td>
           <td class="media"><b>1,00</b><div class="pista"><div class="barra anterior" style="width:50%"></div></div></td>
           <td class="num">13</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Valor contradictorio: dos indicadores del centro con valores distintos en el análisis y en el Anexo I.&#10;Origen no garantizado: indicadores extraídos del entorno de pruebas de LinceBI, sin fecha.">2 errores</span></td></tr>
-        <tr class="detalle" id="det-E02" hidden><td colspan="6"><div class="ficha">
+        <tr class="detalle" id="det-E02" hidden><td colspan="7"><div class="ficha">
           <div><h4>Valoración</h4><p>Borrador mucho más completo (dos tercios de la extensión de la coordinación), pero con exceso de puntos débiles y tablas de indicadores del centro que repetían las series del título.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n0"><dt data-aspecto>Indicadores</dt><dd>0</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Valor contradictorio</b>: dos indicadores del centro con valores distintos en el texto y en el Anexo I.</li><li><b>Origen no garantizado</b>: datos del entorno de pruebas.</li></ul></div>
@@ -298,10 +302,11 @@
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E03">E03</button></td>
           <td title="Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto">Diseño Industrial</td>
           <td><a class="chip ver vieja" href="#v1" data-tip="Versión inicial ajustada por la propia IA con lo aprendido en E01 (julio de 2026).">v1</a></td>
+          <td><span class="chip modelo vieja" tabindex="0" data-tip="claude-opus-5, en Claude Desktop: generó el borrador y lo cotejó con el autoinforme de la coordinación.">Claude Opus 5</span></td>
           <td class="media"><b>1,29</b><div class="pista"><div class="barra anterior" style="width:64.5%"></div></div></td>
           <td class="num">12</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: presenta como realizadas actuaciones que el autoinforme anterior solo proponía.&#10;Valor contradictorio: un indicador del título con dos valores distintos.&#10;Origen no garantizado: no se registró el entorno ni la fecha de extracción.">3 errores</span></td></tr>
-        <tr class="detalle" id="det-E03" hidden><td colspan="6"><div class="ficha">
+        <tr class="detalle" id="det-E03" hidden><td colspan="7"><div class="ficha">
           <div><h4>Valoración</h4><p>Identificación e indicadores correctos, pero 16 puntos débiles frente a 1 de la coordinación y la serie histórica copiada del autoinforme anterior en lugar de consultarla en LinceBI.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: actuaciones propuestas descritas como hechas.</li><li><b>Valor contradictorio</b>: un indicador del título con dos valores distintos.</li><li><b>Origen no garantizado</b>: extracción sin entorno ni fecha registrados.</li></ul></div>
@@ -311,10 +316,11 @@
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E04">E04</button></td>
           <td title="Grado en Ingeniería Informática">Informática</td>
           <td><a class="chip ver" href="#v2" data-tip="Versión 2, primera del asistente actual (commit d5ed099, 2-10-2026): incorpora L4-L14 y ya no contiene ejemplos de los títulos evaluados.">v2</a></td>
+          <td><span class="chip modelo" tabindex="0" data-tip="claude-opus-5.5, en GitHub Copilot CLI: generó el borrador y lo cotejó con el autoinforme de la coordinación.">Claude Opus 5.5</span></td>
           <td class="media"><b>1,43</b><div class="pista"><div class="barra actual" style="width:71.5%"></div></div></td>
           <td class="num">7</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: afirma que el título habilita para una profesión regulada, en contra de la memoria, y describe reuniones con acta sin evidencia de que se celebren.">1 error</span></td></tr>
-        <tr class="detalle" id="det-E04" hidden><td colspan="6"><div class="ficha">
+        <tr class="detalle" id="det-E04" hidden><td colspan="7"><div class="ficha">
           <div><h4>Valoración</h4><p>Mismo título que E01: la nota pasa de 0,57 a 1,43. Identificación e indicadores pasan de 0 a 2 y desaparecen los valores contradictorios y los datos de origen no garantizado. Persisten propuestas descritas como hechas y restos de instrucciones de la plantilla.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: habilitación profesional deducida en contra de la memoria y actuaciones sin evidencia. Origen de las lecciones L16 y L18.</li></ul></div>
@@ -327,10 +333,11 @@
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E05">E05</button></td>
           <td title="Grado en Ingeniería Aeroespacial">Aeroespacial</td>
           <td><a class="chip ver" href="#v3" data-tip="Versión 3 (commit a3157b3, 3-10-2026): añade L16-L18.">v3</a></td>
+          <td><span class="chip modelo" tabindex="0" data-tip="claude-opus-5.5, en GitHub Copilot CLI: generó el borrador y lo cotejó con el autoinforme de la coordinación.">Claude Opus 5.5</span></td>
           <td class="media"><b>1,43</b><div class="pista"><div class="barra actual" style="width:71.5%"></div></div></td>
           <td class="num">7</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: conserva una frase modelo de la plantilla que afirma que el título se imparte en varias modalidades, cuando solo es presencial.">1 error</span></td></tr>
-        <tr class="detalle" id="det-E05" hidden><td colspan="6"><div class="ficha">
+        <tr class="detalle" id="det-E05" hidden><td colspan="7"><div class="ficha">
           <div><h4>Valoración</h4><p>Mismo título que E02: de 1,00 a 1,43. Mejoran el plan de mejora (pasa a 2) y la limpieza de instrucciones. Se confirman en un segundo título errores de análisis, de anexos y de recomendaciones de ACCUA, que pasan a las lecciones L19-L22.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: texto modelo de la plantilla conservado sin contrastar. Origen de la lección L16b.</li></ul></div>
@@ -343,10 +350,11 @@
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E06">E06</button></td>
           <td title="Grado en Ingeniería en Diseño Industrial y Desarrollo del Producto">Diseño Industrial</td>
           <td><a class="chip ver" href="#v4" data-tip="Versión 4 (commit 2816f9e, 3-10-2026): añade L16b y L19-L22.">v4</a></td>
+          <td><span class="chip modelo" tabindex="0" data-tip="claude-opus-5.5, en GitHub Copilot CLI: generó el borrador y lo cotejó con el autoinforme de la coordinación.">Claude Opus 5.5</span></td>
           <td class="media"><b>1,57</b><div class="pista"><div class="barra actual" style="width:78.5%"></div></div></td>
           <td class="num">8</td>
           <td class="ultima"><span class="chip limpio">Ninguno</span></td></tr>
-        <tr class="detalle" id="det-E06" hidden><td colspan="6"><div class="ficha">
+        <tr class="detalle" id="det-E06" hidden><td colspan="7"><div class="ficha">
           <div><h4>Valoración</h4><p>Mismo título que E03: de 1,29 a 1,57 y primer borrador sin errores graves. Funcionan el contraste del texto modelo y las recomendaciones de ACCUA abiertas. Fallan un anexo incompleto y adjetivos de evolución que la serie no respalda.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><p>Ninguno.</p></div>
@@ -359,10 +367,11 @@
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E07">E07</button></td>
           <td title="Grado en Historia">Historia</td>
           <td><a class="chip ver" href="#v5" data-tip="Versión 5 (commit 4e6da0d, 3-10-2026): añade L23-L27.">v5</a></td>
+          <td><span class="chip modelo" tabindex="0" data-tip="claude-opus-5.5, en GitHub Copilot CLI: generó el borrador y lo cotejó con el autoinforme de la coordinación.">Claude Opus 5.5</span></td>
           <td class="media"><b>1,57</b><div class="pista"><div class="barra actual" style="width:78.5%"></div></div></td>
           <td class="num">6</td>
           <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: valores sin dato en LinceBI («-») consignados como 0 % y uno de ellos narrado como ausencia de actividad.">1 error</span></td></tr>
-        <tr class="detalle" id="det-E07" hidden><td colspan="6"><div class="ficha">
+        <tr class="detalle" id="det-E07" hidden><td colspan="7"><div class="ficha">
           <div><h4>Valoración</h4><p>Primer título fuera de la ESI: mantiene la nota de E06. Funcionan el Anexo IV completo y la advertencia de series que no cuadran con el autoinforme anterior. Fallan los guiones convertidos en 0 %, una evolución con el signo cambiado y notas de la plantilla en un anexo. El autoinforme de la coordinación es mucho más extenso que los de la ESI.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: «sin dato» tratado como cero, pese a la lección L19, que habrá que reforzar.</li></ul></div>
@@ -487,7 +496,7 @@
   </section>
 </main>
 
-<footer>Uso interno de la Universidad de Cádiz · Última actualización: 4 de octubre de 2026</footer>
+<footer>Uso interno de la Universidad de Cádiz · Última actualización: 18 de octubre de 2026</footer>
 <script>
   var AYUDA_TABLA = {
     'Diferencias por fallo del asistente': 'Diferencias con el autoinforme de la coordinación cuya causa es el asistente. No cuentan las debidas a LinceBI, a datos internos del centro, a errores del autoinforme ni a la redacción (ver «Qué diferencias cuentan» en el procedimiento).'

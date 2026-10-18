@@ -11,17 +11,18 @@ y [los estados de una lección](PROCEDIMIENTO.md#después-de-la-ejecución-aplic
 
 ## Resumen de la serie
 
-Notas de B con la rúbrica v2 (escala 0-2, media de D1-D7).
+Notas de B (`gpt-6.1-sol`) con la rúbrica v2 (escala 0-2, media de D1-D7). «Modelo A» es el
+modelo que generó el borrador.
 
-| Ejecución | Skill | Media | Bloqueantes |
-|---|---|---|---|
-| E01-GII | v0: anterior, inicial (línea base) | 0,57 | B1, B2, B3 |
-| E02-GIA | v1: anterior, modificada tras E01 (línea base) | 1,00 | B2, B3 |
-| E03-GIDIDP | v1: anterior, modificada tras E01 (línea base) | 1,29 | B1, B2, B3 |
-| [E04-GII](#e04-gii-con-la-skill-actual) | v2 (`d5ed099`): actual | 1,43 | B1 |
-| [E05-GIA](#e05-gia-con-l16-l18) | v3 (`a3157b3`): + L16-L18 | 1,43 | B1 |
-| [E06-GIDIDP](#e06-gididp-con-l16b-y-l19-l22) | v4 (`2816f9e`): + L16b, L19-L22 | 1,57 | — |
-| [E07-GH](#e07-gh-con-l23-l27) | v5 (`4e6da0d`): + L23-L27 | 1,57 | B1 |
+| Ejecución | Skill | Modelo A | Media | Bloqueantes |
+|---|---|---|---|---|
+| E01-GII | v0: anterior, inicial (línea base) | `claude-opus-4.8` (Claude Desktop) | 0,57 | B1, B2, B3 |
+| E02-GIA | v1: anterior, modificada tras E01 (línea base) | `claude-opus-4.8` (Claude Desktop) | 1,00 | B2, B3 |
+| E03-GIDIDP | v1: anterior, modificada tras E01 (línea base) | `claude-opus-5` (Claude Desktop) | 1,29 | B1, B2, B3 |
+| [E04-GII](#e04-gii-con-la-skill-actual) | v2 (`d5ed099`): actual | `claude-opus-5.5` | 1,43 | B1 |
+| [E05-GIA](#e05-gia-con-l16-l18) | v3 (`a3157b3`): + L16-L18 | `claude-opus-5.5` | 1,43 | B1 |
+| [E06-GIDIDP](#e06-gididp-con-l16b-y-l19-l22) | v4 (`2816f9e`): + L16b, L19-L22 | `claude-opus-5.5` | 1,57 | — |
+| [E07-GH](#e07-gh-con-l23-l27) | v5 (`4e6da0d`): + L23-L27 | `claude-opus-5.5` | 1,57 | B1 |
 
 Versión vigente, pendiente de evaluar: v6 (`6f9f6cf`): + L11b, L28. Cada versión nueva de la
 skill recibe el siguiente número y se anota aquí con su commit.
@@ -141,7 +142,8 @@ Decisión del responsable: pendiente.
 Antes del procedimiento, cada evaluación fue un título de la ESI cuyo autoinforme de
 seguimiento del curso 2024/25 (convocatoria 2026) ya había elaborado y aprobado la
 coordinación. Se ejecutó la skill anterior (`old-skills/autoinforme-seguimiento-uca`) en
-Claude Desktop y se pidió a la IA que cotejara su borrador con el documento humano. Entre la
+Claude Desktop (con `claude-opus-4.8` en las evals 1 y 2 y `claude-opus-5` en la 3) y se
+pidió a la IA que cotejara su borrador con el documento humano. Entre la
 eval 1 y las evals 2-3 la IA modificó la skill con lo aprendido en la eval 1; esa versión es
 la que se conserva en `old-skills/`.
 

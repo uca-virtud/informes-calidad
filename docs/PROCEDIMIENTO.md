@@ -200,8 +200,9 @@ coordinación se añade en el paso 8, si llega):
 orquestador tras cada ejecución, sin esperar a la decisión del responsable. En
 `docs/EVALUACIONES.md`, sin datos del título más allá de su sigla:
 
-- «Resumen de la serie»: una fila con la ejecución, las lecciones a validar, la media y los
-  bloqueantes; revisa la frase de conclusión bajo la tabla.
+- «Resumen de la serie»: una fila con la ejecución, las lecciones a validar, el modelo A (el
+  que generó el borrador, según la ficha), la media y los bloqueantes; revisa la frase de
+  conclusión bajo la tabla.
 - «Ejecuciones»: una sección «### Enn: <sigla> con <lecciones a validar>» al final, con la
   media, las dimensiones con 2, los bloqueantes y su causa, las lecciones validadas o
   insuficientes, las nuevas candidatas y la línea «Decisión del responsable: pendiente.».
@@ -218,7 +219,8 @@ documentos internos:
   contexto;
 - en «Resultados», la barra de la ejecución en «Evolución de la nota» y, si repite un título, su
   par en «Mismo título, antes y después»;
-- en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, nota media,
+- en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, modelo que
+  generó el borrador con su identificador en el tooltip, nota media,
   diferencias por fallo del asistente y un chip con el número de
   errores graves cuyo tooltip nombra cada uno —dato inventado, valor contradictorio u origen no
   garantizado— con su motivo generalizado; no se publican los códigos B1-B3) y su fila

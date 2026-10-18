@@ -565,13 +565,13 @@ def actualizar_historial():
         coord = v["media"] if v else None
         dif = round(coord - r["media"], 2) if v and coord is not None and r["media"] is not None else None
         filas.append([carpeta.name, campo_ficha(carpeta, "Fecha"), campo_ficha(carpeta, "Versión de la skill"),
-                      r["rubrica"]] + [nota(r["final"][d]) for d in DIMENSIONES]
+                      campo_ficha(carpeta, "Modelo A (generador y autocotejo)"), r["rubrica"]] + [nota(r["final"][d]) for d in DIMENSIONES]
                      + [nota(r["media"]), ", ".join(r["bloqueantes"]) or "—",
                         f"{round(100 * b['palabras'] / h['palabras'])} %", f"{b['pd']} / {h['pd']}",
                         b["pendientes"], f"{r['anexo']['porcentaje']} %" if r["anexo"] else "—",
                         r["causas_b"]["S"], len(r["pendientes"]) + len(v["pendientes"] if v else []),
                         nota(coord), nota(dif)] + [nota(v["utilidad"].get(u) if v else None) for u in UTILIDAD])
-    cab = ["Ejecución", "Fecha", "Skill", "Rúbrica"] + DIMENSIONES + [
+    cab = ["Ejecución", "Fecha", "Skill", "Modelo A", "Rúbrica"] + DIMENSIONES + [
         "Media", "Bloq.", "Extensión", "PD IA/hum.", "[PEND.]", "Anexo I (cota sup.)", "Causas S", "Pend. revisión",
         "Coord.", "Δ coord.−IA"] + [f"{u} (1-5)" for u in UTILIDAD]
     (EVALS / "historial.md").write_text(
