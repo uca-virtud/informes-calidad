@@ -1,0 +1,20 @@
+He cotejado nuestro borrador con el autoinforme del experto (66 páginas, aprobado por CGC el 24/03/2026). El resultado es muy tranquilizador: coinciden en estructura, criterios, estilo, objetivos de tasas, las 15 recomendaciones ACCUA (05/07/2023), el razonamiento (misma atribución de la baja graduación a la empleabilidad) y casi todos los indicadores. Las diferencias son básicamente de versión de los datos y de los apartados que dependían de gestión interna.
+Diferencias de datos (pruebas vs producción) — lo relevante
+Se confirma justo lo que advertí sobre datapru:
+
+Tasa de graduación 2024-25: el experto pone 7,5 %; nosotros 16,4 %. Es la única diferencia grande y hay que corregirla. El resto de la serie (25,7 / 29,2 / 31,2 / 33,3) es idéntica.
+Diferencias de redondeo en el último curso: rendimiento 67,3 % (experto) vs 67,4 %; eficiencia 73,0 % vs 73,4 %; éxito 79,7 vs 79,8; evaluación 84,4 vs 84,5.
+El resto de indicadores (satisfacción P07-02 3,68; abandono 10,4 %; profesorado; etc.) coinciden.
+
+Apartados que dejamos [PENDIENTE] y cómo los resolvió el experto
+
+3.3 Créditos reconocidos: el experto sí lo tiene (787 créditos reconocidos en el curso), obtenido del Sistema de Información. Se puede incorporar.
+4.5 Prácticas curriculares: el experto da el recuento (2024/25: 15 estudiantes; serie 17 / — COVID / 36 / 18 / 35 / 15). Dato de gestión interna, no de LinceBI.
+Criterio 2 (CGC): el experto no nombra a los miembros; remite a la web. Podemos hacer lo mismo en lugar de dejarlo pendiente.
+7.4 Empleadores: el experto tampoco tiene indicadores; describe que el procedimiento está en elaboración (coincide con nuestro planteamiento).
+
+Un punto donde nuestro texto es más preciso
+En el 4.1 el experto escribe que "los sexenios se incrementan de 89 a 149"; en realidad 89→149 es la serie de quinquenios (docencia). Los sexenios van de 38 a 71. Nuestro borrador lo refleja correctamente (quinquenios 89→149, sexenios 38→71).
+Diferencias editoriales (no errores)
+Los puntos fuertes/débiles del criterio 6 están redactados distinto pero son equivalentes, y nuestro análisis de calificaciones por asignatura es más extenso que el del experto (que solo resume que la media de suspensos es del 13 % —coincide con nuestros totales—).
+¿Quieres que aplique las correcciones para dejar nuestro documento alineado con la versión de producción? En concreto: poner la graduación en 7,5 % (y ajustar rendimiento/eficiencia/éxito/evaluación al redondeo del experto), rehacer el análisis y los puntos del criterio 6 con ese dato, e incorporar créditos reconocidos (787), prácticas curriculares (15) y la remisión a la web para la CGC.

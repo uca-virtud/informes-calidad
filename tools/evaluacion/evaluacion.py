@@ -574,10 +574,15 @@ def actualizar_historial():
     cab = ["Ejecución", "Fecha", "Skill", "Modelo A", "Rúbrica"] + DIMENSIONES + [
         "Media", "Bloq.", "Extensión", "PD IA/hum.", "[PEND.]", "Anexo I (cota sup.)", "Causas S", "Pend. revisión",
         "Coord.", "Δ coord.−IA"] + [f"{u} (1-5)" for u in UTILIDAD]
-    (EVALS / "historial.md").write_text(
-        "# Historial de ejecuciones\n\nGenerado por `evaluacion.py medir` y `valoracion`; no editar a mano. "
-        "«Coord.» es la media de la coordinación pasada a 0-2.\n\n"
-        + tabla_md(cab, filas) + "\n", encoding="utf-8")
+    bloque = (f"{MARCA_INI}\nGenerada por `evaluacion.py medir` y `valoracion`; no editar a mano. "
+              f"«Coord.» es la media de la coordinación pasada a 0-2.\n\n{tabla_md(cab, filas)}\n{MARCA_FIN}")
+    historial = EVALS / "historial.md"
+    txt = historial.read_text(encoding="utf-8") if historial.exists() else ""
+    if MARCA_INI in txt:
+        txt = re.sub(re.escape(MARCA_INI) + ".*?" + re.escape(MARCA_FIN), lambda _: bloque, txt, flags=re.S)
+    else:
+        txt = f"# Historial de ejecuciones\n\n## Tabla de ejecuciones\n\n{bloque}\n"
+    historial.write_text(txt, encoding="utf-8")
 
 
 def cmd_medir(args):

@@ -14,7 +14,8 @@ Cada contenido vive en una sola fuente: enlázala en lugar de copiarla.
 | Elaborar o revisar un autoinforme | [`skills/uca-informes-calidad/SKILL.md`](skills/uca-informes-calidad/SKILL.md) y las referencias que indique su flujo |
 | Preparar un caso de evaluación a partir del nombre de un título | [`.github/skills/preparar-caso/SKILL.md`](.github/skills/preparar-caso/SKILL.md) |
 | Evaluar la skill: ejecución, registro de resultados y material para las coordinaciones | [`docs/PROCEDIMIENTO.md`](docs/PROCEDIMIENTO.md) |
-| Resultados de las evaluaciones y estado de las lecciones | [`docs/EVALUACIONES.md`](docs/EVALUACIONES.md) |
+| Versiones de la skill y estado de las lecciones | [`docs/LECCIONES.md`](docs/LECCIONES.md) |
+| Resultados de cada ejecución | `evals/historial.md` (solo local) |
 | Estructura del repositorio y funcionamiento de la web | [`README.md`](README.md) |
 
 ## Cambiar la skill
@@ -24,20 +25,23 @@ Cada contenido vive en una sola fuente: enlázala en lugar de copiarla.
 - Cumple las [reglas contra el sobreajuste](docs/PROCEDIMIENTO.md#reglas-contra-el-sobreajuste):
   los ejemplos literales proceden solo de títulos con `conjunto = excluido` en
   `evals/casos.csv`.
-- En el mismo cambio, actualiza `SKILL.md`, las referencias afectadas y la tabla de lecciones
-  de `docs/EVALUACIONES.md`.
+- En el mismo cambio, actualiza `SKILL.md`, las referencias afectadas y las tablas de
+  versiones y lecciones de `docs/LECCIONES.md`.
 
 ## Datos personales
 
-`evals/`, `samples/`, `old-skills/` y `docs/peticiones-cartera/` contienen datos personales y
-solo existen en local (`.gitignore`). De ellos llegan al repositorio y a la web únicamente
-cifras agregadas, lecciones generalizadas y el material aprobado del paso 7 del
-procedimiento.
+`evals/historial.md`, `evals/ejecuciones/*/valoracion-coordinacion*.xlsx`, `samples/`,
+`old-skills/` y `docs/peticiones-cartera/` contienen datos personales y solo existen en local
+(`.gitignore`). De ellos llegan al repositorio y a la web únicamente cifras agregadas y
+lecciones generalizadas. `evals/casos.csv`, `evals/casos/` (documentos públicos de cada título)
+y `evals/ejecuciones/` (incluido el material del paso 7) sí se versionan; no añadas ahí nada
+con datos personales.
 
 La web publica solo el avance y cifras globales. Nunca publica datos personales (nombres,
 correos, teléfonos), documentos (PDF, DOCX, Excel, JSON) ni contenido de
-`docs/peticiones-cartera/`. Única excepción: los enlaces de `evaluacion.html` al material de
-`docs/evaluacion/material-coordinaciones/`, que está en el repositorio, no en `web/`.
+`docs/peticiones-cartera/`. Única excepción: los enlaces de `evaluacion.html` al material del
+paso 7 (borrador, ficha y hoja de valoración de `evals/ejecuciones/Enn-<id>/` y autoinforme
+de `evals/casos/<id>/referencia/`), que está en el repositorio, no en `web/`.
 
 ## Web
 
@@ -45,10 +49,11 @@ correos, teléfonos), documentos (PDF, DOCX, Excel, JSON) ni contenido de
   cuando cambie una fase (en `docs/`, en la skill o porque lo comunique el usuario).
 - `web/evaluacion.html` (resultados) se actualiza tras cada ejecución (pasos 6 y 7 del
   procedimiento). `web/procedimiento.html` explica el proceso y la rúbrica: actualízalo cuando
-  cambien en `docs/PROCEDIMIENTO.md`. `web/asistente.html` explica qué es el asistente y cómo
-  funciona: actualízalo cuando cambien la skill o el MCP. El texto de `SKILL.md` lo incrusta el workflow en
-  el marcador `SKILL_MD` de `web/asistente.html` al publicar.
-- Cada versión nueva de la skill recibe el siguiente número (v7, v8…) en `docs/EVALUACIONES.md`
+  cambien en `docs/PROCEDIMIENTO.md` o en `docs/evaluacion/rubrica.md`. `web/asistente.html`
+  explica qué es el asistente y cómo funciona: actualízalo cuando cambien la skill o el MCP.
+  El texto de `SKILL.md` lo incrusta el workflow en el marcador `SKILL_MD` de
+  `web/asistente.html` al publicar.
+- Cada versión nueva de la skill recibe el siguiente número (v7, v8…) en `docs/LECCIONES.md`
   y en la línea temporal de `web/evaluacion.html`.
 - Al modificar una página, cambia su fecha de «Última actualización».
 - La sal de `web/.staticrypt.json` es fija (no es secreta): cambiarla invalida el

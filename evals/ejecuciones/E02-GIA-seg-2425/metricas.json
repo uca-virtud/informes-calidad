@@ -1,0 +1,87 @@
+{
+  "rubrica": "2",
+  "borrador": {
+    "palabras": 16070,
+    "pf": 20,
+    "pd": 15,
+    "am": 15,
+    "pendientes": 4
+  },
+  "referencia": {
+    "palabras": 23746,
+    "pf": 14,
+    "pd": 4,
+    "am": 5,
+    "pendientes": 0
+  },
+  "anexo": {
+    "valores": 504,
+    "encontrados": 471,
+    "porcentaje": 93.5
+  },
+  "notas_a": {},
+  "notas_b": {
+    "D1": 2,
+    "D2": 0,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
+    "D7": 1
+  },
+  "final": {
+    "D1": 2,
+    "D2": 0,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
+    "D7": 1
+  },
+  "media": 1.0,
+  "bloqueantes": [
+    "B2",
+    "B3"
+  ],
+  "causas_b": {
+    "S": 13,
+    "D": 2,
+    "I": 2,
+    "H": 4,
+    "E": 1
+  },
+  "lecciones": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07",
+    "L08",
+    "L09",
+    "L10",
+    "L11"
+  ],
+  "pendientes": [
+    "Bloqueante B2",
+    "Bloqueante B3",
+    "Discrepancia 7 (H): Anexo I, P07 satisfacción y participación",
+    "Discrepancia 8 (H): Anexo I, P04 del centro",
+    "Discrepancia 9 (H): Identificación y prácticas externas",
+    "Discrepancia 12 (I): Criterio 2, CGC y actas del curso",
+    "Discrepancia 13 (I): 4.5 y 7.4, prácticas y empleadores",
+    "Discrepancia 19 (H): Criterio 6, evolución y puntos fuertes humanos"
+  ],
+  "huellas": [
+    {
+      "fichero": "skills/uca-informes-calidad/references/estilo-y-ejemplos.md",
+      "frases": 1,
+      "casos": [
+        "GIDIDP-seg-2425"
+      ],
+      "ejemplo": "de eficiencia esta tasa con un valor de",
+      "titulos": []
+    }
+  ]
+}

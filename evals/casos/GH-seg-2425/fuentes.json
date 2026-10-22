@@ -1,0 +1,18 @@
+{
+  "id": "GH-seg-2425",
+  "titulo": "Grado en Historia",
+  "nivel": "grado",
+  "centro": "FFL",
+  "tipo": "seguimiento",
+  "curso": "2024-25",
+  "convocatoria": "2026",
+  "seguimiento_accua": "",
+  "conjunto": "aprendizaje",
+  "notas": "Informe de agencia: el informe final de renovación de la acreditación (05/07/2023), preferido a la resolución de modificación no sustancial (25/06/2024) por contener las recomendaciones que atiende el seguimiento. Sin plan-mejora aparte: el enlace al plan 2023-24 del título da 404 y el plan va incluido en el autoinforme anterior (págs. 26 y ss.); el plan publicado en la página del centro es del centro, no del título. Memoria: la única publicada (MOD-NS 2024, subida en 11/2024), anterior a la referencia.",
+  "documentos": [
+    {"rol": "autoinforme-humano", "url": "https://filosofia.uca.es/wp-content/uploads/2026/09/Autoinforme-Seguimiento-G.-Historia-2024-2025-convocatoria-2026_redacted.pdf", "pagina": "https://filosofia.uca.es/grado-en-historia/"},
+    {"rol": "autoinforme-anterior", "url": "https://filosofia.uca.es/wp-content/uploads/2025/03/AUTOINFORME-GRADO-DE-HISTORIA-MARZO-2025.pdf", "pagina": "https://filosofia.uca.es/grado-en-historia/"},
+    {"rol": "memoria", "url": "https://filosofia.uca.es/wp-content/uploads/2024/11/G-Historia_MOD-NS_Memoria2024.pdf", "pagina": "https://filosofia.uca.es/grado-en-historia/"},
+    {"rol": "informe-accua", "url": "https://filosofia.uca.es/wp-content/uploads/2026/01/informeFinal2501745.pdf", "pagina": "https://filosofia.uca.es/grado-en-historia/"}
+  ]
+}

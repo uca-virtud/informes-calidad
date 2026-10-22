@@ -50,12 +50,12 @@
   .anterior { background: var(--pend); } .actual { background: var(--hecho); }
 
   /* Evolución */
-  .grafico { display: grid; grid-template-columns: repeat(7, 1fr); gap: .6rem; align-items: end; height: 190px; margin: 1rem 0 .3rem; padding: 0 .3rem; border-bottom: 2px solid var(--linea);
+  .grafico { display: grid; grid-template-columns: repeat(8, 1fr); gap: .6rem; align-items: end; height: 190px; margin: 1rem 0 .3rem; padding: 0 .3rem; border-bottom: 2px solid var(--linea);
              background: linear-gradient(to top, transparent calc(50% - 1px), #e6eaf0 calc(50% - 1px), #e6eaf0 50%, transparent 50%); }
   .grafico .col { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
   .grafico .col b { font-size: .85rem; margin-bottom: .2rem; }
   .grafico .col div { width: 70%; max-width: 60px; border-radius: 5px 5px 0 0; }
-  .ejes { display: grid; grid-template-columns: repeat(7, 1fr); gap: .6rem; padding: 0 .3rem; text-align: center; font-size: .78rem; color: var(--gris); line-height: 1.3; }
+  .ejes { display: grid; grid-template-columns: repeat(8, 1fr); gap: .6rem; padding: 0 .3rem; text-align: center; font-size: .78rem; color: var(--gris); line-height: 1.3; }
   .ejes b { display: block; color: #1d2733; }
   .pares { display: grid; gap: .7rem; margin: .8rem 0; }
   .par { display: grid; grid-template-columns: 9rem 1fr; gap: .8rem; align-items: center; font-size: .88rem; }
@@ -168,7 +168,7 @@
     <h2>En resumen</h2>
     <p>Cada borrador del asistente se compara con el autoinforme real de la coordinación del título y se corrige con
       una <a href="procedimiento.html#rubrica">rúbrica</a>. Así ha cambiado del <strong>asistente inicial</strong>
-      (v0-v1) al <strong>actual</strong> (v2-v5):</p>
+      (v0-v1) al <strong>actual</strong> (v2-v6):</p>
 
     <div class="kpis">
       <div class="kpi">
@@ -177,10 +177,10 @@
         <div class="comparar">
           <div><small>Inicial</small><b>0,95</b></div>
           <span class="flecha" aria-hidden="true">→</span>
-          <div class="despues"><small>Actual</small><b>1,50</b></div>
+          <div class="despues"><small>Actual</small><b>1,49</b></div>
         </div>
         <p>Entre «aprovechable con correcciones» (1) y «utilizable con retoques menores» (2).</p>
-        <span class="tendencia">+58 %</span>
+        <span class="tendencia">+57 %</span>
       </div>
       <div class="kpi">
         <h3>Diferencias por fallo del asistente</h3>
@@ -188,10 +188,10 @@
         <div class="comparar">
           <div><small>Inicial</small><b>12,7</b></div>
           <span class="flecha" aria-hidden="true">→</span>
-          <div class="despues"><small>Actual</small><b>7,0</b></div>
+          <div class="despues"><small>Actual</small><b>7,4</b></div>
         </div>
         <p>Diferencias con el autoinforme de la coordinación cuya causa es el asistente.</p>
-        <span class="tendencia">−45 %</span>
+        <span class="tendencia">−42 %</span>
       </div>
       <div class="kpi">
         <h3>Errores graves</h3>
@@ -199,17 +199,17 @@
         <div class="comparar">
           <div><small>Inicial</small><b>2,7</b></div>
           <span class="flecha" aria-hidden="true">→</span>
-          <div class="despues"><small>Actual</small><b>0,75</b></div>
+          <div class="despues"><small>Actual</small><b>0,8</b></div>
         </div>
         <p>Datos inventados, contradictorios o de origen no garantizado: fallos que pasarían inadvertidos en una lectura.</p>
-        <span class="tendencia">−72 %</span>
+        <span class="tendencia">−70 %</span>
       </div>
     </div>
     <div class="contexto">
-      <span><b>7</b> evaluaciones</span>
-      <span><b>4</b> grados de <b>2</b> centros (ESI y Filosofía y Letras)</span>
-      <span><b>6</b> versiones del asistente evaluadas</span>
-      <span><b>30</b> lecciones incorporadas, <b>14</b> ya comprobadas</span>
+      <span><b>8</b> evaluaciones</span>
+      <span><b>5</b> grados de <b>2</b> centros (ESI y Filosofía y Letras)</span>
+      <span><b>7</b> versiones del asistente evaluadas</span>
+      <span><b>30</b> lecciones incorporadas, <b>16</b> ya comprobadas</span>
     </div>
 
     <ul class="indice" aria-label="En esta página">
@@ -226,7 +226,7 @@
     <h3>Evolución de la nota</h3>
     <p class="leyenda">Nota media de cada evaluación (0-2). La línea central marca el 1, «aprovechable».
       <span class="chip ver vieja">Gris</span> versiones iniciales · <span class="chip limpio">Verde</span> asistente actual.</p>
-    <div class="grafico" role="img" aria-label="Nota por evaluación: E01 0,57; E02 1,00; E03 1,29; E04 1,43; E05 1,43; E06 1,57; E07 1,57">
+    <div class="grafico" role="img" aria-label="Nota por evaluación: E01 0,57; E02 1,00; E03 1,29; E04 1,43; E05 1,43; E06 1,57; E07 1,57; E08 1,43">
       <div class="col"><b>0,57</b><div class="anterior" style="height:28.5%"></div></div>
       <div class="col"><b>1,00</b><div class="anterior" style="height:50%"></div></div>
       <div class="col"><b>1,29</b><div class="anterior" style="height:64.5%"></div></div>
@@ -234,11 +234,12 @@
       <div class="col"><b>1,43</b><div class="actual" style="height:71.5%"></div></div>
       <div class="col"><b>1,57</b><div class="actual" style="height:78.5%"></div></div>
       <div class="col"><b>1,57</b><div class="actual" style="height:78.5%"></div></div>
+      <div class="col"><b>1,43</b><div class="actual" style="height:71.5%"></div></div>
     </div>
     <div class="ejes" aria-hidden="true">
       <span><b>E01</b>Informática<br>v0</span><span><b>E02</b>Aeroespacial<br>v1</span><span><b>E03</b>Diseño Ind.<br>v1</span>
       <span><b>E04</b>Informática<br>v2</span><span><b>E05</b>Aeroespacial<br>v3</span><span><b>E06</b>Diseño Ind.<br>v4</span>
-      <span><b>E07</b>Historia<br>v5</span>
+      <span><b>E07</b>Historia<br>v5</span><span><b>E08</b>Humanidades<br>v6</span>
     </div>
 
     <h3>Mismo título, antes y después</h3>
@@ -324,10 +325,10 @@
           <div><h4>Valoración</h4><p>Mismo título que E01: la nota pasa de 0,57 a 1,43. Identificación e indicadores pasan de 0 a 2 y desaparecen los valores contradictorios y los datos de origen no garantizado. Persisten propuestas descritas como hechas y restos de instrucciones de la plantilla.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: habilitación profesional deducida en contra de la memoria y actuaciones sin evidencia. Origen de las lecciones L16 y L18.</li></ul></div>
-          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/autoinforme-coordinacion.pdf">Autoinforme de la coordinación (PDF)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GII-seg-2425/ficha-ia.md">Ficha de la ejecución (Markdown)</a></p></div>
+          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E04-GII-seg-2425/borrador.docx">Borrador IA (Word)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/casos/GII-seg-2425/referencia/autoinforme-humano.pdf">Autoinforme de la coordinación (PDF)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E04-GII-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E04-GII-seg-2425/ficha.md">Ficha de la ejecución (Markdown)</a></p></div>
         </div></td></tr>
 
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E05">E05</button></td>
@@ -341,10 +342,10 @@
           <div><h4>Valoración</h4><p>Mismo título que E02: de 1,00 a 1,43. Mejoran el plan de mejora (pasa a 2) y la limpieza de instrucciones. Se confirman en un segundo título errores de análisis, de anexos y de recomendaciones de ACCUA, que pasan a las lecciones L19-L22.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>ACCUA</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: texto modelo de la plantilla conservado sin contrastar. Origen de la lección L16b.</li></ul></div>
-          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/autoinforme-coordinacion.pdf">Autoinforme de la coordinación (PDF)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIA-seg-2425/ficha-ia.md">Ficha de la ejecución (Markdown)</a></p></div>
+          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E05-GIA-seg-2425/borrador.docx">Borrador IA (Word)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/casos/GIA-seg-2425/referencia/autoinforme-humano.pdf">Autoinforme de la coordinación (PDF)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E05-GIA-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E05-GIA-seg-2425/ficha.md">Ficha de la ejecución (Markdown)</a></p></div>
         </div></td></tr>
 
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E06">E06</button></td>
@@ -358,10 +359,10 @@
           <div><h4>Valoración</h4><p>Mismo título que E03: de 1,29 a 1,57 y primer borrador sin errores graves. Funcionan el contraste del texto modelo y las recomendaciones de ACCUA abiertas. Fallan un anexo incompleto y adjetivos de evolución que la serie no respalda.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><p>Ninguno.</p></div>
-          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/autoinforme-coordinacion.pdf">Autoinforme de la coordinación (PDF)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GIDIDP-seg-2425/ficha-ia.md">Ficha de la ejecución (Markdown)</a></p></div>
+          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E06-GIDIDP-seg-2425/borrador.docx">Borrador IA (Word)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/casos/GIDIDP-seg-2425/referencia/autoinforme-humano.pdf">Autoinforme de la coordinación (PDF)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E06-GIDIDP-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E06-GIDIDP-seg-2425/ficha.md">Ficha de la ejecución (Markdown)</a></p></div>
         </div></td></tr>
 
         <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E07">E07</button></td>
@@ -375,10 +376,27 @@
           <div><h4>Valoración</h4><p>Primer título fuera de la ESI: mantiene la nota de E06. Funcionan el Anexo IV completo y la advertencia de series que no cuadran con el autoinforme anterior. Fallan los guiones convertidos en 0 %, una evolución con el signo cambiado y notas de la plantilla en un anexo. El autoinforme de la coordinación es mucho más extenso que los de la ESI.</p></div>
           <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>Plan de mejora</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
           <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: «sin dato» tratado como cero, pese a la lección L19, que habrá que reforzar.</li></ul></div>
-          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GH-seg-2425/borrador-ia.docx">Borrador IA (Word)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GH-seg-2425/autoinforme-coordinacion.pdf">Autoinforme de la coordinación (PDF)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GH-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
-            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/docs/evaluacion/material-coordinaciones/GH-seg-2425/ficha-ia.md">Ficha de la ejecución (Markdown)</a></p></div>
+          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E07-GH-seg-2425/borrador.docx">Borrador IA (Word)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/casos/GH-seg-2425/referencia/autoinforme-humano.pdf">Autoinforme de la coordinación (PDF)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E07-GH-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E07-GH-seg-2425/ficha.md">Ficha de la ejecución (Markdown)</a></p></div>
+        </div></td></tr>
+
+        <tr><td><button class="desplegar" aria-expanded="false" aria-controls="det-E08">E08</button></td>
+          <td title="Grado en Humanidades">Humanidades</td>
+          <td><a class="chip ver" href="#v6" data-tip="Versión 6 (commit 6f9f6cf, 4-10-2026): añade L11b y L28.">v6</a></td>
+          <td><span class="chip modelo" tabindex="0" data-tip="claude-opus-5.5, en GitHub Copilot CLI: generó el borrador y lo cotejó con el autoinforme de la coordinación.">Claude Opus 5.5</span></td>
+          <td class="media"><b>1,43</b><div class="pista"><div class="barra actual" style="width:71.5%"></div></div></td>
+          <td class="num">9</td>
+          <td class="ultima"><span class="chip grave" tabindex="0" data-tip="Dato inventado: afirmaciones sin respaldo (la causa de una evolución atribuida sin fuente, actividad del curso afirmada sin evidencia y valores sin dato en LinceBI narrados como ausencia de actividad).">1 error</span></td></tr>
+        <tr class="detalle" id="det-E08" hidden><td colspan="7"><div class="ficha">
+          <div><h4>Valoración</h4><p>Segundo título de Filosofía y Letras: baja a 1,43, con las mismas notas por aspecto que E04. Funcionan las dos lecciones nuevas (créditos reconocidos como dato del centro y resultados globales con seis cursos). Fallan de nuevo afirmaciones sin respaldo, el «sin dato» narrado como ausencia y restos de la plantilla; el plan de mejora baja a 1 por fechas propuestas redactadas como acordadas.</p></div>
+          <div><h4>Nota por aspecto</h4><dl class="aspectos"><div class="n2"><dt data-aspecto>Identificación</dt><dd>2</dd></div><div class="n2"><dt data-aspecto>Indicadores</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Cobertura</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Análisis</dt><dd>1</dd></div><div class="n1"><dt data-aspecto>Plan de mejora</dt><dd>1</dd></div><div class="n2"><dt data-aspecto>ACCUA</dt><dd>2</dd></div><div class="n1"><dt data-aspecto>Formato</dt><dd>1</dd></div></dl></div>
+          <div><h4>Errores graves</h4><ul><li><b>Dato inventado</b>: afirmaciones sin fuente ni evidencia del curso, pese a las lecciones L19 y L25, que habrá que reforzar.</li></ul></div>
+          <div><h4>Material</h4><p class="material"><a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E08-GHUM-seg-2425/borrador.docx">Borrador IA (Word)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/casos/GHUM-seg-2425/referencia/autoinforme-humano.pdf">Autoinforme de la coordinación (PDF)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E08-GHUM-seg-2425/rubrica-valoracion.xlsx">Hoja de valoración (Excel)</a>
+            <a href="https://github.com/uca-virtud/informes-calidad/raw/main/evals/ejecuciones/E08-GHUM-seg-2425/ficha.md">Ficha de la ejecución (Markdown)</a></p></div>
         </div></td></tr>
       </tbody>
     </table>
@@ -388,13 +406,14 @@
 
     <h3>Qué dicen los resultados</h3>
     <ul>
-      <li><strong>Resuelto:</strong> la identificación del título y los indicadores se obtienen bien desde E03, y el
-        plan de mejora y las recomendaciones de ACCUA, desde E06.</li>
+      <li><strong>Resuelto:</strong> la identificación del título y los indicadores se obtienen bien desde E03, y las
+        recomendaciones de ACCUA, desde E06. El plan de mejora, bien en E05-E07, vuelve a 1 en E08.</li>
       <li><strong>Pendiente:</strong> siguen en 1 la <strong>cobertura</strong> (apartados que dependen de datos internos
         del centro), la <strong>calidad del análisis</strong> y la <strong>limpieza del formato</strong>. Ahí se
-        concentran las lecciones «A reforzar».</li>
+        concentran las lecciones «A reforzar», que se repiten en E07 y E08.</li>
       <li><strong>Generalización:</strong> el primer título de otro centro (Historia, E07) obtiene la misma nota que el
-        mejor de la ESI, aunque con más datos pendientes y un borrador proporcionalmente más corto.</li>
+        mejor de la ESI, aunque con más datos pendientes y un borrador proporcionalmente más corto. El segundo
+        (Humanidades, E08) baja a la nota de E04 y E05.</li>
     </ul>
   </section>
 
@@ -403,10 +422,10 @@
     <p>Cada versión incorpora las lecciones aprobadas tras la evaluación anterior y se comprueba con el siguiente
       título. Una lección se da por buena solo cuando funciona en un título distinto del que la originó.</p>
     <div class="estados">
-      <div><b>14</b><span class="chip ok">Funciona</span><br>Comprobada en un título posterior.</div>
+      <div><b>16</b><span class="chip ok">Funciona</span><br>Comprobada en un título posterior.</div>
       <div><b>4</b><span class="chip reforzada">Reforzada</span><br>Se quedó corta y se sustituyó por otra más precisa.</div>
       <div><b>5</b><span class="chip areforzar">A reforzar</span><br>Se quedó corta en la última evaluación.</div>
-      <div><b>7</b><span class="chip porver">Por comprobar</span><br>Aún sin evidencia en un título posterior.</div>
+      <div><b>5</b><span class="chip porver">Por comprobar</span><br>Aún sin evidencia en un título posterior.</div>
     </div>
     <p class="leyenda">Pasa el ratón sobre el estado de cada lección para ver en qué evaluación se comprobó.</p>
 
@@ -455,7 +474,7 @@
         <div class="cabver"><strong>v4</strong><span>3 de octubre de 2026 · commit 2816f9e · evaluada en E06 (1,57, sin errores graves)</span></div>
         <ul class="lecciones">
           <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E06.">Funciona</span><b>L16b</b><span>Releer el texto modelo de la plantilla que se conserva y contrastarlo con la memoria.</span></li>
-          <li><span class="chip areforzar" tabindex="0" data-tip="Funcionó en E06, pero se quedó corta en E07: guiones de LinceBI consignados como 0 % y datos disponibles dejados como pendientes.">A reforzar</span><b>L19</b><span>Cero no es «sin dato»; buscar en los documentos antes de dejar un dato pendiente.</span></li>
+          <li><span class="chip areforzar" tabindex="0" data-tip="Funcionó en E06, pero se quedó corta en E07 y E08: guiones de LinceBI consignados como 0 % o narrados como ausencia de actividad, y datos disponibles dejados como pendientes.">A reforzar</span><b>L19</b><span>Cero no es «sin dato»; buscar en los documentos antes de dejar un dato pendiente.</span></li>
           <li><span class="chip reforzada" tabindex="0" data-tip="Insuficiente en E06: un anexo con solo una selección. Reforzada con L26.">Reforzada</span><b>L20</b><span>Anexos extraídos del informe de LinceBI previsto; un agregado no basta.</span></li>
           <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E06.">Funciona</span><b>L21</b><span>Declarar abiertas las recomendaciones de informes de ACCUA anteriores, con número y fecha.</span></li>
           <li><span class="chip reforzada" tabindex="0" data-tip="Insuficiente en E06: adjetivos de evolución sin respaldo. Reforzada con L23.">Reforzada</span><b>L22</b><span>Concluir solo lo que mide el indicador.</span></li>
@@ -464,18 +483,18 @@
       <li id="v5">
         <div class="cabver"><strong>v5</strong><span>3 de octubre de 2026 · commit 4e6da0d · evaluada en E07 (1,57)</span></div>
         <ul class="lecciones">
-          <li><span class="chip areforzar" tabindex="0" data-tip="En E07 los objetivos de la memoria salieron bien, pero una evolución del centro se describió con el signo cambiado.">A reforzar</span><b>L23</b><span>Contrastar los adjetivos de evolución con toda la serie; cada objetivo de la memoria con su tasa.</span></li>
+          <li><span class="chip areforzar" tabindex="0" data-tip="En E07 los objetivos de la memoria salieron bien, pero una evolución del centro se describió con el signo cambiado. En E08, «mayoritariamente» para menos de la mitad y la causa de una evolución atribuida sin fuente.">A reforzar</span><b>L23</b><span>Contrastar los adjetivos de evolución con toda la serie; cada objetivo de la memoria con su tasa.</span></li>
           <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E07: series discrepantes advertidas sin analizar su evolución.">Funciona</span><b>L24</b><span>Contrastar los cursos comunes con el autoinforme anterior y advertir las diferencias.</span></li>
-          <li><span class="chip areforzar" tabindex="0" data-tip="Insuficiente en E07: se juzgó la eficacia de acciones cuya implantación no constaba.">A reforzar</span><b>L25</b><span>No juzgar la eficacia de una acción sin evidencia de que se implantó.</span></li>
+          <li><span class="chip areforzar" tabindex="0" data-tip="Insuficiente en E07: se juzgó la eficacia de acciones cuya implantación no constaba. En E08, actividad del curso afirmada sin evidencia.">A reforzar</span><b>L25</b><span>No juzgar la eficacia de una acción sin evidencia de que se implantó.</span></li>
           <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E07: Anexo IV completo.">Funciona</span><b>L26</b><span>Anexos completos o con enlace específico al informe íntegro, nunca condicionados.</span></li>
-          <li><span class="chip areforzar" tabindex="0" data-tip="Insuficiente en E07: notas de cumplimentación en una tabla de un anexo.">A reforzar</span><b>L27</b><span>Revisar restos de la plantilla: notas, opciones alternativas, filas de ejemplo.</span></li>
+          <li><span class="chip areforzar" tabindex="0" data-tip="Insuficiente en E07 (notas de cumplimentación en una tabla de un anexo) y en E08 (marcadores y opciones alternativas de la plantilla).">A reforzar</span><b>L27</b><span>Revisar restos de la plantilla: notas, opciones alternativas, filas de ejemplo.</span></li>
         </ul>
       </li>
       <li id="v6" class="vigente">
-        <div class="cabver"><strong>v6</strong><span>4 de octubre de 2026 · commit 6f9f6cf · <b>versión vigente</b>, se comprobará en E08</span></div>
+        <div class="cabver"><strong>v6</strong><span>4 de octubre de 2026 · commit 6f9f6cf · <b>versión vigente</b> · evaluada en E08 (1,43)</span></div>
         <ul class="lecciones">
-          <li><span class="chip porver" tabindex="0" data-tip="Reformulación de L11 tras confirmar en E04-E07 que LinceBI no publica ese informe. Se comprobará en E08.">Por comprobar</span><b>L11b</b><span>Créditos reconocidos como dato que aporta el centro.</span></li>
-          <li><span class="chip porver" tabindex="0" data-tip="Observada en E04, E05 y E07. Se comprobará en E08.">Por comprobar</span><b>L28</b><span>Resultados globales con seis cursos: el más antiguo, del autoinforme anterior.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E08: los créditos reconocidos del curso se piden al centro como dato interno.">Funciona</span><b>L11b</b><span>Créditos reconocidos como dato que aporta el centro.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E08: resultados globales con seis cursos.">Funciona</span><b>L28</b><span>Resultados globales con seis cursos: el más antiguo, del autoinforme anterior.</span></li>
         </ul>
       </li>
     </ol>
@@ -484,19 +503,24 @@
   <section id="proximos">
     <h2>Próximos pasos</h2>
     <ul>
-      <li><strong>E08</strong>, con un título nuevo, comprobará la versión v6 y las lecciones marcadas «A reforzar».</li>
-      <li><strong>En observación</strong>, sin incorporar todavía porque solo se han visto en un título: una fila por
-        recomendación de ACCUA aunque el informe no las numere, y redactar como hipótesis las causas sin fuente.</li>
+      <li><strong>E09</strong>, con un título nuevo, comprobará las lecciones marcadas «A reforzar», que E07 y E08
+        repiten, una vez reforzadas.</li>
+      <li><strong>En observación</strong>, sin incorporar todavía: redactar como hipótesis las causas sin fuente (vista
+        en E07 y E08), una fila por recomendación de ACCUA aunque el informe no las numere, comprobar el cálculo que
+        respalda «mayoritariamente», cruzar «No procede» con la identificación del título, completar la síntesis de
+        sostenibilidad, redactar las fechas del plan de mejora como propuesta y agotar el informe del mapa de
+        indicadores antes de declarar interna una tabla de un anexo.</li>
       <li><strong>Valoración de las coordinaciones</strong>: se pedirá a las coordinaciones de los títulos evaluados que
-        valoren el borrador más reciente con una hoja de cálculo de siete preguntas (datos, cobertura, análisis, plan de
-        mejora, redacción, esfuerzo de revisión y valoración global) puntuadas de 1 a 5. El material está en la ficha
-        de cada ejecución desplegada (E04-E07); se aloja en el repositorio del proyecto en GitHub y requiere acceso a
-        él.</li>
+        valoren el borrador más reciente con una hoja de cálculo que puntúa de 1 a 5 los
+        <a href="procedimiento.html#coordinacion">siete aspectos de la rúbrica</a>, el esfuerzo de revisión y la
+        valoración global, y pregunta por errores graves y comentarios libres. Aún no se ha recibido ninguna. El
+        material está en la ficha de cada ejecución desplegada (E04-E08); se aloja en el repositorio del proyecto en
+        GitHub y requiere acceso a él.</li>
     </ul>
   </section>
 </main>
 
-<footer>Uso interno de la Universidad de Cádiz · Última actualización: 18 de octubre de 2026</footer>
+<footer>Uso interno de la Universidad de Cádiz · Última actualización: 22 de octubre de 2026</footer>
 <script>
   var AYUDA_TABLA = {
     'Diferencias por fallo del asistente': 'Diferencias con el autoinforme de la coordinación cuya causa es el asistente. No cuentan las debidas a LinceBI, a datos internos del centro, a errores del autoinforme ni a la redacción (ver «Qué diferencias cuentan» en el procedimiento).'

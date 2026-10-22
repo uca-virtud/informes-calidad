@@ -18,16 +18,17 @@ se envía material a la coordinación; todo lo demás lo hacen el orquestador y 
 | `docs/evaluacion/plantilla-ficha.md` | Ficha de cada ejecución (la crea el script). |
 | `evals/casos/<id>/entrada/` | Lo que recibiría la skill: autoinforme anterior, memoria, informe ACCUA… |
 | `evals/casos/<id>/referencia/autoinforme-humano.*` | Autoinforme presentado por la coordinación. **Nunca** lo ve A al generar. |
-| `evals/casos/<id>/fuentes.md` | Procedencia de los documentos del caso (URL, fecha, SHA-256), si se preparó con `caso`. |
-| `evals/ejecuciones/Enn-<id>/` | Ficha, borrador, cotejos y métricas de la ejecución. |
-| `evals/historial.md` | Tabla con todas las ejecuciones (la regenera `medir`). |
-| `docs/EVALUACIONES.md` | Registro versionado: resumen de cada ejecución y estado de las lecciones. |
-| `web/evaluacion.html` | Página pública con las cifras globales. |
-| `web/procedimiento.html` | Página pública con el proceso de evaluación y la rúbrica. |
+| `evals/casos/<id>/fuentes.json` y `fuentes.md` | Manifiesto que procesa `caso` y procedencia resultante de los documentos (URL, fecha, SHA-256); solo en los casos preparados con `caso`. |
+| `evals/ejecuciones/Enn-<id>/` | Ficha, borrador (`borrador.docx` y `datos.json`), cotejos y métricas de la ejecución y, si se aprueba el paso 7, la hoja de valoración para la coordinación. |
+| `evals/historial.md` | Resultados de cada ejecución: tabla (la regenera `medir`), conclusiones, relato de cada ejecución y antecedentes. |
+| `docs/LECCIONES.md` | Registro versionado: versiones de la skill y estado de las lecciones. |
+| `web/evaluacion.html` | Página web con los resultados y las cifras globales. |
+| `web/procedimiento.html` | Página web con el proceso de evaluación y la rúbrica. |
 
-`evals/` contiene datos personales y no se versiona: al repositorio y a la web solo llegan
-cifras agregadas, lecciones generalizadas y, si el responsable lo aprueba, el material del
-paso 7.
+De `evals/` se versionan `casos.csv`, `casos/` (documentos públicos de cada título) y
+`ejecuciones/`. Quedan solo en local `historial.md` y las hojas
+`valoracion-coordinacion*.xlsx`, porque contienen datos personales: de ellos solo llegan al
+repositorio y a la web cifras agregadas y lecciones generalizadas.
 
 ## Requisitos previos (una vez)
 
@@ -36,7 +37,7 @@ paso 7.
 2. Entorno Python con `pip install -r tools/evaluacion/requirements.txt`.
 3. Modelos fijos: **A** = `claude-opus-5.5` (genera y se autocoteja); **B** = `gpt-6.1-sol`
    (segundo corrector, de otra familia). Si cambian, se anota en la ficha (campos «Modelo A» y
-   «Modelo B») y en la sección de la ejecución en `docs/EVALUACIONES.md`.
+   «Modelo B») y en la sección de la ejecución en `evals/historial.md`.
 4. Que Copilot use la skill del repositorio (`skills/uca-informes-calidad/SKILL.md`), no una
    copia global antigua.
 
@@ -78,7 +79,7 @@ responsable decide y la skill puede pasar a la siguiente versión.
 | [3](#paso-3-autocotejo-a) | Mismo subagente A | Coteja su borrador | `cotejo-A.md` |
 | [4](#paso-4-segundo-corrector-b) | Subagente B | Coteja el borrador | `cotejo-B.md` |
 | [5](#paso-5-consolidación-provisional) | Orquestador | `evaluacion.py medir Enn` | `metricas.json`, ficha completada, `evals/historial.md` |
-| [6](#paso-6-registro-y-decisión-del-responsable) | Orquestador → responsable | Registra la ejecución y la resume al responsable, que decide | `docs/EVALUACIONES.md`, `web/evaluacion.html`, decisión en la ficha |
+| [6](#paso-6-registro-y-decisión-del-responsable) | Orquestador → responsable | Registra la ejecución y la resume al responsable, que decide | `evals/historial.md`, `docs/LECCIONES.md`, `web/evaluacion.html`, decisión en la ficha |
 
 Los pasos 3 y 4 se lanzan a la vez en cuanto existe `borrador.docx`.
 
@@ -90,7 +91,7 @@ consolidada solo con la IA.
 
 | Paso | Quién | Acción | Produce |
 |---|---|---|---|
-| [7](#paso-7-material-para-la-coordinación) | Orquestador, **solo si el responsable lo aprueba** | Prepara el material para la coordinación | `docs/evaluacion/material-coordinaciones/<id>/` |
+| [7](#paso-7-material-para-la-coordinación) | Orquestador, **solo si el responsable lo aprueba** | Prepara el material para la coordinación | `evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` y enlaces en `web/evaluacion.html` |
 | [8](#paso-8-valoración-de-la-coordinación-y-consolidación-final) | Orquestador, cuando la coordinación devuelve la hoja | `evaluacion.py valoracion Enn` y propuesta de lecciones | `valoracion.json`, sección de la ficha, columnas del historial |
 
 Reglas del orquestador durante toda la ejecución:
@@ -196,18 +197,24 @@ coordinación se añade en el paso 8, si llega):
 
 ### Paso 6: registro y decisión del responsable
 
-`medir` solo actualiza `evals/`, que no se versiona; el registro público lo hace el
-orquestador tras cada ejecución, sin esperar a la decisión del responsable. En
-`docs/EVALUACIONES.md`, sin datos del título más allá de su sigla:
+`medir` solo regenera la tabla de `evals/historial.md` (entre los marcadores
+`<!-- medir:inicio -->` y `<!-- medir:fin -->`, sin tocar el resto); el registro lo completa
+el orquestador tras cada ejecución, sin esperar a la decisión del responsable.
 
-- «Resumen de la serie»: una fila con la ejecución, las lecciones a validar, el modelo A (el
-  que generó el borrador, según la ficha), la media y los bloqueantes; revisa la frase de
-  conclusión bajo la tabla.
+En `evals/historial.md` (solo local):
+
 - «Ejecuciones»: una sección «### Enn: <sigla> con <lecciones a validar>» al final, con la
   media, las dimensiones con 2, los bloqueantes y su causa, las lecciones validadas o
   insuficientes, las nuevas candidatas y la línea «Decisión del responsable: pendiente.».
+- «Conclusiones de la serie»: revisa la frase de conclusión.
+
+En `docs/LECCIONES.md` (versionado), sin datos del título más allá de su sigla:
+
+- «Versiones de la skill»: añade la ejecución a «Evaluada en» de la versión usada.
 - «Lecciones incorporadas»: en la columna «Estado», sustituye cada «validar en Enn» por
-  «validada en Enn» o «insuficiente en Enn (<motivo>)».
+  «validada en Enn» o «insuficiente en Enn (<motivo>)». Si la ejecución contradice una
+  lección ya validada, añade al final «insuficiente en Enn (<motivo>)»; el estado conserva
+  así el orden cronológico.
 - «Lecciones candidatas»: una fila por candidata nueva, con el siguiente número C libre;
   actualiza «Observada en» de las que se repitan.
 
@@ -225,46 +232,44 @@ documentos internos:
   errores graves cuyo tooltip nombra cada uno —dato inventado, valor contradictorio u origen no
   garantizado— con su motivo generalizado; no se publican los códigos B1-B3) y su fila
   desplegable (valoración breve, nota de cada aspecto D1-D7, errores graves y material). Los
-  puntos pendientes de revisión experta se quedan en la ficha de la ejecución y no se publican:
-  no miden al asistente, porque incluyen errores del autoinforme y datos que faltaban;
+  puntos pendientes de revisión experta no se resumen en la web, porque no miden al
+  asistente (incluyen errores del autoinforme y datos que faltaban); quedan en la ficha de la
+  ejecución, que se enlaza en «Material»;
 - la lista «Qué dicen los resultados», si la ejecución la cambia;
 - en «Qué aprende el asistente en cada versión», el estado de las lecciones contrastadas
   (Funciona, Reforzada, A reforzar, Por comprobar), sus recuentos y «Próximos pasos»;
 - la fecha de «Última actualización».
 
-Cuando se aplican lecciones a la skill (ver [después de la
-ejecución](#después-de-la-ejecución-aplicar-lecciones)), añade la nueva versión a la línea
-temporal con su número, commit, fecha y lecciones en «Por comprobar».
-
 Después presenta al responsable un resumen con las notas, los bloqueantes, lo pendiente de
 revisión experta y las lecciones candidatas. El responsable anota en la ficha qué lecciones
 aprueba, rechaza o deja como candidatas, y el orquestador copia la decisión a la sección de
-la ejecución en `docs/EVALUACIONES.md`.
+la ejecución en `evals/historial.md`.
 
 ### Paso 7: material para la coordinación
 
-Este paso copia a la parte versionada documentos de `evals/` que verán terceros. Por eso el
-orquestador pregunta antes al responsable e indica si la ejecución tiene bloqueantes (puede
-preferir no enviar un borrador con B1 o B2). Si lo aprueba, crea
-`docs/evaluacion/material-coordinaciones/<id>/` con:
+Este paso pone documentos de la ejecución a disposición de terceros. Por eso el orquestador
+pregunta antes al responsable e indica si la ejecución tiene bloqueantes (puede preferir no
+enviar un borrador con B1 o B2). Si lo aprueba, crea
+`evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` copiando la de otra ejecución y
+cambiando solo las celdas C3 (nombre del título) y C4 («<Tipo>, curso <aaaa/aa>
+(convocatoria <aaaa>)»).
 
-| Fichero | Origen |
+Después, en la fila desplegable de la ejecución de `web/evaluacion.html`, cambia «—» del
+apartado «Material» por un enlace, con el mismo formato que las demás filas, a:
+
+| Enlace | Fichero |
 |---|---|
-| `borrador-ia.docx` | `evals/ejecuciones/Enn-<id>/borrador.docx`, sin cambios |
-| `ficha-ia.md` | Secciones «Ejecución» y «Generación» de `evals/ejecuciones/Enn-<id>/ficha.md` (esta, sin «(completa el subagente A)»); el resto de la ficha es interno |
-| `autoinforme-coordinacion.pdf` | `evals/casos/<id>/referencia/autoinforme-humano.*` (convertido a PDF si no lo es) |
-| `rubrica-valoracion.xlsx` | Copia de la de otro título cambiando solo las celdas C3 (nombre del título) y C4 («<Tipo>, curso <aaaa/aa> (convocatoria <aaaa>)») |
-
-Si el título ya tenía material de una ejecución anterior, se sustituye por el de la más
-reciente. Después, en la fila desplegable de la ejecución de `web/evaluacion.html`, cambia
-«—» del apartado «Material» por un enlace a cada fichero, con el mismo formato que las demás filas.
+| Borrador IA (Word) | `evals/ejecuciones/Enn-<id>/borrador.docx` |
+| Autoinforme de la coordinación (PDF) | `evals/casos/<id>/referencia/autoinforme-humano.pdf` (si la referencia no es PDF, se guarda también convertida a PDF con ese nombre) |
+| Hoja de valoración (Excel) | `evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` |
+| Ficha de la ejecución (Markdown) | `evals/ejecuciones/Enn-<id>/ficha.md` |
 
 ### Paso 8: valoración de la coordinación y consolidación final
 
 Llega semanas después del paso 7, cuando la coordinación devuelve la hoja rellenada, y no
 detiene el ciclo de IA: la skill puede haber cambiado de versión entretanto. El
 responsable la guarda en `evals/ejecuciones/Enn-<id>/valoracion-coordinacion.xlsx` (con
-sufijo `-1`, `-2`… si valoran varias personas); va en `evals/` porque contiene comentarios
+sufijo `-1`, `-2`… si valoran varias personas); no se versiona porque contiene comentarios
 y el rol de quien valora. El orquestador ejecuta
 `python tools/evaluacion/evaluacion.py valoracion Enn`, que:
 
@@ -298,8 +303,8 @@ La valoración se refiere a la versión de la skill con la que se generó el bor
 lección que salga de ella se valida, como las demás, con una ejecución posterior de otro
 título. El responsable decide en la ficha como en el paso 6 (en la siguiente decisión que
 tenga pendiente, sin abrir un ciclo aparte) y el orquestador lo registra en
-`docs/EVALUACIONES.md` (apartado «Valoración de las coordinaciones», con medias y diferencias
-por dimensión) y en `web/evaluacion.html` (nota de la coordinación junto a la de la IA,
+`evals/historial.md` (apartado «Valoración de las coordinaciones», que se crea con la primera
+valoración, con medias y diferencias por dimensión) y en `web/evaluacion.html` (nota de la coordinación junto a la de la IA,
 «Esfuerzo» y «Global»), siempre con cifras agregadas y sin comentarios literales.
 
 ### Casos especiales: línea base y cambios de rúbrica
@@ -309,37 +314,30 @@ rúbrica, solo se lanza B (paso 4) sobre el borrador existente y después `medir
 Si la ficha no tiene sección «Generación», se quita esa línea del prompt de B. Un cambio de
 rúbrica se refleja también en «La rúbrica de evaluación» de `web/procedimiento.html`.
 
-## Tiempos orientativos
-
-Medidos en E04-E07 (grados de seguimiento) con las fechas de los ficheros de cada ejecución.
-No incluyen caídas de LinceBI ni la revisión del responsable.
-
-| Paso | Duración | Observaciones |
-|---|---|---|
-| 1. `nueva` | Segundos | |
-| 2. Generación (A) | 15-21 min | Unos 11-12 min hasta tener `datos.json` (lectura de entrada y LinceBI); el resto, redacción y depuración del `.docx` |
-| 3 y 4. Autocotejo (A) y corrector (B) | 6-9 min | En paralelo; cada uno tarda 5-9 min |
-| 5. `medir` | Menos de 1 min | |
-| **Total por título (ciclo de IA)** | **25-30 min** | Más el registro y la decisión del responsable (paso 6); la valoración de la coordinación llega aparte |
-
-Para medir, usa las fechas de creación de `datos.json`, `borrador.docx` y los cotejos: el
-tiempo que informa `read_agent` incluye la espera entre turnos del subagente.
-
 ## Después de la ejecución: aplicar lecciones
 
 Las lecciones que apruebe el responsable se aplican a la skill en un cambio pequeño y con su
-propia versión, fuera de la ejecución. Después, el orquestador las añade a «Lecciones
-incorporadas» de `docs/EVALUACIONES.md` con su origen, dónde están en la skill y el estado
-«Incorporada el <fecha>; validar en Enn», donde Enn es la siguiente ejecución de otro
+propia versión, fuera de la ejecución. Después, el orquestador añade a `docs/LECCIONES.md`
+una fila en «Versiones de la skill» con el siguiente número, el commit y las lecciones que
+incorpora, y cada lección a «Lecciones incorporadas» con su origen, dónde está en la skill y
+el estado «Incorporada el <fecha>; validar en Enn», donde Enn es la siguiente ejecución de otro
 título. Si procede de una candidata, su fila en «Lecciones candidatas» pasa a «Incorporada
 como Lnn».
+
+En `web/evaluacion.html`, añade la nueva versión a la línea temporal de «Qué aprende el
+asistente en cada versión» con su número, commit, fecha y lecciones en «Por comprobar».
 
 Ciclo de vida de una lección:
 
 1. **Candidata**: observada, aún fuera de la skill (tabla «Lecciones candidatas»).
 2. **Incorporada**, con «validar en Enn» mientras espera contraste.
-3. **Validada en Enn** o **insuficiente en Enn (<motivo>)**. Una lección insuficiente se
-   refuerza con una nueva (p. ej. L16 → L16b) que vuelve a empezar en el estado 2.
+3. **Validada en Enn** o **insuficiente en Enn (<motivo>)**. Una lección ya validada puede
+   resultar insuficiente en una ejecución posterior; el estado acumula ambas anotaciones. Si
+   la evaluación no puede ejercitarla (p. ej. porque A no puede preguntar al centro), queda
+   «sin evidencia».
+4. **Reforzada** (p. ej. L16 → L16b): el responsable aprueba una lección nueva que la
+   refuerza o sustituye y que vuelve a empezar en el estado 2. Hasta entonces, la lección
+   insuficiente sigue en la skill.
 
 ## Reglas contra el sobreajuste
 
@@ -357,3 +355,19 @@ Ciclo de vida de una lección:
 5. Elige el siguiente título por variedad; reserva algunos (`conjunto = reserva`) que no
    se usan para aprender y se evalúan en los hitos para detectar regresiones.
 6. Cambios en la skill pequeños, versionados y aprobados por el responsable.
+
+## Tiempos orientativos
+
+Medidos en E04-E07 (grados de seguimiento) con las fechas de los ficheros de cada ejecución.
+No incluyen caídas de LinceBI ni la revisión del responsable.
+
+| Paso | Duración | Observaciones |
+|---|---|---|
+| 1. `nueva` | Segundos | |
+| 2. Generación (A) | 15-21 min | Unos 11-12 min hasta tener `datos.json` (lectura de entrada y LinceBI); el resto, redacción y depuración del `.docx` |
+| 3 y 4. Autocotejo (A) y corrector (B) | 6-9 min | En paralelo; cada uno tarda 5-9 min |
+| 5. `medir` | Menos de 1 min | |
+| **Total por título (ciclo de IA)** | **25-30 min** | Más el registro y la decisión del responsable (paso 6); la valoración de la coordinación llega aparte |
+
+Para medir, usa las fechas de creación de `datos.json`, `borrador.docx` y los cotejos: el
+tiempo que informa `read_agent` incluye la espera entre turnos del subagente.

@@ -1,0 +1,1204 @@
+{
+  "encabezado": {
+    "curso": "2024/25",
+    "convocatoria": "2026",
+    "titulo": "GRADO EN INGENIERÍA INFORMÁTICA",
+    "centro": "ESCUELA SUPERIOR DE INGENIERÍA"
+  },
+  "identificacion": {
+    "Universidad": "Universidad de Cádiz",
+    "ID Ministerio": "2501759",
+    "Denominación del título": "Graduado o Graduada en Ingeniería Informática por la Universidad de Cádiz",
+    "Curso académico de implantación": "2010-2011",
+    "Web de la titulación": "https://esingenieria.uca.es/docencia/grados/gii/",
+    "Oferta de título doble": "SÍ",
+    "En su caso, especificar la/las titulación/es y el/los centro/s": "Doble Título de Grado en Matemáticas e Ingeniería Informática (Facultad de Ciencias y Escuela Superior de Ingeniería)",
+    "En caso de ser un título conjunto, especificar las universidades donde se imparte": "No procede",
+    "Modalidad de enseñanza (presencial, semipresencial-híbrida, virtual, a distancia)": "Presencial",
+    "En su caso, fecha de la última renovación de la acreditación": "5/7/2023",
+    "En su caso, créditos prácticos obligatorios": "No procede (Prácticas Curriculares: 12 ECTS optativos)",
+    "En su caso, estructuras curriculares específicas": "Cinco menciones en Tecnología Específica (Computación, Ingeniería de Computadores, Ingeniería del Software, Sistemas de Información y Tecnologías de la Información)"
+  },
+  "anios": [
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25"
+  ],
+  "anios_egresados": [
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24"
+  ],
+  "extraccion": {
+    "entorno": "data.uca.es",
+    "fecha": "2026-10-03",
+    "nota": "Valores vivos de LinceBI (producción). 2020-21 de P01, P06 y P04-16..19 del título tomado del autoinforme 2023-24 (fuera de la ventana de LinceBI); centro 2020-21 no disponible."
+  },
+  "indicadores": {
+    "ISGC-P04-01": {
+      "titulo": {
+        "2020-21": "58%",
+        "2021-22": "57,2%",
+        "2022-23": "55,1%",
+        "2023-24": "60,2%",
+        "2024-25": "61,5%"
+      },
+      "centro": {
+        "2020-21": "60,9%",
+        "2021-22": "54,7%",
+        "2022-23": "56,5%",
+        "2023-24": "58,9%",
+        "2024-25": "60,5%"
+      }
+    },
+    "ISGC-P04-02": {
+      "titulo": {
+        "2020-21": "70,3%",
+        "2021-22": "71,8%",
+        "2022-23": "70,7%",
+        "2023-24": "74,3%",
+        "2024-25": "73,4%"
+      },
+      "centro": {
+        "2020-21": "74,4%",
+        "2021-22": "70,8%",
+        "2022-23": "71,8%",
+        "2023-24": "73,9%",
+        "2024-25": "73,3%"
+      }
+    },
+    "ISGC-P04-03": {
+      "titulo": {
+        "2020-21": "82,6%",
+        "2021-22": "79,7%",
+        "2022-23": "77,9%",
+        "2023-24": "81,1%",
+        "2024-25": "83,8%"
+      },
+      "centro": {
+        "2020-21": "81,8%",
+        "2021-22": "77,3%",
+        "2022-23": "78,7%",
+        "2023-24": "79,7%",
+        "2024-25": "82,5%"
+      }
+    },
+    "ISGC-P04-04": {
+      "titulo": {
+        "2020-21": "41,1%",
+        "2021-22": "29,1%",
+        "2022-23": "22,7%",
+        "2023-24": "26%",
+        "2024-25": "25,2%"
+      },
+      "centro": {
+        "2020-21": "38,3%",
+        "2021-22": "32,2%",
+        "2022-23": "26,8%",
+        "2023-24": "33%",
+        "2024-25": "32,4%"
+      }
+    },
+    "ISGC-P04-05": {
+      "titulo": {
+        "2020-21": "16,1%",
+        "2021-22": "11%",
+        "2022-23": "10,9%",
+        "2023-24": "18,3%",
+        "2024-25": "20,2%"
+      },
+      "centro": {
+        "2020-21": "17,5%",
+        "2021-22": "13%",
+        "2022-23": "16,4%",
+        "2023-24": "17,8%",
+        "2024-25": "17,5%"
+      }
+    },
+    "ISGC-P04-06": {
+      "titulo": {
+        "2020-21": "74%",
+        "2021-22": "69,6%",
+        "2022-23": "70,9%",
+        "2023-24": "72,1%",
+        "2024-25": "73,7%"
+      },
+      "centro": {
+        "2020-21": "73,7%",
+        "2021-22": "72,8%",
+        "2022-23": "71,6%",
+        "2023-24": "72,8%",
+        "2024-25": "72,1%"
+      }
+    },
+    "ISGC-P04-07": {
+      "titulo": {
+        "2020-21": "6,7",
+        "2021-22": "7,3",
+        "2022-23": "7,1",
+        "2023-24": "6,8",
+        "2024-25": "6,8"
+      },
+      "centro": {
+        "2020-21": "5,97",
+        "2021-22": "5,8",
+        "2022-23": "5,95",
+        "2023-24": "6,34",
+        "2024-25": "6,34"
+      }
+    },
+    "ISGC-P04-08": {
+      "titulo": {
+        "2020-21": "-",
+        "2021-22": "1,86",
+        "2022-23": "1,57",
+        "2023-24": "1,54",
+        "2024-25": "1,36"
+      },
+      "centro": {
+        "2020-21": "0,87",
+        "2021-22": "1,26",
+        "2022-23": "1,23",
+        "2023-24": "1,3",
+        "2024-25": "1,93"
+      }
+    },
+    "ISGC-P04-09|Movilidad entrante internacional": {
+      "titulo": {
+        "2020-21": "0,57%",
+        "2021-22": "1,05%",
+        "2022-23": "1,53%",
+        "2023-24": "1,71%",
+        "2024-25": "1,79%"
+      },
+      "centro": {
+        "2020-21": "0,44%",
+        "2021-22": "0,88%",
+        "2022-23": "1,03%",
+        "2023-24": "1,24%",
+        "2024-25": "1,64%"
+      }
+    },
+    "ISGC-P04-09|Movilidad entrante nacional": {
+      "titulo": {
+        "2020-21": "-",
+        "2021-22": "0,18%",
+        "2022-23": "0,15%",
+        "2023-24": "-",
+        "2024-25": "0,14%"
+      },
+      "centro": {
+        "2020-21": "0,44%",
+        "2021-22": "0,52%",
+        "2022-23": "0,84%",
+        "2023-24": "0,54%",
+        "2024-25": "0,5%"
+      }
+    },
+    "ISGC-P04-09|Movilidad saliente internacional": {
+      "titulo": {
+        "2020-21": "1,1%",
+        "2021-22": "1,23%",
+        "2022-23": "2,45%",
+        "2023-24": "2,13%",
+        "2024-25": "1,37%"
+      },
+      "centro": {
+        "2020-21": "1,58%",
+        "2021-22": "3,08%",
+        "2022-23": "3,06%",
+        "2023-24": "1,59%",
+        "2024-25": "1,6%"
+      }
+    },
+    "ISGC-P04-09|Movilidad saliente nacional": {
+      "titulo": {
+        "2020-21": "-",
+        "2021-22": "0,35%",
+        "2022-23": "0,61%",
+        "2023-24": "-",
+        "2024-25": "0,27%"
+      },
+      "centro": {
+        "2020-21": "0,12%",
+        "2021-22": "0,44%",
+        "2022-23": "0,28%",
+        "2023-24": "0,12%",
+        "2024-25": "0,31%"
+      }
+    },
+    "ISGC-P04-10": {
+      "titulo": {
+        "2020-21": "2,62",
+        "2021-22": "-",
+        "2022-23": "2,87",
+        "2023-24": "3,03",
+        "2024-25": "2,94"
+      },
+      "centro": {
+        "2020-21": "2,64",
+        "2021-22": "2,8",
+        "2022-23": "2,88",
+        "2023-24": "3,1",
+        "2024-25": "2,95"
+      }
+    },
+    "ISGC-P04-11": {
+      "titulo": {
+        "2020-21": "3,08",
+        "2021-22": "-",
+        "2022-23": "3,09",
+        "2023-24": "2,79",
+        "2024-25": "3,11"
+      },
+      "centro": {
+        "2020-21": "2,58",
+        "2021-22": "2,76",
+        "2022-23": "2,98",
+        "2023-24": "3,02",
+        "2024-25": "2,97"
+      }
+    },
+    "ISGC-P04-12": {
+      "titulo": {
+        "2020-21": "-",
+        "2021-22": "-",
+        "2022-23": "4,08",
+        "2023-24": "4,36",
+        "2024-25": "4,11"
+      },
+      "centro": {
+        "2020-21": "4,1",
+        "2021-22": "4",
+        "2022-23": "4,13",
+        "2023-24": "3,87",
+        "2024-25": "4,33"
+      }
+    },
+    "ISGC-P04-13": {
+      "titulo": {
+        "2020-21": "-",
+        "2021-22": "1,68",
+        "2022-23": "2,37",
+        "2023-24": "2,22",
+        "2024-25": "4,29"
+      },
+      "centro": {
+        "2020-21": "1,41",
+        "2021-22": "1,91",
+        "2022-23": "2,32",
+        "2023-24": "2,25",
+        "2024-25": "4,65"
+      }
+    },
+    "ISGC-P04-14": {
+      "titulo": {
+        "2020-21": "-",
+        "2021-22": "-",
+        "2022-23": "2,65",
+        "2023-24": "2,52",
+        "2024-25": "3,3"
+      },
+      "centro": {
+        "2020-21": "3,08",
+        "2021-22": "3,37",
+        "2022-23": "3,16",
+        "2023-24": "3,44",
+        "2024-25": "3,52"
+      }
+    },
+    "ISGC-P04-15": {
+      "titulo": {
+        "2020-21": "2,87",
+        "2021-22": "-",
+        "2022-23": "2,73",
+        "2023-24": "2,91",
+        "2024-25": "3,08"
+      },
+      "centro": {
+        "2020-21": "2,84",
+        "2021-22": "2,91",
+        "2022-23": "3,2",
+        "2023-24": "3,23",
+        "2024-25": "3,21"
+      }
+    },
+    "ISGC-P04-16": {
+      "titulo": {
+        "2020-21": "85,27%",
+        "2021-22": "80,51%",
+        "2022-23": "69,35%",
+        "2023-24": "76,6%",
+        "2024-25": "72,93%"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "61,68%",
+        "2022-23": "61,49%",
+        "2023-24": "57,98%",
+        "2024-25": "54,34%"
+      }
+    },
+    "ISGC-P04-17": {
+      "titulo": {
+        "2020-21": "107,5%",
+        "2021-22": "98,33%",
+        "2022-23": "103,33%",
+        "2023-24": "108,46%",
+        "2024-25": "102,31%"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "98,96%",
+        "2022-23": "103,33%",
+        "2023-24": "107,08%",
+        "2024-25": "100,83%"
+      }
+    },
+    "ISGC-P04-18": {
+      "titulo": {
+        "2020-21": "182,5%",
+        "2021-22": "156,67%",
+        "2022-23": "164,17%",
+        "2023-24": "166,15%",
+        "2024-25": "180,77%"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "133,96%",
+        "2022-23": "151,46%",
+        "2023-24": "154,79%",
+        "2024-25": "173,54%"
+      }
+    },
+    "ISGC-P04-19": {
+      "titulo": {
+        "2020-21": "26,42%",
+        "2021-22": "19,17%",
+        "2022-23": "20,7%",
+        "2023-24": "21,25%",
+        "2024-25": "18,96%"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "21,32%",
+        "2022-23": "22,36%",
+        "2023-24": "29,76%",
+        "2024-25": "20,59%"
+      }
+    },
+    "ISGC-P01-01": {
+      "titulo": {
+        "2020-21": "3,38",
+        "2021-22": "3,29",
+        "2022-23": "3,44",
+        "2023-24": "3,43",
+        "2024-25": "3,37"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "3,23",
+        "2022-23": "3,38",
+        "2023-24": "3,5",
+        "2024-25": "3,37"
+      }
+    },
+    "ISGC-P01-02": {
+      "titulo": {
+        "2020-21": "4,42",
+        "2021-22": "4,42",
+        "2022-23": "4,79",
+        "2023-24": "4,42",
+        "2024-25": "4,54"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "4,13",
+        "2022-23": "4,33",
+        "2023-24": "4,22",
+        "2024-25": "4,29"
+      }
+    },
+    "ISGC-P01-03": {
+      "titulo": {
+        "2020-21": "3,72",
+        "2021-22": "3,86",
+        "2022-23": "3,7",
+        "2023-24": "3,69",
+        "2024-25": "3,64"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "3,86",
+        "2022-23": "3,7",
+        "2023-24": "3,69",
+        "2024-25": "3,64"
+      }
+    },
+    "ISGC-P05-02": {
+      "titulo": {
+        "2020-21": "49,44%",
+        "2021-22": "51,19%",
+        "2022-23": "36,05%",
+        "2023-24": "51,19%",
+        "2024-25": "33,33%"
+      },
+      "centro": {
+        "2020-21": "47,47%",
+        "2021-22": "42,37%",
+        "2022-23": "33,09%",
+        "2023-24": "47,08%",
+        "2024-25": "33,33%"
+      }
+    },
+    "ISGC-P05-03": {
+      "titulo": {
+        "2020-21": "60,67%",
+        "2021-22": "61,9%",
+        "2022-23": "51,16%",
+        "2023-24": "35,71%",
+        "2024-25": "39,08%"
+      },
+      "centro": {
+        "2020-21": "52,53%",
+        "2021-22": "45,42%",
+        "2022-23": "42,75%",
+        "2023-24": "30,74%",
+        "2024-25": "39,22%"
+      }
+    },
+    "ISGC-P05-04": {
+      "titulo": {
+        "2020-21": "4,1",
+        "2021-22": "4,3",
+        "2022-23": "4,3",
+        "2023-24": "4,3",
+        "2024-25": "4,3"
+      },
+      "centro": {
+        "2020-21": "4,1",
+        "2021-22": "4,2",
+        "2022-23": "4,4",
+        "2023-24": "4,3",
+        "2024-25": "4,4"
+      }
+    },
+    "ISGC-P05-05": {
+      "titulo": {
+        "2020-21": "29,21%",
+        "2021-22": "30,95%",
+        "2022-23": "30,95%",
+        "2023-24": "19,05%",
+        "2024-25": "25,29%"
+      },
+      "centro": {
+        "2020-21": "25,29%",
+        "2021-22": "24,43%",
+        "2022-23": "24,43%",
+        "2023-24": "14,4%",
+        "2024-25": "22,35%"
+      }
+    },
+    "ISGC-P05-06": {
+      "titulo": {
+        "2020-21": "92,31%",
+        "2021-22": "96,15%",
+        "2022-23": "96,15%",
+        "2023-24": "100%",
+        "2024-25": "63,64%"
+      },
+      "centro": {
+        "2020-21": "76,92%",
+        "2021-22": "85,94%",
+        "2022-23": "85,94%",
+        "2023-24": "89,19%",
+        "2024-25": "52,63%"
+      }
+    },
+    "ISGC-P05-07": {
+      "titulo": {
+        "2020-21": "7,69%",
+        "2021-22": "3,85%",
+        "2022-23": "3,85%",
+        "2023-24": "-",
+        "2024-25": "36,36%"
+      },
+      "centro": {
+        "2020-21": "23,08%",
+        "2021-22": "14,06%",
+        "2022-23": "14,06%",
+        "2023-24": "8,11%",
+        "2024-25": "47,37%"
+      }
+    },
+    "ISGC-P06-01": {
+      "titulo": {
+        "2020-21": "2,88",
+        "2021-22": "2,69",
+        "2022-23": "2,9",
+        "2023-24": "2,98",
+        "2024-25": "2,95"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "2,73",
+        "2022-23": "2,83",
+        "2023-24": "2,97",
+        "2024-25": "2,96"
+      }
+    },
+    "ISGC-P06-02": {
+      "titulo": {
+        "2020-21": "2,62",
+        "2021-22": "2,34",
+        "2022-23": "2,54",
+        "2023-24": "2,74",
+        "2024-25": "2,88"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "2,5",
+        "2022-23": "2,59",
+        "2023-24": "2,73",
+        "2024-25": "2,81"
+      }
+    },
+    "ISGC-P06-03": {
+      "titulo": {
+        "2020-21": "3,68",
+        "2021-22": "3,59",
+        "2022-23": "3,54",
+        "2023-24": "3,7",
+        "2024-25": "3,44"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "3,67",
+        "2022-23": "3,66",
+        "2023-24": "3,73",
+        "2024-25": "3,6"
+      }
+    },
+    "ISGC-P06-04": {
+      "titulo": {
+        "2020-21": "4,37",
+        "2021-22": "4,33",
+        "2022-23": "4,57",
+        "2023-24": "4,59",
+        "2024-25": "4,59"
+      },
+      "centro": {
+        "2020-21": "n.d.",
+        "2021-22": "4,16",
+        "2022-23": "4,32",
+        "2023-24": "4,27",
+        "2024-25": "4,28"
+      }
+    },
+    "ISGC-P07-01_01": {
+      "titulo": {
+        "2020-21": "20,09%",
+        "2021-22": "22,98%",
+        "2022-23": "27,58%",
+        "2023-24": "24,54%",
+        "2024-25": "23,9%"
+      },
+      "centro": {
+        "2020-21": "25,49%",
+        "2021-22": "20,67%",
+        "2022-23": "26,19%",
+        "2023-24": "22,52%",
+        "2024-25": "20,21%"
+      }
+    },
+    "ISGC-P07-01_02": {
+      "titulo": {
+        "2020-21": "56,04%",
+        "2021-22": "51,14%",
+        "2022-23": "41,76%",
+        "2023-24": "43,02%",
+        "2024-25": "29,55%"
+      },
+      "centro": {
+        "2020-21": "25,13%",
+        "2021-22": "18,98%",
+        "2022-23": "17,31%",
+        "2023-24": "17,49%",
+        "2024-25": "15,41%"
+      }
+    },
+    "ISGC-P07-02": {
+      "titulo": {
+        "2020-21": "3,19",
+        "2021-22": "3,17",
+        "2022-23": "3,18",
+        "2023-24": "3,37",
+        "2024-25": "3,41"
+      },
+      "centro": {
+        "2020-21": "3,28",
+        "2021-22": "3,34",
+        "2022-23": "3,4",
+        "2023-24": "3,53",
+        "2024-25": "3,53"
+      }
+    },
+    "ISGC-P07-03": {
+      "titulo": {
+        "2020-21": "4,33",
+        "2021-22": "4,12",
+        "2022-23": "4,51",
+        "2023-24": "4,09",
+        "2024-25": "4,15"
+      },
+      "centro": {
+        "2020-21": "3,92",
+        "2021-22": "3,85",
+        "2022-23": "3,95",
+        "2023-24": "3,84",
+        "2024-25": "3,86"
+      }
+    },
+    "ISGC-P07-04": {
+      "titulo": {
+        "2020-21": "3,86",
+        "2021-22": "3,85",
+        "2022-23": "3,76",
+        "2023-24": "3,78",
+        "2024-25": "3,79"
+      },
+      "centro": {
+        "2020-21": "3,86",
+        "2021-22": "3,85",
+        "2022-23": "3,76",
+        "2023-24": "3,78",
+        "2024-25": "3,79"
+      }
+    },
+    "ISGC-P07-11": {
+      "titulo": {
+        "2020-21": "0,32%",
+        "2021-22": "-",
+        "2022-23": "0,42%",
+        "2023-24": "0,13%",
+        "2024-25": "0,37%"
+      },
+      "centro": {
+        "2020-21": "0,32%",
+        "2021-22": "0,25%",
+        "2022-23": "0,58%",
+        "2023-24": "0,57%",
+        "2024-25": "0,69%"
+      }
+    },
+    "ISGC-P07-12": {
+      "titulo": {
+        "2020-21": "0,81%",
+        "2021-22": "0,42%",
+        "2022-23": "0,14%",
+        "2023-24": "-",
+        "2024-25": "-"
+      },
+      "centro": {
+        "2020-21": "1,29%",
+        "2021-22": "1,09%",
+        "2022-23": "0,27%",
+        "2023-24": "0,65%",
+        "2024-25": "0,4%"
+      }
+    },
+    "ISGC-P07-13": {
+      "titulo": {
+        "2020-21": "0,16%",
+        "2021-22": "-",
+        "2022-23": "-",
+        "2023-24": "-",
+        "2024-25": "-"
+      },
+      "centro": {
+        "2020-21": "0,04%",
+        "2021-22": "-",
+        "2022-23": "-",
+        "2023-24": "0,04%",
+        "2024-25": "-"
+      }
+    },
+    "ISGC-P07-14": {
+      "titulo": {
+        "2020-21": "-",
+        "2021-22": "0,14%",
+        "2022-23": "0,28%",
+        "2023-24": "0,38%",
+        "2024-25": "0,12%"
+      },
+      "centro": {
+        "2020-21": "0,75%",
+        "2021-22": "0,07%",
+        "2022-23": "0,19%",
+        "2023-24": "0,19%",
+        "2024-25": "0,06%"
+      }
+    },
+    "ISGC-P07-01_03": {
+      "titulo": {
+        "2019-20": "9,09% (4/44)",
+        "2020-21": "14,93% (10/67)",
+        "2021-22": "14,29% (7/49)",
+        "2022-23": "21,05% (8/38)",
+        "2023-24": "35,85% (19/53)"
+      },
+      "centro": {
+        "2019-20": "12% (24/200)",
+        "2020-21": "15,72% (50/318)",
+        "2021-22": "18,03% (53/294)",
+        "2022-23": "12,9% (32/248)",
+        "2023-24": "28,62% (81/283)"
+      }
+    },
+    "ISGC-P07-05": {
+      "titulo": {
+        "2019-20": "50",
+        "2020-21": "100",
+        "2021-22": "85,71",
+        "2022-23": "21,05",
+        "2023-24": "33,96"
+      },
+      "centro": {
+        "2019-20": "66,67",
+        "2020-21": "84",
+        "2021-22": "79,25",
+        "2022-23": "12,5",
+        "2023-24": "27,21"
+      }
+    },
+    "ISGC-P07-06": {
+      "titulo": {
+        "2019-20": "100",
+        "2020-21": "100",
+        "2021-22": "100",
+        "2022-23": "100",
+        "2023-24": "94,44"
+      },
+      "centro": {
+        "2019-20": "87,5",
+        "2020-21": "90,48",
+        "2021-22": "85,71",
+        "2022-23": "87,1",
+        "2023-24": "87,01"
+      }
+    },
+    "ISGC-P07-07": {
+      "titulo": {
+        "2019-20": "0",
+        "2020-21": "0",
+        "2021-22": "0",
+        "2022-23": "-",
+        "2023-24": "-"
+      },
+      "centro": {
+        "2019-20": "0",
+        "2020-21": "0",
+        "2021-22": "0",
+        "2022-23": "-",
+        "2023-24": "1,3"
+      }
+    },
+    "ISGC-P07-08": {
+      "titulo": {
+        "2019-20": "50",
+        "2020-21": "50",
+        "2021-22": "66,67",
+        "2022-23": "37,5",
+        "2023-24": "16,67"
+      },
+      "centro": {
+        "2019-20": "62,5",
+        "2020-21": "73,81",
+        "2021-22": "57,14",
+        "2022-23": "58,06",
+        "2023-24": "50,65"
+      }
+    },
+    "ISGC-P07-09": {
+      "titulo": {
+        "2019-20": "2,75",
+        "2020-21": "2,8",
+        "2021-22": "2,86",
+        "2022-23": "3,63",
+        "2023-24": "3,26"
+      },
+      "centro": {
+        "2019-20": "3,39",
+        "2020-21": "3,28",
+        "2021-22": "3,23",
+        "2022-23": "3,69",
+        "2023-24": "3,34"
+      }
+    },
+    "ISGC-P07-10": {
+      "titulo": {
+        "2019-20": "3,25",
+        "2020-21": "3,1",
+        "2021-22": "3",
+        "2022-23": "3,13",
+        "2023-24": "3,47"
+      },
+      "centro": {
+        "2019-20": "3,52",
+        "2020-21": "3,18",
+        "2021-22": "3,25",
+        "2022-23": "3,59",
+        "2023-24": "3,33"
+      }
+    }
+  },
+  "accua": {
+    "fecha": "5 de julio de 2023 (Informe final de renovación de la acreditación)",
+    "items": [
+      {
+        "rec": "Subsanación 1.1.- Se debe publicar una descripción del perfil básico del profesorado.",
+        "accion": "Acción de mejora: en la web del título se publica un documento con la descripción de los perfiles básicos del profesorado (acción completada en el curso 2023-24; se mantiene hasta que ACCUA la dé por cerrada).\nEvidencia: Web del título > Plan de estudios > Profesorado."
+      },
+      {
+        "rec": "Subsanación 1.2.- Se deben introducir mecanismos para que la página web cuente con mecanismos de accesibilidad para personas con diversidad funcional.",
+        "accion": "Acción de mejora: la web del título se integra en el tema UCA para WordPress, sometido a las revisiones periódicas del Observatorio de Accesibilidad; se continúa revisando con la unidad web los contenidos propios (textos alternativos, documentos accesibles).\nEvidencia: página de Accesibilidad de los sitios web de la UCA; actas de la CGC."
+      },
+      {
+        "rec": "Recomendación 1.1.- Se recomienda mejorar el acceso a la información a través de la web de la UCA haciéndolo más intuitivo.",
+        "accion": "Acción de mejora: mejora progresiva de la estructura y los accesos directos de la web del centro y del título.\nEvidencia: https://esingenieria.uca.es/docencia/grados/gii/; ISGC-P01-01 e ISGC-P01-02 (Anexo I)."
+      },
+      {
+        "rec": "Subsanación 2.1.- Se deben poner en marcha acciones para implantar, de manera efectiva, procedimientos para la realización de prospectivas y recogida de datos sistemática de empleadores (y aumentar las de egresados) y para tener en cuenta su opinión en la gestión, garantía de calidad del título y realimentación de actores de interés de la sociedad.",
+        "accion": "Acción de mejora: facilitar la participación de empleadores en las comisiones del centro y, con la Unidad de Calidad, aumentar la participación en las encuestas de egresados y empleadores.\nEvidencia: ISGC-P07-01_03 (35,85 % en la cohorte 2023-24, máximo de la serie); actas de la CGC."
+      },
+      {
+        "rec": "Recomendación 2.2.- Se recomienda seguir con las acciones para aportar más información del grado de satisfacción de los usuarios, atendiendo las recomendaciones del proceso de Acreditación anterior.",
+        "accion": "Acción de mejora: fomentar la participación en las encuestas de los grupos de interés (web de la ESI, Campus Virtual y redes sociales) e informar del número de encuestas y de la población encuestada.\nEvidencia: tasas de respuesta ISGC-P07-01_01, P07-01_02 y P07-01_03 (Anexo I)."
+      },
+      {
+        "rec": "Subsanación 3.1.- Se deben establecer procedimientos formales de coordinación del título y disponer de actas y acuerdos de las reuniones.",
+        "accion": "Acción de mejora: curso de coordinación en el Campus Virtual con todo el profesorado coordinador de asignaturas, que recoge recomendaciones, sugerencias y acuerdos como evidencia de la coordinación.\nEvidencia: curso de coordinación del título en el Campus Virtual; ISGC-P04-10 (Anexo I)."
+      },
+      {
+        "rec": "Recomendación 3.1.- Se recomienda poner en marcha acciones para mejorar la satisfacción con el desarrollo y procedimientos relacionados con el TFG.",
+        "accion": "Acción de mejora: revisar las opciones del centro para asignar TFG al profesorado adscrito y aumentar la oferta de propuestas en la aplicación de TFG/M.\nEvidencia: https://tfgm.uca.es/ (Asuntos comisión > Actas); ISGC-P04-11 (3,11 en 2024-25)."
+      },
+      {
+        "rec": "Subsanación 5.1.- Se deben poner en marcha acciones para aumentar significativamente la participación en movilidad, mejorar la satisfacción de los estudiantes con la movilidad y disponer y hacer públicos y claros sus indicadores y plazas ofertadas.",
+        "accion": "Acción de mejora: revisar la oferta y solicitar convenios con nuevos destinos; complementar las reuniones informativas con orientación específica sobre movilidad.\nEvidencia: Web del título > Movilidad; ISGC-P04-09 e ISGC-P04-15 (Anexo I)."
+      },
+      {
+        "rec": "Recomendación 5.1.- Se recomienda poner en marcha acciones para disponer de oferta de prácticas externas propia del Centro para todos los estudiantes que las soliciten y aumentar la satisfacción del estudiantado con las prácticas.",
+        "accion": "Acción de mejora: la gestión de convenios corresponde al Centro de Promoción de Empleo y Prácticas (CPEP); el centro difunde la oferta y asigna las plazas curriculares.\nEvidencia: ISGC-P04-08 (1,36 plazas por solicitante en 2024-25) e ISGC-P04-14 (3,3 en 2024-25)."
+      },
+      {
+        "rec": "Subsanación 6.1.- Se deben poner en marcha actuaciones urgentes y efectivas para mejorar las tasas de graduación y abandono y reducir el promedio de duración del estudio, adecuándolos a lo indicado en la memoria de verificación.",
+        "accion": "Acción de mejora: grupo de análisis con la representación del estudiantado para identificar las causas de la duración excesiva y del abandono, y actuaciones derivadas (ver AM-ESI-6.1 y AM-ESI-6.2).\nEvidencia: ISGC-P04-04 (25,2 %), ISGC-P04-05 (20,2 %) e ISGC-P04-07 (6,8 años) en 2024-25."
+      },
+      {
+        "rec": "Subsanación 6.2.- Se deben poner en marcha acciones para aumentar el rendimiento del TFG, analizando su posible desarrollo en empresa para disminuir la duración media de los estudios.",
+        "accion": "Acción de mejora: estudiar la anulación de la matrícula del TFG, sesiones de orientación sobre su matriculación y vinculación del TFG con las prácticas en empresa (AM-ESI-6.1).\nEvidencia: porcentaje de no presentados del TFG (35 % en 2024-25, Anexo IV)."
+      },
+      {
+        "rec": "Subsanación 7.1.- Se deben implantar procedimientos institucionalizados de contacto, seguimiento de la actividad laboral y toma de opinión de empleadores y egresados para que su opinión pueda coadyuvar a la mejora continua de los programas formativos, prospectivas, planes de orientación, necesidades del título, etc.",
+        "accion": "Acción de mejora: las mismas acciones de la Subsanación 2.1 y la reunión anual con empleadores (AM-ESI-7.2).\nEvidencia: ISGC-P07-01_03; actas de la reunión con empleadores."
+      },
+      {
+        "rec": "Subsanación 7.2.- Se deben poner en marcha acciones para mejorar el grado de satisfacción del alumnado con los programas y actividades de apoyo y orientación académica y profesional y para que hagan uso de los recursos a su disposición.",
+        "accion": "Acción de mejora: analizar y reorientar las actividades de orientación académica y profesional para hacerlas más visibles y atractivas (AM-ESI-7.1).\nEvidencia: ISGC-P06-01 (2,95) e ISGC-P06-02 (2,88) en 2024-25."
+      },
+      {
+        "rec": "Recomendación 7.1.- Se recomienda tener en cuenta las indicaciones de los empleadores sobre que la ingeniería del software va perdiendo interés en el alumnado y que se está abriendo una brecha entre la formación que se hace en UCA, orientada a investigación, y lo que las empresas están demandando, así como sobre la necesidad de reforzar prácticas y movilidad.",
+        "accion": "Acción de mejora: reuniones anuales con empleadores, conforme al P07, para recabar sus necesidades, expectativas y satisfacción y trasladarlas al programa formativo.\nEvidencia: actas de las reuniones; ISGC-P04-12 e ISGC-P04-13 (Anexo I)."
+      },
+      {
+        "rec": "Recomendación 7.2.- Se recomienda realizar un especial seguimiento a la combinación de tasas de graduación y abandono y a la duración promedio de los estudios para garantizar la sostenibilidad del título a largo plazo.",
+        "accion": "Acción de mejora: la misma acción propuesta para la Subsanación 6.1, con seguimiento anual en el autoinforme.\nEvidencia: ISGC-P04-04, P04-05 y P04-07 (Anexo I) y apartado 7.6."
+      }
+    ]
+  },
+  "puntos": {
+    "1": {
+      "fuertes": [
+        "PF-ESI-1.1.- La satisfacción del PDI con la información publicada del título es alta y estable (ISGC-P01-02: 4,54 sobre 5 en 2024-25).",
+        "PF-ESI-1.2.- La web del título recoge de forma ordenada el programa formativo, la normativa y los resultados del título."
+      ],
+      "debiles": []
+    },
+    "2": {
+      "fuertes": [
+        "PF-ESI-2.1.- El Buzón de Atención al Usuario (BAU) canaliza quejas, sugerencias y felicitaciones con un volumen de quejas muy bajo (ISGC-P07-11: 0,37 %).",
+        "PF-ESI-2.2.- La participación de los egresados en la encuesta alcanza el máximo de la serie (ISGC-P07-01_03: 35,85 %, cohorte 2023-24)."
+      ],
+      "debiles": []
+    },
+    "3": {
+      "fuertes": [
+        "PF-ESI-3.1.- El título mantiene una demanda muy alta: tasa de preferencia del 180,77 % y ocupación del 102,31 % en 2024-25.",
+        "PF-ESI-3.2.- La coordinación docente se apoya en la figura del Vocal de Grado y en un sistema en línea de gestión de incidencias docentes.",
+        "PF-ESI-3.3.- La gestión del TFG se realiza íntegramente en la aplicación tfgm.uca.es, con convocatorias de defensa mensuales."
+      ],
+      "debiles": []
+    },
+    "4": {
+      "fuertes": [
+        "PF-ESI-4.1.- La satisfacción del alumnado con la docencia se mantiene en 4,3 sobre 5 desde 2021-22 (ISGC-P05-04).",
+        "PF-ESI-4.2.- La satisfacción del alumnado con el proceso del TFG alcanza el máximo de la serie (ISGC-P04-11: 3,11)."
+      ],
+      "debiles": []
+    },
+    "5": {
+      "fuertes": [
+        "PF-ESI-5.1.- Alta satisfacción del profesorado con los recursos e infraestructuras (ISGC-P06-04: 4,59 sobre 5).",
+        "PF-ESI-5.2.- Mejora de la satisfacción del alumnado (3,3) y de los tutores de las entidades (4,29) con las prácticas externas.",
+        "PF-ESI-5.3.- La movilidad internacional entrante crece por cuarto curso consecutivo (1,79 %)."
+      ],
+      "debiles": []
+    },
+    "6": {
+      "fuertes": [
+        "PF-ESI-6.1.- Las tasas de éxito (73,4 %), eficiencia (73,7 %) y graduación (20,2 %) cumplen los valores de la memoria, y el rendimiento (61,5 %) es el máximo de la serie."
+      ],
+      "debiles": [
+        {
+          "punto": "PD-ESI-6.1.- Elevado porcentaje de no presentados en el Trabajo Fin de Grado (35 % en 2024-25), que retrasa la graduación y mantiene la duración media de los estudios en 6,8 años.",
+          "acciones": [
+            "AM-ESI-6.1.- Sesiones de orientación sobre la matrícula y planificación del TFG en 3.º y 4.º curso y fomento de TFG vinculados a las prácticas curriculares en empresa."
+          ]
+        },
+        {
+          "punto": "PD-ESI-6.2.- Bajo rendimiento en las asignaturas de programación de 1.º y 2.º curso (p. ej. Metodología de la Programación, 46 % de no presentados; Estructuras de Datos No Lineales, 43 % de no presentados y 35 % de suspensos).",
+          "acciones": [
+            "AM-ESI-6.2.- Reunión de coordinación de las asignaturas de la materia de programación para analizar las causas del abandono de la evaluación y acordar medidas (evaluación continua, prerrequisitos recomendados, apoyo entre iguales)."
+          ]
+        }
+      ]
+    },
+    "7": {
+      "fuertes": [
+        "PF-ESI-7.1.- El 94,44 % de los egresados ocupados de la cohorte 2023-24 trabaja en un sector relacionado con el título (ISGC-P07-06).",
+        "PF-ESI-7.2.- La satisfacción de los egresados con las competencias adquiridas alcanza el máximo de la serie (ISGC-P07-10: 3,47)."
+      ],
+      "debiles": [
+        {
+          "punto": "PD-ESI-7.1.- La satisfacción del alumnado con la orientación académica (ISGC-P06-01: 2,95) y profesional (ISGC-P06-02: 2,88) sigue por debajo de 3 sobre 5 y de la media de la UCA.",
+          "acciones": [
+            "AM-ESI-7.1.- Plan de difusión de las actividades de orientación (Jornadas de Bienvenida, Proyecto Acompáñame, ESI LAB, actividades científico-técnicas) identificándolas expresamente como orientación académica o profesional."
+          ]
+        },
+        {
+          "punto": "PD-ESI-7.2.- No consta la implantación de la recogida sistemática de la satisfacción de los empleadores prevista en el P07.",
+          "acciones": [
+            "AM-ESI-7.2.- Celebrar una reunión anual con empleadores del sector TIC, con acta, para recabar su satisfacción con la formación de los egresados y sus necesidades formativas."
+          ]
+        }
+      ]
+    }
+  },
+  "plan_mejora": [
+    {
+      "origen": "Subsanación 1.1.- Se debe publicar una descripción del perfil básico del profesorado.",
+      "accion": "en la web del título se publica un documento con la descripción de los perfiles básicos del profesorado (acción completada en el curso 2023-24; se mantiene hasta que ACCUA la dé por cerrada).",
+      "evidencia": "Web del título > Plan de estudios > Profesorado.",
+      "prioridad": "Alta",
+      "responsable": "Coordinador de Grado",
+      "inicio": "09/23",
+      "fin": "10/23",
+      "indicador": "No procede"
+    },
+    {
+      "origen": "Subsanación 1.2.- Se deben introducir mecanismos para que la página web cuente con mecanismos de accesibilidad para personas con diversidad funcional.",
+      "accion": "la web del título se integra en el tema UCA para WordPress, sometido a las revisiones periódicas del Observatorio de Accesibilidad; se continúa revisando con la unidad web los contenidos propios (textos alternativos, documentos accesibles).",
+      "evidencia": "página de Accesibilidad de los sitios web de la UCA; actas de la CGC.",
+      "prioridad": "Media",
+      "responsable": "Subdirector de Estudiantes",
+      "inicio": "06/24",
+      "fin": "07/26",
+      "indicador": "No procede"
+    },
+    {
+      "origen": "Recomendación 1.1.- Se recomienda mejorar el acceso a la información a través de la web de la UCA haciéndolo más intuitivo.",
+      "accion": "mejora progresiva de la estructura y los accesos directos de la web del centro y del título.",
+      "evidencia": "https://esingenieria.uca.es/docencia/grados/gii/; ISGC-P01-01 e ISGC-P01-02 (Anexo I).",
+      "prioridad": "Alta",
+      "responsable": "Subdirector de Estudiantes",
+      "inicio": "06/24",
+      "fin": "07/26",
+      "indicador": "ISGC-P01-01; ISGC-P01-02; ISGC-P01-03"
+    },
+    {
+      "origen": "Subsanación 2.1.- Se deben poner en marcha acciones para implantar, de manera efectiva, procedimientos para la realización de prospectivas y recogida de datos sistemática de empleadores (y aumentar las de egresados) y para tener en cuenta su opinión en la gestión, garantía de calidad del título y realimentación de actores de interés de la sociedad.",
+      "accion": "facilitar la participación de empleadores en las comisiones del centro y, con la Unidad de Calidad, aumentar la participación en las encuestas de egresados y empleadores.",
+      "evidencia": "ISGC-P07-01_03 (35,85 % en la cohorte 2023-24, máximo de la serie); actas de la CGC.",
+      "prioridad": "Media",
+      "responsable": "Director del Centro",
+      "inicio": "06/24",
+      "fin": "10/26",
+      "indicador": "ISGC-P07-01_03"
+    },
+    {
+      "origen": "Recomendación 2.2.- Se recomienda seguir con las acciones para aportar más información del grado de satisfacción de los usuarios, atendiendo las recomendaciones del proceso de Acreditación anterior.",
+      "accion": "fomentar la participación en las encuestas de los grupos de interés (web de la ESI, Campus Virtual y redes sociales) e informar del número de encuestas y de la población encuestada.",
+      "evidencia": "tasas de respuesta ISGC-P07-01_01, P07-01_02 y P07-01_03 (Anexo I).",
+      "prioridad": "Media",
+      "responsable": "Subdirector de Estudiantes",
+      "inicio": "04/25",
+      "fin": "05/26",
+      "indicador": "ISGC-P07-01_01; ISGC-P07-01_02; ISGC-P07-01_03"
+    },
+    {
+      "origen": "Subsanación 3.1.- Se deben establecer procedimientos formales de coordinación del título y disponer de actas y acuerdos de las reuniones.",
+      "accion": "curso de coordinación en el Campus Virtual con todo el profesorado coordinador de asignaturas, que recoge recomendaciones, sugerencias y acuerdos como evidencia de la coordinación.",
+      "evidencia": "curso de coordinación del título en el Campus Virtual; ISGC-P04-10 (Anexo I).",
+      "prioridad": "Alta",
+      "responsable": "Coordinador de Grado",
+      "inicio": "09/24",
+      "fin": "07/26",
+      "indicador": "ISGC-P04-10"
+    },
+    {
+      "origen": "Recomendación 3.1.- Se recomienda poner en marcha acciones para mejorar la satisfacción con el desarrollo y procedimientos relacionados con el TFG.",
+      "accion": "revisar las opciones del centro para asignar TFG al profesorado adscrito y aumentar la oferta de propuestas en la aplicación de TFG/M.",
+      "evidencia": "https://tfgm.uca.es/ (Asuntos comisión > Actas); ISGC-P04-11 (3,11 en 2024-25).",
+      "prioridad": "Media",
+      "responsable": "Subdirector de Estudiantes",
+      "inicio": "06/24",
+      "fin": "10/26",
+      "indicador": "ISGC-P04-11"
+    },
+    {
+      "origen": "Subsanación 5.1.- Se deben poner en marcha acciones para aumentar significativamente la participación en movilidad, mejorar la satisfacción de los estudiantes con la movilidad y disponer y hacer públicos y claros sus indicadores y plazas ofertadas.",
+      "accion": "revisar la oferta y solicitar convenios con nuevos destinos; complementar las reuniones informativas con orientación específica sobre movilidad.",
+      "evidencia": "Web del título > Movilidad; ISGC-P04-09 e ISGC-P04-15 (Anexo I).",
+      "prioridad": "Media",
+      "responsable": "Coordinador de Grado",
+      "inicio": "09/24",
+      "fin": "07/26",
+      "indicador": "ISGC-P04-09; ISGC-P04-15"
+    },
+    {
+      "origen": "Recomendación 5.1.- Se recomienda poner en marcha acciones para disponer de oferta de prácticas externas propia del Centro para todos los estudiantes que las soliciten y aumentar la satisfacción del estudiantado con las prácticas.",
+      "accion": "la gestión de convenios corresponde al Centro de Promoción de Empleo y Prácticas (CPEP); el centro difunde la oferta y asigna las plazas curriculares.",
+      "evidencia": "ISGC-P04-08 (1,36 plazas por solicitante en 2024-25) e ISGC-P04-14 (3,3 en 2024-25).",
+      "prioridad": "Baja",
+      "responsable": "Dirección General de Empleo",
+      "inicio": "01/24",
+      "fin": "07/26",
+      "indicador": "ISGC-P04-08; ISGC-P04-14"
+    },
+    {
+      "origen": "Subsanación 6.1.- Se deben poner en marcha actuaciones urgentes y efectivas para mejorar las tasas de graduación y abandono y reducir el promedio de duración del estudio, adecuándolos a lo indicado en la memoria de verificación.",
+      "accion": "grupo de análisis con la representación del estudiantado para identificar las causas de la duración excesiva y del abandono, y actuaciones derivadas (ver AM-ESI-6.1 y AM-ESI-6.2).",
+      "evidencia": "ISGC-P04-04 (25,2 %), ISGC-P04-05 (20,2 %) e ISGC-P04-07 (6,8 años) en 2024-25.",
+      "prioridad": "Alta",
+      "responsable": "Coordinador de Grado",
+      "inicio": "09/23",
+      "fin": "07/26",
+      "indicador": "ISGC-P04-04; ISGC-P04-05; ISGC-P04-07"
+    },
+    {
+      "origen": "Subsanación 6.2.- Se deben poner en marcha acciones para aumentar el rendimiento del TFG, analizando su posible desarrollo en empresa para disminuir la duración media de los estudios.",
+      "accion": "estudiar la anulación de la matrícula del TFG, sesiones de orientación sobre su matriculación y vinculación del TFG con las prácticas en empresa (AM-ESI-6.1).",
+      "evidencia": "porcentaje de no presentados del TFG (35 % en 2024-25, Anexo IV).",
+      "prioridad": "Alta",
+      "responsable": "Secretario Académico",
+      "inicio": "06/23",
+      "fin": "09/26",
+      "indicador": "Tasa de no presentados del TFG"
+    },
+    {
+      "origen": "Subsanación 7.1.- Se deben implantar procedimientos institucionalizados de contacto, seguimiento de la actividad laboral y toma de opinión de empleadores y egresados para que su opinión pueda coadyuvar a la mejora continua de los programas formativos, prospectivas, planes de orientación, necesidades del título, etc.",
+      "accion": "las mismas acciones de la Subsanación 2.1 y la reunión anual con empleadores (AM-ESI-7.2).",
+      "evidencia": "ISGC-P07-01_03; actas de la reunión con empleadores.",
+      "prioridad": "Media",
+      "responsable": "Director del Centro",
+      "inicio": "06/24",
+      "fin": "10/26",
+      "indicador": "ISGC-P07-01_03"
+    },
+    {
+      "origen": "Subsanación 7.2.- Se deben poner en marcha acciones para mejorar el grado de satisfacción del alumnado con los programas y actividades de apoyo y orientación académica y profesional y para que hagan uso de los recursos a su disposición.",
+      "accion": "analizar y reorientar las actividades de orientación académica y profesional para hacerlas más visibles y atractivas (AM-ESI-7.1).",
+      "evidencia": "ISGC-P06-01 (2,95) e ISGC-P06-02 (2,88) en 2024-25.",
+      "prioridad": "Alta",
+      "responsable": "Coordinador de Grado",
+      "inicio": "09/23",
+      "fin": "07/26",
+      "indicador": "ISGC-P06-01; ISGC-P06-02"
+    },
+    {
+      "origen": "Recomendación 7.1.- Se recomienda tener en cuenta las indicaciones de los empleadores sobre que la ingeniería del software va perdiendo interés en el alumnado y que se está abriendo una brecha entre la formación que se hace en UCA, orientada a investigación, y lo que las empresas están demandando, así como sobre la necesidad de reforzar prácticas y movilidad.",
+      "accion": "reuniones anuales con empleadores, conforme al P07, para recabar sus necesidades, expectativas y satisfacción y trasladarlas al programa formativo.",
+      "evidencia": "actas de las reuniones; ISGC-P04-12 e ISGC-P04-13 (Anexo I).",
+      "prioridad": "Alta",
+      "responsable": "Coordinador de Grado",
+      "inicio": "01/24",
+      "fin": "07/26",
+      "indicador": "ISGC-P04-12; ISGC-P04-13"
+    },
+    {
+      "origen": "Recomendación 7.2.- Se recomienda realizar un especial seguimiento a la combinación de tasas de graduación y abandono y a la duración promedio de los estudios para garantizar la sostenibilidad del título a largo plazo.",
+      "accion": "la misma acción propuesta para la Subsanación 6.1, con seguimiento anual en el autoinforme.",
+      "evidencia": "ISGC-P04-04, P04-05 y P04-07 (Anexo I) y apartado 7.6.",
+      "prioridad": "Alta",
+      "responsable": "Coordinador de Grado",
+      "inicio": "09/23",
+      "fin": "07/26",
+      "indicador": "ISGC-P04-04; ISGC-P04-05; ISGC-P04-07"
+    },
+    {
+      "origen": "PD-ESI-6.1.- Elevado porcentaje de no presentados en el Trabajo Fin de Grado (35 % en 2024-25), que retrasa la graduación y mantiene la duración media de los estudios en 6,8 años.",
+      "accion": "AM-ESI-6.1.- Sesiones de orientación sobre la matrícula y planificación del TFG en 3.º y 4.º curso y fomento de TFG vinculados a las prácticas curriculares en empresa.",
+      "evidencia": "Autoinforme de seguimiento 2024-25, Criterio 6; actas de la CGC.",
+      "prioridad": "Alta",
+      "responsable": "Coordinador de Grado",
+      "inicio": "09/25",
+      "fin": "07/26",
+      "indicador": "No presentados del TFG (Anexo IV); ISGC-P04-05; ISGC-P04-07"
+    },
+    {
+      "origen": "PD-ESI-6.2.- Bajo rendimiento en las asignaturas de programación de 1.º y 2.º curso (p. ej. Metodología de la Programación, 46 % de no presentados; Estructuras de Datos No Lineales, 43 % de no presentados y 35 % de suspensos).",
+      "accion": "AM-ESI-6.2.- Reunión de coordinación de las asignaturas de la materia de programación para analizar las causas del abandono de la evaluación y acordar medidas (evaluación continua, prerrequisitos recomendados, apoyo entre iguales).",
+      "evidencia": "Autoinforme de seguimiento 2024-25, Criterio 6; actas de la CGC.",
+      "prioridad": "Media",
+      "responsable": "Coordinador de Grado",
+      "inicio": "09/25",
+      "fin": "07/26",
+      "indicador": "Porcentaje de no presentados y suspensos por asignatura (Anexo IV); ISGC-P04-01"
+    },
+    {
+      "origen": "PD-ESI-7.1.- La satisfacción del alumnado con la orientación académica (ISGC-P06-01: 2,95) y profesional (ISGC-P06-02: 2,88) sigue por debajo de 3 sobre 5 y de la media de la UCA.",
+      "accion": "AM-ESI-7.1.- Plan de difusión de las actividades de orientación (Jornadas de Bienvenida, Proyecto Acompáñame, ESI LAB, actividades científico-técnicas) identificándolas expresamente como orientación académica o profesional.",
+      "evidencia": "Autoinforme de seguimiento 2024-25, Criterio 7; actas de la CGC.",
+      "prioridad": "Alta",
+      "responsable": "Subdirector de Estudiantes",
+      "inicio": "09/25",
+      "fin": "07/26",
+      "indicador": "ISGC-P06-01; ISGC-P06-02"
+    },
+    {
+      "origen": "PD-ESI-7.2.- No consta la implantación de la recogida sistemática de la satisfacción de los empleadores prevista en el P07.",
+      "accion": "AM-ESI-7.2.- Celebrar una reunión anual con empleadores del sector TIC, con acta, para recabar su satisfacción con la formación de los egresados y sus necesidades formativas.",
+      "evidencia": "Autoinforme de seguimiento 2024-25, Criterio 7; actas de la CGC.",
+      "prioridad": "Alta",
+      "responsable": "Director del Centro",
+      "inicio": "01/26",
+      "fin": "10/26",
+      "indicador": "Acta de la reunión anual con empleadores"
+    },
+    {
+      "origen": "PD-ESI-4.1 (autoinforme 2023-24).- Descenso de la satisfacción del estudiantado con el proceso de elección y realización del TFG.",
+      "accion": "AM-ESI-4.1.- Buscar fórmulas para aumentar el número de propuestas de TFG y facilitar la elección por el alumnado (se mantiene en seguimiento: ISGC-P04-11 sube a 3,11 en 2024-25).",
+      "evidencia": "Aplicación https://tfgm.uca.es/; actas de la Comisión de TFG/M.",
+      "prioridad": "Media",
+      "responsable": "Comisión de TFG/M de la ESI",
+      "inicio": "09/24",
+      "fin": "07/26",
+      "indicador": "ISGC-P04-11"
+    }
+  ]
+}

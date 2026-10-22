@@ -1,0 +1,1131 @@
+{
+ "encabezado": {
+  "curso": "2024/25",
+  "convocatoria": "2026",
+  "titulo": "GRADO EN HUMANIDADES",
+  "centro": "Facultad de Filosofía y Letras"
+ },
+ "identificacion": {
+  "Universidad": "Universidad de Cádiz",
+  "ID Ministerio": "2501746",
+  "Denominación del título": "Graduado o Graduada en Humanidades por la Universidad de Cádiz",
+  "Curso académico de implantación": "2010-11",
+  "Web de la titulación": "https://filosofia.uca.es/estudios/grados/grado-en-humanidades/",
+  "Oferta de título doble": "NO",
+  "En su caso, especificar la/las titulación/es y el/los centro/s": "No procede",
+  "En caso de ser un título conjunto, especificar las universidades donde se imparte": "No procede",
+  "Modalidad de enseñanza (presencial, semipresencial-híbrida, virtual, a distancia)": "Presencial",
+  "En su caso, fecha de la última renovación de la acreditación": "18/07/2023",
+  "En su caso, créditos prácticos obligatorios": "No procede (prácticas externas optativas de 6 ECTS)",
+  "En su caso, estructuras curriculares específicas": "Itinerarios: I «Mundo actual y comunicación» y II «Gestión y recursos culturales»"
+ },
+ "anios": [
+  "2020-21",
+  "2021-22",
+  "2022-23",
+  "2023-24",
+  "2024-25"
+ ],
+ "anios_egresados": [
+  "2019-20",
+  "2020-21",
+  "2021-22",
+  "2022-23",
+  "2023-24"
+ ],
+ "extraccion": {
+  "entorno": "data.uca.es",
+  "fecha": "2026-10-21",
+  "notas": "Indicadores de LinceBI (data.uca.es). Valores de 2020-21 de ISGC-P01-01/02/03, ISGC-P04-16 a 19 y del centro en ISGC-P06-01 a 04 tomados del autoinforme anterior, por no devolverlos LinceBI."
+ },
+ "indicadores": {
+  "ISGC-P01-01": {
+   "titulo": {
+    "2020-21": "3,11",
+    "2021-22": "3,42",
+    "2022-23": "3,28",
+    "2023-24": "3,25",
+    "2024-25": "3,43"
+   },
+   "centro": {
+    "2020-21": "3,32",
+    "2021-22": "3,42",
+    "2022-23": "3,5",
+    "2023-24": "3,38",
+    "2024-25": "3,45"
+   }
+  },
+  "ISGC-P01-02": {
+   "titulo": {
+    "2020-21": "4",
+    "2021-22": "4,23",
+    "2022-23": "4,08",
+    "2023-24": "3,83",
+    "2024-25": "4"
+   },
+   "centro": {
+    "2020-21": "4,2",
+    "2021-22": "4,2",
+    "2022-23": "4,36",
+    "2023-24": "4,31",
+    "2024-25": "4,08"
+   }
+  },
+  "ISGC-P01-03": {
+   "titulo": {
+    "2020-21": "3,71",
+    "2021-22": "3,8",
+    "2022-23": "3,45",
+    "2023-24": "3,73",
+    "2024-25": "3,66"
+   },
+   "centro": {
+    "2020-21": "3,71",
+    "2021-22": "3,8",
+    "2022-23": "3,45",
+    "2023-24": "3,73",
+    "2024-25": "3,66"
+   }
+  },
+  "ISGC-P04-01": {
+   "titulo": {
+    "2020-21": "77,7",
+    "2021-22": "73,9",
+    "2022-23": "83",
+    "2023-24": "76,6",
+    "2024-25": "83"
+   },
+   "centro": {
+    "2020-21": "83",
+    "2021-22": "76",
+    "2022-23": "79,6",
+    "2023-24": "80,4",
+    "2024-25": "78,6"
+   }
+  },
+  "ISGC-P04-02": {
+   "titulo": {
+    "2020-21": "93,9",
+    "2021-22": "88,4",
+    "2022-23": "94,6",
+    "2023-24": "89,6",
+    "2024-25": "93,7"
+   },
+   "centro": {
+    "2020-21": "91,3",
+    "2021-22": "87,8",
+    "2022-23": "89,7",
+    "2023-24": "88,9",
+    "2024-25": "87,6"
+   }
+  },
+  "ISGC-P04-03": {
+   "titulo": {
+    "2020-21": "82,8",
+    "2021-22": "83,6",
+    "2022-23": "87,7",
+    "2023-24": "85,5",
+    "2024-25": "88,6"
+   },
+   "centro": {
+    "2020-21": "90,9",
+    "2021-22": "86,6",
+    "2022-23": "88,7",
+    "2023-24": "90,3",
+    "2024-25": "89,7"
+   }
+  },
+  "ISGC-P04-04": {
+   "titulo": {
+    "2020-21": "0",
+    "2021-22": "18,2",
+    "2022-23": "0",
+    "2023-24": "45",
+    "2024-25": "28,6"
+   },
+   "centro": {
+    "2020-21": "25",
+    "2021-22": "22,3",
+    "2022-23": "26,9",
+    "2023-24": "31,5",
+    "2024-25": "25,3"
+   }
+  },
+  "ISGC-P04-05": {
+   "titulo": {
+    "2020-21": "60",
+    "2021-22": "18,2",
+    "2022-23": "100",
+    "2023-24": "45",
+    "2024-25": "42,9"
+   },
+   "centro": {
+    "2020-21": "39,5",
+    "2021-22": "39",
+    "2022-23": "38,9",
+    "2023-24": "39,1",
+    "2024-25": "46,9"
+   }
+  },
+  "ISGC-P04-06": {
+   "titulo": {
+    "2020-21": "93",
+    "2021-22": "89,3",
+    "2022-23": "79,3",
+    "2023-24": "88,4",
+    "2024-25": "83,3"
+   },
+   "centro": {
+    "2020-21": "86,3",
+    "2021-22": "89,9",
+    "2022-23": "88,5",
+    "2023-24": "89",
+    "2024-25": "88"
+   }
+  },
+  "ISGC-P04-07": {
+   "titulo": {
+    "2020-21": "4,8",
+    "2021-22": "5",
+    "2022-23": "5,6",
+    "2023-24": "5,9",
+    "2024-25": "6,8"
+   },
+   "centro": {
+    "2020-21": "5,24",
+    "2021-22": "5,27",
+    "2022-23": "5,25",
+    "2023-24": "5,19",
+    "2024-25": "5,38"
+   }
+  },
+  "ISGC-P04-08": {
+   "titulo": {
+    "2020-21": "1,67",
+    "2021-22": "1",
+    "2022-23": "2,25",
+    "2023-24": "3",
+    "2024-25": "2,67"
+   },
+   "centro": {
+    "2020-21": "1,99",
+    "2021-22": "1,73",
+    "2022-23": "1,93",
+    "2023-24": "1,62",
+    "2024-25": "1,65"
+   }
+  },
+  "ISGC-P04-09|Movilidad entrante internacional": {
+   "titulo": {
+    "2020-21": "127,54",
+    "2021-22": "312,73",
+    "2022-23": "234,38",
+    "2023-24": "164,29",
+    "2024-25": "154,84"
+   },
+   "centro": {
+    "2020-21": "11,96",
+    "2021-22": "24,86",
+    "2022-23": "54,2",
+    "2023-24": "47,08",
+    "2024-25": "42,16"
+   }
+  },
+  "ISGC-P04-09|Movilidad entrante nacional": {
+   "titulo": {
+    "2020-21": "1,45",
+    "2021-22": "5,45",
+    "2022-23": "6,25",
+    "2023-24": "2,86",
+    "2024-25": "3,23"
+   },
+   "centro": {
+    "2020-21": "0,33",
+    "2021-22": "1,05",
+    "2022-23": "1,08",
+    "2023-24": "0,79",
+    "2024-25": "0,79"
+   }
+  },
+  "ISGC-P04-09|Movilidad saliente internacional": {
+   "titulo": {
+    "2020-21": "-",
+    "2021-22": "1,82",
+    "2022-23": "-",
+    "2023-24": "-",
+    "2024-25": "1,61"
+   },
+   "centro": {
+    "2020-21": "2,14",
+    "2021-22": "5,04",
+    "2022-23": "6,89",
+    "2023-24": "4,4",
+    "2024-25": "5,87"
+   }
+  },
+  "ISGC-P04-09|Movilidad saliente nacional": {
+   "titulo": {
+    "2020-21": "1,45",
+    "2021-22": "3,64",
+    "2022-23": "-",
+    "2023-24": "-",
+    "2024-25": "-"
+   },
+   "centro": {
+    "2020-21": "0,8",
+    "2021-22": "0,98",
+    "2022-23": "0,93",
+    "2023-24": "0,79",
+    "2024-25": "0,29"
+   }
+  },
+  "ISGC-P04-10": {
+   "titulo": {
+    "2020-21": "2,63",
+    "2021-22": "3,83",
+    "2022-23": "3,17",
+    "2023-24": "3,15",
+    "2024-25": "3,1"
+   },
+   "centro": {
+    "2020-21": "2,81",
+    "2021-22": "3,07",
+    "2022-23": "3,05",
+    "2023-24": "2,97",
+    "2024-25": "3,14"
+   }
+  },
+  "ISGC-P04-11": {
+   "titulo": {
+    "2020-21": "2,94",
+    "2021-22": "3,91",
+    "2022-23": "3,85",
+    "2023-24": "3,25",
+    "2024-25": "3,26"
+   },
+   "centro": {
+    "2020-21": "3,03",
+    "2021-22": "3,22",
+    "2022-23": "3,24",
+    "2023-24": "3,13",
+    "2024-25": "3,38"
+   }
+  },
+  "ISGC-P04-12": {
+   "titulo": {
+    "2020-21": "4",
+    "2021-22": "4,33",
+    "2022-23": "4,25",
+    "2023-24": "3,5",
+    "2024-25": "4,4"
+   },
+   "centro": {
+    "2020-21": "4,3",
+    "2021-22": "4,21",
+    "2022-23": "4,33",
+    "2023-24": "4,39",
+    "2024-25": "4,33"
+   }
+  },
+  "ISGC-P04-13": {
+   "titulo": {
+    "2020-21": "4,75",
+    "2021-22": "1,5",
+    "2022-23": "2,42",
+    "2023-24": "2,46",
+    "2024-25": "4,84"
+   },
+   "centro": {
+    "2020-21": "4,77",
+    "2021-22": "1,52",
+    "2022-23": "2,35",
+    "2023-24": "2,35",
+    "2024-25": "4,81"
+   }
+  },
+  "ISGC-P04-14": {
+   "titulo": {
+    "2020-21": "3,11",
+    "2021-22": "4,2",
+    "2022-23": "3,89",
+    "2023-24": "3,38",
+    "2024-25": "3,26"
+   },
+   "centro": {
+    "2020-21": "3,22",
+    "2021-22": "3,59",
+    "2022-23": "3,69",
+    "2023-24": "3,38",
+    "2024-25": "3,7"
+   }
+  },
+  "ISGC-P04-15": {
+   "titulo": {
+    "2020-21": "3,5",
+    "2021-22": "4,31",
+    "2022-23": "3,63",
+    "2023-24": "3,59",
+    "2024-25": "3,86"
+   },
+   "centro": {
+    "2020-21": "3,55",
+    "2021-22": "3,31",
+    "2022-23": "3,76",
+    "2023-24": "3,51",
+    "2024-25": "3,87"
+   }
+  },
+  "ISGC-P04-16": {
+   "titulo": {
+    "2020-21": "66,67",
+    "2021-22": "90",
+    "2022-23": "54,55",
+    "2023-24": "70",
+    "2024-25": "75"
+   },
+   "centro": {
+    "2020-21": "82,63",
+    "2021-22": "79,33",
+    "2022-23": "79,49",
+    "2023-24": "77,65",
+    "2024-25": "81,56"
+   }
+  },
+  "ISGC-P04-17": {
+   "titulo": {
+    "2020-21": "38,18",
+    "2021-22": "20",
+    "2022-23": "44",
+    "2023-24": "40",
+    "2024-25": "32"
+   },
+   "centro": {
+    "2020-21": "70,32",
+    "2021-22": "63,83",
+    "2022-23": "66,38",
+    "2023-24": "72,34",
+    "2024-25": "73,83"
+   }
+  },
+  "ISGC-P04-18": {
+   "titulo": {
+    "2020-21": "30,91",
+    "2021-22": "26",
+    "2022-23": "30",
+    "2023-24": "48",
+    "2024-25": "40"
+   },
+   "centro": {
+    "2020-21": "85,26",
+    "2021-22": "74,68",
+    "2022-23": "72,34",
+    "2023-24": "85,11",
+    "2024-25": "87,45"
+   }
+  },
+  "ISGC-P04-19": {
+   "titulo": {
+    "2020-21": "27,78",
+    "2021-22": "18,52",
+    "2022-23": "38,46",
+    "2023-24": "28,17",
+    "2024-25": "22,58"
+   },
+   "centro": {
+    "2020-21": "23,44",
+    "2021-22": "22,26",
+    "2022-23": "23,3",
+    "2023-24": "25,04",
+    "2024-25": "24,69"
+   }
+  },
+  "ISGC-P05-02": {
+   "titulo": {
+    "2020-21": "40,74",
+    "2021-22": "35,09",
+    "2022-23": "23,81",
+    "2023-24": "35",
+    "2024-25": "30,65"
+   },
+   "centro": {
+    "2020-21": "50",
+    "2021-22": "32,14",
+    "2022-23": "31,64",
+    "2023-24": "36",
+    "2024-25": "32,95"
+   }
+  },
+  "ISGC-P05-03": {
+   "titulo": {
+    "2020-21": "27,78",
+    "2021-22": "22,81",
+    "2022-23": "15,87",
+    "2023-24": "26,67",
+    "2024-25": "29,03"
+   },
+   "centro": {
+    "2020-21": "32,35",
+    "2021-22": "20,83",
+    "2022-23": "21,47",
+    "2023-24": "25,14",
+    "2024-25": "31,21"
+   }
+  },
+  "ISGC-P05-04": {
+   "titulo": {
+    "2020-21": "4,5",
+    "2021-22": "4,6",
+    "2022-23": "4,5",
+    "2023-24": "4,5",
+    "2024-25": "4,5"
+   },
+   "centro": {
+    "2020-21": "4,3",
+    "2021-22": "4,3",
+    "2022-23": "4,4",
+    "2023-24": "4,4",
+    "2024-25": "4,4"
+   }
+  },
+  "ISGC-P05-05": {
+   "titulo": {
+    "2020-21": "7,41",
+    "2021-22": "7,02",
+    "2022-23": "7,02",
+    "2023-24": "8,33",
+    "2024-25": "12,9"
+   },
+   "centro": {
+    "2020-21": "12,94",
+    "2021-22": "11,9",
+    "2022-23": "11,9",
+    "2023-24": "12",
+    "2024-25": "16,18"
+   }
+  },
+  "ISGC-P05-06": {
+   "titulo": {
+    "2020-21": "100",
+    "2021-22": "100",
+    "2022-23": "100",
+    "2023-24": "100",
+    "2024-25": "37,5"
+   },
+   "centro": {
+    "2020-21": "86,36",
+    "2021-22": "85",
+    "2022-23": "85",
+    "2023-24": "57,14",
+    "2024-25": "53,57"
+   }
+  },
+  "ISGC-P05-07": {
+   "titulo": {
+    "2020-21": "-",
+    "2021-22": "-",
+    "2022-23": "-",
+    "2023-24": "-",
+    "2024-25": "62,5"
+   },
+   "centro": {
+    "2020-21": "13,64",
+    "2021-22": "15",
+    "2022-23": "15",
+    "2023-24": "9,52",
+    "2024-25": "60,71"
+   }
+  },
+  "ISGC-P06-01": {
+   "titulo": {
+    "2020-21": "2,73",
+    "2021-22": "3,5",
+    "2022-23": "3,33",
+    "2023-24": "3,11",
+    "2024-25": "3,07"
+   },
+   "centro": {
+    "2020-21": "2,99",
+    "2021-22": "3,17",
+    "2022-23": "3,16",
+    "2023-24": "3,05",
+    "2024-25": "3,21"
+   }
+  },
+  "ISGC-P06-02": {
+   "titulo": {
+    "2020-21": "2,26",
+    "2021-22": "3,1",
+    "2022-23": "3,44",
+    "2023-24": "3,03",
+    "2024-25": "3,05"
+   },
+   "centro": {
+    "2020-21": "2,66",
+    "2021-22": "2,89",
+    "2022-23": "2,97",
+    "2023-24": "2,94",
+    "2024-25": "3"
+   }
+  },
+  "ISGC-P06-03": {
+   "titulo": {
+    "2020-21": "3,62",
+    "2021-22": "3,89",
+    "2022-23": "3,67",
+    "2023-24": "3,59",
+    "2024-25": "3,12"
+   },
+   "centro": {
+    "2020-21": "3,32",
+    "2021-22": "3,58",
+    "2022-23": "3,57",
+    "2023-24": "3,39",
+    "2024-25": "3,44"
+   }
+  },
+  "ISGC-P06-04": {
+   "titulo": {
+    "2020-21": "3,72",
+    "2021-22": "4,03",
+    "2022-23": "4,08",
+    "2023-24": "3,87",
+    "2024-25": "3,84"
+   },
+   "centro": {
+    "2020-21": "3,95",
+    "2021-22": "3,94",
+    "2022-23": "4,06",
+    "2023-24": "4,08",
+    "2024-25": "3,84"
+   }
+  },
+  "ISGC-P07-01_01": {
+   "titulo": {
+    "2020-21": "46,48",
+    "2021-22": "53,7",
+    "2022-23": "81,54",
+    "2023-24": "70,42",
+    "2024-25": "83,87"
+   },
+   "centro": {
+    "2020-21": "57,41",
+    "2021-22": "44,13",
+    "2022-23": "42,76",
+    "2023-24": "45,52",
+    "2024-25": "40,53"
+   }
+  },
+  "ISGC-P07-01_02": {
+   "titulo": {
+    "2020-21": "52,63",
+    "2021-22": "36,51",
+    "2022-23": "41,79",
+    "2023-24": "39,06",
+    "2024-25": "39,71"
+   },
+   "centro": {
+    "2020-21": "34,22",
+    "2021-22": "33,48",
+    "2022-23": "28,19",
+    "2023-24": "29,34",
+    "2024-25": "26,99"
+   }
+  },
+  "ISGC-P07-02": {
+   "titulo": {
+    "2020-21": "3,31",
+    "2021-22": "3,69",
+    "2022-23": "3,71",
+    "2023-24": "3,49",
+    "2024-25": "3,45"
+   },
+   "centro": {
+    "2020-21": "3,34",
+    "2021-22": "3,48",
+    "2022-23": "3,48",
+    "2023-24": "3,45",
+    "2024-25": "3,57"
+   }
+  },
+  "ISGC-P07-03": {
+   "titulo": {
+    "2020-21": "3,93",
+    "2021-22": "3,62",
+    "2022-23": "3,85",
+    "2023-24": "3,83",
+    "2024-25": "3,62"
+   },
+   "centro": {
+    "2020-21": "3,97",
+    "2021-22": "3,89",
+    "2022-23": "3,93",
+    "2023-24": "3,99",
+    "2024-25": "3,84"
+   }
+  },
+  "ISGC-P07-04": {
+   "titulo": {
+    "2020-21": "3,81",
+    "2021-22": "3,82",
+    "2022-23": "3,81",
+    "2023-24": "3,78",
+    "2024-25": "3,82"
+   },
+   "centro": {
+    "2020-21": "3,81",
+    "2021-22": "3,82",
+    "2022-23": "3,81",
+    "2023-24": "3,78",
+    "2024-25": "3,82"
+   }
+  },
+  "ISGC-P07-01_03": {
+   "titulo": {
+    "2019-20": "12,50 % (2/16)",
+    "2020-21": "30,77 % (4/13)",
+    "2021-22": "33,33 % (2/6)",
+    "2022-23": "42,86 % (3/7)",
+    "2023-24": "30,77 % (4/13)"
+   },
+   "centro": {
+    "2019-20": "14,48 % (32/221)",
+    "2020-21": "14,73 % (47/319)",
+    "2021-22": "17,51 % (45/257)",
+    "2022-23": "16,30 % (45/276)",
+    "2023-24": "24,23 % (71/293)"
+   }
+  },
+  "ISGC-P07-05": {
+   "titulo": {
+    "2019-20": "50",
+    "2020-21": "25",
+    "2021-22": "50",
+    "2022-23": "42,86",
+    "2023-24": "23,08"
+   },
+   "centro": {
+    "2019-20": "34,38",
+    "2020-21": "25,53",
+    "2021-22": "33,33",
+    "2022-23": "10,87",
+    "2023-24": "12,63"
+   }
+  },
+  "ISGC-P07-06": {
+   "titulo": {
+    "2019-20": "100",
+    "2020-21": "0",
+    "2021-22": "100",
+    "2022-23": "66,67",
+    "2023-24": "66,67"
+   },
+   "centro": {
+    "2019-20": "90,91",
+    "2020-21": "58,33",
+    "2021-22": "73,33",
+    "2022-23": "50",
+    "2023-24": "59,46"
+   }
+  },
+  "ISGC-P07-07": {
+   "titulo": {
+    "2019-20": "0",
+    "2020-21": "0",
+    "2021-22": "0",
+    "2022-23": "-",
+    "2023-24": "33,33"
+   },
+   "centro": {
+    "2019-20": "0",
+    "2020-21": "8,33",
+    "2021-22": "0",
+    "2022-23": "3,33",
+    "2023-24": "8,11"
+   }
+  },
+  "ISGC-P07-08": {
+   "titulo": {
+    "2019-20": "100",
+    "2020-21": "100",
+    "2021-22": "100",
+    "2022-23": "0",
+    "2023-24": "33,33"
+   },
+   "centro": {
+    "2019-20": "54,55",
+    "2020-21": "33,33",
+    "2021-22": "53,33",
+    "2022-23": "40",
+    "2023-24": "44,44"
+   }
+  },
+  "ISGC-P07-09": {
+   "titulo": {
+    "2019-20": "3,50",
+    "2020-21": "4,50",
+    "2021-22": "2,50",
+    "2022-23": "4,33",
+    "2023-24": "2,75"
+   },
+   "centro": {
+    "2019-20": "2,87",
+    "2020-21": "3,51",
+    "2021-22": "3,09",
+    "2022-23": "3,41",
+    "2023-24": "3,43"
+   }
+  },
+  "ISGC-P07-10": {
+   "titulo": {
+    "2019-20": "3,50",
+    "2020-21": "3,75",
+    "2021-22": "3,00",
+    "2022-23": "4,00",
+    "2023-24": "3,00"
+   },
+   "centro": {
+    "2019-20": "3,13",
+    "2020-21": "3,51",
+    "2021-22": "3,18",
+    "2022-23": "3,27",
+    "2023-24": "3,44"
+   }
+  },
+  "ISGC-P07-11": {
+   "titulo": {
+    "2020-21": "-",
+    "2021-22": "-",
+    "2022-23": "-",
+    "2023-24": "-",
+    "2024-25": "0,77"
+   },
+   "centro": {
+    "2020-21": "0,48",
+    "2021-22": "0,75",
+    "2022-23": "0,99",
+    "2023-24": "0,08",
+    "2024-25": "0,5"
+   }
+  },
+  "ISGC-P07-12": {
+   "titulo": {
+    "2020-21": "2,44",
+    "2021-22": "-",
+    "2022-23": "-",
+    "2023-24": "0,77",
+    "2024-25": "0,77"
+   },
+   "centro": {
+    "2020-21": "0,84",
+    "2021-22": "0,56",
+    "2022-23": "0,68",
+    "2023-24": "1,08",
+    "2024-25": "0,37"
+   }
+  },
+  "ISGC-P07-13": {
+   "titulo": {
+    "2020-21": "-",
+    "2021-22": "-",
+    "2022-23": "-",
+    "2023-24": "-",
+    "2024-25": "-"
+   },
+   "centro": {
+    "2020-21": "0,06",
+    "2021-22": "0,06",
+    "2022-23": "0,08",
+    "2023-24": "-",
+    "2024-25": "0,06"
+   }
+  },
+  "ISGC-P07-14": {
+   "titulo": {
+    "2020-21": "-",
+    "2021-22": "-",
+    "2022-23": "-",
+    "2023-24": "-",
+    "2024-25": "-"
+   },
+   "centro": {
+    "2020-21": "0,06",
+    "2021-22": "0,06",
+    "2022-23": "-",
+    "2023-24": "-",
+    "2024-25": "0,06"
+   }
+  }
+ },
+ "puntos": {
+  "1": {
+   "fuertes": [
+    "PF-FFL-1.1.- La satisfacción del PDI con la información publicada del título (ISGC-P01-02) alcanza 4 sobre 5 en 2024-25."
+   ],
+   "debiles": []
+  },
+  "2": {
+   "fuertes": [
+    "PF-FFL-2.1.- Alta participación del alumnado (83,87 %) y del PDI (39,71 %) en las encuestas de satisfacción, muy por encima del centro."
+   ],
+   "debiles": []
+  },
+  "3": {
+   "fuertes": [
+    "PF-FFL-3.1.- El título se desarrolla conforme a la memoria verificada, sin incidencias en su planificación."
+   ],
+   "debiles": []
+  },
+  "4": {
+   "fuertes": [
+    "PF-FFL-4.1.- La satisfacción del alumnado con la docencia (ISGC-P05-04) se mantiene en 4,5 sobre 5, por encima del centro (4,4).",
+    "PF-FFL-4.2.- El 87,1 % del profesorado del título es doctor y acumula 70 sexenios de investigación."
+   ],
+   "debiles": []
+  },
+  "5": {
+   "fuertes": [
+    "PF-FFL-5.1.- La movilidad entrante internacional (ISGC-P04-09) es muy superior a la del centro (154,84 % frente a 42,16 %).",
+    "PF-FFL-5.2.- Los tutores académicos (4,4) y de las entidades (4,84) valoran muy positivamente las prácticas externas."
+   ],
+   "debiles": [
+    {
+     "punto": "PD-FFL-5.1.- La satisfacción del alumnado con las prácticas externas (ISGC-P04-14) desciende de 4,2 (2021-22) a 3,26 sobre 5 en 2024-25, por debajo del centro (3,7).",
+     "acciones": [
+      "AM-FFL-5.1.- Reunión de seguimiento con el alumnado que finaliza las prácticas para identificar las causas de la valoración y trasladarlas a las entidades y a los tutores académicos."
+     ]
+    }
+   ]
+  },
+  "6": {
+   "fuertes": [
+    "PF-FFL-6.1.- Las tasas de éxito (93,7 %) y de eficiencia (83,3 %) superan los objetivos de la memoria (90 % y 80 %).",
+    "PF-FFL-6.2.- En 2024-25 las tasas de abandono (28,6 %) y de graduación (42,9 %) cumplen los objetivos de la memoria."
+   ],
+   "debiles": [
+    {
+     "punto": "PD-FFL-6.1.- Elevado porcentaje de no presentados en asignaturas de primer curso y de idiomas modernos (Inglés I, 40 %; Inglés II, 45 %; Introducción a la Filosofía, 38 %; Teoría de la Literatura Contemporánea, 47 %).",
+     "acciones": [
+      "AM-FFL-6.1.- Reunión de coordinación con el profesorado de estas asignaturas para revisar la planificación de la evaluación continua e informar al alumnado de primer curso, a través de TU Mentor, de los sistemas de evaluación y de la importancia de presentarse."
+     ]
+    },
+    {
+     "punto": "PD-FFL-6.2.- La duración media de los estudios (ISGC-P04-07) aumenta de 4,8 años (2020-21) a 6,8 años (2024-25), por encima del centro (5,38).",
+     "acciones": [
+      "AM-FFL-6.2.- Identificar al alumnado de los últimos cursos con asignaturas o TFG pendientes y ofrecerle una tutoría para planificar la finalización de sus estudios."
+     ]
+    }
+   ]
+  },
+  "7": {
+   "fuertes": [
+    "PF-FFL-7.1.- La inserción en un sector relacionado con los estudios (ISGC-P07-06) es del 66,67 % en la cohorte 2023-24, por encima del centro (59,46 %)."
+   ],
+   "debiles": []
+  }
+ },
+ "accua": {
+  "fecha": "05/07/2023 (informe final de renovación de la acreditación, FAVORABLE)",
+  "items": [
+   {
+    "rec": "Recomendación nº 1 (Criterio 1, aspecto que debe ser subsanado): Se deben incluir en la página web los resultados de satisfacción de todos los grupos de interés (estudiantes, PDI, personal de apoyo, egresados y empleadores) no únicamente de los estudiantes.",
+    "accion": "Acción de mejora: actualizar la información de la web del título siguiendo la Guía de Renovación de la Acreditación de ACCUA (Criterio 1), publicando los resultados de satisfacción de todos los grupos de interés.\nEvidencia: página del Sistema de Garantía de Calidad del centro (https://filosofia.uca.es/sistema-de-garantia-de-calidad/). [PENDIENTE: la coordinación debe confirmar su ejecución en 2024-25 y aportar el enlace a la evidencia]"
+   },
+   {
+    "rec": "Recomendación nº 2 (Criterio 2, aspecto que debe ser subsanado): Se deben aportar indicadores de satisfacción de los empleadores, en particular en relación con la formación recibida por los egresados.",
+    "accion": "Acción de mejora: reunión anual con los empleadores, conforme al P07 del SGC, para recabar sus necesidades, expectativas y satisfacción con la formación de los egresados.\nEvidencia: [PENDIENTE: la coordinación debe confirmar su ejecución en 2024-25 y aportar el enlace a la evidencia]"
+   },
+   {
+    "rec": "Recomendación nº 3 (Criterio 2, aspecto para la mejora): Se recomienda llevar a cabo acciones de fomento de la participación de los profesores en las encuestas de satisfacción de la titulación.",
+    "accion": "Acción de mejora: reuniones informativas con el profesorado y recordatorios por correo electrónico durante el periodo de encuestas.\nEvidencia: la participación del PDI en la encuesta de satisfacción (ISGC-P07-01_02) es del 39,71 % en 2024-25, por encima del centro (26,99 %)."
+   },
+   {
+    "rec": "Recomendación nº 4 (Criterio 4, aspecto para la mejora): Se recomienda fomentar la participación del profesorado de la titulación en proyectos de innovación educativa y de mejora de la calidad docente.",
+    "accion": "Acción de mejora: elaboración y presentación de proyectos de innovación docente específicos del título.\nEvidencia: la participación en proyectos de innovación (ISGC-P05-03) sube del 15,87 % (2022-23) al 29,03 % (2024-25); antecedente: proyecto UCA/R096/2023 (https://goo.su/LAJVTg)."
+   },
+   {
+    "rec": "Recomendación nº 5 (Criterio 3, aspecto que debe ser subsanado): Se deben analizar las causas de la baja satisfacción de estudiantes y profesores con la coordinación académica del grado e implementarse las acciones oportunas para mejorar esa coordinación y aumentar el nivel de satisfacción de los colectivos implicados.",
+    "accion": "Acción de mejora: reuniones periódicas de coordinación con el profesorado y con representantes del alumnado.\nEvidencia: la satisfacción del alumnado con la coordinación docente (ISGC-P04-10) es de 3,1 sobre 5 en 2024-25 (3,14 en el centro). Actas de las reuniones: [PENDIENTE: la coordinación debe confirmar su ejecución en 2024-25 y aportar el enlace a la evidencia]"
+   },
+   {
+    "rec": "Recomendación nº 6 (Criterio 2, aspecto que debe ser subsanado): Se debe continuar con el esfuerzo para conocer el grado de satisfacción de los egresados mediante indicadores estadísticamente significativos. En este sentido, particularmente relevante resulta conocer el grado de satisfacción de dicho colectivo con el programa formativo.",
+    "accion": "Acción de mejora: contacto por correo electrónico con los egresados antes de la encuesta de inserción laboral para fomentar su respuesta.\nEvidencia: la participación de los egresados (ISGC-P07-01_03) es del 30,77 % (4 de 13) en la cohorte 2023-24, por encima del centro (24,23 %)."
+   },
+   {
+    "rec": "Recomendación nº 7 (Criterio 4, aspecto para la mejora): Se recomienda fomentar la participación del profesorado de la titulación en los programas de evaluación docente de la universidad.",
+    "accion": "Acción de mejora: correo recordatorio al profesorado al abrirse la convocatoria DOCENTIA.\nEvidencia: la participación en DOCENTIA (ISGC-P05-05) pasa del 7,02 % (2022-23) al 12,9 % (2024-25)."
+   },
+   {
+    "rec": "Recomendación nº 8 (Criterio 5, aspecto que debe ser subsanado): Se deben analizar las causas que pueden estar detrás de la baja participación en los programas de movilidad saliente y establecer acciones de mejora para aumentarla.",
+    "accion": "Acción de mejora: reuniones informativas con el alumnado sobre los programas de movilidad.\nEvidencia: la movilidad saliente internacional (ISGC-P04-09) es del 1,61 % en 2024-25, sin movilidad saliente nacional. [PENDIENTE: la coordinación debe confirmar su ejecución en 2024-25 y aportar el enlace a la evidencia]"
+   },
+   {
+    "rec": "Recomendación nº 9 (Criterio 5, aspecto que debe ser subsanado): Se deben realizar acciones encaminadas a aumentar la participación de los estudiantes en prácticas externas, diversificándolas fuera de la propia universidad.",
+    "accion": "Acción de mejora: ampliar los convenios con entidades externas en coordinación con la coordinación de prácticas del centro.\nEvidencia: plazas ofertadas sobre solicitantes (ISGC-P04-08) de 2,67 en 2024-25. Relación de entidades y plazas: [PENDIENTE: datos internos del centro]."
+   },
+   {
+    "rec": "Recomendación nº 10 (Criterio 6, aspecto que debe ser subsanado): Se debe profundizar en el esfuerzo para mejorar las tasas con valores por debajo de los objetivos de la memoria (graduación y abandono).",
+    "accion": "Acción de mejora: reuniones con el alumnado y seguimiento individual a través de las tutorías.\nEvidencia: en 2024-25 la tasa de abandono (ISGC-P04-04) es del 28,6 % (objetivo ≤30 %) y la de graduación (ISGC-P04-05) del 42,9 % (objetivo ≥35 %)."
+   },
+   {
+    "rec": "Recomendación nº 11 (Criterio 7, aspecto que debe ser subsanado): Se debe profundizar en el análisis de sostenibilidad del título, valorando no solo fortalezas sino también debilidades (tasa de ocupación, baja empleabilidad de los egresados en puestos de trabajo directamente relacionados con la titulación) que deban ser afrontadas en el plan de mejora continua del título.",
+    "accion": "Acción de mejora: análisis de sostenibilidad en el subcriterio 7.6 con fortalezas y debilidades; difusión del título en institutos y redes sociales y colaboración con la Oficina de Egresados (https://egresados.uca.es/).\nEvidencia: ocupación (ISGC-P04-17) del 32 % en 2024-25; inserción en un sector relacionado (ISGC-P07-06) del 66,67 % en la cohorte 2023-24."
+   },
+   {
+    "rec": "Recomendación nº 12 (Criterio 7, aspecto para la mejora): Se recomienda continuar con las acciones de mejora encaminadas a aumentar el nivel de satisfacción de los estudiantes con los servicios de orientación académica y profesional, con el fin de consolidar la tendencia positiva del último curso.",
+    "accion": "Acción de mejora: programas TU Mentor y Proyecto Compañero y Seminario de Orientación Profesional para Historia y Humanidades.\nEvidencia: satisfacción con la orientación académica (ISGC-P06-01) de 3,07 y con la profesional (ISGC-P06-02) de 3,05 sobre 5 en 2024-25."
+   }
+  ]
+ },
+ "plan_mejora": [
+  {
+   "origen": "Recomendación nº 1 (Criterio 1, aspecto que debe ser subsanado): Se deben incluir en la página web los resultados de satisfacción de todos los grupos de interés (estudiantes, PDI, personal de apoyo, egresados y empleadores) no únicamente de los estudiantes.",
+   "accion": "Actualizar la web del título con los resultados de satisfacción de todos los grupos de interés.",
+   "evidencia": "Página del SGC del centro. [PENDIENTE: la coordinación debe confirmar su ejecución en 2024-25 y aportar el enlace a la evidencia]",
+   "prioridad": "Alta",
+   "responsable": "Vicedecanato con competencias en Calidad de la Facultad de Filosofía y Letras",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "Publicación en la web de los resultados de los cinco grupos de interés"
+  },
+  {
+   "origen": "Recomendación nº 2 (Criterio 2, aspecto que debe ser subsanado): Se deben aportar indicadores de satisfacción de los empleadores, en particular en relación con la formación recibida por los egresados.",
+   "accion": "Celebrar una reunión anual con empleadores (P07) y registrar su satisfacción con la formación de los egresados.",
+   "evidencia": "Acta de la reunión. [PENDIENTE: la coordinación debe confirmar su ejecución en 2024-25 y aportar el enlace a la evidencia]",
+   "prioridad": "Alta",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "Acta anual con la valoración de los empleadores"
+  },
+  {
+   "origen": "Recomendación nº 3 (Criterio 2, aspecto para la mejora): Se recomienda llevar a cabo acciones de fomento de la participación de los profesores en las encuestas de satisfacción de la titulación.",
+   "accion": "Reuniones informativas y recordatorios al profesorado durante el periodo de encuestas.",
+   "evidencia": "ISGC-P07-01_02 en 2024-25: 39,71 %.",
+   "prioridad": "Media",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P07-01_02"
+  },
+  {
+   "origen": "Recomendación nº 4 (Criterio 4, aspecto para la mejora): Se recomienda fomentar la participación del profesorado de la titulación en proyectos de innovación educativa y de mejora de la calidad docente.",
+   "accion": "Presentar proyectos de innovación docente específicos del título.",
+   "evidencia": "ISGC-P05-03 en 2024-25: 29,03 %.",
+   "prioridad": "Media",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P05-03"
+  },
+  {
+   "origen": "Recomendación nº 5 (Criterio 3, aspecto que debe ser subsanado): Se deben analizar las causas de la baja satisfacción de estudiantes y profesores con la coordinación académica del grado e implementarse las acciones oportunas para mejorar esa coordinación y aumentar el nivel de satisfacción de los colectivos implicados.",
+   "accion": "Reuniones periódicas de coordinación con el profesorado y representantes del alumnado, con acta de acuerdos.",
+   "evidencia": "Actas de coordinación. [PENDIENTE: la coordinación debe confirmar su ejecución en 2024-25 y aportar el enlace a la evidencia]",
+   "prioridad": "Alta",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P04-10"
+  },
+  {
+   "origen": "Recomendación nº 6 (Criterio 2, aspecto que debe ser subsanado): Se debe continuar con el esfuerzo para conocer el grado de satisfacción de los egresados mediante indicadores estadísticamente significativos. En este sentido, particularmente relevante resulta conocer el grado de satisfacción de dicho colectivo con el programa formativo.",
+   "accion": "Contactar con los egresados antes de la encuesta de inserción para aumentar la respuesta.",
+   "evidencia": "ISGC-P07-01_03, cohorte 2023-24: 30,77 % (4/13).",
+   "prioridad": "Alta",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P07-01_03"
+  },
+  {
+   "origen": "Recomendación nº 7 (Criterio 4, aspecto para la mejora): Se recomienda fomentar la participación del profesorado de la titulación en los programas de evaluación docente de la universidad.",
+   "accion": "Recordatorio al profesorado al abrirse la convocatoria DOCENTIA.",
+   "evidencia": "ISGC-P05-05 en 2024-25: 12,9 %.",
+   "prioridad": "Media",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P05-05"
+  },
+  {
+   "origen": "Recomendación nº 8 (Criterio 5, aspecto que debe ser subsanado): Se deben analizar las causas que pueden estar detrás de la baja participación en los programas de movilidad saliente y establecer acciones de mejora para aumentarla.",
+   "accion": "Reuniones informativas con el alumnado sobre movilidad saliente y análisis de sus causas de baja participación.",
+   "evidencia": "[PENDIENTE: la coordinación debe confirmar su ejecución en 2024-25 y aportar el enlace a la evidencia]",
+   "prioridad": "Alta",
+   "responsable": "Vicedecanato de Relaciones Internacionales de la Facultad de Filosofía y Letras",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P04-09 (movilidad saliente)"
+  },
+  {
+   "origen": "Recomendación nº 9 (Criterio 5, aspecto que debe ser subsanado): Se deben realizar acciones encaminadas a aumentar la participación de los estudiantes en prácticas externas, diversificándolas fuera de la propia universidad.",
+   "accion": "Ampliar los convenios de prácticas con entidades externas a la Universidad.",
+   "evidencia": "Relación de convenios. [PENDIENTE: datos internos del centro]",
+   "prioridad": "Alta",
+   "responsable": "Coordinación de prácticas de la Facultad de Filosofía y Letras",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P04-08 y número de plazas en entidades externas"
+  },
+  {
+   "origen": "Recomendación nº 10 (Criterio 6, aspecto que debe ser subsanado): Se debe profundizar en el esfuerzo para mejorar las tasas con valores por debajo de los objetivos de la memoria (graduación y abandono).",
+   "accion": "Seguimiento individual del alumnado con riesgo de abandono mediante tutorías.",
+   "evidencia": "ISGC-P04-04 en 2024-25: 28,6 %; ISGC-P04-05: 42,9 %.",
+   "prioridad": "Alta",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P04-04 e ISGC-P04-05"
+  },
+  {
+   "origen": "Recomendación nº 11 (Criterio 7, aspecto que debe ser subsanado): Se debe profundizar en el análisis de sostenibilidad del título, valorando no solo fortalezas sino también debilidades (tasa de ocupación, baja empleabilidad de los egresados en puestos de trabajo directamente relacionados con la titulación) que deban ser afrontadas en el plan de mejora continua del título.",
+   "accion": "Difusión del título en institutos y redes sociales y colaboración con la Oficina de Egresados.",
+   "evidencia": "ISGC-P04-17 en 2024-25: 32 %.",
+   "prioridad": "Alta",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P04-17 e ISGC-P07-06"
+  },
+  {
+   "origen": "Recomendación nº 12 (Criterio 7, aspecto para la mejora): Se recomienda continuar con las acciones de mejora encaminadas a aumentar el nivel de satisfacción de los estudiantes con los servicios de orientación académica y profesional, con el fin de consolidar la tendencia positiva del último curso.",
+   "accion": "Mantener TU Mentor, Proyecto Compañero y el Seminario de Orientación Profesional para Historia y Humanidades.",
+   "evidencia": "ISGC-P06-01: 3,07; ISGC-P06-02: 3,05 (2024-25).",
+   "prioridad": "Media",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Mayo de 2023",
+   "fin": "Septiembre de 2027",
+   "indicador": "ISGC-P06-01 e ISGC-P06-02"
+  },
+  {
+   "origen": "PD-FFL-5.1.- La satisfacción del alumnado con las prácticas externas (ISGC-P04-14) desciende de 4,2 (2021-22) a 3,26 sobre 5 en 2024-25, por debajo del centro (3,7).",
+   "accion": "AM-FFL-5.1.- Reunión de seguimiento con el alumnado que finaliza las prácticas para identificar las causas de la valoración y trasladarlas a las entidades y a los tutores académicos.",
+   "evidencia": "Indicador del Anexo I e informe de calificaciones del curso 2024-25.",
+   "prioridad": "Media",
+   "responsable": "Coordinación de prácticas de la Facultad de Filosofía y Letras",
+   "inicio": "Marzo de 2026",
+   "fin": "Julio de 2027",
+   "indicador": "ISGC-P04-14"
+  },
+  {
+   "origen": "PD-FFL-6.1.- Elevado porcentaje de no presentados en asignaturas de primer curso y de idiomas modernos (Inglés I, 40 %; Inglés II, 45 %; Introducción a la Filosofía, 38 %; Teoría de la Literatura Contemporánea, 47 %).",
+   "accion": "AM-FFL-6.1.- Reunión de coordinación con el profesorado de estas asignaturas para revisar la planificación de la evaluación continua e informar al alumnado de primer curso, a través de TU Mentor, de los sistemas de evaluación y de la importancia de presentarse.",
+   "evidencia": "Indicador del Anexo I e informe de calificaciones del curso 2024-25.",
+   "prioridad": "Media",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Marzo de 2026",
+   "fin": "Julio de 2027",
+   "indicador": "Porcentaje de no presentados por asignatura e ISGC-P04-03"
+  },
+  {
+   "origen": "PD-FFL-6.2.- La duración media de los estudios (ISGC-P04-07) aumenta de 4,8 años (2020-21) a 6,8 años (2024-25), por encima del centro (5,38).",
+   "accion": "AM-FFL-6.2.- Identificar al alumnado de los últimos cursos con asignaturas o TFG pendientes y ofrecerle una tutoría para planificar la finalización de sus estudios.",
+   "evidencia": "Indicador del Anexo I e informe de calificaciones del curso 2024-25.",
+   "prioridad": "Media",
+   "responsable": "Coordinación del Grado en Humanidades",
+   "inicio": "Marzo de 2026",
+   "fin": "Julio de 2027",
+   "indicador": "ISGC-P04-07"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+  "rubrica": "2",
+  "borrador": {
+    "palabras": 5522,
+    "pf": 4,
+    "pd": 3,
+    "am": 3,
+    "pendientes": 0
+  },
+  "referencia": {
+    "palabras": 26359,
+    "pf": 19,
+    "pd": 5,
+    "am": 5,
+    "pendientes": 0
+  },
+  "anexo": {
+    "valores": 378,
+    "encontrados": 369,
+    "porcentaje": 97.6
+  },
+  "notas_a": {},
+  "notas_b": {
+    "D1": 0,
+    "D2": 0,
+    "D3": 0,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
+    "D7": 1
+  },
+  "final": {
+    "D1": 0,
+    "D2": 0,
+    "D3": 0,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
+    "D7": 1
+  },
+  "media": 0.57,
+  "bloqueantes": [
+    "B1",
+    "B2",
+    "B3"
+  ],
+  "causas_b": {
+    "S": 13,
+    "D": 1,
+    "I": 0,
+    "H": 2,
+    "E": 1
+  },
+  "lecciones": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07",
+    "L08",
+    "L09",
+    "L10",
+    "L11",
+    "L12"
+  ],
+  "pendientes": [
+    "Bloqueante B1",
+    "Bloqueante B2",
+    "Bloqueante B3",
+    "Discrepancia 15 (H): Criterio 7.2, inserción profesional",
+    "Discrepancia 16 (H): Criterio 6, eficiencia frente a memoria"
+  ],
+  "huellas": [
+    {
+      "fichero": "skills/uca-informes-calidad/references/estilo-y-ejemplos.md",
+      "frases": 1,
+      "casos": [
+        "GIDIDP-seg-2425"
+      ],
+      "ejemplo": "de eficiencia esta tasa con un valor de",
+      "titulos": []
+    }
+  ]
+}

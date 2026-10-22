@@ -1,0 +1,18 @@
+{
+  "id": "GHUM-seg-2425",
+  "titulo": "Grado en Humanidades",
+  "nivel": "grado",
+  "centro": "FFL",
+  "tipo": "seguimiento",
+  "curso": "2024-25",
+  "convocatoria": "2026",
+  "seguimiento_accua": "",
+  "conjunto": "aprendizaje",
+  "notas": "Informe de agencia: el informe final de renovación de la acreditación (2023), preferido a la resolución de modificación no sustancial (2024, común con Historia) por contener las recomendaciones que atiende el seguimiento. Sin plan-mejora aparte: el plan 2023-24 publicado es un extracto (págs. 18-22) del autoinforme anterior. Memoria: la única publicada (MOD-NS 2024, subida en 11/2024), anterior a la referencia.",
+  "documentos": [
+    {"rol": "autoinforme-humano", "url": "https://filosofia.uca.es/wp-content/uploads/2026/09/Autoinforme-Seguimiento-G.-Humanidades-2024-2025-convocatoria-2026_redacted.pdf", "pagina": "https://filosofia.uca.es/grado-en-humanidades/"},
+    {"rol": "autoinforme-anterior", "url": "https://filosofia.uca.es/wp-content/uploads/2025/03/Autoinforme_GHumanidades_Calidad_Rev02_2025_02-04.pdf", "pagina": "https://filosofia.uca.es/grado-en-humanidades/"},
+    {"rol": "memoria", "url": "https://filosofia.uca.es/wp-content/uploads/2024/11/G-Humanidades_MOD-NS_Memoria2024.pdf", "pagina": "https://filosofia.uca.es/grado-en-humanidades/"},
+    {"rol": "informe-accua", "url": "https://filosofia.uca.es/wp-content/uploads/2026/01/InformeFinal2501746_Humanidades.pdf", "pagina": "https://filosofia.uca.es/grado-en-humanidades/"}
+  ]
+}

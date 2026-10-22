@@ -1,0 +1,97 @@
+{
+  "rubrica": "2",
+  "borrador": {
+    "palabras": 12801,
+    "pf": 12,
+    "pd": 9,
+    "am": 4,
+    "pendientes": 43
+  },
+  "referencia": {
+    "palabras": 23746,
+    "pf": 14,
+    "pd": 4,
+    "am": 5,
+    "pendientes": 0
+  },
+  "anexo": {
+    "valores": 568,
+    "encontrados": 505,
+    "porcentaje": 88.9
+  },
+  "notas_a": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 2,
+    "D5": 2,
+    "D6": 2,
+    "D7": 1
+  },
+  "notas_b": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 2,
+    "D6": 1,
+    "D7": 1
+  },
+  "final": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 2,
+    "D6": 1,
+    "D7": 1
+  },
+  "media": 1.43,
+  "bloqueantes": [
+    "B1"
+  ],
+  "causas_b": {
+    "S": 7,
+    "D": 1,
+    "I": 2,
+    "H": 5,
+    "E": 1
+  },
+  "lecciones": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07"
+  ],
+  "pendientes": [
+    "Bloqueante B1",
+    "Discrepancia 3 (H): Anexo I, P04 del centro",
+    "Discrepancia 4 (H): Anexo I, P04-08 2024-25",
+    "Discrepancia 5 (H): Anexo I, P07 (satisfacción del alumnado)",
+    "Discrepancia 7 (H): Criterio 4, P05-01",
+    "Discrepancia 12 (H): Tabla de recomendaciones de ACCUA",
+    "Discrepancia 14 (H): Texto de los criterios 4, 5 y 6 del humano",
+    "Discrepancia 15 (I): Fechas y documentos internos (política de calidad, CGC, Junta, repositorio, prácticas: 15 estudiantes, convenios y tutores)",
+    "Discrepancia 1 (H): Identificación: estructuras curriculares",
+    "Discrepancia 2 (H): Anexo I, P04 del centro",
+    "Discrepancia 3 (H): Anexo I, P07 satisfacción, título y centro",
+    "Discrepancia 4 (H): Anexo I y criterio 7, egresados",
+    "Discrepancia 7 (I): Anexo I, P04-13 del centro, 2020-21 a 2022-23",
+    "Discrepancia 14 (I): 3.3, 5.3, Anexo III y estado del SGC",
+    "Discrepancia 15 (H): Puntos fuertes de resultados"
+  ],
+  "huellas": [
+    {
+      "fichero": "skills/uca-informes-calidad/references/estilo-y-ejemplos.md",
+      "frases": 1,
+      "casos": [
+        "GIDIDP-seg-2425"
+      ],
+      "ejemplo": "de eficiencia esta tasa con un valor de",
+      "titulos": []
+    }
+  ]
+}

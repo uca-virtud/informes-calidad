@@ -1,0 +1,553 @@
+P9 [None] Normal: Autoinforme de seguimiento Curso 2024/25
+P10 [None] Normal: (Convocatoria 2026)
+P12 [None] Normal: GRADO/MÁSTER EN: HISTORIA
+P13 [None] Normal: CENTRO/S: FACULTAD DE FILOSOFÍA Y LETRAS
+--- T0
+--- T1
+--- T2
+P24 [None] Normal (Web): APLICACIONES PARA LA GESTIÓN DOCUMENTAL Y SISTEMAS DE INFORMACIÓN
+Relación de aplicaciones y herramientas:
+P25 [FF0000] Normal: * Eliminar esta tabla cuando el autoinforme no se presente a ACCUA.
+--- T3
+P36 [FF0000] Normal: [Todo lo indicado en negro son recomendaciones, según nuestra experiencia, de redacción de los diferentes apar
+P37 [FF0000] Normal: [Todo lo indicado en rojo son instrucciones de cumplimentación de los diferentes apartados del presente docume
+P38 [FF0000] Normal: [Todo lo indicado en azul son las directrices de ACCUA. Se debe de eliminar al presentar el autoinforme para s
+P39 [FF0000] Normal: [Para títulos de máster interuniversitarios, deberá indicarse información desagregada de todas las universidad
+P40 [FF0000] Normal: Los valores de los indicadores de Tasas, indicar que son valores dinámicos y como tal pueden cambiar diariamen
+P41 [FF0000] Normal: Los valores de los indicadores de egresados ISGC-P07-05 a 09, cambió su fórmula a partir de la cohorte 2022/23
+--- T4
+P44 [None] List Paragraph: Para garantizar que la información del título y centro, se encuentra accesible y actualizada, anualmente se re
+P46 [FF0000,None] List Paragraph: La información pública del grado/máster XXXXXX se elabora, habitualmente, de acuerdo con los protocolos en vig
+P48 [None] Normal: En dicha web el título publica información completa y actualizada sobre las características del programa y su 
+P50 [None] AGAE Texto: Los indicadores de satisfacción del estudiantado y profesorado con la IPD forman parte del Sistema de Garantía
+P52 [None] List Paragraph: [Ampliar la información con lo que se considere oportuno dando respuesta a las directrices de seguimiento de A
+P55 [FF0000,None] Heading 5: [Apoyar el análisis y valoración de este criterio en los indicadores del P01 – Difusión de la Información. Ane
+P57 [FF0000] Normal: Se recuerda que deben estar publicados en la web del título o del centro, los siguientes ítems, como más impor
+P58 [FF0000] List Paragraph: Memoria verificada y en su caso modificada.
+P59 [FF0000] List Paragraph: Composición de la CGC y los acuerdos adoptados por la comisión.
+P60 [FF0000] List Paragraph: Normativas académicas de matrícula que recoja el número mínimo de créditos ECTS de matrícula por estudiante y 
+P61 [FF0000] List Paragraph: Normativa de acceso y admisión. (Real Decreto 534/2024 deroga a Real Decreto 412/2014)
+P62 [FF0000] List Paragraph: Normativa de permanencia.
+P63 [FF0000] List Paragraph: Normativa de reconocimiento y transferencia de créditos.
+P64 [FF0000] List Paragraph: Normativa de movilidad.
+P65 [FF0000] List Paragraph: Normativa de evaluación.
+P66 [FF0000] List Paragraph: Normativa de prácticas externas.
+P67 [FF0000] List Paragraph: Normativa de elaboración y defensa de trabajos fin de grado o fin de máster.
+P68 [FF0000] AGAE Texto: Sistemas de apoyo específicos para el alumnado una vez matriculado.
+P69 [FF0000] AGAE Texto: Evaluación de la agencia de la solicitud de verificación.
+P70 [FF0000] AGAE Texto: Resultados de satisfacción de estudiantes, PDI, personal de apoyo, egresados, empleadores.
+P71 [FF0000] AGAE Texto: Resultados del título: oferta y demanda académica, resultados por asignaturas y globales del programa formativ
+P72 [FF0000] AGAE Texto: Evaluación de la agencia de la solicitud de verificación.
+P73 [FF0000] AGAE Texto: Informes de seguimiento y de renovación de la acreditación.
+P74 [FF0000] AGAE Texto: Plan de mejora del título.
+P76 [FF0000] AGAE Texto: [Solo se incluirán los puntos fuertes y débiles del presente autoinforme y no de años anteriores]
+--- T5
+--- T6
+--- T7
+P82 [None] Default: El Consejo de Gobierno de la Universidad de Cádiz aprobó el 28 de junio de 2021 la versión 3 del Sistema de Ga
+P84 [None] Default: Este Sistema se compone de:
+P86 [None] Default: Manual de Calidad
+P87 [None] Default: 8 Procesos
+P88 [None] Default: Protocolos/procedimientos propios de cada centro.
+P90 [None] Default: En el Manual de Calidad se identifican a los responsables dentro del Sistema y se relacionan las funciones que
+P92 [None] Default: Los 8 procesos se estructuran en los siguientes apartados:
+P94 [None] Default: Objeto
+P95 [None] Default: Desarrollo
+P96 [None] Default: Seguimiento y medición (indicadores y evidencias). Las fichas técnicas de los indicadores se ubican en el Anex
+P97 [None] Default: Herramientas y formatos: desarrollados en el Anexo 1 de cada proceso
+P98 [None] Default: Cronograma/s: se desarrolla gráficamente el proceso a través de actuaciones con sus responsables, fechas de ej
+P100 [FF0000,None] Default: En base al P02-Proceso para la revisión de la gestión de la calidad la Facultad/Escuela XXXXXXXXXXXXXX aprobó 
+P102 [FF0000,None] Default: La Comisión de Garantía de Calidad de la Facultad/Escuela XXXXXX está compuesta por:
+P104 [None] Default: --
+P105 [None] Default: --
+P107 [FF0000,None] Default: Esta comisión cuenta con un Reglamento de funcionamiento que se puede consultar en el siguiente enlace: XXXXXX
+P109 [None] Default: En cuanto a la gestión documental del sistema, éste se articula a través:
+P111 [None] Default: La web del título
+P112 [None] default: El Sistema de Información de la UCA. Se encuentra en la dirección https://data.uca.es/lincebi/Login/.  Por raz
+P113 [None] Default: Espacio UCADRIVE del centro: para toda aquella documentación cuyo contenido, por sus características, no sea p
+P115 [None] Default: Hay que señalar que, dado que la Universidad de Cádiz está en proceso de solicitar en los próximos años la Acr
+P118 [None] Default: En el P03-Proceso de diseño, seguimiento y mejora de los programas formativos se define tanto la sistemática a
+P120 [None] AGAE Texto: El título cuenta con un Plan de Mejora actualizado a partir del análisis y revisión de la información recogida
+P122 [] List Paragraph: [Ampliar la información con lo que se considere oportuno dando respuesta a las directrices de seguimiento de A
+P124 [FF0000] Normal: Se recuerda que deben estar publicados en la web del título, los siguientes ítems:
+P125 [FF0000] List Paragraph: Composición de la Comisión de Garantía de Calidad y actas de sus reuniones
+P126 [FF0000] List Paragraph: Cuadro de mando, informes de gestión y planes directores.
+P127 [FF0000] List Paragraph: Procedimiento de extinción del título.
+P128 [FF0000] List Paragraph: Planes de contingencia o de prevención de riesgos ante situaciones excepcionales.
+P130 [FF0000] AGAE Texto: [Solo se incluirán los puntos fuertes y débiles del presente autoinforme y no de años anteriores]
+--- T8
+--- T9
+P134 [FF0000] AGAE Texto: [A continuación, solo se incluirán TODAS las recomendaciones del último informe de ACCUA (Ya sea renovación de
+P136 [FF0000] AGAE Texto: Enlace: https://ws262.juntadeandalucia.es/accua/?id=informestitulos
+--- T10
+P138 [None] Normal: (*) Verificación, seguimiento, modificación o renovación acreditación
+--- T11
+P139 [None] List Paragraph: El diseño del título está actualizado y se revisa periódicamente, incorporando, si procede, acciones de mejora
+P141 [None] Normal: El desarrollo del plan de estudios, conforme a la memoria verificada (http://xxxxxx.uca.es), es adecuado, cohe
+P143 [FF0000] Normal: [Se recuerda la necesidad de incluir información en la web referida a:
+P144 [00B0F0] List Paragraph: Actas de la Comisión de Garantía de la Calidad.
+P145 [00B0F0] List Paragraph: Guías docentes, especificando las asignaturas que se imparten en otras lenguas].
+P147 [None] List Paragraph: La modalidad de enseñanza (presencial, virtual (o no presencial) y/o híbrida (o semipresencial) se ajusta a lo
+P149 [00B0F0,FF0000,None] Normal: Las modalidades de impartición del título se corresponden con la memoria verificada (y en su caso modificada).
+P151 [FF0000,None] Normal: Rellenar solo en su caso: el título se imparte en varias modalidades de enseñanza, y posee coordinación docent
+P153 [None] Normal: 3.3. 	Los procesos de gestión e implantación de la normativa aplicable al título se desarrollan de manera adec
+P155 [None] AGAE Texto: Los procesos de reconocimiento de créditos y convalidaciones se aplican de manera ajustada a la normativa vige
+P157 [FF0000,None] AGAE Texto: Respecto a la gestión de los TFG/TFM, estos son lo suficientemente ágiles y transparentes como para permitir l
+P159 [FF0000] AGAE Texto: [Se recomienda incluir la información de los reconocimientos de créditos o convalidaciones durante el periodo 
+P162 [FF0000] AGAE Texto: [Se recomienda indicar el número de créditos reconocidos por estudiantes por experiencia profesional entre otr
+P163 [None] Normal (Web): Así mismo, los estudiantes tienen que superar cada curso académico un número de créditos para poder continuar 
+P164 [FF0000] Normal: [Se recuerda la necesidad de incluir información referida a:
+P165 [00B0F0] List Paragraph: En su caso, de estar previstos complementos formativos, debería documentarse el alumnado que ha cursado los mi
+P166 [00B0F0] List Paragraph: Promedio de créditos en complementos formativos del alumnado que los han cursado.
+P167 [00B0F0] List Paragraph: Complementos formativos (si existen). Alumnado titulado que han cursado complementos formativos].
+P169 [None] List Paragraph: Los criterios de admisión, el perfil del estudiante de ingreso y número de plazas son adecuadas y se ajustan a
+P171 [00B0F0,FF0000,None] AGAE Texto: El número de estudiantes de nuevo ingreso se corresponde con lo establecido en la Memoria verificada. El perfi
+P173 [FF0000] Normal: [Comentar en su caso:
+P174 [00B0F0] List Paragraph: Los tamaños de los grupos son adecuados para la consecución de los objetivos de aprendizaje y la consecución d
+P175 [00B0F0] List Paragraph: Pruebas de admisión específicas previstas y sus ponderaciones. Debe justificarse su carácter público y su cohe
+P177 [FF0000] Normal: [Se recuerda la necesidad de incluir información, en caso de títulos de máster, referida a:
+P178 [00B0F0] List Paragraph: Estudiantes que proceden de la misma universidad.
+P179 [00B0F0] List Paragraph: Estudiantes que proceden de otras universidades andaluzas.
+P180 [00B0F0] List Paragraph: Estudiantes que proceden de otras universidades del Estado.
+P181 [00B0F0] List Paragraph: Estudiantes que proceden de universidades extranjeras.
+P182 [00B0F0] List Paragraph: Porcentaje de estudiantes con más de un 15% de créditos reconocidos].
+P184 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P04 del 16 al 19. Anexo I de est
+P185 [FF0000] AGAE Texto: [RSGC-P04-03: Perfil de ingreso (Informe de acceso a los títulos de la UCA y análisis del perfil de ingreso)]
+P188 [None] List Paragraph: La coordinación docente permite la adecuada planificación del programa formativo asegurando que los resultados
+P190 [FF0000,None] Normal: En relación con el programa formativo del título de Grado / Máster en xxxxx, se ha desarrollado una intensa ac
+P191 [None] AGAE Texto: El desarrollo de la coordinación se asegura a través de figuras como el/la coordinador/a de la asignatura, o e
+P193 [FF0000] Normal: Describir brevemente la coordinación entre las actividades formativas de carácter práctico (laboratorios, caso
+P194 [FF0000] Normal: Describir la coordinación horizontal y vertical a dos niveles:
+P195 [FF0000] AGAE Texto: Cuadro de personal académico y de apoyo implicado en los distintos niveles de la coordinación (coordinador/a d
+P196 [FF0000] AGAE Texto: y plasmación material del desarrollo de la misma a través de actas de reuniones o documentación análoga.
+P198 [FF0000] Normal: Descripción de las actuaciones llevadas a cabo por parte del/de la coordinador/a de prácticas con la finalidad
+P200 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P04-10. Anexo I de este autoinfo
+P202 [None] List Paragraph: Implantación de los títulos con estructuras específicas y de innovación docente, tales como:
+P203 [None] List Paragraph: Títulos que se imparten en más de un centro.
+P204 [None] List Paragraph: Títulos conjuntos.
+P205 [None] List Paragraph: Dobles grados con itinerario específico.
+P206 [None] List Paragraph: Titulaciones de grado con mención dual.
+P207 [None] List Paragraph: Titulaciones de grado con estructuras curriculares específicas y de innovación docente.
+P208 [None] List Paragraph: Titulaciones de grado con itinerario académico abierto.
+P210 [FF0000] Normal: [Completar solo en caso de que el plan de estudios las contemple:]
+P211 [000000] Normal: Dobles títulos:
+P212 [000000] List Paragraph: La normativa específica aprobada por la Universidad que regula las dobles titulaciones es el Reglamento UCA/CG
+P213 [000000] List Paragraph: Las titulaciones que están implicadas y las asignaturas de estas (Incluir enlace a documento pdf)
+P214 [000000] List Paragraph: Propuesta formativa diseñada que se oferta, acorde con lo propuesto en el art. 24 del RD (22/20219)]
+P216 [000000] Normal: Títulos conjuntos o interuniversitarios:
+P218 [000000] List Paragraph: El protocolo de coordinación está previsto en el P03 del SGC:
+P219 [000000] List Paragraph: La coordinación de los títulos de Grado y títulos de Máster interuniversitarios, y de aquellas colaboraciones 
+P221 [FF0000] Normal: [Incluir información concreta de cómo se está gestionando esta coordinación]
+P223 [None] Normal: Títulos que se imparten en más de un centro:
+P225 [000000,FF0000] Normal: A fin de asegurar la coordinación exigida entre los centros XXXXXXXXXX y XXXXXXXXXXXX, se creó una Comisión de
+P227 [000000] List Paragraph: El Vicerrector de Títulos y Calidad, que lo coordina
+P228 [FF0000] List Paragraph: XX
+P229 [FF0000] List Paragraph: XX
+P230 [FF0000] List Paragraph: XX
+P232 [FF0000] Normal: [Incluir al resto de miembros que, como mínimo son los responsables de los centros y los coordinadores del tít
+P234 [FF0000] AGAE Texto: [Solo se incluirán los puntos fuertes y débiles del presente autoinforme y no de años anteriores]
+--- T12
+--- T13
+--- T14
+P240 [] List Paragraph: [Para cumplimentar los apartados de los subcriterios, consultar apartado directrices del documento DIMENSIONES
+P242 [None] AGAE Texto: 4.1 El personal académico reúne el nivel de cualificación y experiencia (docente e investigadora) adecuado y s
+P244 [None] Default: El personal académico de la universidad se distribuye por áreas de conocimiento y departamentos, permitiendo q
+P247 [FF0000] Normal: Se debe valorar:
+P249 [00B0F0] AGAE Texto: Los méritos docentes e investigadores adquiridos por cada miembro del profesorado son garantía del nivel de ca
+P250 [00B0F0] List Paragraph: El profesorado colaborador proveniente de otras universidades o centros de investigación y los convenios estab
+P252 [FF0000] Normal: [Analizar: perfil del profesorado]
+P254 [FF0000,None] Heading 5: ANEXO II:  1) Tabla Personal para impartir el título (último año impartido).  https://data.uca.es/lincebi - Ru
+P258 [FF0000,None] Normal: [Se debe aportar un análisis. Ver "ISGC-P05-01: Distribución y características del personal académico del títu
+P261 [None] AGAE Texto: El personal académico implicado en el título es suficiente y su grado de dedicación es adecuado para llevar a 
+P263 [FF0000] Normal: [Analizar:
+P264 [00B0F0] List Paragraph: Cómo el profesorado imparte un porcentaje de horas docente adecuado, y se realiza un desglose grupal apropiado
+P265 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P266 [00B0F0] List Paragraph: Evidencia subcriterio 4.1
+P268 [FF0000,None] Heading 5: ANEXO II:  1) Tabla Personal para impartir el título (último año impartido).  https://data.uca.es/lincebi - Ru
+P270 [FF0000,None] Normal: [Se debe aportar un análisis. Ver "ISGC-P05-01: Distribución y características del personal académico del títu
+P272 [None] AGAE Texto: 4.3 La actividad docente del personal académico es objeto de evaluación, teniendo en cuenta las característica
+P275 [000000] Normal: La Universidad de Cádiz, a través del Vicerrectorado competente, pone a disposición del profesorado oportunida
+P277 [000000] Normal: Anualmente, tras consulta y petición a los grupos de interés se diseña un catálogo de acciones formativas para
+P279 [000000] Normal: Además, existen convocatorias para potenciar la innovación y mejora docente en el marco de las asignaturas con
+P280 [000000] List Paragraph: Convocatorias de Proyectos de Innovación y Mejora Docente.
+P281 [000000] List Paragraph: Convocatoria de Actuaciones Avaladas para la Mejora Docente.
+P282 [000000] List Paragraph: Convocatoria de Actuaciones Avaladas para la Formación del Profesorado.
+P283 [000000] List Paragraph: Convocatoria de Ayudas para la Difusión de Resultados de Innovación Docente.
+P285 [000000] Normal: La formación del profesorado y su participación en proyectos de innovación docente se considera un aspecto cla
+P286 [000000] List Paragraph: P05 Proceso de gestión del personal académico, éste permite estudiar el rendimiento del título en esta materia
+P287 [000000] List Paragraph: P04 Proceso de gestión de los procesos de enseñanza-aprendizaje, en éste se evalúan indicadores de percepción,
+P290 [000000] Normal: La Universidad de Cádiz, de acuerdo con el artículo 127.1 de los  Estatutos que establece que “todo Profesor s
+P292 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P293 [00B0F0] AGAE Texto normal: Resultados de evaluación de la calidad de la actividad docente del profesorado, en su caso resultados del DOCE
+P294 [00B0F0] AGAE Texto normal: Información sobre la formación del profesorado y sobre la innovación docente llevada a cabo por parte del prof
+P296 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P05-2, 3, 5, 6 y 7 Anexo I de es
+P297 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P300 [None] AGAE Texto: Disponibilidad de criterios de selección y asignación de TFM o TFG.
+P302 [FF0000,None] Default: En el entendimiento de que los trabajos de fin de grado/máster deben ser el resultado de un ejercicio integrad
+P304 [FF0000] Normal: [En el caso de que un centro disponga de un marco normativo propio sobre TFM debe aportarlo, así mismo y de ma
+P306 [00B0F0] Default: Directrices:
+P308 [00B0F0] Default: Si el título asegura la idoneidad de los criterios con el fin de garantizar la igualdad de oportunidades y el 
+P309 [00B0F0] Default: Se establecen con claridad los criterios de oferta de TFG/TFMs y en su caso, la oferta por parte del profesora
+P310 [00B0F0] Default: El título asegura la idoneidad de los criterios con el fin de garantizar la igualdad de oportunidades y el tra
+P312 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P313 [00B0F0] AGAE Texto normal: Se cuenta con un documento detallado con los criterios de asignación de tutor y tema asignado para realizar el
+P314 [00B0F0] AGAE Texto normal: Información sobre el perfil del profesorado que supervisa el TFG/TFM.
+P316 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en el indicador del ISGC-P04-11 Anexo I de este autoinforme]
+P317 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P320 [None] AGAE Texto: 4.5 En su caso, adecuación del perfil del profesorado que supervisa las prácticas externas y sus funciones.
+P322 [FF0000] Normal: [Analizar:
+P323 [00B0F0] List Paragraph: Cómo el profesorado que supervisa las prácticas externas o profesionales posee un perfil adecuado al ejercicio
+P325 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P326 [00B0F0] AGAE Texto normal: -  Documento regulatorio del desarrollo de las prácticas externas o profesionales en el que consten los perfil
+P327 [00B0F0] AGAE Texto normal: -  Información sobre la persona que tutela las prácticas externas (incluidos rotatorios y prácticas profesiona
+P328 [00B0F0] AGAE Texto normal: -  Personal académico o profesional responsable de las tutorías de las prácticas académicas externas.
+P330 [FF0000,None] Normal: ANEXO III (A proporcionar por el centro): 2) Personal académico o profesional responsable de las tutorías de l
+P332 [None] AGAE Texto: 4.6. En su caso, adecuación del perfil del profesorado que imparte enseñanza híbrida o virtual.
+P334 [FF0000] Normal: [Analizar, en caso de que el título disponga de enseñanza híbrida o virtual, la adecuación del perfil del prof
+P335 [FF0000] Default: [Analizar:
+P336 [00B0F0] AGAE Texto normal: Si dispone de una tabla del profesorado desglosada en las diferentes modalidades de enseñanza.
+P337 [00B0F0] AGAE Texto normal: El profesorado involucrado en la modalidad híbrida y/o virtual cuenta con la formación adecuada para impartir 
+P339 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P340 [00B0F0] AGAE Texto normal: Ver evidencia subcriterio 4.1.
+P341 [00B0F0] AGAE Texto normal: Programa formativo para la docencia online.
+P342 [00B0F0] AGAE Texto normal: Actividades desarrolladas para la adquisición de competencias digitales por parte del profesorado.
+P344 [None] Normal: 4.7 El alumnado está satisfecho con respecto a la actuación docente del profesorado.
+P346 [FF0000] Normal: [Analizar:
+P347 [00B0F0] List Paragraph: Si el título dispone de indicadores válidos para conocer la satisfacción de los estudiantes con respecto a la 
+P348 [00B0F0] List Paragraph: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P349 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P350 [00B0F0] AGAE Texto normal: Indicadores de satisfacción
+P351 [00B0F0] AGAE Texto normal: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P353 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en el indicador del ISGC-P05-04.  Anexo I de este autoinform
+P354 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P357 [None] AGAE Texto: El profesorado está satisfecho con el desarrollo del programa formativo.
+P359 [FF0000] Normal: [Analizar:
+P360 [00B0F0] List Paragraph: El título dispone de indicadores válidos para conocer la satisfacción del profesorado respecto al desarrollo d
+P361 [00B0F0] List Paragraph: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P362 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P363 [00B0F0] AGAE Texto normal: Indicadores de satisfacción
+P364 [00B0F0] AGAE Texto normal: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P366 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en el indicador del ISGC-P07-03.  Anexo I de este autoinform
+P367 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P370 [FF0000] AGAE Texto: [Solo se incluirán los puntos fuertes y débiles del presente autoinforme y no de años anteriores]
+--- T15
+--- T16
+--- T17
+P376 [FF0000] List Paragraph: [Para cumplimentar los apartados de los subcriterios consultar apartado directrices del Documento DIMENSIONES,
+P378 [None] AGAE Texto: 5.1. El título cuenta con la infraestructura y los recursos adecuados teniendo en cuenta el tamaño de los grup
+P381 [FF0000] Default: [Se debe valorar si:
+P383 [00B0F0] AGAE Texto: El título dispone de aulas adecuadas y convenientemente equipadas (número, tamaño, mesas y sillas, proyectores
+P384 [00B0F0] AGAE Texto: El título dispone de salas de lectura, espacios para realización de trabajos en grupo, áreas de descanso, etc.
+P385 [00B0F0] AGAE Texto: El título dispone de los laboratorios o espacios específicos para la realización de las prácticas adecuados (n
+P386 [00B0F0] AGAE Texto: El título cuenta con la dotación económica necesaria para la realización de las prácticas y del resto de activ
+P387 [00B0F0] AGAE Texto: El título cuenta con una biblioteca adecuada al número de estudiantes y las características del programa forma
+P388 [00B0F0] AGAE Texto: El título dispone de una plataforma virtual de apoyo a la docencia. Existe un procedimiento para analizar el u
+P389 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción del estudiantado con las infraestructura
+P390 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P391 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción del profesorado con las infraestructuras
+P392 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P394 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P395 [00B0F0] AGAE Texto: Descripción de las infraestructuras disponibles para el desarrollo de las diferentes actividades formativas.
+P396 [00B0F0] AGAE Texto: Descripción de las características y funcionamiento de la biblioteca.
+P397 [00B0F0] AGAE Texto: Acceso a la plataforma virtual y estadísticas de utilización.
+P398 [00B0F0] AGAE Texto: Indicadores de satisfacción del alumnado.
+P399 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha
+P400 [00B0F0] AGAE Texto: Indicadores de satisfacción del profesorado.
+P401 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P403 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P06- 03 y 04 Anexo I de este aut
+P404 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P406 [None] Normal: 5.2. En su caso, las acciones realizadas para favorecer la movilidad del estudiantado son adecuadas a las cara
+P408 [FF0000] Default: [Se debe valorar si:
+P410 [00B0F0] AGAE Texto: El título dispone de una oferta de destinos de movilidad adecuada a las características del título, tanto en l
+P411 [00B0F0] AGAE Texto: El título cuenta con un procedimiento para la revisión y actualización de los convenios de movilidad existente
+P412 [00B0F0] AGAE Texto: El título cuenta con un procedimiento de información al alumnado y asignación de destinos de movilidad.
+P413 [00B0F0] AGAE Texto: El título cuenta con un procedimiento de acogida de estudiantes de movilidad entrante.
+P414 [00B0F0] AGAE Texto: El título cuenta un procedimiento para la designación de coordinadores de movilidad y para el reconocimiento d
+P415 [00B0F0] AGAE Texto: El título cuenta con un procedimiento de gestión y apoyo a estudiantes de movilidad por parte de la coordinaci
+P416 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción del estudiantado saliente con los progra
+P417 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción de los coordinadores de intercambios con
+P418 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P421 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P422 [00B0F0] AGAE Texto: Listado de destinos de movilidad.
+P423 [00B0F0] AGAE Texto: Número de estudiantes de movilidad entrante y saliente.
+P424 [00B0F0] AGAE Texto: Procedimiento de revisión y actualización de convenios de movilidad.
+P425 [00B0F0] AGAE Texto: Procedimiento de información y asignación de destinos de movilidad.
+P426 [00B0F0] AGAE Texto: Procedimiento de acogida de estudiantes de movilidad entrante.
+P427 [00B0F0] AGAE Texto: Procedimiento de designación de coordinadores y reconocimiento de sus funciones.
+P428 [00B0F0] AGAE Texto: Procedimiento de gestión y apoyo al estudiante de movilidad.
+P429 [00B0F0] AGAE Texto: Indicadores de satisfacción del alumnado de movilidad.
+P430 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P431 [00B0F0] AGAE Texto: Indicadores de satisfacción del profesorado que coordina la movilidad.
+P432 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P434 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en el indicador del ISGC-P04-09 y 15.  Anexo I de este autoi
+P435 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P437 [None] AGAE Texto: 5.3. En el caso de que el programa formativo incluya prácticas académicas externas, se desarrollan de manera a
+P439 [FF0000] Default: [Se debe valorar si:
+P441 [00B0F0] AGAE Texto: El título dispone de una oferta de destinos para la realización de las prácticas externas, tanto obligatorias 
+P442 [00B0F0] AGAE Texto: El título dispone de un procedimiento para revisar y actualizar la oferta de convenios de prácticas y para ana
+P443 [00B0F0] AGAE Texto: El título dispone de un procedimiento de asignación de las prácticas externas.
+P444 [00B0F0] AGAE Texto: El número de tutores externos y su capacitación son adecuados para facilitar la adquisición, por parte del est
+P445 [00B0F0] AGAE Texto: El título dispone de criterios claros y definidos para la designación de los tutores externos.
+P446 [00B0F0] AGAE Texto: El título dispone de un procedimiento de coordinación de los tutores externos, en el que se informe sobre sus 
+P447 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción de los estudiantes con las prácticas ext
+P448 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción de los tutores de prácticas externas, ta
+P449 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P451 [None] AGAE Texto: ANEXO III:
+P452 [None] AGAE Texto: 1) Tabla Información sobre prácticas académicas externas (último curso).
+P453 [None] AGAE Texto: 2) Tabla. Personal académico o profesional responsable de las tutorías de las prácticas académicas externas.
+P455 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P456 [00B0F0] AGAE Texto: Listado de convenios para prácticas externas y número de plazas ofertadas.
+P457 [00B0F0] AGAE Texto: Listado de plazas cubiertas en cada centro.
+P458 [00B0F0] AGAE Texto: Procedimiento de asignación de las prácticas externas.
+P459 [00B0F0] AGAE Texto: Número de tutores de prácticas de la universidad y del centro conveniado. Criterios de designación de tutores.
+P460 [00B0F0] AGAE Texto: Procedimiento de revisión y actualización de los convenios de prácticas.
+P461 [00B0F0] AGAE Texto: Procedimiento de coordinación de los tutores externos.
+P462 [00B0F0] AGAE Texto: Procedimiento de presentación y evaluación de los resultados de las prácticas (rúbrica).
+P463 [00B0F0] AGAE Texto: Información sobre prácticas académicas externas (último curso).
+P464 [00B0F0] AGAE Texto: Indicadores de satisfacción del alumnado con las prácticas externas.
+P465 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P466 [00B0F0] AGAE Texto: Indicadores de satisfacción de los tutores de prácticas.
+P467 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P469 [FF0000] Normal: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P04-8- 12-13 y 14 Anexo I de est
+P470 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P473 [None] AGAE Texto: 5.4. El personal de apoyo que participa en las actividades formativas es adecuado y suficiente para el desarro
+P475 [000000] Normal: En la Universidad de Cádiz no hay personal de apoyo (PTGAS) adscrito a títulos y/o centros. La RPT de la UCA e
+P476 [FF0000] Default: [Incluir la tabla general del personal de apoyo a los títulos de grado y máster, disponible en el Campus Virtu
+P478 [FF0000] Default: [Se debe valorar si:
+P480 [00B0F0] AGAE Texto: El título dispone del personal de apoyo necesario para la realización de las actividades formativas prácticas,
+P481 [00B0F0] AGAE Texto: El título dispone del personal de apoyo necesario para el resto de actividades necesarias para el desarrollo d
+P482 [00B0F0] AGAE Texto: El título/centro dispone del personal de administración y servicios necesario para llevar a cabo todas las tar
+P483 [00B0F0] AGAE Texto: El título/centro dispone de indicadores válidos para conocer la satisfacción del personal de administración y 
+P484 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P486 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P487 [00B0F0] AGAE Texto: Listado y perfil del personal de apoyo disponible para la realización de las prácticas.
+P488 [00B0F0] AGAE Texto: Listado y perfil del personal disponible para el resto de actividades de apoyo para el desarrollo del programa
+P489 [00B0F0] AGAE Texto: Listado y descripción del personal de administración y gestión asignado al título/centro.
+P490 [00B0F0] AGAE Texto: Indicadores de satisfacción del personal de apoyo asignado al título/centro.
+P491 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción del personal de apoyo asignado al título/centro y accion
+P493 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en el indicador del ISGC-P01-03 e ISGC-P07-04.  Anexo I de e
+P494 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P496 [None] AGAE Texto: 5.5. En caso de enseñanza híbrida o virtual, el título cuenta con los recursos necesarios en infraestructura y
+P498 [FF0000] Default: [Se debe valorar si:
+P499 [00B0F0] AGAE Texto: El título dispone de los recursos técnicos y de personal necesarios para impartir docencia no presencial.
+P500 [00B0F0] AGAE Texto: El título dispone de un procedimiento que permita analizar la progresión académica del estudiantado que recibe
+P501 [00B0F0] AGAE Texto: El título cuenta con personal de apoyo suficiente y adecuado para la impartición de la docencia no presencial.
+P502 [00B0F0] AGAE Texto: El título cuenta con un programa de formación para el personal de apoyo que participa en la docencia no presen
+P503 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción de los estudiantes con la docencia no pr
+P504 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P505 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción del profesorado con la docencia no prese
+P506 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P508 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P509 [00B0F0] AGAE Texto: Descripción del sistema de docencia no presencial utilizado.
+P510 [00B0F0] AGAE Texto: Procedimiento de seguimiento y evaluación del estudiantado que participa en la docencia no presencial.
+P511 [00B0F0] AGAE Texto: Procedimiento para el acceso a los servicios de orientación académica y profesional.
+P512 [00B0F0] AGAE Texto: Listado (descripción) del personal de apoyo disponible.
+P513 [00B0F0] AGAE Texto: Actividades formativas ofertadas y participación del PDI y personal de apoyo en dichas actividades.
+P514 [00B0F0] AGAE Texto: Indicadores de satisfacción del alumnado de la modalidad no presencial.
+P515 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P516 [00B0F0] AGAE Texto: Indicadores de satisfacción del profesorado en la modalidad no presencial.
+P517 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha
+P519 [FF0000] AGAE Texto: [Solo se incluirán los puntos fuertes y débiles del presente autoinforme y no de años anteriores]
+--- T18
+--- T19
+--- T20
+P525 [] List Paragraph: [Para cumplimentar los apartados de los subcriterios consultar apartado directrices del Documento DIMENSIONES,
+P527 [None] AGAE Texto: 6.1 Los resultados del proceso de aprendizaje alcanzados por el estudiantado se corresponden con el nivel MECE
+P529 [FF0000] Default: [Se debe valorar que:
+P530 [00B0F0] AGAE Texto: Debe existir correspondencia entre los resultados del proceso de aprendizaje previstos y el nivel MECES del Tí
+P531 [00B0F0] AGAE Texto: Los resultados de aprendizaje alcanzados se corresponden con los previstos en la Memoria verificada. Deberá ga
+P533 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P534 [FF0000] AGAE Texto: SOLO para los títulos que van a Seguimiento ACCUA:
+P535 [00B0F0] AGAE Texto: Guías docentes.
+P536 [00B0F0] AGAE Texto: Información sobre cinco asignaturas obligatorias representativas del programa formativo entre ellas TFM/TFG y 
+P537 [00B0F0] AGAE Texto: Guías docentes.
+P538 [00B0F0] AGAE Texto: Información sobre el profesorado de la asignatura.
+P539 [00B0F0] AGAE Texto: Selección de pruebas de evaluación del estudiantado que cubran el espectro de calificaciones (suspenso, aproba
+P540 [00B0F0] AGAE Texto: En caso de evaluación continua, tabla que permita su contextualización. Debe incluir como mínimo la ponderació
+P541 [00B0F0] AGAE Texto: En su caso, cinco memorias de prácticas externas.
+P544 [None] AGAE Texto: Las actividades formativas, la metodología y los sistemas de evaluación son pertinentes y adecuadas para certi
+P546 [FF0000] Default: [Se debe valorar si:
+P547 [00B0F0] AGAE Texto: Las metodologías docentes y las actividades formativas son adecuadas para la consecución de los resultados de 
+P548 [00B0F0] AGAE Texto: Las actividades formativas, la metodología y los sistemas de evaluación reflejados en las guías docentes de la
+P549 [00B0F0] AGAE Texto: El proceso de elaboración y defensa de los TFG/TFM es coherente con la normativa interna de la Universidad de 
+P550 [00B0F0] AGAE Texto: Existencia de sistemas de evaluación que garanticen una evaluación homogénea y adecuada de los TFG/TFM.
+P551 [00B0F0] AGAE Texto: Existencia de criterios y procedimientos de asignación de TFG/TFM.
+P552 [00B0F0] AGAE Texto: Las prácticas externas se desarrollan garantizando la adquisición de las competencias vinculadas a dicha asign
+P553 [00B0F0] AGAE Texto: Existencia de criterios y procedimientos de asignación de prácticas externas].
+P555 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P556 [00B0F0] AGAE Texto: Guías docentes (incluyendo programa, resultados de aprendizaje, actividades formativas y sistemas de evaluació
+P557 [00B0F0] AGAE Texto: Plan de estudios del título pormenorizando las actividades formativas llevadas a cabo en el proceso de enseñan
+P558 [00B0F0] AGAE Texto: Documento del SGC sobre los procesos asociados al desarrollo de los programas formativos para favorecer el apr
+P559 [00B0F0] AGAE Texto: Rúbrica de la presentación y evaluación de los TFG/TFM.
+P560 [00B0F0] AGAE Texto: Listado de prácticas externas realizadas, centros, tutores internos y externos.
+P562 [FF0000] AGAE Texto: Solo para los Títulos que van a Seguimiento ACCUA:
+P563 [00B0F0] AGAE Texto: Listado de TFG/TFM defendidos y calificaciones.
+P564 [00B0F0] AGAE Texto: Información sobre cinco asignaturas obligatorias representativas del programa formativo entre ellas TFG/TFM y 
+P565 [00B0F0] AGAE Texto: Guías docentes
+P566 [00B0F0] AGAE Texto: Información sobre el profesorado de la asignatura.
+P567 [00B0F0] AGAE Texto: Selección de pruebas de evaluación del estudiantado que cubran el espectro de calificaciones (suspenso, aproba
+P568 [00B0F0] AGAE Texto: En caso de evaluación continua, tabla que permita su contextualización. Debe incluir como mínimo la ponderació
+P569 [00B0F0] AGAE Texto: En su caso, cinco Memorias de Prácticas externas.
+P571 [None] AGAE Texto: Los resultados de los indicadores académicos y su evolución se adecúan a los objetivos formativos del plan de 
+P573 [FF0000] Default: [Se debe valorar si:
+P574 [00B0F0] AGAE Texto: Los resultados de los indicadores académicos deben ser coherentes con las previsiones globales realizadas en l
+P576 [FF0000] AGAE Texto: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P04-01 a 07 Anexo I de este auto
+P577 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P580 [FF0000,None] AGAE Texto: ANEXO IV: Información sobre calificaciones globales del título y por asignaturas y tipo de enseñanza. https://
+--- T21
+P583 [00B0F0,FF0000] AGAE Texto: Nota: se deben repetir las asignaturas según la modalidad de enseñanza (presencial, virtual (o no presencial) 
+P584 [00B0F0] AGAE Texto: Porcentaje de no presentados
+P585 [00B0F0] AGAE Texto: Resultados globales de la titulación de los últimos seis años:
+P586 [00B0F0,FF0000] AGAE Texto: Tasa de rendimiento Indicador ISGC-P04-01
+P587 [00B0F0,FF0000] AGAE Texto: Tasa de eficacia  Disponemos del indicador de eficiencia Indicador ISGC-P04-06
+P588 [00B0F0,FF0000] AGAE Texto: Tasa de graduación Indicador ISGC-P04-05
+P589 [00B0F0,FF0000] AGAE Texto: Tasa de abandono Indicador ISGC-P04-04
+P590 [00B0F0,FF0000] AGAE Texto: Resultados globales del primer curso de los últimos seis años: Descargar del Sistema Información y subir al UC
+P591 [00B0F0] AGAE Texto: Tasa de abandono:
+P592 [00B0F0] AGAE Texto: Tasa de presentados
+P593 [00B0F0] AGAE Texto: Tasa de éxito
+P594 [00B0F0] AGAE Texto: Tasa de rendimiento
+P597 [None] AGAE Texto: El título dispone de indicadores para analizar grado de satisfacción del estudiantado con cada asignatura, así
+P599 [000000,FF0000] AGAE Texto: Según el artículo 2.4 del Reglamento UCA/CG09/2022, de 26 de septiembre, sobre la evaluación de la satisfacció
+P601 [FF0000] AGAE Texto: [Solo se incluirán los puntos fuertes y débiles del presente autoinforme y no de años anteriores]
+--- T22
+--- T23
+P607 [None] List Paragraph: ORIENTACIÓN ACADÉMICA, ORIENTACIÓN PROFESIONAL Y EMPLEABILIDAD
+P609 [] List Paragraph: [Para cumplimentar los apartados de los subcriterios consultar apartado directrices del Documento DIMENSIONES,
+P611 [None] AGAE Texto: El título tiene los servicios necesarios para poder garantizar la orientación académica y profesional del alum
+P613 [None] Normal: 1. Orientación Académica.
+P614 [FF0000] Normal: [Se deben relacionar actividades de orientación universitaria que específicamente despliegue el centro como, p
+P615 [FF0000] List Paragraph: Programa de Orientación y Apoyo al Estudiante (PROA) que gestionado a través de P06 Proceso de Gestión de recu
+P616 [FF0000] List Paragraph: Área de Atención al Alumnado.
+P617 [FF0000] List Paragraph: Tablón de Anuncios en web.
+P618 [FF0000] List Paragraph: Jornadas de Orientación de Másteres, con alcance a los cuatro campus, dirigidas al alumnado de último curso de
+P620 [None] Normal: a) Servicio de Atención Psicológica y Psicopedagógica (SAP). Éste tiene como objetivo atender las necesidades 
+P621 [None] Normal: b) Secretariado de Políticas de Inclusión. Su finalidad es garantizar un tratamiento equitativo y una efectiva
+P622 [None] Normal: c) Dirección General de Igualdad. La finalidad de esta unidad es tratar de eliminar las dificultades y barrera
+P623 [None] Normal: d) Dirección General de Diversidad. De reciente creación, tiene, como principal objetivo, promover y garantiza
+P624 [None] Normal: e) Servicio de Relaciones Internacionales (ORI). Integrado en el Área de Gestión de Alumnado y Relaciones Inte
+P627 [None] Normal: 2. Orientación Profesional.
+P629 [None] Normal: La Universidad de Cádiz cuenta con programas para mejorar la empleabilidad de los universitarios dentro del me
+P630 [None] Normal: •	El Plan Integral de Formación para el Empleo (PIFE) proporciona, a través de un itinerario formativo, los re
+P631 [None] Normal: •	Agencia de colocación: Este servicio está basado en un sistema dinámico que promueve de forma ágil y eficien
+P632 [None] Normal: •	La Feria de Empleo de la Universidad de Cádiz es un punto de encuentro entre sus estudiantes y egresados int
+P634 [FF0000] Normal: [Se debe relacionar otras actividades de orientación profesional que específicamente despliegue el centro, com
+P635 [FF0000] List Paragraph: Encuentros con emprendedores.
+P636 [FF0000] List Paragraph: Workshop con empresas.
+P637 [FF0000] List Paragraph: Actividades en colaboración con la Cátedra Emprendedores y Cátedra Extenda.
+P638 [FF0000] List Paragraph: Encuentros empresariales.
+P639 [FF0000] List Paragraph: Servicios de orientación profesional.
+P640 [FF0000] List Paragraph: Cualquier actividad, jornada, conferencia o seminario cuyo objetivo sea orientar profesionalmente al alumnado.
+P642 [FF0000] Default: [Se debe valorar si:
+P643 [00B0F0] AGAE Texto: El título cuenta con un plan estable de orientación académica dirigida a su estudiantado, que incluye jornadas
+P644 [00B0F0] AGAE Texto: El título cuenta con un plan estable de orientación profesional, dirigido, de forma específica a los futuros e
+P645 [00B0F0] AGAE Texto: El título dispone de indicadores válidos para conocer la satisfacción del estudiantado con la orientación acad
+P646 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P648 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P649 [00B0F0] AGAE Texto: Plan de orientación académica.
+P650 [00B0F0] AGAE Texto: Plan de orientación profesional.
+P651 [00B0F0] AGAE Texto: Indicadores de satisfacción del estudiantado con respecto a la orientación académica y profesional recibida.
+P652 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P654 [FF0000] Normal: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P06-01 y 02 Anexo I de este Auto
+P655 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P657 [FF0000] Default: Apoyar el análisis y valoración de este criterio, con los siguientes documentos:
+P658 [FF0000] List Paragraph: FSGC P06-02: Informe de ejecución del Programa de Orientación y Apoyo al Estudiante (PROA)
+P659 [FF0000] List Paragraph: FSGC P06-04: Informe de ejecución del Programa de Orientación Profesional del Centro
+P661 [None] AGAE Texto: 7.2. Los resultados de los indicadores de empleabilidad de las personas egresadas son adecuados para las carac
+P663 [FF0000] Default: [Se debe valorar si:
+P664 [00B0F0] AGAE Texto: El título dispone de indicadores de empleabilidad fiables, que permitan determinar que los empleos a los que a
+P665 [00B0F0] AGAE Texto: Los indicadores de empleabilidad son analizados por los responsables, en relación con las características de l
+P667 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P668 [00B0F0] AGAE Texto: Indicadores de empleabilidad.
+P669 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de empleabilidad y acciones de mejora puestas en marcha.
+P671 [FF0000] Normal: [Se recuerda que los valores son por cohortes de egreso, no por curso académico. Según el Sistema de Gestión d
+P673 [FF0000] Normal: [Así mismo, se recomienda analizar si los empleos a los que acceden los egresados están directamente relaciona
+P675 [FF0000] Heading 5: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P07-05 a 08]. https://data.uca.e
+P676 [FF0000] Heading 5: Encuestas Egresados: Ruta: Datos Académicos/Calidad/Indicadores Procesos SGC/ P07 - Medición de Resultados/ -
+P677 [FF0000] Heading 5: Egresados y Encuesta completa de egresados: Ruta: Datos Académicos/Calidad/Indicadores Procesos SGC/Encuestas 
+P679 [FF0000] Normal: [Se recuerda que los valores de estos indicadores son por cohortes de egreso. En el caso de títulos de Grado y
+P680 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P682 [None] AGAE Texto: 7.3 Los perfiles de egreso fundamentalmente desplegados en el programa formativo mantienen su interés y están 
+P684 [FF0000] Default: [Se debe valorar si:
+P685 [00B0F0] AGAE Texto: El título dispone de un procedimiento que permita revisar el interés y adecuación de los perfiles de egreso y 
+P687 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P688 [00B0F0] AGAE Texto: Procedimiento de revisión y actualización de los perfiles de egreso.
+P690 [None] AGAE Texto: 7.4 Los empleadores están satisfechos con la formación recibida por los egresados.
+P692 [FF0000,None] Normal: Según el proceso P07 Proceso de medición de resultados, para recabar información sobre necesidades o expectati
+P693 [FF0000] Default: [Aportar enlace a las actas de reunión de estas comisiones]
+P695 [FF0000] Default: [Se debe valorar si:
+P696 [00B0F0] AGAE Texto: El título dispone de indicadores fiables, que permiten determinar el grado de satisfacción de los empleadores 
+P697 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P699 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P700 [00B0F0] AGAE Texto: Indicadores de satisfacción por parte de los empleadores.
+P701 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P703 [FF0000] Normal: [Se recomienda analizar los resultados de satisfacción con la formación recibida de las reuniones con las enti
+P705 [None] AGAE Texto: 7.5 Los egresados están satisfechos con la formación recibida.
+P707 [FF0000] Default: [Se debe valorar si:
+P708 [00B0F0] AGAE Texto: El título dispone de indicadores fiables, que permiten determinar el grado de satisfacción de los egresados co
+P709 [00B0F0] AGAE Texto: Los indicadores de satisfacción son analizados por los responsables y utilizados en el proceso de mejora de la
+P711 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P712 [00B0F0] AGAE Texto: Indicadores de satisfacción del alumnado egresado
+P713 [00B0F0] AGAE Texto: Análisis realizado de los indicadores de satisfacción y acciones de mejora puestas en marcha.
+P715 [FF0000] Normal: [Apoyar el análisis y valoración de este criterio en los indicadores del ISGC-P07-01_03, 09, 10 Anexo I de est
+P716 [FF0000] Normal: [Se recuerda que los valores de estos indicadores son por cohortes de egreso. En el caso de títulos de grado y
+P717 [FF0000] AGAE Texto: [Cuando se analicen indicadores se recomienda indicar que estos están además en el anexo 1]
+P720 [None] AGAE Texto: 7.6 Se analiza la sostenibilidad del título teniendo en cuenta el perfil de formación que ofrece la titulación
+P722 [FF0000] Default: [Se debe valorar si:
+P723 [00B0F0] AGAE Texto: El título cuenta con un procedimiento que permite el análisis de su sostenibilidad. La sostenibilidad del títu
+P724 [00B0F0] AGAE Texto: El análisis de la sostenibilidad del título es utilizado en el proceso de mejora de la titulación].
+P726 [00B0F0] AGAE Texto: Evidencias según guía ACCUA:
+P727 [00B0F0] AGAE Texto: Análisis sobre la sostenibilidad del título correlacionando las diferentes dimensiones que afectan a este crit
+P728 [00B0F0] AGAE Texto: demanda,
+P729 [00B0F0] AGAE Texto: nivel del profesorado implicado en la titulación,
+P730 [00B0F0] AGAE Texto: etc.).
+P733 [FF0000] AGAE Texto: [Solo se incluirán los puntos fuertes y débiles del presente autoinforme y no de años anteriores]
+--- T24
+--- T25
+P739 [None] Normal: PLAN DE MEJORA
+P740 [FF0000] Normal: [Se recomienda incluir solo un responsable por cada acción de mejora]
+P741 [FF0000] Normal: [Este plan de mejora debe incluir todas las recomendaciones indicadas en el último informe de ACCUA y deben se
+--- T26
+P755 [None] Normal: ANEXO 1:
+P756 [None] Normal: INFORME DE INDICADORES
+P769 [None] List Paragraph: P01 – Difusión de la información.
+--- T27
+--- T28
+P773 [None] Normal: 2) P04 – Proceso para la Gestión de los Procesos de Enseñanza-Aprendizaje:  Indicadores P04 (Rendimiento)
+--- T29
+--- T30
+P780 [None] Normal: 3) P05 – Gestión del Personal Académico: Indicadores P05 (02-07).
+--- T31
+--- T32
+P787 [None] Normal: 4) Gestión de los recursos para el aprendizaje y apoyo al estudiante: Indicadores P04 (Acceso) y P06.
+--- T33
+--- T34
+P796 [None] Normal: 5) P07 – Resultados: A) Satisfacción con la titulación (01-04).
+--- T35
+--- T36
+P802 [None] Normal: 6) P07 – Resultados: B) Egresados (05-10)
+--- T37
+--- T38
+P806 [None] Normal: 7) P07 – Resultados: C) BAU (11-14)
+--- T39
+P834 [None] Normal: ANEXO 2:
+P835 [None] Normal: TABLAS PERSONAL ACADÉMICO
+P850 [None] Normal: ANEXO II:  Tabla Personal para impartir el título (último año impartido).
+P851 [FF0000] Normal: [Se recomienda incluir tabla o enlace a la tabla (desde la web o UCADrive)]. Ver enlace:
+P852 [FF0000,None] Heading 5: https://data.uca.es/lincebi - Ruta: /Datos Académicos/Calidad/Indicadores Procesos SGC/P05 - Gest. Personal Do
+--- T40
+P869 [None] Normal: ANEXO 3:
+P870 [None] Normal: TABLAS PRÁCTICA EXTERNAS
+P872 [None] AGAE Texto: ANEXO III:
+P874 [None] AGAE Texto: Tabla Información sobre prácticas académicas externas (último curso).
+--- T41
+--- T42
+P878 [None] AGAE Texto: Tabla. Personal académico o profesional responsable de las tutorías de las prácticas académicas externas.
+P879 [None] AGAE Texto: Información sobre las personas que tutorizan las prácticas externas (último curso):
+--- T43
+P891 [None] Normal: ANEXO 4:
+P892 [None] Normal: TABLA CALIFICACIONES GLOBALES
+P895 [None] AGAE Texto: ANEXO IV:  Información sobre calificaciones globales del título y por asignaturas y tipo de enseñanza.
+P897 [FF0000] AGAE Texto: [Se recomienda incluir tabla o enlace a la tabla (desde la web o UCADrive)]. Ver enlace:
+P898 [FF0000] Heading 5: https://data.uca.es/lincebi - Ruta: /Datos Académicos/Calidad/Indicadores Procesos SGC/P04 - Gest. Procesos de
+--- T44

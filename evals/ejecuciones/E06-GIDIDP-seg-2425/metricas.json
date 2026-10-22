@@ -1,0 +1,92 @@
+{
+  "rubrica": "2",
+  "borrador": {
+    "palabras": 12892,
+    "pf": 12,
+    "pd": 7,
+    "am": 5,
+    "pendientes": 28
+  },
+  "referencia": {
+    "palabras": 24533,
+    "pf": 16,
+    "pd": 1,
+    "am": 1,
+    "pendientes": 0
+  },
+  "anexo": {
+    "valores": 553,
+    "encontrados": 544,
+    "porcentaje": 98.4
+  },
+  "notas_a": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 2,
+    "D4": 1,
+    "D5": 2,
+    "D6": 2,
+    "D7": 2
+  },
+  "notas_b": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 2,
+    "D6": 2,
+    "D7": 1
+  },
+  "final": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 2,
+    "D6": 2,
+    "D7": 1
+  },
+  "media": 1.57,
+  "bloqueantes": [],
+  "causas_b": {
+    "S": 8,
+    "D": 3,
+    "I": 1,
+    "H": 3,
+    "E": 1
+  },
+  "lecciones": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07"
+  ],
+  "pendientes": [
+    "Discrepancia 2 (H): Anexo I, P04-05 título 2023-24",
+    "Discrepancia 5 (H): Anexo I, P04-13 centro 2024-25",
+    "Discrepancia 7 (H): Anexo I, egresados del título (P07-09/10)",
+    "Discrepancia 8 (I): Criterio 3, créditos reconocidos 2024-25",
+    "Discrepancia 9 (I): Criterio 5.3, Anexo III; fechas de la CGC y la Junta",
+    "Discrepancia 11 (H): Criterio 1, objetivo de la memoria",
+    "Discrepancia 12 (H): Criterio 5, profesorado (P05-01) y otros datos del texto humano",
+    "Discrepancia 16 (H): Criterio 2 y plan, numeración de ACCUA",
+    "Discrepancia 2 (H): Anexo I, egresados del título; 7.2 y 7.5",
+    "Discrepancia 3 (H): Anexo I, P04-13 del centro, 2024-25",
+    "Discrepancia 5 (H): 6.3, objetivos de la memoria",
+    "Discrepancia 13 (I): 3.3; 4.5; 5.3; Anexos II-III y aprobación"
+  ],
+  "huellas": [
+    {
+      "fichero": "skills/uca-informes-calidad/references/estilo-y-ejemplos.md",
+      "frases": 1,
+      "casos": [
+        "GIDIDP-seg-2425"
+      ],
+      "ejemplo": "de eficiencia esta tasa con un valor de",
+      "titulos": []
+    }
+  ]
+}

@@ -36,6 +36,8 @@
   .proceso li.decide { border-top-color: var(--curso); } .proceso li.decide::before { background: var(--curso); }
   .proceso.coord { counter-reset: paso 6; grid-template-columns: repeat(2, 1fr); }
   .proceso.coord li { border-top-color: var(--hecho); } .proceso.coord li::before { background: var(--hecho); }
+  .proceso.vida { grid-template-columns: repeat(4, 1fr); }
+  .proceso.vida li { border-top-color: var(--gris); } .proceso.vida li::before { background: var(--gris); }
   .ciclo { text-align: center; color: var(--gris); font-size: .88rem; margin: 0 0 1rem; }
   .dos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
   .caja { background: #f9fafc; border-radius: 8px; padding: 1rem 1.1rem; font-size: .9rem; }
@@ -62,9 +64,10 @@
   footer { text-align: center; color: var(--gris); font-size: .85rem; padding: 0 1.5rem 2rem; }
   @media (max-width: 960px) {
     .rubrica-scroll { overflow-x: auto; } .rubrica { min-width: 640px; }
+    .proceso.vida { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 760px) {
-    .escala, .proceso, .proceso.coord { grid-template-columns: 1fr; }
+    .escala, .proceso, .proceso.coord, .proceso.vida { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -90,6 +93,7 @@
 
     <ul class="indice" aria-label="En esta página">
       <li><a href="#proceso">Cómo se hace el seguimiento</a></li>
+      <li><a href="#lecciones">Cómo madura una lección</a></li>
       <li><a href="#rubrica">La rúbrica</a></li>
       <li><a href="asistente.html#instrucciones">Instrucciones del asistente</a></li>
     </ul>
@@ -97,21 +101,21 @@
 
   <section id="proceso">
     <h2>Cómo se hace el seguimiento</h2>
-    <p>El seguimiento tiene dos ciclos. El de la IA se completa en una sesión y no espera a nadie; el de la
-      coordinación llega cuando puede y completa los resultados sin detener al primero.</p>
+    <p>El seguimiento tiene dos ciclos. El de la IA se completa en una sesión de unos 25-30 minutos por título y no
+      espera a nadie; el de la coordinación llega cuando puede y completa los resultados sin detener al primero.</p>
 
     <h3>Ciclo de IA</h3>
     <ol class="proceso">
       <li><strong>Se abre la evaluación de un título</strong>Con el autoinforme 2024/25 ya aprobado, que será la
         referencia.<span class="quien">Responsable del proyecto</span></li>
       <li><strong>El asistente redacta el borrador</strong>Con los documentos de la coordinación e indicadores de
-        LinceBI, sin ver la referencia.<span class="quien">Asistente · 15-20 min</span></li>
+        LinceBI, sin ver la referencia.<span class="quien">Asistente · 15-21 min</span></li>
       <li><strong>El asistente revisa su borrador</strong>Lo compara con la referencia y lo puntúa con la
         <a href="#rubrica">rúbrica</a>.<span class="quien">Corrector de IA 1 · 6-9 min</span></li>
       <li><strong>Un segundo corrector lo puntúa</strong>Otro modelo de IA, independiente, aplica la misma
         rúbrica.<span class="quien">Corrector de IA 2 · a la vez que el paso 3</span></li>
       <li><strong>Consolidación provisional</strong>Nota de la IA, métricas y puntos para revisión
-        experta.<span class="quien">Herramienta de evaluación</span></li>
+        experta.<span class="quien">Herramienta de evaluación · menos de 1 min</span></li>
       <li class="decide"><strong>El responsable decide</strong>Aprueba, rechaza o deja en observación las lecciones
         propuestas.<span class="quien">Responsable del proyecto</span></li>
     </ol>
@@ -129,6 +133,21 @@
     <p class="ciclo">↻ Sus propuestas se deciden en el siguiente paso 6, aunque el asistente ya haya cambiado de
       versión. Si la valoración no llega, la evaluación queda con la nota de la IA.</p>
 
+    <h3 id="lecciones">Cómo madura una lección</h3>
+    <p>Cada diferencia causada por el asistente puede dar lugar a una lección: una regla general, sin datos del título.
+      Estos son los estados que muestra <a href="evaluacion.html#lecciones">Qué aprende el asistente</a>:</p>
+    <ol class="proceso vida">
+      <li><strong>En observación</strong>Propuesta, aún fuera del asistente. Se incorpora si el responsable la
+        aprueba y procede de la normativa o la guía, se ha visto en dos o más títulos de coordinaciones distintas, o la
+        avala la Unidad de Calidad.</li>
+      <li><strong>Por comprobar</strong>Incorporada en una nueva versión, a la espera de evaluar otro título. Sigue
+        así si la evaluación no puede ponerla a prueba (por ejemplo, si depende de preguntar al centro).</li>
+      <li><strong>Funciona o A reforzar</strong>Según resulte en ese título. Una lección que funcionó puede quedarse
+        corta en un título posterior.</li>
+      <li><strong>Reforzada</strong>Se sustituye por otra más precisa, que vuelve a «Por comprobar». Hasta entonces,
+        la anterior sigue en el asistente.</li>
+    </ol>
+
     <div class="dos">
       <div class="caja">
         <h4>Para que la evaluación sea justa</h4>
@@ -136,7 +155,7 @@
           <li>El asistente no cambia durante una evaluación.</li>
           <li>Una lección vale solo si funciona en otro título.</li>
           <li>El asistente no contiene ejemplos de los títulos evaluados.</li>
-          <li>Algunos títulos se repiten para medir el progreso.</li>
+          <li>Algunos títulos se repiten para medir el progreso y otros se reservarán para detectar retrocesos.</li>
         </ul>
       </div>
       <div class="caja">
@@ -154,7 +173,8 @@
 
   <section id="rubrica">
     <h2>La rúbrica de evaluación</h2>
-    <p>Se puntúan siete aspectos y la nota es su media. Se valora el borrador frente a la normativa y los datos
+    <p>Se puntúan siete aspectos y la nota es su media; los que no aplican al título (por ejemplo, ACCUA si no hay
+      informe) no cuentan. Se valora el borrador frente a la normativa y los datos
       verificables, no su parecido con el autoinforme de la coordinación.</p>
 
     <div class="escala">
@@ -177,7 +197,7 @@
         <tr><td>Análisis</td><td>Interpretación de los indicadores.</td>
           <td>Evolución, objetivo correcto y causas coherentes.</td><td>Descriptivo o sin causas.</td><td>Ausente, genérico o contradictorio.</td></tr>
         <tr><td>Plan de mejora</td><td>Puntos fuertes, débiles y acciones.</td>
-          <td>Concretos, con acción, responsable y plazo.</td><td>Genéricos o sin enlazar.</td><td>Ausente o incompleto.</td></tr>
+          <td>Concretos, con acción, responsable y plazo.</td><td>Genéricos, no asumibles o sin enlazar.</td><td>Ausente, o el plan no recoge los puntos débiles.</td></tr>
         <tr><td>ACCUA</td><td>Recomendaciones abiertas.</td>
           <td>Todas, con su numeración y estado.</td><td>Falta alguna o se renumeran.</td><td>Ausentes o inventadas.</td></tr>
         <tr><td>Formato</td><td>Plantilla, códigos y registro.</td>
@@ -190,7 +210,8 @@
     <p>Se señalan aparte, sea cual sea la nota:</p>
     <div class="graves">
       <div><strong>Dato inventado</strong>Sin respaldo en los documentos, LinceBI o la normativa.</div>
-      <div><strong>Valor imposible o contradictorio</strong>Por ejemplo, una tasa mayor del 100 %.</div>
+      <div><strong>Valor imposible o contradictorio</strong>Por ejemplo, una tasa mayor del 100 % o el mismo indicador
+        con dos valores distintos.</div>
       <div><strong>Origen no garantizado</strong>Datos del entorno de pruebas o sin fuente registrada.</div>
     </div>
 
@@ -220,6 +241,6 @@
 
 </main>
 
-<footer>Uso interno de la Universidad de Cádiz · Última actualización: 4 de octubre de 2026</footer>
+<footer>Uso interno de la Universidad de Cádiz · Última actualización: 22 de octubre de 2026</footer>
 </body>
 </html>

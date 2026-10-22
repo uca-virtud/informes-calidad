@@ -1,0 +1,9 @@
+El informe real confirma que la mayoría de mis valores coincidían (rendimiento 61,5%, éxito 73,4%, evaluación 83,8%, abandono 25,2% idénticos) y revela un hueco importante que sí conviene incorporar a la skill: el análisis de calificaciones por asignatura del Criterio 6.3. Ajusto la skill.2 archivos editados, ejecutó un comando, leyó un archivo2 archivos editados, ejecutó un comando, leyó un archivoHe comparado tu informe real (24/25) con el que generé. Resumen:
+Lo que coincidió bien: la estructura (7 criterios, subcriterios, anexos), los puntos fuertes/débiles con la codificación PF/PD/AM‑ESI, la tabla de recomendaciones ACCUA y varios indicadores idénticos (rendimiento 61,5%, éxito 73,4%, evaluación 83,8%, abandono 25,2%; objetivos de memoria 20/25/60/50). El estilo de análisis por indicador también encaja.
+Diferencias detectadas y qué he ajustado en la skill:
+
+Faltaba el análisis de calificaciones por asignatura (Criterio 6.3). Tu informe dedica un párrafo extenso a las asignaturas con más suspensos (Sistemas Distribuidos 41%, etc.), las de muchos no presentados y las de excelencia. Lo he añadido como parte obligatoria: extraer PorcentajeCalificaciones (Anexo IV) y redactar ese análisis con un patrón y ejemplo real.
+Algunos valores diferían (graduación 8,4% real vs 12,6% que extraje; eficiencia 73,9% vs 73,7%). Es porque tiré del entorno de pruebas datapru.uca.es. He dejado en la skill la instrucción de usar producción (data.uca.es).
+P01‑03 (PTGAS) se analiza a nivel de centro (recomendación ACCUA): añadido como nota.
+Objetivos de memoria: mejor presentarlos como tabla; anotado.
+El Plan de Mejora real trae responsables y fechas concretos (los tuyos iban genéricos): confirma que ese detalle sale del plan de mejora vivo, como ya te comenté.

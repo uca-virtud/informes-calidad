@@ -7,6 +7,13 @@ __pycache__/
 
 # Documentos internos que no se versionan
 docs/peticiones-cartera/
-evals/
 samples/
 old-skills/
+
+# De evals/ se versionan los casos y las ejecuciones; el historial y las valoraciones
+# de las coordinaciones (comentarios y rol de quien valora) siguen en local
+evals/*
+!evals/casos/
+!evals/casos.csv
+!evals/ejecuciones/
+evals/ejecuciones/*/valoracion-coordinacion*.xlsx

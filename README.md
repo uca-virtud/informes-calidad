@@ -10,8 +10,8 @@ de la Universidad de Cádiz.
   elaboración, recursos y criterios de entrega.
 - [Procedimiento de evaluación](docs/PROCEDIMIENTO.md): cómo se evalúa la skill frente a
   autoinformes reales, paso a paso.
-- [Evaluaciones](docs/EVALUACIONES.md): resultados de cada ejecución, lecciones aprendidas y
-  su estado en la skill.
+- [Lecciones](docs/LECCIONES.md): versiones de la skill y lecciones aprendidas en su
+  evaluación, con su estado.
 - [Instrucciones para agentes](AGENTS.md): reglas de trabajo de los agentes de IA en este
   repositorio.
 
@@ -25,10 +25,13 @@ no se versionan.
 | `skills/uca-informes-calidad/` | Skill vigente (seguimiento y renovación de la acreditación). |
 | `.github/skills/preparar-caso/` | Skill de proyecto que prepara un caso de evaluación a partir del nombre del título, buscando sus documentos en la web del centro. |
 | `tools/evaluacion/` | Script `evaluacion.py` (`enlaces`, `caso`, `nueva`, `medir`, `valoracion`) del procedimiento de evaluación. |
-| `docs/` | Visión, procedimiento y registro de evaluaciones. |
-| `docs/evaluacion/` | Rúbrica, plantillas de cotejo y ficha, y `material-coordinaciones/<caso>/` (borrador de la IA y sus datos en JSON, autoinforme de la coordinación y rúbrica de valoración en Excel de cada título). |
+| `docs/` | Visión, procedimiento de evaluación y lecciones. |
+| `docs/evaluacion/` | Rúbrica y plantillas de cotejo y ficha. |
 | `docs/peticiones-cartera/` | Peticiones de cartera de los centros y solicitud de la fase 1 al Sistema de Información (modelo de datos e informe de indicadores del Anexo I). *Solo local.* |
-| `evals/` | Catálogo de casos (`casos.csv`), `casos/<id>/` (entrada y autoinforme humano de referencia), `ejecuciones/Enn-<id>/` (ficha, borrador, cotejos y métricas) e `historial.md`. *Solo local.* |
+| `evals/casos.csv` | Catálogo de casos de evaluación. |
+| `evals/casos/<id>/` | Por cada caso: documentos de entrada (`entrada/`), autoinforme humano de referencia (`referencia/`) y procedencia de los documentos (`fuentes.json` y `fuentes.md`). |
+| `evals/ejecuciones/Enn-<id>/` | Por cada ejecución: ficha, borrador, cotejos, métricas y, si se envió a la coordinación, `rubrica-valoracion.xlsx`. Las hojas devueltas (`valoracion-coordinacion*.xlsx`) son *solo locales*. |
+| `evals/historial.md` | Resultados y relato de cada ejecución. *Solo local.* |
 | `samples/` | Autoinformes reales de ejemplo (seguimiento y renovación). *Solo local.* |
 | `old-skills/autoinforme-seguimiento-uca/` | Versión anterior de la skill, solo de seguimiento, usada en las primeras evaluaciones. *Solo local.* |
 | `web/` | Web del proyecto (ver abajo). |

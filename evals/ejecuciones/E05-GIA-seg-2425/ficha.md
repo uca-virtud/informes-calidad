@@ -1,0 +1,95 @@
+# Ficha de ejecución — E05-GIA-seg-2425
+
+<!-- La crea `evaluacion.py nueva`. Los campos entre <…> los completa quien se indica. -->
+
+## Ejecución
+
+| Campo | Valor |
+|---|---|
+| Ejecución | E05 |
+| Caso | GIA-seg-2425 |
+| Título | Grado en Ingeniería Aeroespacial |
+| Tipo y curso | seguimiento, 2024-25 (convocatoria 2026) |
+| Seguimiento ACCUA | no consta: se asume sí |
+| Conjunto | aprendizaje |
+| Fecha | 2026-10-03 |
+| Versión de la skill | a3157b3 |
+| Versión de la rúbrica | 2 |
+| Modelo A (generador y autocotejo) | claude-opus-5.5 |
+| Modelo B (segundo corrector) | gpt-6.1-sol |
+
+## Generación (completa el subagente A)
+
+| Campo | Valor |
+|---|---|
+| Host de LinceBI | `data.uca.es`, verificado en cada reanudación (18:47 y 19:17) por el `viewerUrl` de las respuestas (`https://data.uca.es/lincebi/api/repos/...`). |
+| Fecha de extracción | 2026-10-03, en dos tramos (CEST): **tramo 1, de 18:48 a 18:53**: P04, P01, P05-02 a P05-07, P06, P07, egresados, calificaciones 2024-25 y perfil de ingreso, para el título, el centro y la UCA; **tramo 2, de 19:17 a 19:19**, con llamadas de una en una: P05-01, búsqueda del informe de créditos reconocidos, filas finales de los informes de los que no se pudo leer la última página y BAU del centro. Los dos tramos constan en `datos.json` → `extraccion.tramos`. |
+| Documentos de entrada usados | `entrada/autoinforme-anterior.pdf` (autoinforme 2023-24, conv. 2025; 58 p.): series históricas, PF/PD y plan de mejora anterior. `entrada/informe-accua.pdf` (informe final de renovación de la acreditación, 05/07/2023; 13 p.): las 15 recomendaciones. `entrada/memoria.pdf` (memoria verificada; 199 p.): identificación y objetivos de §8.1. |
+| Supuestos tomados sin poder preguntar | Tipo: seguimiento. Seguimiento ACCUA: no consta, así que se asume que sí y se rellena la tabla de las 15 recomendaciones. Indicadores: solo LinceBI. Datos internos del centro: no se aportan; quedan 43 marcas `[PENDIENTE…]` (fechas de aprobación del SGC y de la CGC, enlaces, actas de coordinación y de empleadores, estado de IMPLANTA, revisión de accesibilidad, créditos reconocidos, plazas ofertadas, entidades y tutores de prácticas, credenciales de las herramientas de la tabla 1.2, entre otras). Las acciones del plan anterior que continúan empiezan el 01/09/2025 y las nuevas el 01/11/2026; todas terminan el 30/09/2027. |
+| Decisiones relevantes | (1) **P04-13**: de 2021-22 a 2023-24 el valor en vivo es exactamente la mitad del publicado (2,11/2,32/2,38 frente a 4,23/4,63/4,77), así que se toman los valores del autoinforme anterior (regla (b) de la serie histórica). En el centro, 2023-24 = 4,5 (autoinforme anterior) y de 2020-21 a 2022-23 queda `[PENDIENTE: revisar]`. (2) Los valores de 2020-21 de P01, P04-16 a P04-19 y P06 salen del autoinforme anterior y los de P07, del informe heredado `P07_IndicadoresTotal`; la columna 2025-26 se descarta. (3) Se toman los valores vivos aunque difieran del autoinforme anterior. (4) Los subcriterios 3.6, 4.6 y 5.5 se marcan «No procede»; se eliminan los bloques de la plantilla que no aplican. (5) Se añaden dos tablas: perfil de ingreso (3.4) y objetivos de la memoria (6.3: graduación 20 ± 5 %, abandono 20 ± 5 %, eficiencia 65 ± 5 %, rendimiento 50 ± 5 %). Las tablas de calificaciones muestran 6 asignaturas representativas y el GLOBAL. (6) Puntos débiles: PD-1.1 (participación en encuestas), PD-3.1 (coordinación), PD-5.1 (movilidad) y PD-6.1 (no presentados al TFG), cada uno con su AM; los criterios 2 y 4 no tienen puntos débiles. El plan de mejora (18 filas) une cada recomendación ACCUA con el PD equivalente (S7 + PD-3.1, S10 + PD-5.1, S11 + PD-6.1, S5/S13 + PD-2.2 anterior). Mantiene las PD 1.1, 2.1 y 2.3 anteriores y da por resueltas la PD-6.1 (abandono) y la PD-6.2 (graduación) anteriores. (7) Debilidades candidatas que solo se comentan en el texto, sin convertirlas en PD: formación del profesorado (P05-02, 25,68 %), orientación profesional (P06-02, 2,60), aumento de las reclamaciones del BAU y descenso de la satisfacción de los egresados. (8) El informe ACCUA no numera sus recomendaciones, así que se citan por tipo y criterio. |
+| Incidencias | (1) **Primera caída del MCP de LinceBI, de 18:30 a 18:46**: todas las llamadas agotaron el tiempo. Se reinició a las 18:47. (2) **Segunda caída, de 18:53 a 19:16**: `Request timed out` persistente; se detuvo la ejecución y los datos se guardaron en `extraccion-parcial.md`. El servidor **se corrigió** (pérdida de respuestas con llamadas simultáneas; error de validación por `nextOffset` nulo en la última página de cada informe) y se reinició a las 19:16. **Por eso la extracción se hizo en dos tramos**; al retomarla se reutilizaron los datos del tramo 1 y se comprobó que las series coinciden. `extraccion-parcial.md` se borró al pasar sus datos a `datos.json`. (3) Un error 401 aislado de la cuenta de servicio en el tramo 1; la llamada siguiente funcionó. (4) Parámetros incoherentes entre informes: `Grado`/`GRADO`, el centro como código o como nombre (egresados) y `ptipoestudio=GRA` en P05-01. (5) P04-13 viene normalizado dos veces en LinceBI (véase la decisión 1). (6) No hay en LinceBI ningún informe de créditos reconocidos, que queda `[PENDIENTE]`. (7) Valores vivos distintos de los del autoinforme anterior (graduación 2023-24: 33,3 frente a 19,7; eficiencia: 77,8 frente a 78,8; P05-05 2023-24: 11,43 frente a 10,00; nota de acceso 2023-24: 12,378 frente a 12,368). Además, LinceBI avisa de que el cálculo de P07-05 a P07-08 (egresados) cambia desde 2022-23. (8) `rellenar_autoinforme.py` avisa de que P07-01_01 y P07-01_02 «superan la escala 0-5»: son falsos positivos, porque son tasas de respuesta en %. (9) Se completó la redacción con un script propio sobre la salida de `rellenar_autoinforme.py` y antes de `depurar_instrucciones.py`. Ese script corrige marcadores partidos entre runs, enlaces `xxx`, el color de los enlaces y las filas vacías de puntos débiles. La carpeta `tmp/` se borró. |
+
+## Resultado (completa `evaluacion.py medir`)
+
+<!-- medir:inicio -->
+| Métrica | Borrador | Humano |
+|---|---|---|
+| Palabras | 12801 | 23746 |
+| PF distintos | 12 | 14 |
+| PD distintos | 9 | 4 |
+| AM distintas | 4 | 5 |
+| `[PENDIENTE]` | 43 | 0 |
+
+Extensión borrador / humano: 12.801 / 23.746 (54 %).
+Valores del Anexo I presentes en algún lugar de la referencia (cota superior, no mide la celda): 505/568 (88.9 %).
+
+| Dim. | A | B | Final |
+|---|---|---|---|
+| D1 | 2 | 2 | 2 |
+| D2 | 2 | 2 | 2 |
+| D3 | 1 | 1 | 1 |
+| D4 | 2 | 1 | 1 |
+| D5 | 2 | 2 | 2 |
+| D6 | 2 | 1 | 1 |
+| D7 | 1 | 1 | 1 |
+
+Media final: 1.43. Bloqueantes: B1. Discrepancias por causa (B): S=7, D=1, I=2, H=5, E=1.
+
+**Aviso de huellas de casos en la skill** (revisar que no sean datos de títulos):
+- `skills/uca-informes-calidad/references/estilo-y-ejemplos.md`: 1 frases de GIDIDP-seg-2425 (p. ej. «de eficiencia esta tasa con un valor de»)
+<!-- medir:fin -->
+
+## Pendiente de revisión experta
+
+- Bloqueante B1
+- Discrepancia 3 (H): Anexo I, P04 del centro
+- Discrepancia 4 (H): Anexo I, P04-08 2024-25
+- Discrepancia 5 (H): Anexo I, P07 (satisfacción del alumnado)
+- Discrepancia 7 (H): Criterio 4, P05-01
+- Discrepancia 12 (H): Tabla de recomendaciones de ACCUA
+- Discrepancia 14 (H): Texto de los criterios 4, 5 y 6 del humano
+- Discrepancia 15 (I): Fechas y documentos internos (política de calidad, CGC, Junta, repositorio, prácticas: 15 estudiantes, convenios y tutores)
+- Discrepancia 1 (H): Identificación: estructuras curriculares
+- Discrepancia 2 (H): Anexo I, P04 del centro
+- Discrepancia 3 (H): Anexo I, P07 satisfacción, título y centro
+- Discrepancia 4 (H): Anexo I y criterio 7, egresados
+- Discrepancia 7 (I): Anexo I, P04-13 del centro, 2020-21 a 2022-23
+- Discrepancia 14 (I): 3.3, 5.3, Anexo III y estado del SGC
+- Discrepancia 15 (H): Puntos fuertes de resultados
+
+## Decisión del responsable
+
+| Lección | Decisión | Motivo |
+|---|---|---|
+| Texto modelo en negro conservado (B-L01) | incorporada (L16b) | E03, E04 y E05 |
+| Guiones y datos no disponibles (B-L03) | incorporada (L19) | E04 y E05 |
+| Pendientes evitables y Anexo II (A-L01, A-L02, B-L04) | incorporada (L20) | C5 de la línea base y E05 |
+| Recomendaciones ACCUA anteriores abiertas (B-L05) | incorporada (L21) | C4 de la línea base y E05 |
+| Conclusiones más allá del indicador (B-L07) | incorporada (L22) | C2 de la línea base y E05 |
+| Encabezados de tabla perdidos (B-L02) | corregido en el script | Regresión de L17 |
+| Series de seis años y primer curso (B-L06), columna del centro 2020-21 (A-L03), opciones de plantilla (A-L04) | candidata | Un solo título |
+
+## Retro del proceso
+
+<Qué ajustar de la rúbrica, las plantillas, el procedimiento o el script antes de la siguiente
+ejecución.>

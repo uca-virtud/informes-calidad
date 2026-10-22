@@ -1,0 +1,91 @@
+{
+  "rubrica": "2",
+  "borrador": {
+    "palabras": 14634,
+    "pf": 15,
+    "pd": 5,
+    "am": 5,
+    "pendientes": 35
+  },
+  "referencia": {
+    "palabras": 26359,
+    "pf": 19,
+    "pd": 5,
+    "am": 5,
+    "pendientes": 0
+  },
+  "anexo": {
+    "valores": 545,
+    "encontrados": 531,
+    "porcentaje": 97.4
+  },
+  "notas_a": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 2,
+    "D5": 2,
+    "D6": 2,
+    "D7": 2
+  },
+  "notas_b": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 2,
+    "D7": 1
+  },
+  "final": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 2,
+    "D7": 1
+  },
+  "media": 1.43,
+  "bloqueantes": [
+    "B1"
+  ],
+  "causas_b": {
+    "S": 7,
+    "D": 3,
+    "I": 1,
+    "H": 1,
+    "E": 0
+  },
+  "lecciones": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07"
+  ],
+  "pendientes": [
+    "Bloqueante B1",
+    "Discrepancia 1 (I): Portada",
+    "Discrepancia 2 (I): 2.1 Sistema de garantía",
+    "Discrepancia 12 (H): Anexo I, P04-09 del centro, 2023-24",
+    "Discrepancia 13 (I): 4.5, 5.3 y Anexo III, prácticas",
+    "Discrepancia 19 (I): 7.4 Empleadores",
+    "Discrepancia 20 (I): 6.1 Evidencias",
+    "Discrepancia 4 (I): Identificación administrativa; criterios 2, 3, 4, 5 y 7; Anexo III",
+    "Discrepancia 12 (H): 6.2/6.3 y 7.6, interpretación de objetivos"
+  ],
+  "huellas": [
+    {
+      "fichero": "skills/uca-informes-calidad/references/estilo-y-ejemplos.md",
+      "frases": 1,
+      "casos": [
+        "GIDIDP-seg-2425"
+      ],
+      "ejemplo": "de eficiencia esta tasa con un valor de",
+      "titulos": []
+    }
+  ]
+}

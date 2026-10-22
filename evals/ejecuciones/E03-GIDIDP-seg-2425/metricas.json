@@ -1,0 +1,85 @@
+{
+  "rubrica": "2",
+  "borrador": {
+    "palabras": 17234,
+    "pf": 19,
+    "pd": 16,
+    "am": 14,
+    "pendientes": 0
+  },
+  "referencia": {
+    "palabras": 24533,
+    "pf": 16,
+    "pd": 1,
+    "am": 1,
+    "pendientes": 0
+  },
+  "anexo": {
+    "valores": 579,
+    "encontrados": 568,
+    "porcentaje": 98.1
+  },
+  "notas_a": {},
+  "notas_b": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
+    "D7": 1
+  },
+  "final": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 1,
+    "D7": 1
+  },
+  "media": 1.29,
+  "bloqueantes": [
+    "B1",
+    "B2",
+    "B3"
+  ],
+  "causas_b": {
+    "S": 12,
+    "D": 3,
+    "I": 1,
+    "H": 4,
+    "E": 1
+  },
+  "lecciones": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07",
+    "L08"
+  ],
+  "pendientes": [
+    "Bloqueante B1",
+    "Bloqueante B2",
+    "Bloqueante B3",
+    "Discrepancia 6 (H): Anexo I, P04-13, centro, 2024-25",
+    "Discrepancia 7 (H): Anexo I, egresados del título: cabeceras",
+    "Discrepancia 8 (H): Criterio 6.3, objetivo de la memoria",
+    "Discrepancia 9 (H): Criterio 4.7, satisfacción con la docencia",
+    "Discrepancia 16 (I): Anexo III, plazas, convenios y tutores actuales"
+  ],
+  "huellas": [
+    {
+      "fichero": "skills/uca-informes-calidad/references/estilo-y-ejemplos.md",
+      "frases": 1,
+      "casos": [
+        "GIDIDP-seg-2425"
+      ],
+      "ejemplo": "de eficiencia esta tasa con un valor de",
+      "titulos": []
+    }
+  ]
+}

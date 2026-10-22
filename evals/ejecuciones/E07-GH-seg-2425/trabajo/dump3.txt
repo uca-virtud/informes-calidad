@@ -1,0 +1,257 @@
+P9 [None] Normal: Autoinforme de seguimiento Curso 2024/25
+P10 [None] Normal: (Convocatoria 2026)
+P12 [000000] Normal: GRADO EN: HISTORIA
+P13 [000000] Normal: CENTRO: FACULTAD DE FILOSOFÍA Y LETRAS
+--- T0
+--- T1
+--- T2
+P24 [None] Normal (Web): APLICACIONES PARA LA GESTIÓN DOCUMENTAL Y SISTEMAS DE INFORMACIÓN
+Relación de aplicaciones y herramientas:
+--- T3
+--- T4
+P37 [None] List Paragraph: Para garantizar que la información del título y centro, se encuentra accesible y actualizada, anualmente se re
+P39 [000000,None] List Paragraph: La información pública del Grado en Historia se elabora, habitualmente, de acuerdo con los protocolos en vigor
+P41 [000000] Normal: En dicha web (https://filosofia.uca.es/grado-en-historia/) el título publica información sobre las característ
+P43 [None] AGAE Texto: Los indicadores de satisfacción del estudiantado y profesorado con la IPD forman parte del Sistema de Garantía
+P49 [000000] Normal: Análisis de la información pública disponible (curso 2024-25). La web del título ofrece la memoria modificada 
+P50 [000000] Normal: Los indicadores del proceso P01 (Anexo 1, tabla 1) muestran una valoración estable y aceptable de la informaci
+P51 [000000] Normal: La valoración del alumnado debe leerse con cautela, porque la tasa de respuesta de su encuesta (ISGC-P07-01_01
+P52 [000000] Normal: Evidencias en el UCADrive del centro: [PENDIENTE: ruta de la carpeta de evidencias del criterio 1].
+--- T5
+--- T6
+--- T7
+P58 [None] Default: El Consejo de Gobierno de la Universidad de Cádiz aprobó el 28 de junio de 2021 la versión 3 del Sistema de Ga
+P60 [None] Default: Este Sistema se compone de:
+P62 [None] Default: Manual de Calidad
+P63 [None] Default: 8 Procesos
+P64 [None] Default: Protocolos/procedimientos propios de cada centro.
+P66 [None] Default: En el Manual de Calidad se identifican a los responsables dentro del Sistema y se relacionan las funciones que
+P68 [None] Default: Los 8 procesos se estructuran en los siguientes apartados:
+P70 [None] Default: Objeto
+P71 [None] Default: Desarrollo
+P72 [None] Default: Seguimiento y medición (indicadores y evidencias). Las fichas técnicas de los indicadores se ubican en el Anex
+P73 [None] Default: Herramientas y formatos: desarrollados en el Anexo 1 de cada proceso
+P74 [None] Default: Cronograma/s: se desarrolla gráficamente el proceso a través de actuaciones con sus responsables, fechas de ej
+P76 [000000,None] Default: En base al P02-Proceso para la revisión de la gestión de la calidad la Facultad de Filosofía y Letras aprobó s
+P78 [000000,None] Default: La Comisión de Garantía de Calidad de la Facultad de Filosofía y Letras está compuesta por:
+P80 [000000] Default: Representantes del equipo decanal, de la administración del campus y de los diferentes grados del centro; la c
+P82 [000000,None] Default: Esta comisión cuenta con un Reglamento de funcionamiento que se puede consultar en el siguiente enlace: https:
+P84 [None] Default: En cuanto a la gestión documental del sistema, éste se articula a través:
+P86 [None] Default: La web del título
+P87 [None] default: El Sistema de Información de la UCA. Se encuentra en la dirección https://data.uca.es/lincebi/Login/.  Por raz
+P88 [None] Default: Espacio UCADRIVE del centro: para toda aquella documentación cuyo contenido, por sus características, no sea p
+P90 [None] Default: Hay que señalar que, dado que la Universidad de Cádiz está en proceso de solicitar en los próximos años la Acr
+P93 [None] Default: En el P03-Proceso de diseño, seguimiento y mejora de los programas formativos se define tanto la sistemática a
+P95 [000000] AGAE Texto: El título cuenta con un Plan de Mejora que se actualiza con este autoinforme a partir del análisis de la infor
+P99 [000000] Normal: Análisis del funcionamiento del SGC en el título (curso 2024-25). La CGC del centro es el órgano responsable d
+P100 [000000] Normal: El último informe de ACCUA es el informe final de renovación de la acreditación de 05/07/2023 [PENDIENTE: conf
+P101 [000000] Normal: Sobre la eficacia del SGC, el autoinforme anterior describía la gestión documental en tres plataformas (web, S
+P102 [000000] Normal: Evidencias en el UCADrive del centro: [PENDIENTE: ruta de la carpeta de evidencias del criterio 2].
+--- T8
+--- T9
+--- T10
+P108 [None] Normal: (*) Verificación, seguimiento, modificación o renovación acreditación
+--- T11
+P109 [None] List Paragraph: El diseño del título está actualizado y se revisa periódicamente, incorporando, si procede, acciones de mejora
+P111 [None] Normal: El desarrollo del plan de estudios, conforme a la memoria verificada (https://filosofia.uca.es/memoria-modific
+P114 [000000] Normal: El plan de estudios (240 ECTS: 60 de formación básica, 114 obligatorios, 6 de TFG y 60 optativos, entre ellos 
+P115 [None] List Paragraph: La modalidad de enseñanza (presencial, virtual (o no presencial) y/o híbrida (o semipresencial) se ajusta a lo
+P117 [None] Normal: Las modalidades de impartición del título se corresponden con la memoria verificada.
+P120 [000000] Normal: El Grado en Historia se imparte solo en modalidad presencial, tal como establece la memoria verificada.
+P121 [None] Normal: 3.3. 	Los procesos de gestión e implantación de la normativa aplicable al título se desarrollan de manera adec
+P123 [None] AGAE Texto: Los procesos de reconocimiento de créditos y convalidaciones se aplican de manera ajustada a la normativa vige
+P125 [000000,None] AGAE Texto: Respecto a la gestión de los TFG, estos son lo suficientemente ágiles y transparentes como para permitir la fi
+P129 [000000] Normal (Web): Asimismo, el alumnado debe superar cada curso un número mínimo de créditos para continuar sus estudios, según 
+P131 [000000] Normal: Reconocimiento de créditos en 2024-25. No se ha localizado en el Sistema de Información un informe de créditos
+P132 [000000] Normal: TFG. La normativa marco de la UCA y el reglamento interno del centro regulan la oferta de líneas, la asignació
+P133 [000000] Normal: Complementos formativos. El título no contempla complementos de formación. Las actividades de refuerzo de leng
+P134 [None] List Paragraph: Los criterios de admisión, el perfil del estudiante de ingreso y número de plazas son adecuadas y se ajustan a
+P136 [000000,None] AGAE Texto: El número de estudiantes de nuevo ingreso se corresponde con lo establecido en la Memoria verificada. El perfi
+P142 [000000] Normal: Demanda, ocupación y perfil de ingreso (Anexo 1, tabla 2). La memoria fija 75 plazas de nuevo ingreso. En 2024
+P143 [000000] Normal: Según el informe de perfil de ingreso del Sistema de Información, en 2024-25 ingresaron 70 estudiantes (78, 75
+P144 [000000] Normal: No hay pruebas de admisión específicas distintas de la PEvAU. El perfil de ingreso recomendado es público y co
+P145 [None] List Paragraph: La coordinación docente permite la adecuada planificación del programa formativo asegurando que los resultados
+P147 [None] Normal: En el Grado en Historia, la coordinación docente se articula a través de las figuras de coordinador/a de asign
+P148 [None] AGAE Texto: Las reuniones de coordinación del curso 2024-25 y sus actas: [PENDIENTE: enlace a las actas de coordinación de
+P153 [000000] Normal: La coordinación horizontal y vertical se articula, según la memoria y el autoinforme anterior, a través de la 
+P154 [000000] Normal: La satisfacción del alumnado con la coordinación docente (ISGC-P04-10) baja a 2,88 sobre 5 en 2024-25, el valo
+P155 [None] List Paragraph: Implantación de los títulos con estructuras específicas y de innovación docente, tales como:
+P156 [None] List Paragraph: Títulos que se imparten en más de un centro.
+P157 [None] List Paragraph: Títulos conjuntos.
+P158 [None] List Paragraph: Dobles grados con itinerario específico.
+P159 [None] List Paragraph: Titulaciones de grado con mención dual.
+P160 [None] List Paragraph: Titulaciones de grado con estructuras curriculares específicas y de innovación docente.
+P161 [None] List Paragraph: Titulaciones de grado con itinerario académico abierto.
+P163 [000000] Normal: No procede. El Grado en Historia se imparte en un único centro (Facultad de Filosofía y Letras), no es un títu
+P164 [000000] Normal: Evidencias en el UCADrive del centro: [PENDIENTE: ruta de la carpeta de evidencias del criterio 3].
+--- T12
+--- T13
+--- T14
+P171 [None] AGAE Texto: 4.1 El personal académico reúne el nivel de cualificación y experiencia (docente e investigadora) adecuado y s
+P173 [None] Default: El personal académico de la universidad se distribuye por áreas de conocimiento y departamentos, permitiendo q
+P179 [None] Heading 5: ANEXO II: 1) Tabla Personal para impartir el título (último año impartido): véase el Anexo 2 de este autoinfor
+P185 [000000] Normal: Perfil del profesorado (ISGC-P05-01, Anexo II). En 2024-25 imparten docencia en el título 49 profesores y prof
+P186 [None] AGAE Texto: El personal académico implicado en el título es suficiente y su grado de dedicación es adecuado para llevar a 
+P189 [None] Heading 5: ANEXO II: 1) Tabla Personal para impartir el título (último año impartido): véase el Anexo 2 de este autoinfor
+P192 [000000] Normal: La dedicación total al título es de 332 créditos en 2024-25 (entre 331,5 y 338 en toda la serie), estable para
+P193 [None] AGAE Texto: 4.3 La actividad docente del personal académico es objeto de evaluación, teniendo en cuenta las característica
+P196 [000000] Normal: La Universidad de Cádiz, a través del Vicerrectorado competente, pone a disposición del profesorado oportunida
+P198 [000000] Normal: Anualmente, tras consulta y petición a los grupos de interés se diseña un catálogo de acciones formativas para
+P200 [000000] Normal: Además, existen convocatorias para potenciar la innovación y mejora docente en el marco de las asignaturas con
+P201 [000000] List Paragraph: Convocatorias de Proyectos de Innovación y Mejora Docente.
+P202 [000000] List Paragraph: Convocatoria de Actuaciones Avaladas para la Mejora Docente.
+P203 [000000] List Paragraph: Convocatoria de Actuaciones Avaladas para la Formación del Profesorado.
+P204 [000000] List Paragraph: Convocatoria de Ayudas para la Difusión de Resultados de Innovación Docente.
+P206 [000000] Normal: La formación del profesorado y su participación en proyectos de innovación docente se considera un aspecto cla
+P207 [000000] List Paragraph: P05 Proceso de gestión del personal académico, éste permite estudiar el rendimiento del título en esta materia
+P208 [000000] List Paragraph: P04 Proceso de gestión de los procesos de enseñanza-aprendizaje, en éste se evalúan indicadores de percepción,
+P211 [000000] Normal: La Universidad de Cádiz, de acuerdo con el artículo 127.1 de los  Estatutos que establece que “todo Profesor s
+P216 [000000] Normal: Formación, innovación y evaluación docente (Anexo 1, tabla 3). La participación del profesorado del título en 
+P217 [000000] Normal: La participación en DOCENTIA (ISGC-P05-05) crece de forma continuada desde 2022-23 (8,7%) hasta el 20,41% en 2
+P218 [None] AGAE Texto: Disponibilidad de criterios de selección y asignación de TFM o TFG.
+P220 [000000,None] Default: En el entendimiento de que los trabajos de fin de grado deben ser el resultado de un ejercicio integrador de l
+P228 [000000] Normal: En el Grado en Historia, la oferta de líneas y tutores, la asignación provisional y definitiva, la composición
+P229 [None] AGAE Texto: 4.5 En su caso, adecuación del perfil del profesorado que supervisa las prácticas externas y sus funciones.
+P233 [None] Normal: ANEXO III  2) Personal académico o profesional responsable de las tutorías de las prácticas académicas externa
+P235 [000000] Normal: Las prácticas externas del título son optativas (20519046, 6 ECTS, 4º curso). Las supervisan profesores del tí
+P236 [None] AGAE Texto: 4.6. En su caso, adecuación del perfil del profesorado que imparte enseñanza híbrida o virtual.
+P240 [000000] Normal: No procede. El título se imparte solo en modalidad presencial.
+P241 [None] Normal: 4.7 El alumnado está satisfecho con respecto a la actuación docente del profesorado.
+P246 [000000] Normal: La satisfacción global del alumnado con la docencia (ISGC-P05-04) se mantiene en 4,5 sobre 5 por tercer curso 
+P247 [None] AGAE Texto: El profesorado está satisfecho con el desarrollo del programa formativo.
+P252 [000000] Normal: La satisfacción global del PDI con el título (ISGC-P07-03) es de 3,81 en 2024-25, estable desde 2022-23 (3,88 
+P253 [000000] Normal: Evidencias en el UCADrive del centro: [PENDIENTE: ruta de la carpeta de evidencias del criterio 4].
+--- T15
+--- T16
+--- T17
+P260 [None] AGAE Texto: 5.1. El título cuenta con la infraestructura y los recursos adecuados teniendo en cuenta el tamaño de los grup
+P267 [000000] Normal: Las aulas de la Facultad de Filosofía y Letras disponen de equipamiento multimedia, y el título usa el laborat
+P268 [000000] Normal: La satisfacción del alumnado con los recursos materiales e infraestructuras (ISGC-P06-03) baja de 3,70 a 3,37 
+P269 [None] Normal: 5.2. En su caso, las acciones realizadas para favorecer la movilidad del estudiantado son adecuadas a las cara
+P276 [000000] Normal: Movilidad (Anexo 1, tabla 2, ISGC-P04-09). La movilidad entrante internacional sube al 18,38% en 2024-25 (15,9
+P277 [None] AGAE Texto: 5.3. En el caso de que el programa formativo incluya prácticas académicas externas, se desarrollan de manera a
+P281 [None] AGAE Texto: ANEXO III:
+P282 [None] AGAE Texto: 1) Tabla Información sobre prácticas académicas externas (último curso).
+P283 [None] AGAE Texto: 2) Tabla. Personal académico o profesional responsable de las tutorías de las prácticas académicas externas.
+P288 [000000] Normal: Las prácticas externas son optativas (6 ECTS) y se gestionan mediante convenios en la plataforma GADES de la U
+P289 [000000] Normal: [PENDIENTE: Anexo III, tablas 1 y 2: créditos y plazas de prácticas, número de estudiantes, convenios con plaz
+P290 [None] AGAE Texto: 5.4. El personal de apoyo que participa en las actividades formativas es adecuado y suficiente para el desarro
+P292 [000000] Normal: En la Universidad de Cádiz no hay personal de apoyo (PTGAS) adscrito a títulos y/o centros. La RPT de la UCA e
+P298 [000000] Normal: Como no hay PTGAS adscrito al título, el apoyo a la docencia lo prestan los servicios del campus y los servici
+P299 [None] AGAE Texto: 5.5. En caso de enseñanza híbrida o virtual, el título cuenta con los recursos necesarios en infraestructura y
+P303 [000000] Normal: No procede. El título se imparte solo en modalidad presencial.
+P304 [000000] Normal: Evidencias en el UCADrive del centro: [PENDIENTE: ruta de la carpeta de evidencias del criterio 5].
+--- T18
+--- T19
+--- T20
+P311 [None] AGAE Texto: 6.1 Los resultados del proceso de aprendizaje alcanzados por el estudiantado se corresponden con el nivel MECE
+P316 [000000] Normal: Los resultados de aprendizaje de las guías docentes (https://asignaturas.uca.es/asig/) se corresponden con el 
+P317 [000000] Normal: [PENDIENTE: subir al UCADrive las evidencias de seguimiento ACCUA: guías docentes y profesorado de cinco asign
+P318 [None] AGAE Texto: Las actividades formativas, la metodología y los sistemas de evaluación son pertinentes y adecuadas para certi
+P323 [000000] Normal: Las actividades formativas (clases teóricas, prácticas de aula, de laboratorio y de campo, seminarios y tutorí
+P324 [None] AGAE Texto: Los resultados de los indicadores académicos y su evolución se adecúan a los objetivos formativos del plan de 
+P329 [000000] Normal: Indicadores académicos (Anexo 1, tabla 2) y objetivos de la memoria. La tasa de rendimiento (ISGC-P04-01) es d
+P330 [000000] Normal: La comparación con los objetivos de la memoria verificada es la siguiente:
+--- T21
+P332 [000000] Normal: Las tasas de graduación y abandono cumplen holgadamente los objetivos y la eficiencia queda a tres décimas del
+P333 [000000] Normal: Calificaciones por asignatura (2024-25). En la tabla siguiente se muestran las asignaturas con mayor porcentaj
+P334 [None] AGAE Texto: ANEXO IV: Información sobre calificaciones globales del título y por asignaturas y tipo de enseñanza. https://
+--- T22
+P339 [000000] Normal: Concentran los suspensos Historia Moderna Universal I (35%, con un 19% de no presentados), Epigrafía y Numismá
+P340 [000000] Normal: Estas asignaturas se trasladarán a la Coordinación del Grado y a los departamentos dentro del análisis de la a
+P341 [000000] Normal: Resultados globales de la titulación. Rendimiento, eficiencia, graduación y abandono se han analizado en el ap
+P342 [000000] Normal: Resultados globales del primer curso. [PENDIENTE: tasas de abandono, presentados, éxito y rendimiento del prim
+P343 [None] AGAE Texto: El título dispone de indicadores para analizar grado de satisfacción del estudiantado con cada asignatura, así
+P345 [000000] AGAE Texto: Según el artículo 2.4 del Reglamento UCA/CG09/2022, de 26 de septiembre, sobre la evaluación de la satisfacció
+P347 [000000] Normal: La satisfacción del alumnado con la docencia del título (ISGC-P05-04: 4,5) y con el título (ISGC-P07-02: 3,80)
+P348 [000000] Normal: Evidencias en el UCADrive del centro: [PENDIENTE: ruta de la carpeta de evidencias del criterio 6].
+--- T23
+--- T24
+P354 [None] List Paragraph: ORIENTACIÓN ACADÉMICA, ORIENTACIÓN PROFESIONAL Y EMPLEABILIDAD
+P357 [None] AGAE Texto: El título tiene los servicios necesarios para poder garantizar la orientación académica y profesional del alum
+P359 [None] Normal: 1. Orientación Académica.
+P361 [000000] Normal: Según el autoinforme anterior, en el centro se desarrollan el Programa de Orientación y Apoyo al Estudiante (P
+P362 [000000] Normal: Además, la UCA ofrece los siguientes servicios:
+P363 [None] Normal: a) Servicio de Atención Psicológica y Psicopedagógica (SAP). Éste tiene como objetivo atender las necesidades 
+P364 [None] Normal: b) Secretariado de Políticas de Inclusión. Su finalidad es garantizar un tratamiento equitativo y una efectiva
+P365 [None] Normal: c) Dirección General de Igualdad. La finalidad de esta unidad es tratar de eliminar las dificultades y barrera
+P366 [None] Normal: d) Dirección General de Diversidad. De reciente creación, tiene, como principal objetivo, promover y garantiza
+P367 [None] Normal: e) Servicio de Relaciones Internacionales (ORI). Integrado en el Área de Gestión de Alumnado y Relaciones Inte
+P370 [None] Normal: 2. Orientación Profesional.
+P372 [None] Normal: La Universidad de Cádiz cuenta con programas para mejorar la empleabilidad de los universitarios dentro del me
+P373 [None] Normal: •	El Plan Integral de Formación para el Empleo (PIFE) proporciona, a través de un itinerario formativo, los re
+P374 [None] Normal: •	Agencia de colocación: Este servicio está basado en un sistema dinámico que promueve de forma ágil y eficien
+P375 [None] Normal: •	La Feria de Empleo de la Universidad de Cádiz es un punto de encuentro entre sus estudiantes y egresados int
+P378 [000000] Normal: En el título, la Subcomisión para la mejora del Grado en Historia tiene prevista en el Plan de Mejora la organ
+P379 [000000] Normal: La satisfacción del alumnado con el apoyo y la orientación académica (ISGC-P06-01) es de 3,28 en 2024-25, esta
+P384 [None] AGAE Texto: 7.2. Los resultados de los indicadores de empleabilidad de las personas egresadas son adecuados para las carac
+P392 [000000] Normal: Empleabilidad (Anexo 1, tabla 6). Los indicadores de egresados se refieren a cohortes de egreso, no a cursos a
+P393 [000000] Normal: En la cohorte 2023-24, la tasa de inserción profesional en cualquier sector (ISGC-P07-05) es del 10,64% (11,11
+P394 [None] AGAE Texto: 7.3 Los perfiles de egreso fundamentalmente desplegados en el programa formativo mantienen su interés y están 
+P398 [000000] Normal: Los perfiles de egreso de la memoria (docencia, investigación, archivos y documentación, patrimonio y gestión 
+P399 [None] AGAE Texto: 7.4 Los empleadores están satisfechos con la formación recibida por los egresados.
+P401 [000000,None] Normal: Según el proceso P07 Proceso de medición de resultados, para recabar información sobre necesidades o expectati
+P406 [000000] Normal: El título no dispone todavía de datos de satisfacción de los empleadores con la formación de los egresados. AC
+P407 [None] AGAE Texto: 7.5 Los egresados están satisfechos con la formación recibida.
+P413 [000000] Normal: La satisfacción de los egresados con los estudios realizados (ISGC-P07-09) es de 3,70 en la cohorte 2023-24 (1
+P414 [None] AGAE Texto: 7.6 Se analiza la sostenibilidad del título teniendo en cuenta el perfil de formación que ofrece la titulación
+P419 [000000] Normal: Síntesis de sostenibilidad. El título es sostenible a la vista de los cuatro ámbitos analizados:
+P420 [000000] List Paragraph: • Demanda: preferencia del 129,33% y adecuación del 92%, ambas muy superiores a las del centro, con ocupación 
+P421 [000000] List Paragraph: • Profesorado: 49 docentes, casi todos doctores (97,96%), con 104 sexenios, más ayudantes doctores y menos fig
+P422 [000000] List Paragraph: • Recursos: suficientes en aulas, laboratorio y prácticas (1,67 plazas por solicitante), aunque la satisfacció
+P423 [000000] List Paragraph: • Resultados: graduación del 62,3% y abandono del 18,2%, mejores que los objetivos de la memoria; satisfacción
+P424 [000000] Normal: Los riesgos para la sostenibilidad son la baja satisfacción con la coordinación, la escasa movilidad saliente,
+P425 [000000] Normal: Evidencias en el UCADrive del centro: [PENDIENTE: ruta de la carpeta de evidencias del criterio 7].
+--- T25
+--- T26
+P431 [None] Normal: PLAN DE MEJORA
+--- T27
+P445 [None] Normal: ANEXO 1:
+P446 [None] Normal: INFORME DE INDICADORES
+P459 [None] Normal: Fuente: Sistema de Información de la UCA (data.uca.es), extracción del 04/10/2026. Los valores de la columna 2
+P460 [None] List Paragraph: P01 – Difusión de la información.
+--- T28
+--- T29
+P464 [None] Normal: 2) P04 – Proceso para la Gestión de los Procesos de Enseñanza-Aprendizaje:  Indicadores P04 (Rendimiento)
+--- T30
+--- T31
+P471 [None] Normal: Notas: las tasas de abandono, graduación y eficiencia son dinámicas y el Sistema de Información las recalcula 
+P472 [None] Normal: 3) P05 – Gestión del Personal Académico: Indicadores P05 (02-07).
+--- T32
+--- T33
+P479 [None] Normal: Nota: en los datos del centro, la suma de ISGC-P05-06 e ISGC-P05-07 supera el 100% en algunos cursos; se repro
+P480 [None] Normal: 4) Gestión de los recursos para el aprendizaje y apoyo al estudiante: Indicadores P04 (Acceso) y P06.
+--- T34
+--- T35
+P489 [None] Normal: Nota: los valores 2020-21 de ISGC-P04-16 a ISGC-P04-19 y de los indicadores P06 proceden del autoinforme anter
+P490 [None] Normal: 5) P07 – Resultados: A) Satisfacción con la titulación (01-04).
+--- T36
+--- T37
+P496 [None] Normal: 6) P07 – Resultados: B) Egresados (05-10)
+--- T38
+--- T39
+P500 [None] Normal: * No disponible: el Sistema de Información no ofrece dato de ISGC-P07-07 para la cohorte 2022-23. Los indicado
+P501 [None] Normal: 7) P07 – Resultados: C) BAU (11-14)
+--- T40
+P529 [None] Normal: Nota: el Sistema de Información muestra «-» cuando no hay registros en el BAU; se consigna como 0%.
+P530 [None] Normal: ANEXO 2:
+P531 [None] Normal: TABLAS PERSONAL ACADÉMICO
+P546 [None] Normal: ANEXO II:  Tabla Personal para impartir el título (último año impartido).
+P547 [None] Heading 5: Fuente: Sistema de Información de la UCA (data.uca.es), informes ISGC-P05-01 y P05 (resto de indicadores).
+--- T41
+P548 [000000] Normal: Resumen del personal académico del título en 2024-25 (ISGC-P05-01, Sistema de Información):
+--- T42
+P550 [000000] Normal: Categorías en 2024-25: catedráticos de universidad, 13 (26,53%); titulares de universidad, 15 (30,61%); contra
+P567 [None] Normal: ANEXO 3:
+P568 [None] Normal: TABLAS PRÁCTICA EXTERNAS
+P570 [None] AGAE Texto: ANEXO III:
+P572 [None] AGAE Texto: Tabla Información sobre prácticas académicas externas (último curso).
+--- T43
+--- T44
+P576 [None] AGAE Texto: Tabla. Personal académico o profesional responsable de las tutorías de las prácticas académicas externas.
+P577 [None] AGAE Texto: Información sobre las personas que tutorizan las prácticas externas (último curso):
+--- T45
+P589 [None] Normal: ANEXO 4:
+P590 [None] Normal: TABLA CALIFICACIONES GLOBALES
+P593 [None] AGAE Texto: ANEXO IV:  Información sobre calificaciones globales del título y por asignaturas y tipo de enseñanza.
+--- T46
