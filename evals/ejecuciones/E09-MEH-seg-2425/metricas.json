@@ -1,0 +1,125 @@
+{
+  "rubrica": "2",
+  "borrador": {
+    "palabras": 13029,
+    "pf": 7,
+    "pd": 4,
+    "am": 14,
+    "pendientes": 57
+  },
+  "referencia": {
+    "palabras": 22917,
+    "pf": 0,
+    "pd": 0,
+    "am": 0,
+    "pendientes": 0
+  },
+  "anexo": {
+    "valores": 515,
+    "encontrados": 503,
+    "porcentaje": 97.7
+  },
+  "notas_a": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 2,
+    "D4": 1,
+    "D5": 1,
+    "D6": 2,
+    "D7": 2
+  },
+  "notas_b": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 2,
+    "D7": 1
+  },
+  "final": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 1,
+    "D4": 1,
+    "D5": 1,
+    "D6": 2,
+    "D7": 1
+  },
+  "media": 1.43,
+  "bloqueantes": [
+    "B1"
+  ],
+  "causas_b": {
+    "S": 7,
+    "D": 5,
+    "I": 2,
+    "H": 3,
+    "E": 1
+  },
+  "lecciones": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L24b",
+    "L30"
+  ],
+  "pendientes": [
+    "Bloqueante B1",
+    "Discrepancia 6 (H): Anexo I, erratas del humano",
+    "Discrepancia 8 (H): Portada y datos fuera del curso",
+    "Discrepancia 9 (H): Criterio 5, puntos fuertes y débiles",
+    "Discrepancia 10 (H): Criterios 1 y 7, satisfacción de los empleadores",
+    "Discrepancia 11 (H): 6.1 y 7.3, P07-03 y asimetrías",
+    "Discrepancia 12 (H): 7.6, sostenibilidad",
+    "Discrepancia 13 (H): 5.1, P05-04 de 2023-24",
+    "Discrepancia 14 (I): Anexo III, prácticas externas",
+    "Discrepancia 8 (H): Identificación y Anexo III, naturaleza de las prácticas",
+    "Discrepancia 9 (I): 3.3-3.4, 4.5, 5.4, 6.1 y Anexo III, datos internos",
+    "Discrepancia 10 (I): 4.1 y Anexo II, detalle individual del profesorado",
+    "Discrepancia 15 (H): Anexo I, cinco errores del humano",
+    "Discrepancia 18 (H): 3.4, alcance temporal del máximo de preferencia"
+  ],
+  "huellas": [
+    {
+      "fichero": "skills/uca-informes-calidad/assets/bloques_reutilizables_uca.md",
+      "frases": 5,
+      "casos": [
+        "MEH-seg-2425"
+      ],
+      "ejemplo": "de innovación y mejora docente actuaciones avaladas para",
+      "titulos": []
+    },
+    {
+      "fichero": "skills/uca-informes-calidad/references/estilo-y-ejemplos.md",
+      "frases": 2,
+      "casos": [
+        "MEH-seg-2425"
+      ],
+      "ejemplo": "accua o punto débil acciones de mejora a",
+      "titulos": []
+    },
+    {
+      "fichero": "skills/uca-informes-calidad/references/estructura-autoinforme.md",
+      "frases": 3,
+      "casos": [
+        "MEH-seg-2425"
+      ],
+      "ejemplo": "3 4 criterios de admisión perfil de ingreso",
+      "titulos": []
+    },
+    {
+      "fichero": "skills/uca-informes-calidad/references/mapa-indicadores-lincebi.md",
+      "frases": 4,
+      "casos": [
+        "GH-seg-2425",
+        "MEH-seg-2425"
+      ],
+      "ejemplo": "del alumnado con las prácticas externas isgc p04",
+      "titulos": []
+    }
+  ]
+}

@@ -19,7 +19,7 @@ se envía material a la coordinación; todo lo demás lo hacen el orquestador y 
 | `evals/casos/<id>/entrada/` | Lo que recibiría la skill: autoinforme anterior, memoria, informe ACCUA… |
 | `evals/casos/<id>/referencia/autoinforme-humano.*` | Autoinforme presentado por la coordinación. **Nunca** lo ve A al generar. |
 | `evals/casos/<id>/fuentes.json` y `fuentes.md` | Manifiesto que procesa `caso` y procedencia resultante de los documentos (URL, fecha, SHA-256); solo en los casos preparados con `caso`. |
-| `evals/ejecuciones/Enn-<id>/` | Ficha, borrador (`borrador.docx` y `datos.json`), cotejos y métricas de la ejecución y, si se aprueba el paso 7, la hoja de valoración para la coordinación. |
+| `evals/ejecuciones/Enn-<id>/` | Ficha, borrador (`borrador.docx` y `datos.json`), cotejos y métricas de la ejecución y la hoja de valoración (paso 7) para la coordinación. |
 | `evals/historial.md` | Resultados de cada ejecución: tabla (la regenera `medir`), conclusiones, relato de cada ejecución y antecedentes. |
 | `docs/LECCIONES.md` | Registro versionado: versiones de la skill y estado de las lecciones. |
 | `web/evaluacion.html` | Página web con los resultados y las cifras globales. |
@@ -104,7 +104,7 @@ consolidada solo con la IA.
 
 | Paso | Quién | Acción | Produce |
 |---|---|---|---|
-| [7](#paso-7-material-para-la-coordinación) | Orquestador, **solo si el responsable lo aprueba** | Prepara el material para la coordinación | `evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` y enlaces en `web/evaluacion.html` |
+| [7](#paso-7-material-para-la-coordinación) | Orquestador, **siempre** | Prepara el material para la coordinación | `evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` y enlaces en `web/evaluacion.html` |
 | [8](#paso-8-valoración-de-la-coordinación-y-consolidación-final) | Orquestador, cuando la coordinación devuelve la hoja | `evaluacion.py valoracion Enn` y propuesta de lecciones | `valoracion.json`, sección de la ficha, columnas del historial |
 
 Reglas del orquestador durante toda la ejecución:
@@ -260,9 +260,9 @@ la ejecución en `evals/historial.md`.
 
 ### Paso 7: material para la coordinación
 
-Este paso pone documentos de la ejecución a disposición de terceros. Por eso el orquestador
-pregunta antes al responsable e indica si la ejecución tiene bloqueantes (puede preferir no
-enviar un borrador con B1 o B2). Si lo aprueba, crea
+Se hace siempre, tras el paso 6 y sin preguntar al responsable, aunque la ejecución tenga
+bloqueantes: el resumen al responsable los indica, junto con el material publicado. El
+orquestador crea
 `evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` copiando la de otra ejecución y
 cambiando solo las celdas C3 (nombre del título) y C4 («<Tipo>, curso <aaaa/aa>
 (convocatoria <aaaa>)»).

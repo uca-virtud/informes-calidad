@@ -1,0 +1,19 @@
+{
+  "id": "MEH-seg-2425",
+  "titulo": "Máster Universitario en Estudios Hispánicos",
+  "nivel": "máster",
+  "centro": "FFL",
+  "tipo": "seguimiento",
+  "curso": "2024-25",
+  "convocatoria": "2026",
+  "seguimiento_accua": "",
+  "conjunto": "aprendizaje",
+  "notas": "Memoria: la «2023 en vigor» (MNS 2023, fecha interna 11/07/2024), vigente en 2024-25 aunque se subió en 2026/09; se descarta la de 2013. Informe ACCUA: el de seguimiento firmado el 28/01/2026 (evalúa hasta 2023-24), anterior a la referencia (23/07/2026); se descartan la modificación 2023 y la renovación 2021 por ser anteriores a él. Plan de mejora: el de 2023-24 (el de 2024-25 acompaña a la referencia). seguimiento_accua vacío: no consta con claridad para la convocatoria 2026.",
+  "documentos": [
+    {"rol": "autoinforme-humano", "url": "https://filosofia.uca.es/wp-content/uploads/2026/07/Autoinforme-de-seguimiento-del-Master-en-Estudios-Hispanicos-CURSO-2024-2025-Conv.-2026_redacted.pdf", "pagina": "https://filosofia.uca.es/master-estudios-hispanicos/"},
+    {"rol": "autoinforme-anterior", "url": "https://filosofia.uca.es/wp-content/uploads/2025/10/0-Autoinforme-G-Estudios-Hispanicos-23-24.pdf", "pagina": "https://filosofia.uca.es/master-estudios-hispanicos/"},
+    {"rol": "memoria", "url": "https://filosofia.uca.es/wp-content/uploads/2026/09/2023__M_Estudios_Hisp_MNS_Memoria_Aprobada.pdf", "pagina": "https://filosofia.uca.es/master-estudios-hispanicos/"},
+    {"rol": "informe-accua", "url": "https://filosofia.uca.es/wp-content/uploads/2026/06/5-2026-informeSeguimiento4314324-M-Hispanicos-2026.pdf", "pagina": "https://filosofia.uca.es/master-estudios-hispanicos/"},
+    {"rol": "plan-mejora", "url": "https://filosofia.uca.es/wp-content/uploads/2026/06/4-PLAN-DE-MEJORA-2023-2024.pdf", "pagina": "https://filosofia.uca.es/master-estudios-hispanicos/"}
+  ]
+}
