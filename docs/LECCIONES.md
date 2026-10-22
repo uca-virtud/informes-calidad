@@ -22,9 +22,9 @@ v0 y v1 son la skill anterior (`old-skills/`, solo local), por eso no tienen com
 | v4 | `2816f9e` | + L16b, L19-L22 | E06-GIDIDP |
 | v5 | `4e6da0d` | + L23-L27 | E07-GH |
 | v6 | `6f9f6cf` | + L11b, L28 | E08-GHUM |
-| v7 | pendiente | + L19b, L23b, L25b, L26b, L27b, L29; correcciones de los scripts (C15, C16) | — |
+| v7 | f759c6e | + L19b, L23b, L25b, L26b, L27b, L29; correcciones de los scripts (C15, C16) | — |
 
-Versión vigente: **v7** (commit pendiente).
+Versión vigente: **v7** (commit f759c6e).
 
 ## Lecciones y estado en la skill
 
