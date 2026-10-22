@@ -33,8 +33,9 @@ Ejemplos reales (adáptalos, no los copies literalmente):
   último curso, encontrándose muy lejos del valor objetivo (20%). Esta tasa refleja también
   el problema que tiene este título al ser usado como etapa intermedia por el estudiantado
   que no pudo acceder a la especialidad deseada […].»
-- «ISGC-P04-06: Tasa de eficiencia. Esta tasa con un valor de 72,3% ha aumentado respecto
-  al curso anterior y se sitúa con un valor superior al valor objetivo (65%).»
+- Plantilla para una tasa con objetivo en la memoria: «ISGC-P04-06: Tasa de eficiencia.
+  Con un <valor>%, la tasa <aumenta/disminuye> respecto al curso anterior (<valor
+  anterior>%) y <supera/no alcanza> el valor objetivo de la memoria (<objetivo>%).»
 - Plantilla para un valor atípico en una serie: «ISGC-P05-06: Porcentaje de calificaciones
   "EXCELENTES"… la media de los últimos cinco cursos es del <media>%. Tras el <valor>%
   del curso <año anterior>, este curso desciende al <valor>%, un descenso que

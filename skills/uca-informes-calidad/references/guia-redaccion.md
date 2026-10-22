@@ -42,6 +42,12 @@ interpretación y en las decisiones de mejora que se derivan.
   anterior…» y `[PENDIENTE: confirmar estado actual]`). Tampoco se juzga si una acción ha
   sido eficaz sin evidencia de que se implantó: separa implantación, evolución del
   indicador y efecto atribuible.
+  Lo que dicen el autoinforme o el plan del curso anterior es un antecedente, no actividad
+  del curso: reuniones, tutorías, «sin incidencias» o «no hubo …» se afirman solo con una
+  evidencia fechada del curso. Si no la hay, el `[PENDIENTE]` cubre la ejecución misma,
+  no solo su enlace. Una causa explicativa sin fuente (cambio de escala, de procedimiento
+  o de plan) se redacta como hipótesis («podría deberse a…») y se descarta si la propia
+  serie, del título o del centro, la contradice.
 - **Datos de identidad, de la memoria**. La habilitación para una profesión regulada, la
   modalidad, las plazas y los centros se toman de la memoria verificada, sin deducirlos de
   las competencias, del perfil profesional o de sellos de calidad.
@@ -49,17 +55,40 @@ interpretación y en las decisiones de mejora que se derivan.
   no está en LinceBI, búscalo antes en toda la entrada (autoinforme anterior, informes,
   anexos), con el mismo indicador, ámbito y curso. Si no aparece, escribe
   `[PENDIENTE: dato de …]` o «No disponible», indicando el motivo.
+  Mantén distintos «cero», «no calculado», «sin respuestas» y «no disponible» en el JSON,
+  en las tablas y en el texto. Un guion de la fuente no se convierte en 0 ni se narra como
+  ausencia («no hubo …», «ninguna persona …») salvo que la fuente lo defina así o lo
+  respalde un recuento; una nota tuya no basta. Tampoco quedan pendientes los datos
+  normativos que da la memoria (p. ej. créditos de prácticas obligatorias) ni las columnas
+  históricas que aporta el autoinforme anterior.
 - **Antes de dejar algo pendiente, búscalo**. Un anexo o tabla con fuente en LinceBI se
   extrae del informe previsto en el mapa de indicadores. Un total, un agregado o un enlace
   genérico a la plataforma no sustituyen la tabla exigida. El anexo se entrega completo, o
   con un enlace específico al informe íntegro del mismo curso; nunca condicionado a «si se
-  requiere».
+  requiere». Antes de declarar interna o no disponible una tabla de un anexo, consulta el
+  informe exacto que indica el mapa para ese anexo, con el curso del autoinforme.
 - **Concluye solo lo que mide el indicador**. No deduzcas un indicador a partir de otro
   (p. ej. la nota de corte a partir de la preferencia). Evita «garantiza», «todas cumplen»
   o «en todos los casos» salvo que lo hayas comprobado indicador a indicador. Los adjetivos
   de evolución («continuado», «por cuarto curso consecutivo») se comprueban con toda la
   serie, y la comparación con un objetivo de la memoria solo se hace con la tasa que lo
   tiene, en todas sus apariciones (análisis, puntos fuertes y síntesis).
+  Comprueba el signo de cada evolución, en el título y en el centro, y que «el más bajo» o
+  «el más alto» lo sea en todo el conjunto citado. «Mayoría», «suficiente», «estable» o
+  «representativo» exigen comprobar el universo, las categorías y el cálculo (menos de la
+  mitad no es mayoría). Un rasgo no sustituye a otro afín: la cualificación del profesorado
+  no acredita su estabilidad.
+- **Plantilla depurada por su sentido, no solo por su color**. Tras el paso 4b, resuelve
+  los avisos `REVISAR` del script y relee el texto en negro que queda: elimina las órdenes
+  al redactor («especificar…», «rellenar solo en su caso», notas de cumplimentación de
+  tablas) y las alternativas que no proceden para el título (Grado/Máster, modalidades,
+  opciones de un apartado), y conserva las definiciones de campo. Las tablas que la
+  plantilla exige (p. ej. objetivos de la memoria antes del análisis de las tasas) se
+  incluyen con sus notas.
+- **La síntesis de sostenibilidad (7.6) cierra el autoinforme**. Recorre demanda,
+  profesorado, recursos, resultados e inserción laboral, responde a las debilidades que
+  señaló ACCUA y termina con una valoración explícita proporcionada a los datos (ver
+  `estilo-y-ejemplos.md`, «Sostenibilidad»).
 - **Tono**: institucional, claro y concreto. Evita generalidades vacías; aporta cifras,
   fechas, enlaces y responsables.
 
@@ -127,15 +156,24 @@ aplicaciones [T3].
 10. Apartados no aplicables eliminados o marcados como "No aplica".
 11. Ninguna acción propuesta, recomendación o texto modelo aparece como ya ejecutado sin
     evidencia en la entrada; la habilitación profesional coincide con la memoria; el texto
-    modelo conservado en negro se ha releído y se corresponde con el título.
-12. Ninguna celda con «-» o vacía sin explicación; cada `[PENDIENTE]` corresponde a un dato
-    que no está en la entrada ni en el informe de LinceBI previsto.
+    modelo conservado en negro se ha releído y se corresponde con el título; la actividad
+    del curso no se apoya solo en el autoinforme anterior y las causas sin fuente figuran
+    como hipótesis.
+12. Ninguna celda con «-» o vacía sin explicación; ningún guion convertido en 0 o narrado
+    como ausencia sin definición de la fuente o recuento; cada `[PENDIENTE]` corresponde a
+    un dato que no está en la entrada (memoria y autoinforme anterior incluidos) ni en el
+    informe de LinceBI previsto en el mapa.
 13. Están todas las recomendaciones vivas de ACCUA, también las de informes anteriores que
     el último declara abiertas.
 14. Ninguna conclusión va más allá de lo que mide su indicador ni generaliza sin
     comprobarlo; los adjetivos de evolución y las comparaciones con objetivos coinciden
-    con toda la serie y con la memoria en todas sus apariciones.
+    con toda la serie y con la memoria en todas sus apariciones; los signos de evolución
+    (título y centro), los extremos y los cuantificadores («mayoría», «suficiente») están
+    comprobados con el cálculo.
 15. Los cursos comunes con el autoinforme anterior están contrastados y las diferencias
     sistemáticas explicadas.
 16. No quedan restos de plantilla en negro: notas de cumplimentación, opciones alternativas
-    («Grado/Máster»), filas de ejemplo ni enlaces pegados al texto siguiente.
+    («Grado/Máster»), filas de ejemplo ni enlaces pegados al texto siguiente; los avisos
+    `REVISAR` de la depuración están resueltos y están las tablas que exige la plantilla.
+17. La síntesis de sostenibilidad (7.6) cubre demanda, profesorado, recursos, resultados e
+    inserción, responde a las debilidades de ACCUA y cierra con una valoración explícita.

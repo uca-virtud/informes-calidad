@@ -151,8 +151,12 @@ def relabel_year_headers(doc, data):
 
 
 def check_scale(label, scope, year, value):
-    """Avisa si un indicador de satisfacción (escala 0-5) supera el máximo."""
-    if "satisfacci" not in label.lower():
+    """Avisa si un indicador de satisfacción (escala 0-5) supera el máximo.
+
+    Las tasas de respuesta de las encuestas (P07-01) citan la satisfacción en su nombre,
+    pero son porcentajes: no se comprueban."""
+    low = label.lower()
+    if "satisfacci" not in low or "tasa de respuesta" in low or "(%)" in low:
         return
     try:
         num = float(str(value).replace(",", ".").split()[0])

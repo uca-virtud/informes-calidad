@@ -91,7 +91,17 @@ Pendiente de recibir la hoja de valoración (paso 8).
 
 | Lección | Decisión | Motivo |
 |---|---|---|
-| <Lxx> | <incorporada / candidata / descartada> | <filtro de admisión: norma, ≥2 títulos o Unidad de Calidad> |
+| L11b, L28 | funcionan | Validadas en esta ejecución |
+| L19b | incorporada (v7, 22-10-2026) | Refuerzo de L19: insuficiente en E07 y E08 (≥2 títulos) |
+| L23b (con C10) | incorporada (v7, 22-10-2026) | Refuerzo de L23: insuficiente en E07 y E08 (≥2 títulos); C10 es un caso de L23, ya respaldada |
+| L25b (con C8) | incorporada (v7, 22-10-2026) | Refuerzo de L25: insuficiente en E07 y E08; C8 repetida en los dos (≥2 títulos) |
+| L26b (C11) | incorporada (v7, 22-10-2026) | Refuerzo de L26/L20, ya respaldadas por ≥2 títulos; C11 concreta cómo agotar la fuente |
+| L27b | incorporada (v7, 22-10-2026) | Refuerzo de L27: insuficiente en E07 y E08 (≥2 títulos); incluye los avisos `REVISAR` de C16 |
+| L29 (C13) | incorporada (v7, 22-10-2026) | Norma/guía: `estilo-y-ejemplos.md` («Sostenibilidad») ya exige la síntesis transversal con valoración; se añade a la verificación |
+| C15 | corregida en el script | `rellenar_autoinforme.py` no comprueba la escala 0-5 en tasas de respuesta ni en etiquetas con «(%)» |
+| C16 | corregida en el script | `depurar_instrucciones.py` borra los párrafos mixtos que quedan solo con puntuación, recorta guiones colgantes y lista con `REVISAR` los restos en negro |
+| C12, C14 | candidatas | Solo en este título |
+| Huellas | revisadas, 22-10-2026 | El ejemplo de eficiencia pasa a plantilla con marcadores; «Participación en proyectos de innovación y mejora docente» es el nombre oficial de P05-03 y se conserva |
 
 ## Retro del proceso
 

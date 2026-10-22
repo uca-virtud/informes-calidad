@@ -80,7 +80,14 @@ Media final: 1.57. Bloqueantes: B1. Discrepancias por causa (B): S=6, D=3, I=2, 
 
 | Lección | Decisión | Motivo |
 |---|---|---|
-| <Lxx> | <incorporada / candidata / descartada> | <filtro de admisión: norma, ≥2 títulos o Unidad de Calidad> |
+| L11b | incorporada (v6, 4-10-2026) | Reformulación de L11 respaldada por E04-E07: LinceBI no publica los créditos reconocidos |
+| L28 (C9) | incorporada (v6, 4-10-2026) | ≥2 títulos (E04, E05, E07) |
+| L19b | incorporada (v7, 22-10-2026) | Refuerzo de L19: insuficiente en E07 y E08 (≥2 títulos) |
+| L23b (con C10) | incorporada (v7, 22-10-2026) | Refuerzo de L23: insuficiente en E07 y E08 (≥2 títulos) |
+| L25b (con C8) | incorporada (v7, 22-10-2026) | Refuerzo de L25: insuficiente en E07 y E08; C8 repetida en los dos (≥2 títulos) |
+| L27b | incorporada (v7, 22-10-2026) | Refuerzo de L27: insuficiente en E07 y E08 (≥2 títulos) |
+| C7 | candidata | Solo en este título |
+| Huellas | revisadas, 22-10-2026 | El ejemplo de eficiencia pasa a plantilla con marcadores; «Sistema de garantía interno de la calidad» y «Participación en proyectos de innovación y mejora docente» son nombres oficiales (criterio 2 y P05-03) y se conservan |
 
 ## Retro del proceso
 

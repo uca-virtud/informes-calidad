@@ -214,8 +214,12 @@ Borra los párrafos en rojo (instrucciones) y azul (directrices ACCUA), los que 
 corchetes `[ … ]` y los marcadores `XXXX`, también dentro de las tablas, y en los párrafos
 mixtos quita solo los fragmentos en rojo o azul. Las etiquetas cortas en azul de las
 tablas (encabezados como «Suspensos» o «%») se conservan y pasan a negro. Conserva el texto en negro (análisis),
-las tablas y los `[PENDIENTE: …]`. Revisa el resultado para asegurarte de que no se ha
-eliminado contenido útil.
+las tablas y los `[PENDIENTE: …]`. Si tras quitar los fragmentos de color un párrafo mixto
+queda solo con puntuación, lo borra; si conserva texto, lo lista en la salida de error con
+el prefijo `REVISAR`. Resuelve cada aviso: borra lo que sea resto de una instrucción o una
+opción que no procede para el título (p. ej. el texto para títulos con varias
+modalidades, «Punto débil nº» sin número) y completa lo que sea contenido. Revisa además
+el resultado para asegurarte de que no se ha eliminado contenido útil.
 En la renovación, ejecútalo sobre cada `Criterio_n.docx`.
 
 El script `rellenar_autoinforme.py` también vuelca la **tabla de recomendaciones de
@@ -249,10 +253,15 @@ supera 5 y que título y centro alinean igual las cohortes; que no queda texto d
 instrucciones (rojo/azul) ni marcadores `XXXX`; que cada punto débil tiene acción de
 mejora; que los indicadores citados en el análisis coinciden con las tablas del Anexo 1;
 que ninguna acción propuesta o texto modelo figura como realizado sin evidencia (relee el
-texto modelo conservado en negro); que no quedan celdas con «-» o vacías sin explicación
-ni `[PENDIENTE]` de datos que estén en la entrada o en LinceBI; que no quedan restos de
-plantilla en negro (notas de cumplimentación, opciones alternativas, filas de ejemplo,
-enlaces pegados al texto).
+texto modelo conservado en negro) ni actividad del curso conocida solo por el autoinforme
+anterior, y que las causas sin fuente figuran como hipótesis; que no quedan celdas con «-»
+o vacías sin explicación, guiones convertidos en 0 o narrados como ausencia, ni
+`[PENDIENTE]` de datos que estén en la entrada (memoria y autoinforme anterior incluidos)
+o en LinceBI; que los signos de evolución, los extremos y los cuantificadores («mayoría»,
+«suficiente») coinciden con el cálculo; que no quedan restos de plantilla en negro (notas
+de cumplimentación, opciones alternativas, filas de ejemplo, enlaces pegados al texto) ni
+avisos `REVISAR` sin resolver; y que la síntesis de sostenibilidad (7.6) cubre todos sus
+elementos y cierra con una valoración explícita.
 Relee `references/guia-redaccion.md` (checklist final) y, en la renovación, el checklist
 de `references/estructura-renovacion.md`.
 

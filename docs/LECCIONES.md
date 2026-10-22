@@ -22,8 +22,9 @@ v0 y v1 son la skill anterior (`old-skills/`, solo local), por eso no tienen com
 | v4 | `2816f9e` | + L16b, L19-L22 | E06-GIDIDP |
 | v5 | `4e6da0d` | + L23-L27 | E07-GH |
 | v6 | `6f9f6cf` | + L11b, L28 | E08-GHUM |
+| v7 | pendiente | + L19b, L23b, L25b, L26b, L27b, L29; correcciones de los scripts (C15, C16) | — |
 
-Versión vigente: **v6** (`6f9f6cf`).
+Versión vigente: **v7** (commit pendiente).
 
 ## Lecciones y estado en la skill
 
@@ -34,8 +35,8 @@ verificación de `guia-redaccion.md`. Una lección insuficiente sigue en la skil
 responsable apruebe su refuerzo.
 
 «Estado» usa el vocabulario de la web ([significado](PROCEDIMIENTO.md#estados-de-una-lección))
-y «Seguimiento», la cronología que lo justifica. Estado actual: 16 Funciona, 4 Reforzada,
-5 A reforzar, 5 Por comprobar.
+y «Seguimiento», la cronología que lo justifica. Estado actual: 15 Funciona, 9 Reforzada,
+1 A reforzar, 11 Por comprobar.
 
 | # | Estado | Lección | Origen | Dónde está en la skill | Seguimiento |
 |---|---|---|---|---|---|
@@ -59,16 +60,22 @@ y «Seguimiento», la cronología que lo justifica. Estado actual: 16 Funciona, 
 | L16b | Funciona | Refuerzo de L16: releer el texto modelo conservado en negro y contrastarlo con la memoria | E03-E05 | `guia-redaccion.md` (checklist 11), `SKILL.md` (verificación) | Incorporada el 3-10-2026; validada en E06 |
 | L17 | Funciona | La depuración cubre celdas de tablas y párrafos mixtos y conserva los `[PENDIENTE]` (C6) | E01-E04 | `scripts/depurar_instrucciones.py`, `SKILL.md` (paso 4b), checklist | Incorporada el 3-10-2026; validada en E05, tras corregir que vaciaba las etiquetas cortas en azul de las tablas |
 | L18 | Funciona | La habilitación profesional y demás datos de identidad se toman de la memoria | E04 (norma: memoria) | `guia-redaccion.md` | Incorporada el 3-10-2026; validada en E05 |
-| L19 | A reforzar | Cero no es «sin dato»: sin guiones ambiguos; buscar en la entrada antes de dejar pendiente | E04, E05 | `guia-redaccion.md` (checklist 12), `SKILL.md` | Incorporada el 3-10-2026; validada en E06; insuficiente en E07 (guiones como 0 %; pendientes con dato en la entrada) y en E08 (guiones narrados como ausencia de actividad) |
+| L19 | Reforzada | Cero no es «sin dato»: sin guiones ambiguos; buscar en la entrada antes de dejar pendiente | E04, E05 | `guia-redaccion.md` (checklist 12), `SKILL.md` | Incorporada el 3-10-2026; validada en E06; insuficiente en E07 (guiones como 0 %; pendientes con dato en la entrada) y en E08 (guiones narrados como ausencia de actividad) → L19b |
+| L19b | Por comprobar | Refuerzo de L19: cero, no calculado, sin respuestas y no disponible, distintos en JSON, tablas y texto; un guion no pasa a 0 ni se narra como ausencia sin definición de la fuente o recuento; sin pendientes de datos de la memoria o del autoinforme anterior | E04, E05, E07, E08 | `guia-redaccion.md` (principios y checklist 12), `SKILL.md` (verificación) | Incorporada el 22-10-2026; validar en E09 |
 | L20 | Reforzada | Anexos con fuente en LinceBI extraídos del informe previsto; un agregado o enlace genérico no basta (C5) | E01-E03, E05 | `guia-redaccion.md` (checklist 12) | Incorporada el 3-10-2026; insuficiente en E06 (Anexo IV con solo una selección) → L26 |
 | L21 | Funciona | Recomendaciones de informes ACCUA anteriores declaradas abiertas, con número y fecha (C4) | E01-E03, E05 | `guia-redaccion.md` (plan de mejora y checklist 13) | Incorporada el 3-10-2026; validada en E06 |
 | L22 | Reforzada | Concluir solo lo que mide el indicador; sin generalizar sin comprobar (C2) | E01-E03, E05 | `guia-redaccion.md` (checklist 14) | Incorporada el 3-10-2026; insuficiente en E06 → L23 |
-| L23 | A reforzar | Refuerzo de L22: adjetivos de evolución contrastados con toda la serie; objetivos de la memoria solo con su tasa, en todas las apariciones | E01-E03, E05, E06 | `guia-redaccion.md` (checklist 14) | Incorporada el 3-10-2026; insuficiente en E07 (evolución del centro con el signo cambiado; los objetivos de la memoria, correctos) y en E08 («mayoritariamente» con menos de la mitad; causa de una evolución atribuida sin fuente) |
+| L23 | Reforzada | Refuerzo de L22: adjetivos de evolución contrastados con toda la serie; objetivos de la memoria solo con su tasa, en todas las apariciones | E01-E03, E05, E06 | `guia-redaccion.md` (checklist 14) | Incorporada el 3-10-2026; insuficiente en E07 (evolución del centro con el signo cambiado; los objetivos de la memoria, correctos) y en E08 («mayoritariamente» con menos de la mitad; causa de una evolución atribuida sin fuente) → L23b |
+| L23b | Por comprobar | Refuerzo de L23: signos de evolución (título y centro), extremos y cuantificadores («mayoría», «suficiente») comprobados con el cálculo (incluye C10) | E07, E08 | `guia-redaccion.md` (principios y checklist 14), `SKILL.md` (verificación) | Incorporada el 22-10-2026; validar en E09 |
 | L24 | Funciona | Contrastar los cursos comunes con el autoinforme anterior; sin analizar la evolución si hay diferencias sistemáticas | E05, E06 | `guia-redaccion.md` (principios y checklist 15) | Incorporada el 3-10-2026; validada en E07 |
-| L25 | A reforzar | Ampliación de L16: estado conocido solo por el autoinforme anterior no es vigente; sin juzgar la eficacia sin implantación acreditada | E04, E06 | `guia-redaccion.md` | Incorporada el 3-10-2026; insuficiente en E07 (eficacia juzgada sin implantación acreditada) y en E08 (actividad del curso afirmada sin evidencia) |
-| L26 | Funciona | Refuerzo de L20: anexo completo o con enlace específico al informe íntegro, nunca condicionado | E01-E03, E06 | `guia-redaccion.md` | Incorporada el 3-10-2026; validada en E07 |
-| L27 | A reforzar | Verificar restos de plantilla en negro: notas de cumplimentación, opciones alternativas, filas de ejemplo, enlaces pegados | E05, E06 | `guia-redaccion.md` (checklist 16), `SKILL.md` | Incorporada el 3-10-2026; insuficiente en E07 (notas de cumplimentación en la tabla del Anexo II) y en E08 (marcadores de plantilla y opciones alternativas en negro) |
+| L25 | Reforzada | Ampliación de L16: estado conocido solo por el autoinforme anterior no es vigente; sin juzgar la eficacia sin implantación acreditada | E04, E06 | `guia-redaccion.md` | Incorporada el 3-10-2026; insuficiente en E07 (eficacia juzgada sin implantación acreditada) y en E08 (actividad del curso afirmada sin evidencia) → L25b |
+| L25b | Por comprobar | Refuerzo de L25: lo del curso anterior es antecedente, no actividad del curso; el `[PENDIENTE]` cubre la ejecución; causas sin fuente como hipótesis y descartadas si la serie las contradice (incluye C8) | E07, E08 | `guia-redaccion.md` (principios y checklist 11), `SKILL.md` (verificación) | Incorporada el 22-10-2026; validar en E09 |
+| L26 | Reforzada | Refuerzo de L20: anexo completo o con enlace específico al informe íntegro, nunca condicionado | E01-E03, E06 | `guia-redaccion.md` | Incorporada el 3-10-2026; validada en E07; insuficiente en E08 (tabla de un anexo declarada interna sin agotar el informe del mapa) → L26b |
+| L26b | Por comprobar | Refuerzo de L26: antes de declarar interna una tabla de un anexo, consultar el informe exacto del mapa para ese curso (C11) | E08 (refuerzo de L20 y L26) | `guia-redaccion.md` (principios y checklist 12) | Incorporada el 22-10-2026; validar en E09 |
+| L27 | Reforzada | Verificar restos de plantilla en negro: notas de cumplimentación, opciones alternativas, filas de ejemplo, enlaces pegados | E05, E06 | `guia-redaccion.md` (checklist 16), `SKILL.md` | Incorporada el 3-10-2026; insuficiente en E07 (notas de cumplimentación en la tabla del Anexo II) y en E08 (marcadores de plantilla y opciones alternativas en negro) → L27b |
+| L27b | Por comprobar | Refuerzo de L27: depuración por sentido (órdenes al redactor, alternativas que no proceden, tablas exigidas con sus notas) y avisos `REVISAR` del script resueltos | E07, E08 | `guia-redaccion.md` (principios y checklist 16), `SKILL.md` (pasos 4b y 6), `scripts/depurar_instrucciones.py` | Incorporada el 22-10-2026; validar en E09 |
 | L28 | Funciona | Resultados globales del 6.3 con seis cursos: el más antiguo, fuera de la ventana de LinceBI, del autoinforme anterior (C9) | E04, E05, E07 | `mapa-indicadores-lincebi.md` (años y regla de la serie histórica), `SKILL.md`, `estructura-autoinforme.md`, `guia-redaccion.md` (checklist 2) | Incorporada el 4-10-2026; validada en E08 (seis cursos, los dos más antiguos del autoinforme anterior) |
+| L29 | Por comprobar | Síntesis de sostenibilidad (7.6) con demanda, profesorado, recursos, resultados e inserción, respuesta a las debilidades de ACCUA y valoración explícita (C13) | E08 (norma: guía de estilo) | `guia-redaccion.md` (principios y checklist 17), `SKILL.md` (verificación); ya en `estilo-y-ejemplos.md` («Sostenibilidad») | Incorporada el 22-10-2026; validar en E09 |
 
 ### Lecciones candidatas
 
@@ -85,12 +92,12 @@ la skill. Las que ya se incorporaron conservan su fila y remiten a su lección.
 | C5 | No dar por completo un anexo vacío o con solo un enlace; extraer lo disponible o marcarlo pendiente | E01-E03, E05 | Incorporada como L20 |
 | C6 | Revisar instrucciones y marcadores en todo el documento, incluidas tablas y portada | E01-E04 | Incorporada como L17 |
 | C7 | Una fila por recomendación de ACCUA, aunque el informe no las numere | E07 | Candidata |
-| C8 | Causas explicativas sin fuente redactadas como hipótesis | E07, E08 | Candidata: repetida en un segundo título; pendiente de decisión |
+| C8 | Causas explicativas sin fuente redactadas como hipótesis | E07, E08 | Incorporada en L25b |
 | C9 | Completar los seis cursos de resultados globales del 6.3 con el autoinforme anterior cuando LinceBI solo ofrece cinco | E04, E05, E07 | Incorporada como L28 |
-| C10 | Comprobar el cálculo que respalda «mayoritariamente», «suficiente» y adjetivos semejantes | E08 | Candidata (afín a L23) |
-| C11 | Agotar el informe que indica el mapa antes de declarar interna una tabla de un anexo | E08 | Candidata (afín a L20 y L26) |
+| C10 | Comprobar el cálculo que respalda «mayoritariamente», «suficiente» y adjetivos semejantes | E08 | Incorporada en L23b |
+| C11 | Agotar el informe que indica el mapa antes de declarar interna una tabla de un anexo | E08 | Incorporada como L26b |
 | C12 | Cruzar «No procede» con la identificación del título (itinerarios, modalidades, menciones) | E08 | Candidata |
-| C13 | Síntesis de sostenibilidad (7.6) con todos sus elementos: inserción, recursos y conclusión explícita | E08 | Candidata |
+| C13 | Síntesis de sostenibilidad (7.6) con todos sus elementos: inserción, recursos y conclusión explícita | E08 | Incorporada como L29 (ya la exigía la guía de estilo) |
 | C14 | Fechas del plan de mejora redactadas como propuesta, no como acordadas, y sin inicios anteriores a la redacción | E08 | Candidata |
-| C15 | `rellenar_autoinforme.py` no debe avisar de escala 0-5 en las tasas de respuesta (P07-01), cuya etiqueta contiene «satisfacción» pero son porcentajes | E08 | Candidata (herramienta) |
-| C16 | `depurar_instrucciones.py` deja en negro los restos de instrucciones mixtas («Rellenar solo en su caso: …», rutas de LinceBI de los anexos): avisar en el paso 4b o tratarlos en el script | E08 | Candidata (herramienta; afín a L17 y L27) |
+| C15 | `rellenar_autoinforme.py` no debe avisar de escala 0-5 en las tasas de respuesta (P07-01), cuya etiqueta contiene «satisfacción» pero son porcentajes | E08 | Corregida en el script (v7) |
+| C16 | `depurar_instrucciones.py` deja en negro los restos de instrucciones mixtas («Rellenar solo en su caso: …», rutas de LinceBI de los anexos): avisar en el paso 4b o tratarlos en el script | E08 | Corregida en el script (v7): avisos `REVISAR`; véase L27b |
