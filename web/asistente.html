@@ -6,15 +6,19 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Informes de calidad UCA · El asistente</title>
 <style>
-  :root { --azul: #1f3a6e; --gris: #5f6b7a; --fondo: #f5f7fa; --linea: #e6eaf0; --curso: #ef8f00; --hecho: #2e7d32; }
+  :root { --azul: #1f3a6e; --gris: #5f6b7a; --fondo: #f5f7fa; --linea: #e6eaf0; --curso: #ef8f00; --hecho: #2e7d32; --pend: #9aa5b1; }
   * { box-sizing: border-box; }
   body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1d2733; background: var(--fondo); }
-  header { background: var(--azul); color: #fff; padding: 2.5rem 1.5rem; }
-  header h1 { margin: 0 0 .4rem; font-size: 1.8rem; }
+  header, nav { padding-inline: max(1.5rem, calc((100% - 1060px) / 2 + 1.5rem)); }
+  header { background: var(--azul); color: #fff; padding-block: 1.8rem; }
+  header h1 { margin: 0 0 .3rem; font-size: 1.7rem; line-height: 1.2; }
   header p { margin: 0; opacity: .9; }
-  nav { background: #172d57; padding: 0 1.5rem; }
-  nav a { display: inline-block; color: #fff; text-decoration: none; padding: .7rem 1rem; opacity: .8; }
-  nav a:hover, nav a[aria-current] { opacity: 1; box-shadow: inset 0 -3px 0 #fff; }
+  nav { background: #172d57; display: flex; overflow-x: auto; scrollbar-width: none; padding-inline: max(.5rem, calc((100% - 1060px) / 2 + .5rem)); }
+  nav a { flex: none; color: #fff; text-decoration: none; padding: .75rem 1rem; opacity: .8; }
+  nav a:hover { opacity: 1; background: rgba(255,255,255,.08); }
+  nav a[aria-current] { opacity: 1; box-shadow: inset 0 -3px 0 #fff; }
+  nav a:focus-visible { opacity: 1; outline: 2px solid #fff; outline-offset: -4px; }
+  @media (max-width: 760px) { header { padding-block: 1.2rem; } header h1 { font-size: 1.4rem; } nav a { padding-inline: .75rem; } }
   main { max-width: 1060px; margin: 0 auto; padding: 1.5rem; }
   section { background: #fff; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
   h2 { margin-top: 0; color: var(--azul); font-size: 1.3rem; }
@@ -29,17 +33,45 @@
   .pieza.mcp { border-top-color: var(--hecho); } .pieza.agente { border-top-color: var(--curso); }
   .flecha { text-align: center; color: var(--gris); font-size: .9rem; margin: 0; }
 
+  /* Etiquetas de estado y tooltips */
+  .chip { display: inline-block; font-size: .78rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; white-space: nowrap; line-height: 1.5; }
+  .ok { background: var(--hecho); color: #fff; } .reforzada { background: #7e57c2; color: #fff; }
+  .areforzar { background: var(--curso); color: #fff; } .porver { background: var(--pend); color: #fff; }
+  [data-tip] { position: relative; cursor: help; }
+  [data-tip]:hover::after, [data-tip]:focus::after {
+    content: attr(data-tip); position: absolute; left: 0; bottom: calc(100% + 6px);
+    width: max-content; max-width: 320px; white-space: pre-line; text-align: left; z-index: 10;
+    background: #1d2733; color: #fff; padding: .5rem .7rem; border-radius: 6px;
+    font-size: .8rem; font-weight: 400; line-height: 1.4; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  [data-tip]:focus { outline: 2px solid var(--azul); outline-offset: 1px; }
+
+  /* Línea temporal de versiones */
+  .versiones { list-style: none; margin: 1rem 0 0; padding: 0; }
+  .versiones > li { position: relative; padding: 0 0 1.3rem 1.8rem; border-left: 3px solid var(--linea); margin-left: .6rem; }
+  .versiones > li:last-child { border-left-color: transparent; }
+  .versiones > li::before { content: ""; position: absolute; left: -.6rem; top: .25rem; width: .9rem; height: .9rem; border-radius: 50%; background: var(--azul); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--azul); }
+  .versiones > li.vigente::before { background: var(--curso); box-shadow: 0 0 0 1px var(--curso); }
+  .cabver { display: flex; flex-wrap: wrap; gap: .5rem; align-items: baseline; }
+  .cabver strong { color: var(--azul); font-size: 1.05rem; }
+  .cabver span { color: var(--gris); font-size: .88rem; }
+  .lecciones { list-style: none; padding: 0; margin: .5rem 0 0; font-size: .92rem; }
+  .lecciones li { display: grid; grid-template-columns: 7.5rem 3.2rem 1fr; gap: .5rem; padding: .25rem 0; align-items: baseline; }
+  .lecciones li b { color: var(--gris); }
+  .lecciones li[hidden] { display: none; }
+  .estados { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .8rem; margin: 1rem 0; }
+  .estados b { font-size: 1.5rem; color: var(--azul); margin-right: .4rem; }
+  .estados button { font: inherit; text-align: left; background: #fff; cursor: pointer; border: 1px solid var(--linea); border-radius: 8px; padding: .7rem .9rem; font-size: .86rem; }
+  .estados button:hover, .estados button[aria-pressed="true"] { border-color: var(--azul); box-shadow: 0 0 0 1px var(--azul); }
+  .estados button:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+
 
   details { border: 1px solid var(--linea); border-radius: 8px; padding: .8rem 1rem; }
   summary { cursor: pointer; font-weight: 600; color: var(--azul); }
-  .skill { max-height: 70vh; overflow: auto; margin-top: 1rem; font-size: .92rem; }
-  .skill h1 { font-size: 1.3rem; } .skill h2 { font-size: 1.15rem; } .skill h3 { font-size: 1rem; }
-  .skill pre, .skill code { background: #f0f2f5; border-radius: 4px; font-size: .85rem; }
-  .skill pre { padding: .6rem; overflow-x: auto; }
-  .skill table { width: 100%; border-collapse: collapse; }
-  .skill th, .skill td { text-align: left; padding: .4rem; border-top: 1px solid var(--linea); vertical-align: top; }
   footer { text-align: center; color: var(--gris); font-size: .85rem; padding: 0 1.5rem 2rem; }
-  @media (max-width: 760px) { .piezas { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) {
+    .piezas { grid-template-columns: 1fr; }
+    .lecciones li { grid-template-columns: 6.5rem 1fr; } .lecciones li > :last-child { grid-column: 1 / -1; }
+  }
 </style>
 </head>
 <body>
@@ -47,11 +79,11 @@
   <h1>Informes de calidad UCA</h1>
   <p>El asistente de redacción de autoinformes: qué es y cómo funciona</p>
 </header>
-<nav>
+<nav aria-label="Secciones del sitio">
   <a href="index.html">Avance</a>
   <a href="asistente.html" aria-current="page">El asistente</a>
-  <a href="procedimiento.html">Procedimiento de evaluación</a>
-  <a href="evaluacion.html">Resultados de la evaluación</a>
+  <a href="procedimiento.html">Cómo se evalúa</a>
+  <a href="evaluacion.html">Resultados</a>
 </nav>
 
 <main>
@@ -74,23 +106,136 @@
       <div class="pieza mcp"><h4>MCP de LinceBI</h4>Conexión que permite al agente consultar los indicadores de
         calidad con las credenciales UCA del usuario.</div>
     </div>
-    <p class="flecha">Agente + skill + MCP → autoinforme en Word, con los datos pendientes marcados
+    <p class="flecha">Agente + skill + MCP → autoinforme en Word (en renovación, un documento por criterio y el
+      Anexo I), con los datos pendientes marcados
       <code>[PENDIENTE]</code></p>
   </section>
 
-  <section id="instrucciones">
-    <h2>Instrucciones del asistente</h2>
-    <details>
-      <summary>Ver el texto de la skill (versión vigente)</summary>
-      <div class="skill">
-<!-- SKILL_MD -->
-        <p class="leyenda">El texto se incorpora automáticamente al publicar la web.</p>
-<!-- /SKILL_MD -->
-      </div>
-    </details>
+  <section id="descarga">
+    <h2>Descargar el asistente</h2>
+    <p>La versión vigente del asistente, lista para instalar en Claude:
+      <a href="https://github.com/uca-virtud/informes-calidad/raw/main/dist/uca-informes-calidad.zip">uca-informes-calidad.zip</a>.
+      Súbela como skill desde la configuración de Claude.</p>
+    <p class="leyenda">La descarga se aloja en el repositorio del proyecto en GitHub y requiere acceso a él.</p>
+    <p>El MCP de LinceBI, que permite al asistente consultar los indicadores directamente, estará disponible
+      próximamente. Mientras tanto, el asistente trabaja con las exportaciones de LinceBI (Excel, CSV o PDF) que
+      aporte el usuario y marca como <code>[PENDIENTE]</code> los datos que falten.</p>
   </section>
+
+  <section id="lecciones">
+    <h2>Qué ha aprendido el asistente en cada versión</h2>
+    <p>Cada versión incorpora las lecciones aprobadas tras la evaluación anterior y se comprueba con el siguiente
+      título. Una lección se da por buena solo cuando funciona en un título distinto del que la originó.</p>
+    <div class="estados">
+      <button type="button" data-filtro="ok" aria-pressed="false"><b>16</b><span class="chip ok">Funciona</span><br>Comprobada en un título posterior.</button>
+      <button type="button" data-filtro="reforzada" aria-pressed="false"><b>4</b><span class="chip reforzada">Reforzada</span><br>Se quedó corta y se sustituyó por otra más precisa.</button>
+      <button type="button" data-filtro="areforzar" aria-pressed="false"><b>5</b><span class="chip areforzar">A reforzar</span><br>Se quedó corta y aún no se ha reforzado.</button>
+      <button type="button" data-filtro="porver" aria-pressed="false"><b>5</b><span class="chip porver">Por comprobar</span><br>Aún sin evidencia en un título posterior.</button>
+    </div>
+    <p class="leyenda">Pulsa un estado para ver solo sus lecciones. Pasa el ratón sobre el estado de cada lección, o púlsalo, para ver en qué evaluación se comprobó.</p>
+
+    <ol class="versiones">
+      <li id="v0">
+        <div class="cabver"><strong>v0</strong><span>Julio de 2026 · versión inicial, solo de seguimiento · evaluada en E01 (0,57)</span></div>
+        <p class="leyenda" style="margin:.3rem 0 0">Punto de partida, sin lecciones porque aún no se había evaluado con
+          ningún título. Partía de la plantilla oficial de seguimiento, un mapa de los indicadores de LinceBI, una guía
+          de redacción con ejemplos, bloques de texto reutilizables y scripts que rellenan las tablas de la plantilla.</p>
+      </li>
+      <li id="v1">
+        <div class="cabver"><strong>v1</strong><span>Julio de 2026 · ajustada por la propia IA tras E01 · evaluada en E02 (1,00) y E03 (1,29)</span></div>
+        <ul class="lecciones">
+          <li><span class="chip porver" tabindex="0" data-tip="Incorporada antes del procedimiento actual, sin comprobación formal.">Por comprobar</span><b>L1</b><span>Incluir el análisis de calificaciones por asignatura.</span></li>
+          <li><span class="chip porver" tabindex="0" data-tip="Incorporada antes del procedimiento actual, sin comprobación formal.">Por comprobar</span><b>L2</b><span>Analizar la satisfacción del personal técnico, de gestión y de administración y servicios a nivel de centro.</span></li>
+          <li><span class="chip porver" tabindex="0" data-tip="Incorporada antes del procedimiento actual, sin comprobación formal. Su refuerzo, L23, está a reforzar, aunque en E07 los objetivos de la memoria salieron bien.">Por comprobar</span><b>L3</b><span>Objetivos de la memoria en tabla, cada uno con su tasa.</span></li>
+          <li><span class="chip porver" tabindex="0" data-tip="Depende del «plan de mejora vivo», un documento opcional; aún sin comprobar en un título posterior.">Por comprobar</span><b>L15</b><span>Responsables y fechas concretos en el plan de mejora.</span></li>
+        </ul>
+      </li>
+      <li id="v2">
+        <div class="cabver"><strong>v2</strong><span>2 de octubre de 2026 · commit d5ed099 · primera del asistente actual (seguimiento y renovación) · evaluada en E04 (1,43)</span></div>
+        <p class="leyenda" style="margin:.3rem 0 0">Además, desde E04 el asistente ya no contiene ejemplos tomados de los títulos que se evalúan.</p>
+        <ul class="lecciones">
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E04: producción verificada y sin datos de pruebas en E04-E07.">Funciona</span><b>L4</b><span>Extraer los indicadores de LinceBI de producción, nunca del entorno de pruebas.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E04: indicadores con nota 2 en E04-E07.">Funciona</span><b>L5</b><span>Consultar toda la serie histórica en LinceBI; el autoinforme anterior, solo para lo que no está.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E04.">Funciona</span><b>L6</b><span>Registrar el entorno y la fecha de extracción.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E04: sin valores imposibles ni cohortes desalineadas en E04-E07.">Funciona</span><b>L7</b><span>Ninguna satisfacción por encima de 5 y cohortes alineadas entre título y centro.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E04.">Funciona</span><b>L8</b><span>Egresados: las cinco últimas cohortes con datos.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E04: entre 2 y 4 puntos débiles en E04-E07, frente a 15-16 en E02-E03.">Funciona</span><b>L9</b><span>Entre 1 y 5 puntos débiles, solo los que la coordinación puede abordar.</span></li>
+          <li><span class="chip porver" tabindex="0" data-tip="La evaluación no la ejercita: el asistente no puede preguntar al centro durante la prueba.">Por comprobar</span><b>L10</b><span>Pedir al centro desde el inicio los datos internos (prácticas, convenios, tutores…).</span></li>
+          <li><span class="chip reforzada" tabindex="0" data-tip="Insuficiente en E04: LinceBI no publica ese informe (confirmado en E05-E07). Sustituida por L11b.">Reforzada</span><b>L11</b><span>Créditos reconocidos desde LinceBI.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E04.">Funciona</span><b>L12</b><span>Composición de la Comisión de Garantía de Calidad: remitir a la web del título.</span></li>
+          <li><span class="chip areforzar" tabindex="0" data-tip="Sin incidencias en E04 y E07, pero insuficiente en E06: faltaron las rutas de evidencias por criterio.">A reforzar</span><b>L13</b><span>Evidencias del seguimiento: rutas por criterio y curso, y enlaces de los anexos.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E04.">Funciona</span><b>L14</b><span>Conservar la numeración original de las recomendaciones de ACCUA.</span></li>
+        </ul>
+      </li>
+      <li id="v3">
+        <div class="cabver"><strong>v3</strong><span>3 de octubre de 2026 · commit a3157b3 · evaluada en E05 (1,43)</span></div>
+        <ul class="lecciones">
+          <li><span class="chip reforzada" tabindex="0" data-tip="Insuficiente en E05: se conservó una frase modelo de la plantilla sin contrastar. Reforzada con L16b.">Reforzada</span><b>L16</b><span>Una propuesta no es un hecho: no describir como realizado lo que no tiene evidencia.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E05, tras corregir que vaciaba las etiquetas cortas en azul de las tablas.">Funciona</span><b>L17</b><span>Eliminar las instrucciones de la plantilla también en tablas, conservando los pendientes.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E05.">Funciona</span><b>L18</b><span>La habilitación profesional y los datos de identidad se toman de la memoria.</span></li>
+        </ul>
+      </li>
+      <li id="v4">
+        <div class="cabver"><strong>v4</strong><span>3 de octubre de 2026 · commit 2816f9e · evaluada en E06 (1,57, sin errores graves)</span></div>
+        <ul class="lecciones">
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E06.">Funciona</span><b>L16b</b><span>Releer el texto modelo de la plantilla que se conserva y contrastarlo con la memoria.</span></li>
+          <li><span class="chip areforzar" tabindex="0" data-tip="Funcionó en E06, pero se quedó corta en E07 y E08: guiones de LinceBI consignados como 0 % o narrados como ausencia de actividad, y datos disponibles dejados como pendientes.">A reforzar</span><b>L19</b><span>Cero no es «sin dato»; buscar en los documentos antes de dejar un dato pendiente.</span></li>
+          <li><span class="chip reforzada" tabindex="0" data-tip="Insuficiente en E06: un anexo con solo una selección. Reforzada con L26.">Reforzada</span><b>L20</b><span>Anexos extraídos del informe de LinceBI previsto; un agregado no basta.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E06.">Funciona</span><b>L21</b><span>Declarar abiertas las recomendaciones de informes de ACCUA anteriores, con número y fecha.</span></li>
+          <li><span class="chip reforzada" tabindex="0" data-tip="Insuficiente en E06: adjetivos de evolución sin respaldo. Reforzada con L23.">Reforzada</span><b>L22</b><span>Concluir solo lo que mide el indicador.</span></li>
+        </ul>
+      </li>
+      <li id="v5">
+        <div class="cabver"><strong>v5</strong><span>3 de octubre de 2026 · commit 4e6da0d · evaluada en E07 (1,57)</span></div>
+        <ul class="lecciones">
+          <li><span class="chip areforzar" tabindex="0" data-tip="En E07 los objetivos de la memoria salieron bien, pero una evolución del centro se describió con el signo cambiado. En E08, «mayoritariamente» para menos de la mitad y la causa de una evolución atribuida sin fuente.">A reforzar</span><b>L23</b><span>Contrastar los adjetivos de evolución con toda la serie; cada objetivo de la memoria con su tasa.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E07: series discrepantes advertidas sin analizar su evolución.">Funciona</span><b>L24</b><span>Contrastar los cursos comunes con el autoinforme anterior y advertir las diferencias.</span></li>
+          <li><span class="chip areforzar" tabindex="0" data-tip="Insuficiente en E07: se juzgó la eficacia de acciones cuya implantación no constaba. En E08, actividad del curso afirmada sin evidencia.">A reforzar</span><b>L25</b><span>No juzgar la eficacia de una acción sin evidencia de que se implantó.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E07: Anexo IV completo.">Funciona</span><b>L26</b><span>Anexos completos o con enlace específico al informe íntegro, nunca condicionados.</span></li>
+          <li><span class="chip areforzar" tabindex="0" data-tip="Insuficiente en E07 (notas de cumplimentación en una tabla de un anexo) y en E08 (marcadores y opciones alternativas de la plantilla).">A reforzar</span><b>L27</b><span>Revisar restos de la plantilla: notas, opciones alternativas, filas de ejemplo.</span></li>
+        </ul>
+      </li>
+      <li id="v6" class="vigente">
+        <div class="cabver"><strong>v6</strong><span>4 de octubre de 2026 · commit 6f9f6cf · <b>versión vigente</b> · evaluada en E08 (1,43)</span></div>
+        <ul class="lecciones">
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E08: los créditos reconocidos del curso se piden al centro como dato interno.">Funciona</span><b>L11b</b><span>Créditos reconocidos como dato que aporta el centro.</span></li>
+          <li><span class="chip ok" tabindex="0" data-tip="Comprobada en E08: resultados globales con seis cursos.">Funciona</span><b>L28</b><span>Resultados globales con seis cursos: el más antiguo, del autoinforme anterior.</span></li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
 </main>
 
-<footer>Uso interno de la Universidad de Cádiz · Última actualización: 4 de octubre de 2026</footer>
+<footer>Uso interno de la Universidad de Cádiz · Última actualización: 22 de octubre de 2026</footer>
+<script>
+  var filtros = document.querySelectorAll('.estados button');
+  filtros.forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      var estado = boton.getAttribute('aria-pressed') === 'true' ? null : boton.getAttribute('data-filtro');
+      filtros.forEach(function (b) { b.setAttribute('aria-pressed', b === boton && estado !== null); });
+      document.querySelectorAll('.versiones > li').forEach(function (version) {
+        var visibles = 0;
+        version.querySelectorAll('.lecciones li').forEach(function (leccion) {
+          var ver = !estado || leccion.querySelector('.chip').classList.contains(estado);
+          leccion.hidden = !ver;
+          if (ver) { visibles++; }
+        });
+        version.hidden = estado !== null && visibles === 0;
+      });
+    });
+  });
+  // Los lectores de pantalla no leen el ::after: exponen el tooltip como descripción accesible.
+  var descripciones = document.createElement('div');
+  descripciones.hidden = true;
+  document.body.appendChild(descripciones);
+  document.querySelectorAll('[data-tip]').forEach(function (el, i) {
+    var desc = document.createElement('span');
+    desc.id = 'tip-' + i;
+    desc.textContent = el.getAttribute('data-tip');
+    descripciones.appendChild(desc);
+    el.setAttribute('aria-describedby', desc.id);
+  });
+</script>
 </body>
 </html>

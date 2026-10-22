@@ -26,7 +26,8 @@ Cada contenido vive en una sola fuente: enlázala en lugar de copiarla.
   los ejemplos literales proceden solo de títulos con `conjunto = excluido` en
   `evals/casos.csv`.
 - En el mismo cambio, actualiza `SKILL.md`, las referencias afectadas y las tablas de
-  versiones y lecciones de `docs/LECCIONES.md`.
+  versiones y lecciones de `docs/LECCIONES.md`, y regenera el zip que se descarga desde la web
+  con `python3 tools/empaquetar_skill.py` (`dist/uca-informes-calidad.zip`).
 
 ## Datos personales
 
@@ -50,11 +51,10 @@ de `evals/casos/<id>/referencia/`), que está en el repositorio, no en `web/`.
 - `web/evaluacion.html` (resultados) se actualiza tras cada ejecución (pasos 6 y 7 del
   procedimiento). `web/procedimiento.html` explica el proceso y la rúbrica: actualízalo cuando
   cambien en `docs/PROCEDIMIENTO.md` o en `docs/evaluacion/rubrica.md`. `web/asistente.html`
-  explica qué es el asistente y cómo funciona: actualízalo cuando cambien la skill o el MCP.
-  El texto de `SKILL.md` lo incrusta el workflow en el marcador `SKILL_MD` de
-  `web/asistente.html` al publicar.
+  explica qué es el asistente, cómo funciona y qué ha aprendido en cada versión: actualízalo cuando
+  cambien la skill, el MCP o el estado de las lecciones (paso 6 del procedimiento).
 - Cada versión nueva de la skill recibe el siguiente número (v7, v8…) en `docs/LECCIONES.md`
-  y en la línea temporal de `web/evaluacion.html`.
+  y en la línea temporal de `web/asistente.html`.
 - Al modificar una página, cambia su fecha de «Última actualización».
 - La sal de `web/.staticrypt.json` es fija (no es secreta): cambiarla invalida el
   «Recordarme» de quienes ya accedieron.

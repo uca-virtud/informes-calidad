@@ -10,12 +10,16 @@
           --n0: #f6cdc9; --n1: #fde4ad; --n2: #c6e5c8; }
   * { box-sizing: border-box; }
   body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1d2733; background: var(--fondo); }
-  header { background: var(--azul); color: #fff; padding: 2.5rem 1.5rem; }
-  header h1 { margin: 0 0 .4rem; font-size: 1.8rem; }
+  header, nav { padding-inline: max(1.5rem, calc((100% - 1060px) / 2 + 1.5rem)); }
+  header { background: var(--azul); color: #fff; padding-block: 1.8rem; }
+  header h1 { margin: 0 0 .3rem; font-size: 1.7rem; line-height: 1.2; }
   header p { margin: 0; opacity: .9; }
-  nav { background: #172d57; padding: 0 1.5rem; }
-  nav a { display: inline-block; color: #fff; text-decoration: none; padding: .7rem 1rem; opacity: .8; }
-  nav a:hover, nav a[aria-current] { opacity: 1; box-shadow: inset 0 -3px 0 #fff; }
+  nav { background: #172d57; display: flex; overflow-x: auto; scrollbar-width: none; padding-inline: max(.5rem, calc((100% - 1060px) / 2 + .5rem)); }
+  nav a { flex: none; color: #fff; text-decoration: none; padding: .75rem 1rem; opacity: .8; }
+  nav a:hover { opacity: 1; background: rgba(255,255,255,.08); }
+  nav a[aria-current] { opacity: 1; box-shadow: inset 0 -3px 0 #fff; }
+  nav a:focus-visible { opacity: 1; outline: 2px solid #fff; outline-offset: -4px; }
+  @media (max-width: 760px) { header { padding-block: 1.2rem; } header h1 { font-size: 1.4rem; } nav a { padding-inline: .75rem; } }
   main { max-width: 1060px; margin: 0 auto; padding: 1.5rem; }
   section { background: #fff; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
   h2 { margin-top: 0; color: var(--azul); font-size: 1.3rem; }
@@ -76,11 +80,11 @@
   <h1>Informes de calidad UCA</h1>
   <p>Cómo se evalúa el asistente de redacción de autoinformes</p>
 </header>
-<nav>
+<nav aria-label="Secciones del sitio">
   <a href="index.html">Avance</a>
   <a href="asistente.html">El asistente</a>
-  <a href="procedimiento.html" aria-current="page">Procedimiento de evaluación</a>
-  <a href="evaluacion.html">Resultados de la evaluación</a>
+  <a href="procedimiento.html" aria-current="page">Cómo se evalúa</a>
+  <a href="evaluacion.html">Resultados</a>
 </nav>
 
 <main>
@@ -95,7 +99,7 @@
       <li><a href="#proceso">Cómo se hace el seguimiento</a></li>
       <li><a href="#lecciones">Cómo madura una lección</a></li>
       <li><a href="#rubrica">La rúbrica</a></li>
-      <li><a href="asistente.html#instrucciones">Instrucciones del asistente</a></li>
+      <li><a href="asistente.html#descarga">Descargar el asistente</a></li>
     </ul>
   </section>
 
@@ -114,8 +118,8 @@
         <a href="#rubrica">rúbrica</a>.<span class="quien">Corrector de IA 1 · 6-9 min</span></li>
       <li><strong>Un segundo corrector lo puntúa</strong>Otro modelo de IA, independiente, aplica la misma
         rúbrica.<span class="quien">Corrector de IA 2 · a la vez que el paso 3</span></li>
-      <li><strong>Consolidación provisional</strong>Nota de la IA, métricas y puntos para revisión
-        experta.<span class="quien">Herramienta de evaluación · menos de 1 min</span></li>
+      <li><strong>Consolidación provisional</strong>Nota de la IA (la del segundo corrector, o la del primero si
+        falta), métricas y puntos para revisión experta.<span class="quien">Herramienta de evaluación · menos de 1 min</span></li>
       <li class="decide"><strong>El responsable decide</strong>Aprueba, rechaza o deja en observación las lecciones
         propuestas.<span class="quien">Responsable del proyecto</span></li>
     </ol>
@@ -135,15 +139,15 @@
 
     <h3 id="lecciones">Cómo madura una lección</h3>
     <p>Cada diferencia causada por el asistente puede dar lugar a una lección: una regla general, sin datos del título.
-      Estos son los estados que muestra <a href="evaluacion.html#lecciones">Qué aprende el asistente</a>:</p>
+      Estos son los estados que muestra <a href="asistente.html#lecciones">Qué ha aprendido el asistente</a>:</p>
     <ol class="proceso vida">
       <li><strong>En observación</strong>Propuesta, aún fuera del asistente. Se incorpora si el responsable la
         aprueba y procede de la normativa o la guía, se ha visto en dos o más títulos de coordinaciones distintas, o la
         avala la Unidad de Calidad.</li>
       <li><strong>Por comprobar</strong>Incorporada en una nueva versión, a la espera de evaluar otro título. Sigue
         así si la evaluación no puede ponerla a prueba (por ejemplo, si depende de preguntar al centro).</li>
-      <li><strong>Funciona o A reforzar</strong>Según resulte en ese título. Una lección que funcionó puede quedarse
-        corta en un título posterior.</li>
+      <li><strong>Funciona o A reforzar</strong>Según resulte en ese título; una que funcionó puede quedarse corta
+        después. «A reforzar» se mantiene hasta que se refuerza.</li>
       <li><strong>Reforzada</strong>Se sustituye por otra más precisa, que vuelve a «Por comprobar». Hasta entonces,
         la anterior sigue en el asistente.</li>
     </ol>

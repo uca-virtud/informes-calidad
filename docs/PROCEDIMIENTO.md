@@ -30,6 +30,19 @@ De `evals/` se versionan `casos.csv`, `casos/` (documentos públicos de cada tí
 `valoracion-coordinacion*.xlsx`, porque contienen datos personales: de ellos solo llegan al
 repositorio y a la web cifras agregadas y lecciones generalizadas.
 
+### Equivalencias con la web
+
+Los documentos usan códigos; la web, nombres. Los estados de las lecciones, en
+[Estados de una lección](#estados-de-una-lección).
+
+| Código | Nombre en la web |
+|---|---|
+| D1 · D2 · D3 · D4 | Identificación · Indicadores · Cobertura · Análisis |
+| D5 · D6 · D7 | Plan de mejora · ACCUA · Formato |
+| B1 · B2 · B3 | Dato inventado · Valor contradictorio · Origen no garantizado (errores graves) |
+| Discrepancias de causa S | Diferencias por fallo del asistente |
+| Nota final (de B, o de A si no hay B) | Nota media |
+
 ## Requisitos previos (una vez)
 
 1. MCP de LinceBI configurado en Copilot CLI contra `data.uca.es` (lo configura el
@@ -211,34 +224,34 @@ En `evals/historial.md` (solo local):
 En `docs/LECCIONES.md` (versionado), sin datos del título más allá de su sigla:
 
 - «Versiones de la skill»: añade la ejecución a «Evaluada en» de la versión usada.
-- «Lecciones incorporadas»: en la columna «Estado», sustituye cada «validar en Enn» por
+- «Lecciones incorporadas»: en «Seguimiento», sustituye cada «validar en Enn» por
   «validada en Enn» o «insuficiente en Enn (<motivo>)». Si la ejecución contradice una
-  lección ya validada, añade al final «insuficiente en Enn (<motivo>)»; el estado conserva
-  así el orden cronológico.
+  lección ya validada, añade al final «insuficiente en Enn (<motivo>)», para conservar el
+  orden cronológico. Ajusta «Estado» y el recuento previo a la tabla según
+  [Estados de una lección](#estados-de-una-lección).
 - «Lecciones candidatas»: una fila por candidata nueva, con el siguiente número C libre;
   actualiza «Observada en» de las que se repitan.
 
-Actualiza también `web/evaluacion.html`, sin datos personales ni detalles que identifiquen
-documentos internos:
+Actualiza también `web/evaluacion.html`, con los nombres de la
+[tabla de equivalencias](#equivalencias-con-la-web) y sin datos personales ni detalles que
+identifiquen documentos internos. Cada ejecución añade:
 
-- cifras globales tomadas de `evals/historial.md`, en las tarjetas de «En resumen» (versiones
-  iniciales frente a asistente actual, con sus barras y porcentaje de cambio) y en la línea de
-  contexto;
-- en «Resultados», la barra de la ejecución en «Evolución de la nota» y, si repite un título, su
-  par en «Mismo título, antes y después»;
-- en «Por ejecución», la fila de la ejecución (versión de la skill con su tooltip, modelo que
-  generó el borrador con su identificador en el tooltip, nota media,
-  diferencias por fallo del asistente y un chip con el número de
-  errores graves cuyo tooltip nombra cada uno —dato inventado, valor contradictorio u origen no
-  garantizado— con su motivo generalizado; no se publican los códigos B1-B3) y su fila
-  desplegable (valoración breve, nota de cada aspecto D1-D7, errores graves y material). Los
-  puntos pendientes de revisión experta no se resumen en la web, porque no miden al
-  asistente (incluyen errores del autoinforme y datos que faltaban); quedan en la ficha de la
-  ejecución, que se enlaza en «Material»;
-- la lista «Qué dicen los resultados», si la ejecución la cambia;
-- en «Qué aprende el asistente en cada versión», el estado de las lecciones contrastadas
-  (Funciona, Reforzada, A reforzar, Por comprobar), sus recuentos y «Próximos pasos»;
-- la fecha de «Última actualización».
+| Sección | Qué se actualiza |
+|---|---|
+| «En resumen» (al principio) | Tarjetas (versiones iniciales frente a asistente actual y % de cambio) y línea de contexto bajo ellas (evaluaciones, grados y centros, versiones y lecciones). |
+| «Resultados en detalle» › «Por ejecución» | Fila (versión y modelo con tooltip, nota media, diferencias por fallo del asistente, chip de errores graves con su motivo generalizado y valoración de la coordinación: «Pendiente», y «No se pide» en las ejecuciones anteriores del mismo título) y fila desplegable (valoración breve, notas por aspecto, errores graves y material). |
+| «Resultados en detalle» › «Nota por aspecto» | Fila con la ejecución, el título, la versión y la nota de cada aspecto. |
+| «Resultados en detalle» › «Mismo título» | Par antes y después si la ejecución repite título. |
+| «Conclusiones y próximos pasos» | Qué hace ya bien y en qué flojea el asistente, qué comprobará la siguiente ejecución, estado de la valoración de las coordinaciones y número de lecciones en observación. |
+| Pie | Fecha de «Última actualización». |
+
+En `web/asistente.html`, actualiza «Qué ha aprendido el asistente en cada versión»: estado de las
+lecciones contrastadas con su tooltip, recuentos de cada estado y fecha de «Última
+actualización».
+
+Los puntos pendientes de revisión experta no van a la web, porque no miden al asistente
+(incluyen errores del autoinforme y datos que faltaban): quedan en la ficha, enlazada en
+«Material».
 
 Después presenta al responsable un resumen con las notas, los bloqueantes, lo pendiente de
 revisión experta y las lecciones candidatas. El responsable anota en la ficha qué lecciones
@@ -288,6 +301,9 @@ y el rol de quien valora. El orquestador ejecuta
 Una hoja anterior a la separación de D1 y D2 se acepta con aviso: «Datos» puntúa ambas y no
 hay D6 ni errores graves.
 
+En la tabla de ejecuciones de `web/evaluacion.html`, cambia la columna «Valoración de la
+coordinación» de esa ejecución de «Pendiente» a «Recibida» (`<span class="chip limpio">`).
+
 Después el orquestador presenta al responsable:
 
 - **Lecciones candidatas** a partir de los comentarios y los textos libres, generalizadas
@@ -319,25 +335,26 @@ rúbrica se refleja también en «La rúbrica de evaluación» de `web/procedimi
 Las lecciones que apruebe el responsable se aplican a la skill en un cambio pequeño y con su
 propia versión, fuera de la ejecución. Después, el orquestador añade a `docs/LECCIONES.md`
 una fila en «Versiones de la skill» con el siguiente número, el commit y las lecciones que
-incorpora, y cada lección a «Lecciones incorporadas» con su origen, dónde está en la skill y
-el estado «Incorporada el <fecha>; validar en Enn», donde Enn es la siguiente ejecución de otro
-título. Si procede de una candidata, su fila en «Lecciones candidatas» pasa a «Incorporada
-como Lnn».
+incorpora, y cada lección a «Lecciones incorporadas» con su origen, dónde está en la skill,
+el estado «Por comprobar» y el seguimiento «Incorporada el <fecha>; validar en Enn», donde Enn
+es la siguiente ejecución de otro título. Si procede de una candidata, su fila en «Lecciones
+candidatas» pasa a «Incorporada como Lnn».
 
-En `web/evaluacion.html`, añade la nueva versión a la línea temporal de «Qué aprende el
+En `web/asistente.html`, añade la nueva versión a la línea temporal de «Qué aprende el
 asistente en cada versión» con su número, commit, fecha y lecciones en «Por comprobar».
 
-Ciclo de vida de una lección:
+### Estados de una lección
 
-1. **Candidata**: observada, aún fuera de la skill (tabla «Lecciones candidatas»).
-2. **Incorporada**, con «validar en Enn» mientras espera contraste.
-3. **Validada en Enn** o **insuficiente en Enn (<motivo>)**. Una lección ya validada puede
-   resultar insuficiente en una ejecución posterior; el estado acumula ambas anotaciones. Si
-   la evaluación no puede ejercitarla (p. ej. porque A no puede preguntar al centro), queda
-   «sin evidencia».
-4. **Reforzada** (p. ej. L16 → L16b): el responsable aprueba una lección nueva que la
-   refuerza o sustituye y que vuelve a empezar en el estado 2. Hasta entonces, la lección
-   insuficiente sigue en la skill.
+El mismo nombre en `docs/LECCIONES.md` («Estado») y en la web; «Seguimiento» guarda las
+anotaciones que lo justifican.
+
+| Estado | Cuándo | Anotación en «Seguimiento» |
+|---|---|---|
+| En observación | Observada, aún fuera de la skill (tabla «Lecciones candidatas»). | — |
+| Por comprobar | Incorporada, a la espera de otro título, o la evaluación no puede ejercitarla (p. ej. A no puede preguntar al centro). | «validar en Enn» o «sin evidencia» |
+| Funciona | Validada en un título posterior y sin insuficiencias pendientes. | «validada en Enn» |
+| A reforzar | Insuficiente en alguna ejecución, aunque antes se validara, y sin refuerzo aprobado. Sigue en la skill. | «insuficiente en Enn (<motivo>)» |
+| Reforzada | El responsable aprobó una lección que la sustituye o amplía (p. ej. L16 → L16b), que empieza en «Por comprobar». | «→ Lnn» tras la insuficiencia |
 
 ## Reglas contra el sobreajuste
 

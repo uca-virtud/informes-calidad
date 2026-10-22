@@ -7,7 +7,7 @@ valida; los resultados de cada ejecución están en `evals/historial.md` (solo l
 
 Cada ejecución sigue el [procedimiento de evaluación](PROCEDIMIENTO.md), que también define
 [cómo se actualiza este documento](PROCEDIMIENTO.md#paso-6-registro-y-decisión-del-responsable)
-y [los estados de una lección](PROCEDIMIENTO.md#después-de-la-ejecución-aplicar-lecciones).
+y [los estados de una lección](PROCEDIMIENTO.md#estados-de-una-lección).
 
 ## Versiones de la skill
 
@@ -33,38 +33,42 @@ Rutas relativas a `skills/uca-informes-calidad/`; «checklist n» es el punto n 
 verificación de `guia-redaccion.md`. Una lección insuficiente sigue en la skill hasta que el
 responsable apruebe su refuerzo.
 
-| # | Lección | Origen | Dónde está en la skill | Estado |
-|---|---|---|---|---|
-| L1 | Incluir el análisis de calificaciones por asignatura (6.3, `PorcentajeCalificaciones`) | E01 | `SKILL.md`, `estilo-y-ejemplos.md` | Incorporada |
-| L2 | P01-03 (PTGAS) se analiza a nivel de centro | E01 | `estilo-y-ejemplos.md` | Incorporada |
-| L3 | Objetivos de la memoria (§8.1) en tabla, respetando la tasa a la que se asocia cada uno | E01, E03 | `estilo-y-ejemplos.md` | Incorporada |
-| L4 | Extraer de producción (`data.uca.es`), no de pruebas (`datapru.uca.es`) | E01, E02 | `SKILL.md` (comprobación del host antes de extraer y parada si es pruebas); el script avisa si `extraccion.entorno` es `datapru` | Incorporada el 2-10-2026; validada en E04 (producción comprobada y sin B3 en E04-E07) |
-| L5 | Extraer toda la serie en vivo; el autoinforme anterior solo para columnas fuera de la ventana de cinco cursos y valores incoherentes | E03 | `mapa-indicadores-lincebi.md` («Regla de la serie histórica»), `SKILL.md` | Incorporada el 2-10-2026; validada en E04 (D2 = 2 en E04-E07) |
-| L6 | Registrar entorno y fecha de extracción; advertir de la volatilidad de P04-05 | E02, E03 | Bloque `extraccion` del JSON; el script avisa si falta | Incorporada el 2-10-2026; validada en E04 |
-| L7 | Ningún indicador de satisfacción por encima de 5; misma alineación de cohortes en título y centro | E03 | Aviso del script, comprobaciones del mapa y checklist | Incorporada el 2-10-2026; validada en E04 (sin B2 ni cohortes desalineadas en E04-E07) |
-| L8 | Egresados: cinco últimas cohortes con datos (conv. 2026: `2019-20 … 2023-24`), análisis de la cohorte más reciente, nº de encuestas y egresados | E03 | El script reetiqueta las cabeceras de la plantilla con `anios_egresados` | Incorporada el 2-10-2026 por decisión del responsable; validada en E04 |
-| L9 | Entre 1 y 5 puntos débiles en total, solo los asumibles con acción propia | E03 (y recuento de E02) | `SKILL.md`, `guia-redaccion.md`, `estilo-y-ejemplos.md` | Incorporada el 2-10-2026; validada en E04 (entre 2 y 4 PD en E04-E07) |
-| L10 | Pedir al centro desde el inicio los datos internos (doble título, prácticas, convenios, tutores, créditos reconocidos, primer curso, rutas UCADrive) | E02, E03 | `SKILL.md`, `mapa-indicadores-lincebi.md` | Incorporada el 2-10-2026; sin evidencia: la evaluación no la ejercita, porque A no puede preguntar |
-| L11 | Créditos reconocidos desde LinceBI | E02 | — (sustituida por L11b) | Incorporada el 2-10-2026; insuficiente en E04 (LinceBI no publica ese informe; confirmado en E05-E07) → L11b |
-| L11b | Reformulación de L11: créditos reconocidos del curso como dato del centro; si el autoinforme anterior cita su fuente, reproducirla en el `[PENDIENTE]` | E04-E07 | `mapa-indicadores-lincebi.md` («Datos que no están en LinceBI»), `SKILL.md`, `estructura-autoinforme.md` | Incorporada el 4-10-2026; validada en E08 (reconocimientos del curso pedidos al centro como dato interno) |
-| L12 | Composición de la CGC: remitir a la web del título | E02 | `SKILL.md`, `estilo-y-ejemplos.md`, `estructura-autoinforme.md` | Incorporada el 2-10-2026; validada en E04 |
-| L13 | Evidencias en el seguimiento: rutas UCADrive por criterio y curso; enlaces externos para los Anexos II y IV | E03 | `estructura-autoinforme.md` | Incorporada el 2-10-2026; sin incidencias en E04; insuficiente en E06 (sin rutas ni marcadores de evidencias por criterio); sin incidencias en E07 |
-| L14 | Conservar la numeración original de las recomendaciones ACCUA | E03 | `SKILL.md`, `estilo-y-ejemplos.md` | Incorporada el 2-10-2026; validada en E04 |
-| L15 | Responsables y fechas concretos en el plan de mejora | E01 | Documento opcional «plan de mejora vivo» | Incorporada |
-| L16 | Propuesta no es hecho: acciones, recomendaciones y texto modelo no se describen como realizados sin evidencia (C3) | E01-E04 | `guia-redaccion.md` (principios y checklist), `SKILL.md` (verificación) | Incorporada el 3-10-2026; insuficiente en E05 (texto modelo en negro conservado) → L16b |
-| L16b | Refuerzo de L16: releer el texto modelo conservado en negro y contrastarlo con la memoria | E03-E05 | `guia-redaccion.md` (checklist 11), `SKILL.md` (verificación) | Incorporada el 3-10-2026; validada en E06 |
-| L17 | La depuración cubre celdas de tablas y párrafos mixtos y conserva los `[PENDIENTE]` (C6) | E01-E04 | `scripts/depurar_instrucciones.py`, `SKILL.md` (paso 4b), checklist | Incorporada el 3-10-2026; validada en E05, tras corregir que vaciaba las etiquetas cortas en azul de las tablas |
-| L18 | La habilitación profesional y demás datos de identidad se toman de la memoria | E04 (norma: memoria) | `guia-redaccion.md` | Incorporada el 3-10-2026; validada en E05 |
-| L19 | Cero no es «sin dato»: sin guiones ambiguos; buscar en la entrada antes de dejar pendiente | E04, E05 | `guia-redaccion.md` (checklist 12), `SKILL.md` | Incorporada el 3-10-2026; validada en E06; insuficiente en E07 (guiones como 0 %; pendientes con dato en la entrada) y en E08 (guiones narrados como ausencia de actividad) |
-| L20 | Anexos con fuente en LinceBI extraídos del informe previsto; un agregado o enlace genérico no basta (C5) | E01-E03, E05 | `guia-redaccion.md` (checklist 12) | Incorporada el 3-10-2026; insuficiente en E06 (Anexo IV con solo una selección) → L26 |
-| L21 | Recomendaciones de informes ACCUA anteriores declaradas abiertas, con número y fecha (C4) | E01-E03, E05 | `guia-redaccion.md` (plan de mejora y checklist 13) | Incorporada el 3-10-2026; validada en E06 |
-| L22 | Concluir solo lo que mide el indicador; sin generalizar sin comprobar (C2) | E01-E03, E05 | `guia-redaccion.md` (checklist 14) | Incorporada el 3-10-2026; insuficiente en E06 → L23 |
-| L23 | Refuerzo de L22: adjetivos de evolución contrastados con toda la serie; objetivos de la memoria solo con su tasa, en todas las apariciones | E01-E03, E05, E06 | `guia-redaccion.md` (checklist 14) | Incorporada el 3-10-2026; insuficiente en E07 (evolución del centro con el signo cambiado; los objetivos de la memoria, correctos) y en E08 («mayoritariamente» con menos de la mitad; causa de una evolución atribuida sin fuente) |
-| L24 | Contrastar los cursos comunes con el autoinforme anterior; sin analizar la evolución si hay diferencias sistemáticas | E05, E06 | `guia-redaccion.md` (principios y checklist 15) | Incorporada el 3-10-2026; validada en E07 |
-| L25 | Ampliación de L16: estado conocido solo por el autoinforme anterior no es vigente; sin juzgar la eficacia sin implantación acreditada | E04, E06 | `guia-redaccion.md` | Incorporada el 3-10-2026; insuficiente en E07 (eficacia juzgada sin implantación acreditada) y en E08 (actividad del curso afirmada sin evidencia) |
-| L26 | Refuerzo de L20: anexo completo o con enlace específico al informe íntegro, nunca condicionado | E01-E03, E06 | `guia-redaccion.md` | Incorporada el 3-10-2026; validada en E07 |
-| L27 | Verificar restos de plantilla en negro: notas de cumplimentación, opciones alternativas, filas de ejemplo, enlaces pegados | E05, E06 | `guia-redaccion.md` (checklist 16), `SKILL.md` | Incorporada el 3-10-2026; insuficiente en E07 (notas de cumplimentación en la tabla del Anexo II) y en E08 (marcadores de plantilla y opciones alternativas en negro) |
-| L28 | Resultados globales del 6.3 con seis cursos: el más antiguo, fuera de la ventana de LinceBI, del autoinforme anterior (C9) | E04, E05, E07 | `mapa-indicadores-lincebi.md` (años y regla de la serie histórica), `SKILL.md`, `estructura-autoinforme.md`, `guia-redaccion.md` (checklist 2) | Incorporada el 4-10-2026; validada en E08 (seis cursos, los dos más antiguos del autoinforme anterior) |
+«Estado» usa el vocabulario de la web ([significado](PROCEDIMIENTO.md#estados-de-una-lección))
+y «Seguimiento», la cronología que lo justifica. Estado actual: 16 Funciona, 4 Reforzada,
+5 A reforzar, 5 Por comprobar.
+
+| # | Estado | Lección | Origen | Dónde está en la skill | Seguimiento |
+|---|---|---|---|---|---|
+| L1 | Por comprobar | Incluir el análisis de calificaciones por asignatura (6.3, `PorcentajeCalificaciones`) | E01 | `SKILL.md`, `estilo-y-ejemplos.md` | Incorporada |
+| L2 | Por comprobar | P01-03 (PTGAS) se analiza a nivel de centro | E01 | `estilo-y-ejemplos.md` | Incorporada |
+| L3 | Por comprobar | Objetivos de la memoria (§8.1) en tabla, respetando la tasa a la que se asocia cada uno | E01, E03 | `estilo-y-ejemplos.md` | Incorporada |
+| L4 | Funciona | Extraer de producción (`data.uca.es`), no de pruebas (`datapru.uca.es`) | E01, E02 | `SKILL.md` (comprobación del host antes de extraer y parada si es pruebas); el script avisa si `extraccion.entorno` es `datapru` | Incorporada el 2-10-2026; validada en E04 (producción comprobada y sin B3 en E04-E07) |
+| L5 | Funciona | Extraer toda la serie en vivo; el autoinforme anterior solo para columnas fuera de la ventana de cinco cursos y valores incoherentes | E03 | `mapa-indicadores-lincebi.md` («Regla de la serie histórica»), `SKILL.md` | Incorporada el 2-10-2026; validada en E04 (D2 = 2 en E04-E07) |
+| L6 | Funciona | Registrar entorno y fecha de extracción; advertir de la volatilidad de P04-05 | E02, E03 | Bloque `extraccion` del JSON; el script avisa si falta | Incorporada el 2-10-2026; validada en E04 |
+| L7 | Funciona | Ningún indicador de satisfacción por encima de 5; misma alineación de cohortes en título y centro | E03 | Aviso del script, comprobaciones del mapa y checklist | Incorporada el 2-10-2026; validada en E04 (sin B2 ni cohortes desalineadas en E04-E07) |
+| L8 | Funciona | Egresados: cinco últimas cohortes con datos (conv. 2026: `2019-20 … 2023-24`), análisis de la cohorte más reciente, nº de encuestas y egresados | E03 | El script reetiqueta las cabeceras de la plantilla con `anios_egresados` | Incorporada el 2-10-2026 por decisión del responsable; validada en E04 |
+| L9 | Funciona | Entre 1 y 5 puntos débiles en total, solo los asumibles con acción propia | E03 (y recuento de E02) | `SKILL.md`, `guia-redaccion.md`, `estilo-y-ejemplos.md` | Incorporada el 2-10-2026; validada en E04 (entre 2 y 4 PD en E04-E07) |
+| L10 | Por comprobar | Pedir al centro desde el inicio los datos internos (doble título, prácticas, convenios, tutores, créditos reconocidos, primer curso, rutas UCADrive) | E02, E03 | `SKILL.md`, `mapa-indicadores-lincebi.md` | Incorporada el 2-10-2026; sin evidencia: la evaluación no la ejercita, porque A no puede preguntar |
+| L11 | Reforzada | Créditos reconocidos desde LinceBI | E02 | — (sustituida por L11b) | Incorporada el 2-10-2026; insuficiente en E04 (LinceBI no publica ese informe; confirmado en E05-E07) → L11b |
+| L11b | Funciona | Reformulación de L11: créditos reconocidos del curso como dato del centro; si el autoinforme anterior cita su fuente, reproducirla en el `[PENDIENTE]` | E04-E07 | `mapa-indicadores-lincebi.md` («Datos que no están en LinceBI»), `SKILL.md`, `estructura-autoinforme.md` | Incorporada el 4-10-2026; validada en E08 (reconocimientos del curso pedidos al centro como dato interno) |
+| L12 | Funciona | Composición de la CGC: remitir a la web del título | E02 | `SKILL.md`, `estilo-y-ejemplos.md`, `estructura-autoinforme.md` | Incorporada el 2-10-2026; validada en E04 |
+| L13 | A reforzar | Evidencias en el seguimiento: rutas UCADrive por criterio y curso; enlaces externos para los Anexos II y IV | E03 | `estructura-autoinforme.md` | Incorporada el 2-10-2026; sin incidencias en E04; insuficiente en E06 (sin rutas ni marcadores de evidencias por criterio); sin incidencias en E07 |
+| L14 | Funciona | Conservar la numeración original de las recomendaciones ACCUA | E03 | `SKILL.md`, `estilo-y-ejemplos.md` | Incorporada el 2-10-2026; validada en E04 |
+| L15 | Por comprobar | Responsables y fechas concretos en el plan de mejora | E01 | Documento opcional «plan de mejora vivo» | Incorporada |
+| L16 | Reforzada | Propuesta no es hecho: acciones, recomendaciones y texto modelo no se describen como realizados sin evidencia (C3) | E01-E04 | `guia-redaccion.md` (principios y checklist), `SKILL.md` (verificación) | Incorporada el 3-10-2026; insuficiente en E05 (texto modelo en negro conservado) → L16b |
+| L16b | Funciona | Refuerzo de L16: releer el texto modelo conservado en negro y contrastarlo con la memoria | E03-E05 | `guia-redaccion.md` (checklist 11), `SKILL.md` (verificación) | Incorporada el 3-10-2026; validada en E06 |
+| L17 | Funciona | La depuración cubre celdas de tablas y párrafos mixtos y conserva los `[PENDIENTE]` (C6) | E01-E04 | `scripts/depurar_instrucciones.py`, `SKILL.md` (paso 4b), checklist | Incorporada el 3-10-2026; validada en E05, tras corregir que vaciaba las etiquetas cortas en azul de las tablas |
+| L18 | Funciona | La habilitación profesional y demás datos de identidad se toman de la memoria | E04 (norma: memoria) | `guia-redaccion.md` | Incorporada el 3-10-2026; validada en E05 |
+| L19 | A reforzar | Cero no es «sin dato»: sin guiones ambiguos; buscar en la entrada antes de dejar pendiente | E04, E05 | `guia-redaccion.md` (checklist 12), `SKILL.md` | Incorporada el 3-10-2026; validada en E06; insuficiente en E07 (guiones como 0 %; pendientes con dato en la entrada) y en E08 (guiones narrados como ausencia de actividad) |
+| L20 | Reforzada | Anexos con fuente en LinceBI extraídos del informe previsto; un agregado o enlace genérico no basta (C5) | E01-E03, E05 | `guia-redaccion.md` (checklist 12) | Incorporada el 3-10-2026; insuficiente en E06 (Anexo IV con solo una selección) → L26 |
+| L21 | Funciona | Recomendaciones de informes ACCUA anteriores declaradas abiertas, con número y fecha (C4) | E01-E03, E05 | `guia-redaccion.md` (plan de mejora y checklist 13) | Incorporada el 3-10-2026; validada en E06 |
+| L22 | Reforzada | Concluir solo lo que mide el indicador; sin generalizar sin comprobar (C2) | E01-E03, E05 | `guia-redaccion.md` (checklist 14) | Incorporada el 3-10-2026; insuficiente en E06 → L23 |
+| L23 | A reforzar | Refuerzo de L22: adjetivos de evolución contrastados con toda la serie; objetivos de la memoria solo con su tasa, en todas las apariciones | E01-E03, E05, E06 | `guia-redaccion.md` (checklist 14) | Incorporada el 3-10-2026; insuficiente en E07 (evolución del centro con el signo cambiado; los objetivos de la memoria, correctos) y en E08 («mayoritariamente» con menos de la mitad; causa de una evolución atribuida sin fuente) |
+| L24 | Funciona | Contrastar los cursos comunes con el autoinforme anterior; sin analizar la evolución si hay diferencias sistemáticas | E05, E06 | `guia-redaccion.md` (principios y checklist 15) | Incorporada el 3-10-2026; validada en E07 |
+| L25 | A reforzar | Ampliación de L16: estado conocido solo por el autoinforme anterior no es vigente; sin juzgar la eficacia sin implantación acreditada | E04, E06 | `guia-redaccion.md` | Incorporada el 3-10-2026; insuficiente en E07 (eficacia juzgada sin implantación acreditada) y en E08 (actividad del curso afirmada sin evidencia) |
+| L26 | Funciona | Refuerzo de L20: anexo completo o con enlace específico al informe íntegro, nunca condicionado | E01-E03, E06 | `guia-redaccion.md` | Incorporada el 3-10-2026; validada en E07 |
+| L27 | A reforzar | Verificar restos de plantilla en negro: notas de cumplimentación, opciones alternativas, filas de ejemplo, enlaces pegados | E05, E06 | `guia-redaccion.md` (checklist 16), `SKILL.md` | Incorporada el 3-10-2026; insuficiente en E07 (notas de cumplimentación en la tabla del Anexo II) y en E08 (marcadores de plantilla y opciones alternativas en negro) |
+| L28 | Funciona | Resultados globales del 6.3 con seis cursos: el más antiguo, fuera de la ventana de LinceBI, del autoinforme anterior (C9) | E04, E05, E07 | `mapa-indicadores-lincebi.md` (años y regla de la serie histórica), `SKILL.md`, `estructura-autoinforme.md`, `guia-redaccion.md` (checklist 2) | Incorporada el 4-10-2026; validada en E08 (seis cursos, los dos más antiguos del autoinforme anterior) |
 
 ### Lecciones candidatas
 
