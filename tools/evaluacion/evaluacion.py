@@ -53,6 +53,7 @@ ASPECTOS_HOJA = {"identificación": ["D1"], "indicadores": ["D2"], "datos": ["D1
 TEXTOS_HOJA = {"¿qué cambiaría del borrador?": "Qué cambiaría", "¿qué echa en falta?": "Qué echa en falta",
                "otros comentarios": "Otros comentarios"}
 UTILIDAD = ["Esfuerzo", "Global"]
+SI_NO = {"sí": True, "si": True, "no": False}
 
 
 def error(msg):
@@ -570,10 +571,11 @@ def actualizar_historial():
                         f"{round(100 * b['palabras'] / h['palabras'])} %", f"{b['pd']} / {h['pd']}",
                         b["pendientes"], f"{r['anexo']['porcentaje']} %" if r["anexo"] else "—",
                         r["causas_b"]["S"], len(r["pendientes"]) + len(v["pendientes"] if v else []),
-                        nota(coord), nota(dif)] + [nota(v["utilidad"].get(u) if v else None) for u in UTILIDAD])
+                        nota(coord), nota(dif), nota(v["utilidad"].get("Esfuerzo") if v else None),
+                        nota(global_valoracion(v) if v else None)])
     cab = ["Ejecución", "Fecha", "Skill", "Modelo A", "Rúbrica"] + DIMENSIONES + [
         "Media", "Bloq.", "Extensión", "PD IA/hum.", "[PEND.]", "Anexo I (cota sup.)", "Causas S", "Pend. revisión",
-        "Coord.", "Δ coord.−IA"] + [f"{u} (1-5)" for u in UTILIDAD]
+        "Coord.", "Δ coord.−IA", "Esfuerzo (1-5)", "Global"]
     bloque = (f"{MARCA_INI}\nGenerada por `evaluacion.py medir` y `valoracion`; no editar a mano. "
               f"«Coord.» es la media de la coordinación pasada a 0-2.\n\n{tabla_md(cab, filas)}\n{MARCA_FIN}")
     historial = EVALS / "historial.md"
@@ -653,20 +655,36 @@ def media(valores):
     return round(sum(validos) / len(validos), 2) if validos else None
 
 
+def si_no(valor):
+    return SI_NO.get(str(valor or "").strip().lower().rstrip("."))
+
+
 def leer_hoja_valoracion(ruta):
     import openpyxl
     ws = openpyxl.load_workbook(ruta, data_only=True).active
-    hoja = {"fichero": ruta.name, "rol": ws["C5"].value, "fecha": str(ws["C6"].value or "") or None,
-            "notas": {}, "comentarios": {}, "graves": None, "comentario_graves": None, "textos": {}}
+    fecha = ws["C6"].value
+    fecha = fecha.date().isoformat() if hasattr(fecha, "date") else (str(fecha).strip() if fecha else None)
+    hoja = {"fichero": ruta.name, "rol": ws["C5"].value, "fecha": fecha,
+            "notas": {}, "comentarios": {}, "graves": None, "comentario_graves": None, "partida": None,
+            "textos": {}}
     formato_anterior = False
     for fila in range(1, ws.max_row + 1):
         etiqueta = str(ws.cell(fila, 2).value or "").strip().lower()
         texto_a = str(ws.cell(fila, 1).value or "").strip().lower()
         valor, comentario = ws.cell(fila, 4).value, ws.cell(fila, 5).value
         if etiqueta == "errores graves":
-            respuesta = str(valor or "").strip().lower()
-            hoja["graves"] = {"sí": True, "si": True, "no": False}.get(respuesta)
+            # Hojas antiguas: la respuesta se escribía a veces en la columna del comentario.
+            hoja["graves"] = si_no(valor) if valor not in (None, "") else si_no(comentario)
+            if valor in (None, "") and hoja["graves"] is not None:
+                print(f"AVISO: {ruta.name}: «Errores graves» se toma de la columna del comentario ({comentario}).")
             hoja["comentario_graves"] = comentario
+        elif etiqueta == "global" and isinstance(valor, str) and valor.strip():
+            # Hoja v3: «Global» es Sí/No (punto de partida); las anteriores, una nota de 1 a 5.
+            hoja["partida"] = si_no(valor)
+            if hoja["partida"] is None:
+                print(f"AVISO: {ruta.name}, fila {fila}: «{valor}» no es Sí ni No; se ignora.")
+            if comentario:
+                hoja["comentarios"]["Global"] = str(comentario).strip()
         elif etiqueta in ASPECTOS_HOJA:
             formato_anterior |= etiqueta == "datos"
             if valor not in (None, "") and not (isinstance(valor, (int, float)) and 1 <= valor <= 5 and valor == int(valor)):
@@ -693,6 +711,13 @@ def consolidar_valoracion(hojas, metricas):
     notas_0_2 = {d: None if notas_1_5[d] is None else a_escala_rubrica(notas_1_5[d]) for d in DIMENSIONES}
     respuestas = [h["graves"] for h in hojas if h["graves"] is not None]
     graves = None if not respuestas else any(respuestas)
+    partidas = [h.get("partida") for h in hojas if h.get("partida") is not None]
+    if not partidas:
+        partida = None
+    elif len(partidas) == 1:
+        partida = "sí" if partidas[0] else "no"
+    else:
+        partida = f"{sum(partidas)} de {len(partidas)} sí"
     pendientes = []
     for d in DIMENSIONES:
         ia = metricas["final"].get(d)
@@ -705,10 +730,20 @@ def consolidar_valoracion(hojas, metricas):
         pendientes.append(f"Coordinación: no aprecia errores graves y la IA anotó {', '.join(graves_ia)}")
     return {"hojas": hojas, "notas_1_5": {d: notas_1_5[d] for d in DIMENSIONES}, "notas": notas_0_2,
             "media": media(notas_0_2.values()), "utilidad": {u: notas_1_5[u] for u in UTILIDAD},
-            "graves": graves, "pendientes": pendientes}
+            "partida": partida, "graves": graves, "pendientes": pendientes}
 
 
-def bloque_valoracion(v, metricas):
+def global_valoracion(v):
+    """«Global»: Sí/No en la hoja v3 (con varias hojas, «k de n» responden Sí); nota 1-5 en las anteriores."""
+    if v.get("partida") is not None:
+        return v["partida"]
+    nota_global = v["utilidad"].get("Global")
+    return None if nota_global is None else f"{decimal(nota_global)} (1-5)"
+
+
+def bloque_valoracion(v, metricas, detalle=False):
+    """Bloque de la valoración. Sin `detalle`, solo cifras agregadas (va a la ficha, que se versiona);
+    con `detalle`, también el rol y los comentarios literales (solo para la consola, en local)."""
     fmt = decimal
     filas = []
     for d in DIMENSIONES:
@@ -717,22 +752,25 @@ def bloque_valoracion(v, metricas):
         filas.append([d, fmt(v["notas_1_5"][d]), fmt(c), fmt(ia), fmt(dif)])
     dif_media = None if v["media"] is None or metricas["media"] is None else round(v["media"] - metricas["media"], 2)
     graves = {True: "sí", False: "no", None: "sin respuesta"}[v["graves"]]
+    fechas = sorted({h["fecha"] for h in v["hojas"] if h["fecha"]})
     partes = [
-        "Valoraciones: " + "; ".join(f"`{h['fichero']}` ({h['rol'] or 'rol sin indicar'}, {h['fecha'] or 'sin fecha'})"
-                                     for h in v["hojas"]) + ".",
+        f"Hojas de valoración recibidas: {len(v['hojas'])}"
+        + (f" ({', '.join(fechas)})" if fechas else "") + ".",
         "",
         tabla_md(["Dim.", "Coordinación (1-5)", "Equivale (0-2)", "IA (final)", "Diferencia"], filas),
         f"\nMedia: coordinación {fmt(v['media'])}, IA {fmt(metricas['media'])} (diferencia {fmt(dif_media)}). "
-        + " ".join(f"{u} (1-5): {fmt(v['utilidad'][u])}." for u in UTILIDAD)
-        + f" Errores graves según la coordinación: {graves}.",
+        + f"Esfuerzo (1-5): {fmt(v['utilidad']['Esfuerzo'])}. Global (punto de partida): "
+        + f"{global_valoracion(v) or '—'}. Errores graves según la coordinación: {graves}.",
     ]
+    if not detalle:
+        return "\n".join(partes + ["", "Los comentarios de la coordinación no se versionan: están en "
+                                   "`valoracion.json` y en las hojas, solo en local."])
     for h in v["hojas"]:
-        detalle = [f"- {k}: {t}" for k, t in h["comentarios"].items()]
+        lineas = [f"- {k}: {t}" for k, t in h["comentarios"].items()]
         if h["comentario_graves"]:
-            detalle.append(f"- Errores graves: {h['comentario_graves']}")
-        detalle += [f"- {k}: {t}" for k, t in h["textos"].items()]
-        if detalle:
-            partes += ["", f"Comentarios de `{h['fichero']}`:", *detalle]
+            lineas.append(f"- Errores graves: {h['comentario_graves']}")
+        lineas += [f"- {k}: {t}" for k, t in h["textos"].items()]
+        partes += ["", f"`{h['fichero']}` ({h['rol'] or 'rol sin indicar'}):", *lineas]
     return "\n".join(partes)
 
 
@@ -763,7 +801,7 @@ def cmd_valoracion(args):
     (carpeta / "valoracion.json").write_text(json.dumps(v, ensure_ascii=False, indent=2), encoding="utf-8")
     escribir_valoracion_en_ficha(carpeta, v, metricas)
     actualizar_historial()
-    print(bloque_valoracion(v, metricas))
+    print(bloque_valoracion(v, metricas, detalle=True))
     print(f"\nActualizados {carpeta.name}/valoracion.json, ficha.md y evals/historial.md")
 
 

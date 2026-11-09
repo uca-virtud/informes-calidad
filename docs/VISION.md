@@ -26,9 +26,11 @@ borradores de los informes generados con ayuda de IA.
 
 1. **Modelo de datos e informe agregado en LinceBI** para exponer rápidamente los
    indicadores de calidad (P01–P08) que necesita el Anexo I, descargables en su formato.
-   Solicitado al Sistema de Información, con puesta en marcha deseada en noviembre de 2026
-   para los autoinformes del curso 2025-26; el cuadro de mando se solicitará más adelante.
-   *En desarrollo.* Detalle en
+   *Disponible* desde noviembre de 2026 para los autoinformes del curso 2025-26: el Sistema
+   de Información publicó el informe agregado
+   (`/public/Datos Académicos/Calidad/Autoinforme/Autoinforme.prpt`), que la skill consulta
+   primero; los informes disgregados quedan como alternativa. Queda pendiente el cuadro de
+   mando, que se solicitará más adelante. Detalle en
    [solicitud-SI-fase1.md](peticiones-cartera/solicitud-SI-fase1.md) (solo en local).
 2. **MCP de conexión con LinceBI** (stdio). *Desarrollado* como proyecto Spring Boot con
    Maven.

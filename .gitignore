@@ -10,6 +10,11 @@ docs/peticiones-cartera/
 samples/
 old-skills/
 
+# Materiales del Servicio de Calidad con datos personales: revisiones comentadas (autoría
+# de los comentarios) y censos del PTGAS
+docs/calidad-2026/revisiones/
+docs/calidad-2026/censos-ptgas/
+
 # De evals/ se versionan los casos y las ejecuciones; el historial y las valoraciones
 # de las coordinaciones (comentarios y rol de quien valora) siguen en local
 evals/*
@@ -17,3 +22,4 @@ evals/*
 !evals/casos.csv
 !evals/ejecuciones/
 evals/ejecuciones/*/valoracion-coordinacion*.xlsx
+evals/ejecuciones/*/valoracion.json

@@ -15,6 +15,7 @@ Cada contenido vive en una sola fuente: enlázala en lugar de copiarla.
 | Preparar un caso de evaluación a partir del nombre de un título | [`.github/skills/preparar-caso/SKILL.md`](.github/skills/preparar-caso/SKILL.md) |
 | Evaluar la skill: ejecución, registro de resultados y material para las coordinaciones | [`docs/PROCEDIMIENTO.md`](docs/PROCEDIMIENTO.md) |
 | Versiones de la skill y estado de las lecciones | [`docs/LECCIONES.md`](docs/LECCIONES.md) |
+| Plantilla, guía rápida y recomendaciones de ACCUA del Servicio de Calidad | [`docs/calidad-2026/README.md`](docs/calidad-2026/README.md) |
 | Resultados de cada ejecución | `evals/historial.md` (solo local) |
 | Estructura del repositorio y funcionamiento de la web | [`README.md`](README.md) |
 
@@ -31,8 +32,10 @@ Cada contenido vive en una sola fuente: enlázala en lugar de copiarla.
 
 ## Datos personales
 
-`evals/historial.md`, `evals/ejecuciones/*/valoracion-coordinacion*.xlsx`, `samples/`,
-`old-skills/` y `docs/peticiones-cartera/` contienen datos personales y solo existen en local
+`evals/historial.md`, `evals/ejecuciones/*/valoracion-coordinacion*.xlsx`,
+`evals/ejecuciones/*/valoracion.json`, `samples/`,
+`old-skills/`, `docs/peticiones-cartera/`, `docs/calidad-2026/revisiones/` y
+`docs/calidad-2026/censos-ptgas/` contienen datos personales y solo existen en local
 (`.gitignore`). De ellos llegan al repositorio y a la web únicamente cifras agregadas y
 lecciones generalizadas. `evals/casos.csv`, `evals/casos/` (documentos públicos de cada título)
 y `evals/ejecuciones/` (incluido el material del paso 7) sí se versionan; no añadas ahí nada

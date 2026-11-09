@@ -90,13 +90,17 @@
 <main>
   <section id="presentacion">
     <h2>Cómo se evalúa el asistente</h2>
-    <p>El asistente redacta el <strong>borrador del autoinforme de seguimiento</strong> de un título. Para medir su
-      utilidad, cada borrador se compara con el autoinforme real aprobado por la coordinación, se puntúa con una
-      rúbrica y lo aprendido mejora el asistente antes del siguiente título. Los resultados están en
+    <p>El asistente redacta el <strong>borrador del autoinforme de seguimiento</strong> de un título con la plantilla
+      del Servicio de Calidad de cada convocatoria. Para medir su utilidad, cada borrador se puntúa con una rúbrica que
+      lo contrasta con lo que exige la norma (plantilla del año, guía de ACCUA, guía rápida y recomendaciones de ACCUA
+      recopiladas por el Servicio de Calidad) y con los datos verificables. El autoinforme que presentó la coordinación
+      sirve de referencia para detectar errores, pero no es la medida: el borrador debe cumplir lo que pide ACCUA aunque
+      la referencia no lo haga. Lo aprendido mejora el asistente antes del siguiente título. Las notas de cada título
+      evaluado (las de la IA y las de las coordinaciones, no los indicadores del título) están en
       <a href="evaluacion.html">Resultados de la evaluación</a>.</p>
 
     <ul class="indice" aria-label="En esta página">
-      <li><a href="#proceso">Cómo se hace el seguimiento</a></li>
+      <li><a href="#proceso">Cómo se evalúa cada borrador</a></li>
       <li><a href="#lecciones">Cómo madura una lección</a></li>
       <li><a href="#rubrica">La rúbrica</a></li>
       <li><a href="asistente.html#descarga">Descargar el asistente</a></li>
@@ -104,16 +108,19 @@
   </section>
 
   <section id="proceso">
-    <h2>Cómo se hace el seguimiento</h2>
-    <p>El seguimiento tiene dos ciclos. El de la IA se completa en una sesión de unos 25-30 minutos por título y no
-      espera a nadie; el de la coordinación llega cuando puede y completa los resultados sin detener al primero.</p>
+    <h2>Cómo se evalúa cada borrador</h2>
+    <p>La evaluación del asistente (no el seguimiento de los títulos) tiene dos ciclos. El de la IA se completa en
+      una sesión de unos 25-30 minutos por título y no espera a nadie; el de la coordinación y el Servicio de Calidad
+      llega cuando puede y completa los resultados sin detener al primero. Cada convocatoria, la plantilla nueva del
+      autoinforme se incorpora al asistente antes de evaluar con ella.</p>
 
     <h3>Ciclo de IA</h3>
     <ol class="proceso">
-      <li><strong>Se abre la evaluación de un título</strong>Con el autoinforme 2024/25 ya aprobado, que será la
-        referencia.<span class="quien">Responsable del proyecto</span></li>
+      <li><strong>Se abre la evaluación de un título</strong>Con el autoinforme ya presentado por la coordinación,
+        que servirá de referencia.<span class="quien">Responsable del proyecto</span></li>
       <li><strong>El asistente redacta el borrador</strong>Con los documentos de la coordinación e indicadores de
-        LinceBI, sin ver la referencia.<span class="quien">Asistente · 15-21 min</span></li>
+        LinceBI, sin ver la referencia. Las tablas que no salen de LinceBI por protección de datos (3.3 y 6.4) quedan
+        para que la coordinación las complete desde UCADrive.<span class="quien">Asistente · 15-21 min</span></li>
       <li><strong>El asistente revisa su borrador</strong>Lo compara con la referencia y lo puntúa con la
         <a href="#rubrica">rúbrica</a>.<span class="quien">Corrector de IA 1 · 6-9 min</span></li>
       <li><strong>Un segundo corrector lo puntúa</strong>Otro modelo de IA, independiente, aplica la misma
@@ -126,13 +133,14 @@
     <p class="ciclo">↻ Las lecciones aprobadas forman una nueva versión del asistente, que se prueba con otro título
       o con uno ya evaluado para medir el progreso.</p>
 
-    <h3>Ciclo de la coordinación (asíncrono)</h3>
+    <h3>Ciclo de la coordinación y del Servicio de Calidad (asíncrono)</h3>
     <ol class="proceso coord">
       <li><strong>Se envía el material</strong>Borrador, autoinforme de referencia y hoja de valoración, en todas
         las evaluaciones.<span class="quien">Orquestador · tras el paso 6</span></li>
-      <li><strong>La coordinación valora y se completa la consolidación</strong>Puntúa los mismos aspectos que la
-        <a href="#coordinacion">rúbrica</a>; su nota se compara con la de la IA y sus comentarios se convierten en
-        propuestas de mejora.<span class="quien">Coordinación del título · cuando puede</span></li>
+      <li><strong>La coordinación y Calidad valoran y se completa la consolidación</strong>Puntúan los mismos
+        aspectos que la <a href="#coordinacion">rúbrica</a>; el Servicio de Calidad comprueba además que el borrador
+        cumple los requisitos de ACCUA. Su nota se compara con la de la IA y sus comentarios se convierten en
+        propuestas de mejora.<span class="quien">Coordinación del título y Servicio de Calidad · cuando pueden</span></li>
     </ol>
     <p class="ciclo">↻ Sus propuestas se deciden en el siguiente paso 6, aunque el asistente ya haya cambiado de
       versión. Si la valoración no llega, la evaluación queda con la nota de la IA.</p>
@@ -154,19 +162,19 @@
 
     <div class="dos">
       <div class="caja">
-        <h4>Para que la evaluación sea justa</h4>
+        <h4>Para que las notas sean comparables entre títulos</h4>
         <ul>
-          <li>El asistente no cambia durante una evaluación.</li>
-          <li>Una lección vale solo si funciona en otro título.</li>
-          <li>El asistente no contiene ejemplos de los títulos evaluados.</li>
+          <li>El asistente no cambia mientras se evalúa un título: todos sus borradores salen de la misma versión.</li>
+          <li>Una mejora solo se da por buena si también funciona en otro título distinto del que la originó.</li>
+          <li>El asistente no copia frases ni ejemplos de los títulos evaluados, para no aprenderse sus respuestas.</li>
           <li>Algunos títulos se repiten para medir el progreso y otros se reservarán para detectar retrocesos.</li>
         </ul>
       </div>
       <div class="caja">
-        <h4>Papel de las coordinaciones</h4>
+        <h4>Papel de las coordinaciones y del Servicio de Calidad</h4>
         <ul>
-          <li>Su autoinforme es la referencia, no la verdad absoluta: si el borrador acierta y el autoinforme no, no
-            resta.</li>
+          <li>El autoinforme de la coordinación es la referencia, no la verdad absoluta: si el borrador cumple lo que
+            pide ACCUA y la referencia no, no resta.</li>
           <li>Valoran el borrador de su título con una hoja que sigue los mismos aspectos que la rúbrica. Su nota se
             compara con la de los correctores de IA y sus comentarios se convierten en propuestas de mejora del
             asistente.</li>
@@ -178,8 +186,9 @@
   <section id="rubrica">
     <h2>La rúbrica de evaluación</h2>
     <p>Se puntúan siete aspectos y la nota es su media; los que no aplican al título (por ejemplo, ACCUA si no hay
-      informe) no cuentan. Se valora el borrador frente a la normativa y los datos
-      verificables, no su parecido con el autoinforme de la coordinación.</p>
+      informe) no cuentan. Se valora el borrador frente a la norma (plantilla del año, guía de ACCUA, guía rápida y
+      recomendaciones de ACCUA) y los datos verificables, no su parecido con el autoinforme de la coordinación.
+      Versión 3 de la rúbrica, vigente desde la evaluación E10; las anteriores se puntuaron con la versión 2.</p>
 
     <div class="escala">
       <div class="n2"><b>2</b>Correcto: usable con retoques menores.</div>
@@ -196,16 +205,26 @@
           <td>Todos los campos correctos.</td><td>1-2 campos erróneos.</td><td>3 o más erróneos.</td></tr>
         <tr><td>Indicadores</td><td>Valores y cursos de las tablas del Anexo I.</td>
           <td>≥ 95 % correctos y bien alineados.</td><td>80-95 %, o una tabla desalineada.</td><td>&lt; 80 %, o varias desalineadas.</td></tr>
-        <tr><td>Cobertura</td><td>Contenido en todos los subcriterios.</td>
-          <td>Completo; solo faltan datos internos del centro.</td><td>Algún hueco evitable.</td><td>Varios huecos o falta un apartado.</td></tr>
-        <tr><td>Análisis</td><td>Interpretación de los indicadores.</td>
-          <td>Evolución, objetivo correcto y causas coherentes.</td><td>Descriptivo o sin causas.</td><td>Ausente, genérico o contradictorio.</td></tr>
+        <tr><td>Cobertura, evidencias y valoraciones</td><td>Todos los criterios y subcriterios de la plantilla, con lo
+            que pide ACCUA en cada uno.</td>
+          <td>Subdivisiones conservadas, todas las evidencias y valoraciones, y cada enlace a UCADrive con ruta, usuario
+            y contraseña.</td><td>Algún subcriterio fusionado o vacío, falta alguna evidencia o valoración, o un enlace a
+            UCADrive sin acceso.</td><td>Varios huecos o falta un apartado.</td></tr>
+        <tr><td>Análisis</td><td>Indicadores, procedimientos, coordinación, recursos y acciones realizadas.</td>
+          <td>Valora con evidencias lo que pide cada subcriterio: evolución, objetivo correcto y causas coherentes.</td>
+          <td>Descriptivo, limitado a los indicadores o sin causas.</td><td>Ausente, genérico o contradictorio.</td></tr>
         <tr><td>Plan de mejora</td><td>Puntos fuertes, débiles y acciones.</td>
-          <td>Concretos, con acción, responsable y plazo.</td><td>Genéricos, no asumibles o sin enlazar.</td><td>Ausente, o el plan no recoge los puntos débiles.</td></tr>
-        <tr><td>ACCUA</td><td>Recomendaciones abiertas.</td>
-          <td>Todas, con su numeración y estado.</td><td>Falta alguna o se renumeran.</td><td>Ausentes o inventadas.</td></tr>
-        <tr><td>Formato</td><td>Plantilla, códigos y registro.</td>
-          <td>Limpio y fiel a la plantilla.</td><td>Restos de plantilla o estilo impropio.</td><td>Plantilla alterada.</td></tr>
+          <td>Es punto débil toda satisfacción por debajo de 2,5 sobre 5 o toda tendencia negativa durante dos cursos; el
+            plan recoge los puntos débiles y las recomendaciones de ACCUA, cada acción con un responsable, evidencias y
+            fechas.</td><td>Genéricos, algún punto débil omitido o acciones incompletas.</td><td>Ausente, o el plan no
+            recoge los puntos débiles ni las recomendaciones.</td></tr>
+        <tr><td>ACCUA</td><td>Recomendaciones abiertas, en la tabla del criterio 2 y en el plan de mejora.</td>
+          <td>Todas, en los dos sitios, con su numeración y estado.</td><td>Falta alguna, se renumeran o solo están en
+            un sitio.</td><td>Ausentes o inventadas.</td></tr>
+        <tr><td>Formato y anexos</td><td>Plantilla del año, códigos, registro, enlaces y Anexos I a IV.</td>
+          <td>Limpio y fiel a la plantilla, con los cuatro anexos completos y sin enlaces a sistemas de acceso
+            restringido.</td><td>Restos de plantilla, estilo impropio o un anexo incompleto.</td><td>Plantilla
+            alterada o algún anexo vacío.</td></tr>
       </tbody>
     </table>
     </div>
@@ -214,8 +233,9 @@
     <p>Se señalan aparte, sea cual sea la nota:</p>
     <div class="graves">
       <div><strong>Dato inventado</strong>Sin respaldo en los documentos, LinceBI o la normativa.</div>
-      <div><strong>Valor imposible o contradictorio</strong>Por ejemplo, una tasa mayor del 100 % o el mismo indicador
-        con dos valores distintos.</div>
+      <div><strong>Valor imposible o contradictorio</strong>Por ejemplo, una tasa de éxito mayor del 100 % o el mismo
+        indicador con dos valores distintos. Si LinceBI da excepcionalmente un valor mayor del 100 % y el borrador lo
+        copia tal cual, no cuenta como error, pero se revisa a mano.</div>
       <div><strong>Origen no garantizado</strong>Datos del entorno de pruebas o sin fuente registrada.</div>
     </div>
 
@@ -225,8 +245,10 @@
       <thead><tr><th>Causa de la diferencia</th><th>¿Baja la nota?</th></tr></thead>
       <tbody>
         <tr><td><strong>El asistente</strong>: instrucción ausente, errónea o incumplida.</td><td>Sí</td></tr>
-        <tr><td><strong>LinceBI</strong>: el dato cambió entre consultas.</td><td>No</td></tr>
-        <tr><td><strong>Dato interno del centro</strong> no disponible, si se deja pendiente.</td><td>No</td></tr>
+        <tr><td><strong>LinceBI</strong>: el dato cambió entre consultas (según el momento del año o por el cierre de
+            expedientes).</td><td>No</td></tr>
+        <tr><td><strong>Dato interno del centro</strong> no disponible o tabla que solo ve la coordinación en UCADrive
+            (3.3 y 6.4), si se deja pendiente.</td><td>No</td></tr>
         <tr><td><strong>Error del autoinforme</strong>: se anota como hallazgo.</td><td>No</td></tr>
         <tr><td><strong>Redacción</strong> distinta con la misma información.</td><td>No</td></tr>
       </tbody>
@@ -235,9 +257,9 @@
 
     <h3 id="coordinacion">La valoración de la coordinación</h3>
     <p>Cada coordinación recibe el borrador de su título y una hoja con los mismos siete aspectos, puntuados del 1 al 5,
-      y una pregunta sobre errores graves. Para compararla con la rúbrica, la nota se convierte: 1 equivale a 0, 3 a 1 y
-      5 a 2. La hoja añade dos preguntas que la rúbrica no mide: si revisar el borrador cuesta menos que redactar desde
-      cero y si lo usaría como punto de partida.</p>
+      y una pregunta sobre errores graves (Sí/No). Para compararla con la rúbrica, la nota se convierte: 1 equivale a
+      0, 3 a 1 y 5 a 2. La hoja añade dos preguntas que la rúbrica no mide: si revisar el borrador cuesta menos que
+      redactar desde cero (1 a 5) y si lo usaría como punto de partida (Sí/No).</p>
     <p>Cuando la coordinación y la IA difieren un punto o más en un aspecto, se revisa a mano. Si la diferencia se
       repite en varios títulos, se revisa la rúbrica. Los comentarios se publican solo como cifras agregadas y
       lecciones generales.</p>
@@ -245,6 +267,6 @@
 
 </main>
 
-<footer>Uso interno de la Universidad de Cádiz · Última actualización: 23 de octubre de 2026</footer>
+<footer>Uso interno de la Universidad de Cádiz · Última actualización: 9 de noviembre de 2026</footer>
 </body>
 </html>

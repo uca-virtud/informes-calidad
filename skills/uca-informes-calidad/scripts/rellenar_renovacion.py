@@ -37,7 +37,7 @@ except ImportError:
     sys.exit("Falta python-docx. Instala con: pip install python-docx --break-system-packages")
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from rellenar_autoinforme import YEAR_RE, fill_indicators, set_cell_text  # noqa: E402
+from rellenar_autoinforme import YEAR_RE, fill_indicators, norm_year, set_cell_text  # noqa: E402
 
 CRITERIO_RE = re.compile(r"CRITERIO_(\d)", re.IGNORECASE)
 ANEXO_INICIO_RE = re.compile(r"^ANEXO\s+1\s*:", re.IGNORECASE)
@@ -188,9 +188,9 @@ def recortar_a_anexo_1(doc):
 
 
 def avisar_anios(doc, data):
-    cabecera = {c.text.strip() for tb in doc.tables for row in tb.rows for c in row.cells
+    cabecera = {norm_year(c.text) for tb in doc.tables for row in tb.rows for c in row.cells
                 if YEAR_RE.match(c.text)}
-    esperados = set(data.get("anios") or []) | set(data.get("anios_egresados") or [])
+    esperados = {norm_year(a) for a in (data.get("anios") or []) + (data.get("anios_egresados") or [])}
     faltan = sorted(esperados - cabecera)
     if faltan:
         print(f"AVISO: la plantilla de indicadores no tiene columnas para {', '.join(faltan)}; "

@@ -26,9 +26,10 @@ se envía material a la coordinación; todo lo demás lo hacen el orquestador y 
 | `web/procedimiento.html` | Página web con el proceso de evaluación y la rúbrica. |
 
 De `evals/` se versionan `casos.csv`, `casos/` (documentos públicos de cada título) y
-`ejecuciones/`. Quedan solo en local `historial.md` y las hojas
-`valoracion-coordinacion*.xlsx`, porque contienen datos personales: de ellos solo llegan al
-repositorio y a la web cifras agregadas y lecciones generalizadas.
+`ejecuciones/`. Quedan solo en local `historial.md`, las hojas
+`valoracion-coordinacion*.xlsx` y los `valoracion.json`, porque contienen datos personales: de
+ellos solo llegan al repositorio (incluida la ficha) y a la web cifras agregadas y lecciones
+generalizadas.
 
 ### Equivalencias con la web
 
@@ -263,9 +264,12 @@ la ejecución en `evals/historial.md`.
 Se hace siempre, tras el paso 6 y sin preguntar al responsable, aunque la ejecución tenga
 bloqueantes: el resumen al responsable los indica, junto con el material publicado. El
 orquestador crea
-`evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` copiando la de otra ejecución y
-cambiando solo las celdas C3 (nombre del título) y C4 («<Tipo>, curso <aaaa/aa>
-(convocatoria <aaaa>)»).
+`evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` copiando la plantilla
+[`docs/evaluacion/rubrica-valoracion.xlsx`](evaluacion/rubrica-valoracion.xlsx) (alineada con
+la versión vigente de la [rúbrica](evaluacion/rubrica.md)) y rellenando solo las celdas C3
+(nombre del título) y C4 («<Tipo>, curso <aaaa/aa> (convocatoria <aaaa>)»). La plantilla
+pide responder «Global» y «Errores graves» con Sí o No en la columna «Valoración»: si
+cambia la rúbrica, se actualiza en el mismo cambio.
 
 Después, en la fila desplegable de la ejecución de `web/evaluacion.html`, cambia «—» del
 apartado «Material» por un enlace, con el mismo formato que las demás filas, a:
@@ -282,24 +286,28 @@ apartado «Material» por un enlace, con el mismo formato que las demás filas, 
 Llega semanas después del paso 7, cuando la coordinación devuelve la hoja rellenada, y no
 detiene el ciclo de IA: la skill puede haber cambiado de versión entretanto. El
 responsable la guarda en `evals/ejecuciones/Enn-<id>/valoracion-coordinacion.xlsx` (con
-sufijo `-1`, `-2`… si valoran varias personas); no se versiona porque contiene comentarios
-y el rol de quien valora. El orquestador ejecuta
+sufijo `-1`, `-2`… si valoran varias personas). Ni la hoja ni `valoracion.json` se versionan
+porque contienen comentarios y el rol de quien valora. El orquestador ejecuta
 `python tools/evaluacion/evaluacion.py valoracion Enn`, que:
 
-- lee las notas 1-5, los comentarios, la respuesta a «Errores graves» y los textos libres
-  (las celdas vacías son NA; con varias hojas, media por aspecto y errores graves si alguien
-  responde «Sí»);
+- lee las notas 1-5 de los aspectos 1 a 8, los comentarios, las respuestas Sí/No a «Global»
+  y «Errores graves» y los textos libres (las celdas vacías son NA; con varias hojas, media
+  por aspecto, «Global» como «k de n sí» y errores graves si alguien responde «Sí»). Si
+  «Errores graves» está vacía pero el comentario es exactamente «Sí» o «No», lo toma de ahí
+  con aviso;
 - convierte las notas a la escala de la rúbrica con (nota − 1) / 2: 1→0, 3→1, 5→2;
-  «Esfuerzo» y «Global» se quedan en 1-5 porque no tienen equivalente en la rúbrica;
-- escribe `valoracion.json` y la sección «Valoración de la coordinación» de la ficha, y
-  añade al historial la media de la coordinación, su diferencia con la de la IA, «Esfuerzo»
-  y «Global»;
+  «Esfuerzo» se queda en 1-5 porque no tiene equivalente en la rúbrica;
+- escribe `valoracion.json` (local, con los comentarios), muestra en la consola el detalle
+  con los comentarios para preparar las lecciones, escribe en la sección «Valoración de la
+  coordinación» de la ficha solo las cifras (sin rol ni comentarios) y añade al historial la
+  media de la coordinación, su diferencia con la de la IA, «Esfuerzo» y «Global»;
 - añade a «Pendiente de revisión experta» las dimensiones en las que coordinación e IA
   difieren 1 punto o más, y los desacuerdos entre «Errores graves» y los bloqueantes B1/B2.
   `medir` los conserva si se vuelve a ejecutar.
 
 Una hoja anterior a la separación de D1 y D2 se acepta con aviso: «Datos» puntúa ambas y no
-hay D6 ni errores graves.
+hay D6 ni errores graves. En las hojas anteriores a la rúbrica v3, «Global» es una nota 1-5:
+se conserva y se muestra como «n (1-5)».
 
 En la tabla de ejecuciones de `web/evaluacion.html`, cambia la columna «Valoración de la
 coordinación» de esa ejecución de «Pendiente» a «Recibida» (`<span class="chip limpio">`).
@@ -327,8 +335,17 @@ valoración, con medias y diferencias por dimensión) y en `web/evaluacion.html`
 
 Para ejecuciones anteriores al protocolo (E01–E03) o cuando cambia la versión de la
 rúbrica, solo se lanza B (paso 4) sobre el borrador existente y después `medir` (paso 5).
-Si la ficha no tiene sección «Generación», se quita esa línea del prompt de B. Un cambio de
-rúbrica se refleja también en «La rúbrica de evaluación» de `web/procedimiento.html`.
+Si la ficha no tiene sección «Generación», se quita esa línea del prompt de B. Excepción:
+si el cambio de rúbrica acompaña a un cambio de plantilla del autoinforme (nueva
+convocatoria), las ejecuciones anteriores no se vuelven a puntuar, porque se evaluaron
+contra otra plantilla; la serie se corta y la tabla de versiones de la rúbrica indica desde
+qué ejecución rige. Un cambio de rúbrica se refleja también en la plantilla de la hoja de
+valoración (`docs/evaluacion/rubrica-valoracion.xlsx`) y en «La rúbrica de evaluación» de
+`web/procedimiento.html`.
+
+Cada convocatoria, la plantilla del autoinforme que publica el Servicio de Calidad se
+incorpora a la skill (`assets/`) antes de la primera ejecución que la use, junto con la guía
+rápida y las recomendaciones de ACCUA vigentes ([`docs/calidad-2026/`](calidad-2026/README.md)).
 
 ## Después de la ejecución: aplicar lecciones
 
@@ -354,7 +371,7 @@ anotaciones que lo justifican.
 | Por comprobar | Incorporada, a la espera de otro título, o la evaluación no puede ejercitarla (p. ej. A no puede preguntar al centro). | «validar en Enn» o «sin evidencia» |
 | Funciona | Validada en un título posterior y sin insuficiencias pendientes. | «validada en Enn» |
 | A reforzar | Insuficiente en alguna ejecución, aunque antes se validara, y sin refuerzo aprobado. Sigue en la skill. | «insuficiente en Enn (<motivo>)» |
-| Reforzada | El responsable aprobó una lección que la sustituye o amplía (p. ej. L16 → L16b), que empieza en «Por comprobar». | «→ Lnn» tras la insuficiencia |
+| Reforzada | El responsable aprobó una lección que la sustituye o amplía (p. ej. L16 → L16b), que empieza en «Por comprobar», tras una insuficiencia o porque el Servicio de Gestión de la Calidad cambió la norma. | «→ Lnn» tras la insuficiencia o el motivo |
 
 ## Reglas contra el sobreajuste
 

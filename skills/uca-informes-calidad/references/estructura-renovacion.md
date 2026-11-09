@@ -1,7 +1,8 @@
 # Estructura del Autoinforme de Renovación de la Acreditación (ACCUA – UCA)
 
 La renovación de la acreditación se presenta en la **plataforma web de ACCUA**, no como
-un Word. Para no redactar directamente en la plataforma, la Unidad de Calidad facilita
+un Word. Para no redactar directamente en la plataforma, el Servicio de Gestión de la
+Calidad facilita
 una plantilla `.docx` **por criterio** (`assets/plantillas_renovacion/*CRITERIO_n*.docx`,
 formato "GyM" para grados y másteres). La coordinación prepara ahí el texto y luego lo
 vuelca en la plataforma.

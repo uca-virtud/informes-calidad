@@ -105,34 +105,90 @@ interpretación y en las decisiones de mejora que se derivan.
 
 - Solo los **del presente autoinforme** (no arrastres los de años anteriores a estas
   tablas; los débiles no resueltos sí van al plan de mejora).
-- **Pocos puntos débiles**: entre 1 y 5 en todo el autoinforme, como hacen las
-  coordinaciones. Solo los que la coordinación asumirá con una acción propia; no conviertas
-  cada indicador a la baja en un punto débil. Las demás debilidades se analizan en el
-  texto y se proponen al usuario como candidatas.
-- Cada **punto débil** enlaza con una o varias **acciones de mejora** numeradas.
+- **Todos los puntos débiles con evidencia**, sin tope: satisfacción por debajo de 2,5,
+  tendencia negativa durante dos cursos seguidos u otro hecho documentado que requiera
+  mejora. Una variación puntual sin tendencia se analiza en el texto, pero no es punto
+  débil. Todos pasan al plan de mejora.
+- **Las recomendaciones de ACCUA no son puntos débiles**: van solo en la tabla del
+  criterio 2 y en el plan de mejora. Un punto débil propio puede tratar el mismo asunto si
+  el análisis de este curso lo evidencia, pero sin copiar la recomendación.
+- Cada **punto débil** enlaza con una o varias **acciones de mejora**. La numeración la
+  pone el script: ordinales con el curso delante en los fuertes y números correlativos en
+  todo el autoinforme en los débiles.
 - Redacta puntos concretos y verificables, apoyados en indicadores o hechos. Los puntos
   fuertes pueden ser también de proceso (p. ej. agilidad en el reconocimiento de créditos,
   convocatorias de TFG frecuentes), no solo de indicadores.
 
 ## Plan de mejora (seguimiento)
 
-- Un solo **responsable** por acción.
+- Un solo **responsable** por acción. Si es externo al centro (un servicio central, otra
+  facultad), añade `[PENDIENTE: autorización del responsable externo]`.
+- Las columnas conservan la denominación exacta de la plantilla.
 - Incluye: todas las recomendaciones vivas del último informe ACCUA (hasta que la
   agencia las cierre) + todos los puntos débiles de este autoinforme + los puntos
   débiles no resueltos del plan anterior.
 - Lee entero el informe de ACCUA. Las recomendaciones de informes anteriores que declare
   no resueltas o resueltas en parte siguen vivas: inclúyelas con su número y fecha
   originales.
-- Cada acción con prioridad (Alta/Media/Baja), fechas de inicio y fin, y, si procede,
-  indicador de seguimiento.
+- Cada acción con prioridad (Alta/Media/Baja), fechas de inicio y fin en formato MM/AAAA,
+  concretas o estimadas (nunca «Permanente», «Continua» ni «Finalizada»: el cierre lo
+  decide ACCUA), e indicador de seguimiento con su valor actual en la última columna (en
+  la renovación, la serie de los cinco últimos cursos; sin dato, «-» o «No procede»).
+- Cada acción lleva sus evidencias, con enlace directo, en una línea separada. Un
+  indicador no es una evidencia: es el resultado que la evidencia sustenta.
+- Si la recomendación pide «analizar las causas», la acción dice cómo se analizarán y qué
+  se hará con las conclusiones. Si falta la satisfacción de empleadores, la acción son las
+  actividades para conocerla y la evidencia, su informe o acta.
+- Las recomendaciones de ACCUA se copian literales, una por fila, con su número original
+  y sin estados («en curso»). La tabla del criterio 2 y el plan coinciden exactamente: su
+  segunda columna (recomendación) es la primera del plan y su tercera (acciones y
+  evidencias, con los enlaces) es la segunda. El script las genera de la misma fuente; no
+  las edites por separado.
+- Para anticipar lo que ACCUA suele pedir y no repetir sus recomendaciones, revisa
+  `recomendaciones-accua.md`.
+
+## Formato, enlaces y entrega (guía rápida del Servicio de Gestión de la Calidad)
+
+- **Estructura de la plantilla intacta**: no reorganices ni renumeres apartados. Un
+  apartado sin contenido se elimina o lleva «No procede». Conserva las subdivisiones de
+  cada subcriterio (sus apartados y los aspectos que ACCUA pide valorar): analiza cada una
+  o márcala «No procede» con el motivo; no las fundas en un texto único. No repitas en
+  varios apartados la misma información, enlace o indicador: analízalo donde corresponda y
+  remite a él.
+  Separa bien los párrafos.
+- **Indicadores**: cada mención lleva nombre, código y curso analizado (el de la
+  convocatoria, recogido en el Anexo I). En el criterio 7, los datos de egresados se
+  refieren a **cohortes**, no a cursos académicos.
+- **Anexos**: con el formato del modelo. El Anexo I reproduce literalmente las tablas de
+  LinceBI. En los Anexos II, III y IV ninguna celda queda en blanco: «-» o «No procede».
+- **Enlaces**:
+  - No enlaces herramientas a las que no acceden los evaluadores: LinceBI, GADES, ICARO,
+    Campus Virtual y similares. Cítalas como fuente sin enlace y enlaza la evidencia
+    publicada o en UCADrive. La depuración avisa de ellos con `REVISAR`.
+  - Cada evidencia, a un máximo de dos clics: enlaza el documento concreto, no la portada
+    de la web ni una carpeta genérica.
+  - Los enlaces van activos, en azul y subrayados. Si hay que acortar una URL, se usa el
+    acortador de la UCA (https://url.uca.es/redir/crear): otros fallan o añaden un paso
+    intermedio que suma clics. La skill no acorta URL; lo hace la coordinación si lo
+    necesita.
+  - UCADrive: acceso interno, nunca un enlace público. Lleva la ruta para localizar la
+    evidencia y el enlace directo al fichero (ver «Indicaciones del Servicio de Gestión de
+    la Calidad» en `SKILL.md`).
+- **Versión que se envía** (la prepara la coordinación; recuérdalo en la entrega): todos
+  los `[PENDIENTE]` resueltos, todo el texto en negro, sin comentarios ni resaltados, todos
+  los enlaces probados. El PDF definitivo **no lleva firma digital**, porque rompe los
+  enlaces: la aprobación del centro, firmada, se añade como anexo en la última página.
 
 ## Apartados que solo aplican a Seguimiento ACCUA
 
-Si el título se presenta a ACCUA, prepara además: guías docentes, información de cinco
+El borrador cumple siempre todo lo que pide ACCUA, vaya o no el título a ACCUA ese año;
+la coordinación decide cuánto profundiza. Si el título no va a ACCUA, elimina solo la
+tabla de aplicaciones de la identificación y no cites la auditoría de la información
+pública, que el Servicio de Gestión de la Calidad hace solo a los títulos que van. Si va,
+cita esa auditoría como evidencia y prepara además: guías docentes, información de cinco
 asignaturas obligatorias representativas (incl. TFG/TFM y prácticas), pruebas de
-evaluación que cubran todo el espectro de calificaciones, y (en su caso) memorias de
-prácticas. Si es solo seguimiento interno, puedes omitir estas evidencias y la tabla de
-aplicaciones [T3].
+evaluación que cubran todo el espectro de calificaciones y, en su caso, memorias de
+prácticas.
 
 ## Checklist final del seguimiento (verificación antes de entregar)
 
@@ -144,16 +200,19 @@ aplicaciones [T3].
    ningún indicador de satisfacción por encima de 5; misma alineación de cohortes en las
    tablas de egresados del título y del centro.
 4. No queda texto en rojo/azul (instrucciones/directrices) ni marcadores `XXXX`, tampoco
-   en celdas de tablas ni dentro de párrafos con análisis.
+   en celdas de tablas ni dentro de párrafos con análisis; sí queda, en negro y con un
+   enlace por elemento, el recordatorio de información pública del criterio 1.
 5. Cada criterio tiene análisis real en todos sus subcriterios aplicables.
-6. Entre 1 y 5 puntos débiles en total; cada uno con su acción de mejora; el plan de
-   mejora consolida ACCUA + débiles.
-7. Recomendaciones de ACCUA con su numeración original.
+6. Todos los puntos débiles con evidencia, cada uno con su acción de mejora; el plan de
+   mejora consolida ACCUA + débiles, con fechas MM/AAAA y sin acciones «Permanente» ni
+   «Finalizada».
+7. Recomendaciones de ACCUA literales, una por fila y con su numeración original.
 8. Los indicadores citados en el texto coinciden con los del Anexo 1, y los objetivos de
    la memoria se comparan con la tasa a la que corresponden.
 9. Enlaces reales (web del título, página de la CGC, normativas, actas, rutas UCADrive)
-   en lugar de placeholders.
-10. Apartados no aplicables eliminados o marcados como "No aplica".
+   en lugar de placeholders; cada evidencia de UCADrive en su subcriterio, con su ruta
+   completa y `[PENDIENTE: usuario y contraseña de UCADrive]`.
+10. Apartados no aplicables eliminados o marcados como «No procede».
 11. Ninguna acción propuesta, recomendación o texto modelo aparece como ya ejecutado sin
     evidencia en la entrada; la habilitación profesional coincide con la memoria; el texto
     modelo conservado en negro se ha releído y se corresponde con el título; la actividad
@@ -177,3 +236,13 @@ aplicaciones [T3].
     `REVISAR` de la depuración están resueltos y están las tablas que exige la plantilla.
 17. La síntesis de sostenibilidad (7.6) cubre demanda, profesorado, recursos, resultados e
     inserción, responde a las debilidades de ACCUA y cierra con una valoración explícita.
+18. Guía rápida: ninguna recomendación de ACCUA en las tablas de puntos débiles; tabla del
+    criterio 2 y plan coincidentes; cada acción con su evidencia (ningún indicador como
+    evidencia) y sin fechas «Finalizada»; responsables externos con su autorización
+    pendiente; ningún enlace a LinceBI, GADES, ICARO o Campus Virtual; ninguna información,
+    enlace o indicador repetido entre apartados; indicadores con nombre, código y curso;
+    datos de egresados por cohortes; ninguna celda en blanco en los Anexos II–IV; todas las
+    subdivisiones de cada subcriterio conservadas.
+19. Repasados los temas que ACCUA pide de forma recurrente en cada criterio
+    (`recomendaciones-accua.md`): los que aplican al título están analizados o tienen
+    acción en el plan.

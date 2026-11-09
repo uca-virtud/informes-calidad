@@ -59,6 +59,26 @@ Media final: 1.43. Bloqueantes: B1. Discrepancias por causa (B): S=7, D=1, I=2, 
 - `skills/uca-informes-calidad/references/estilo-y-ejemplos.md`: 1 frases de GIDIDP-seg-2425 (p. ej. «de eficiencia esta tasa con un valor de»)
 <!-- medir:fin -->
 
+## Valoración de la coordinación (completa `evaluacion.py valoracion`)
+
+<!-- valoracion:inicio -->
+Hojas de valoración recibidas: 1 (22 de octubre de 2026).
+
+| Dim. | Coordinación (1-5) | Equivale (0-2) | IA (final) | Diferencia |
+|---|---|---|---|---|
+| D1 | 4 | 1,5 | 2 | -0,5 |
+| D2 | 4 | 1,5 | 2 | -0,5 |
+| D3 | 1 | 0 | 1 | -1 |
+| D4 | 2 | 0,5 | 1 | -0,5 |
+| D5 | 1 | 0 | 2 | -2 |
+| D6 | 5 | 2 | 1 | 1 |
+| D7 | 2 | 0,5 | 1 | -0,5 |
+
+Media: coordinación 0,86, IA 1,43 (diferencia -0,57). Esfuerzo (1-5): —. Global (punto de partida): —. Errores graves según la coordinación: sin respuesta.
+
+Los comentarios de la coordinación no se versionan: están en `valoracion.json` y en las hojas, solo en local.
+<!-- valoracion:fin -->
+
 ## Pendiente de revisión experta
 
 - Bloqueante B1
@@ -76,6 +96,9 @@ Media final: 1.43. Bloqueantes: B1. Discrepancias por causa (B): S=7, D=1, I=2, 
 - Discrepancia 7 (I): Anexo I, P04-13 del centro, 2020-21 a 2022-23
 - Discrepancia 14 (I): 3.3, 5.3, Anexo III y estado del SGC
 - Discrepancia 15 (H): Puntos fuertes de resultados
+- Coordinación D3: coordinación=0, IA=1
+- Coordinación D5: coordinación=0, IA=2
+- Coordinación D6: coordinación=2, IA=1
 
 ## Decisión del responsable
 

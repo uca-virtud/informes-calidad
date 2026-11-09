@@ -4,9 +4,15 @@
 Vuelca sobre la plantilla oficial .docx, sin alterar su formato:
   - Encabezado (curso, convocatoria, título, centro)
   - Tabla de datos de identificación del título
+  - Bloque de bibliotecas del criterio 5.1: conserva el del `campus` y borra los demás
+  - Enlaces de la plantilla dados por obsoletos (ENLACES_VIGENTES), como la Política de
+    Calidad
   - Tablas de indicadores del Anexo 1 (ISGC P01-P07), por TÍTULO y por CENTRO, con las
-    cabeceras de años tomadas de `anios` y `anios_egresados`
-  - (Opcional) Puntos fuertes/débiles por criterio y Plan de Mejora
+    cabeceras de años tomadas de `anios` y `anios_egresados` (admite 2024-25 y 2024/25)
+  - (Opcional) Recomendaciones de ACCUA del Criterio 2, puntos fuertes/débiles por
+    criterio y Plan de Mejora, localizados por el contenido de sus tablas. El plan se
+    genera a partir de las recomendaciones y de los puntos débiles, para que coincida
+    literalmente con ellos; `plan_mejora` solo añade filas extra.
 
 Uso:
   python rellenar_autoinforme.py --plantilla plantilla.docx --datos datos.json \
@@ -19,21 +25,42 @@ import argparse
 import json
 import re
 import sys
+from copy import deepcopy
 
 try:
     import docx
+    from docx.oxml.ns import qn
+    from docx.text.paragraph import Paragraph
 except ImportError:
     sys.exit("Falta python-docx. Instala con: pip install python-docx --break-system-packages")
 
-YEAR_RE = re.compile(r"^\s*\d{4}-\d{2}\s*$")
+YEAR_RE = re.compile(r"^\s*\d{4}[-/]\d{2}\s*$")
 CODE_RE = re.compile(r"ISGC-P\d{2}[-_]\d{2}(?:_\d{2})?")
+FECHA_RE = re.compile(r"^(\d{1,2}/)?\d{1,2}/\d{4}$")
+N_CRITERIOS = 7
+PENDIENTE = "[PENDIENTE]"
+CAMPOS_PLAN = ("prioridad", "responsable", "inicio", "fin", "indicador")
 
-# Mapa criterio -> (indice tabla puntos fuertes, indice tabla puntos debiles)
-PUNTOS_TABLES = {
-    1: (5, 6), 2: (8, 9), 3: (12, 13), 4: (15, 16),
-    5: (18, 19), 6: (22, 23), 7: (24, 25),
+# Color de fuente de cada bloque de bibliotecas del criterio 5.1 de la plantilla.
+CAMPUS_COLORES = {
+    "puerto-real": "F79646",
+    "cadiz": "808080",
+    "jerez": "FB2DCF",
+    "algeciras": "7030A0",
 }
-PLAN_MEJORA_TABLE = 26
+
+# Enlaces de la plantilla que el Servicio de Gestión de la Calidad ha dado por obsoletos.
+ENLACES_VIGENTES = {
+    # Política de Calidad: directrices aprobadas el 29-9-2026.
+    "BOUCA356-16-19.pdf":
+        "https://ucalidad.uca.es/wp-content/uploads/2026/10/"
+        "BOUCA-DIRECTRICES-POLITICA-DE-CALIDAD-29-9-26.pdf",
+}
+
+
+def norm_year(text):
+    """Clave común para un curso escrito como 2024-25 o como 2024/25."""
+    return str(text).strip().replace("/", "-")
 
 
 def set_cell_text(cell, text):
@@ -60,6 +87,62 @@ def set_cell_text(cell, text):
         run.add_text(line)
 
 
+def _base_rpr(cell, row=None):
+    """Formato de carácter de referencia para escribir en una celda.
+
+    Toma el del primer run de la celda; si está vacía, el de la marca de párrafo o el
+    de otra celda de la fila. Quita color y resaltado (los placeholders van en rojo)."""
+    fuentes = [cell] + (list(row.cells) if row is not None else [])
+    rpr = None
+    for c in fuentes:
+        for p in c.paragraphs:
+            if p.runs and p.runs[0]._r.rPr is not None:
+                rpr = p.runs[0]._r.rPr
+                break
+            ppr = p._p.pPr
+            if ppr is not None and ppr.find(qn("w:rPr")) is not None:
+                rpr = ppr.find(qn("w:rPr"))
+                break
+        if rpr is not None:
+            break
+    if rpr is None:
+        return None
+    rpr = deepcopy(rpr)
+    for tag in ("w:color", "w:highlight", "w:shd", "w:b", "w:bCs", "w:ins", "w:del"):
+        for el in rpr.findall(qn(tag)):
+            rpr.remove(el)
+    return rpr
+
+
+def set_cell_rich(cell, lines, row=None):
+    """Escribe en una celda un párrafo por línea; cada línea es una lista de
+    segmentos (texto, negrita). Conserva el formato de párrafo y de carácter de la
+    plantilla y elimina el contenido previo (placeholders)."""
+    rpr = _base_rpr(cell, row)
+    for p in cell.paragraphs[1:]:
+        p._element.getparent().remove(p._element)
+    p0 = cell.paragraphs[0]._p
+    for child in list(p0):
+        if child.tag != qn("w:pPr"):
+            p0.remove(child)
+    molde = deepcopy(p0)
+    parrafos = [p0]
+    for _ in lines[1:]:
+        nuevo = deepcopy(molde)
+        parrafos[-1].addnext(nuevo)
+        parrafos.append(nuevo)
+    for p_el, segmentos in zip(parrafos, lines or [[]]):
+        par = Paragraph(p_el, cell)
+        for texto, negrita in segmentos:
+            if not texto:
+                continue
+            run = par.add_run(texto)
+            if rpr is not None:
+                run._r.insert(0, deepcopy(rpr))
+            if negrita:
+                run.bold = True
+
+
 def distinct_leading(cells, first_year_col):
     """Textos distintos y no vacíos de las celdas anteriores a la 1ª columna-año."""
     out = []
@@ -84,6 +167,26 @@ def fill_header(doc, enc):
             set_para(p, f"{t} {enc['titulo']}")
         elif t.upper().startswith("CENTRO/S") and enc.get("centro"):
             set_para(p, f"{t} {enc['centro']}")
+    fill_fechas_portada(doc, enc)
+
+
+def fill_fechas_portada(doc, enc):
+    """Rellena «Fecha: xxx» (elaborado / aprobado) conservando la letra blanca del diseño;
+    sin fecha deja una marca [PENDIENTE] para que la depuración no vacíe la celda."""
+    tabla = _tabla_por_cabecera(doc, "elaborado:")
+    if tabla is None:
+        return
+    claves = (("fecha_elaboracion", "elaboración"), ("fecha_aprobacion", "aprobación"))
+    for fila in tabla.rows:
+        for col, celda in enumerate(fila.cells[:2]):
+            for p in celda.paragraphs:
+                if not p.text.strip().startswith("Fecha:"):
+                    continue
+                clave, que = claves[col]
+                valor = enc.get(clave) or f"{PENDIENTE[:-1]}: fecha de {que}]"
+                for r in p.runs:
+                    if "xxx" in r.text.lower():
+                        r.text = re.sub(r"[Xx]{3,}", valor, r.text)
 
 
 def set_para(p, text):
@@ -146,8 +249,11 @@ def relabel_year_headers(doc, data):
                       f"{len(nuevos)}; no se han cambiado sus cabeceras.", file=sys.stderr)
                 continue
             for c, year in zip(cells, nuevos):
-                if c.text.strip() != year:
-                    set_cell_text(c, year)
+                # Conserva el separador de la plantilla (2021/22 en general, 2019-20 en egreso).
+                sep = "/" if "/" in c.text else "-"
+                nuevo = norm_year(year).replace("-", sep)
+                if c.text.strip() != nuevo:
+                    set_cell_text(c, nuevo)
 
 
 def check_scale(label, scope, year, value):
@@ -195,7 +301,7 @@ def fill_indicators(doc, data):
             texts = [c.text.strip() for c in cells]
             rowtext = " ".join(texts)
             # ¿fila de cabecera con años?
-            year_cols = {i: t for i, t in enumerate(texts) if YEAR_RE.match(t)}
+            year_cols = {i: norm_year(t) for i, t in enumerate(texts) if YEAR_RE.match(t)}
             if year_cols:
                 colyears = year_cols
                 first_year_col = min(year_cols)
@@ -224,7 +330,7 @@ def fill_indicators(doc, data):
             values = inds.get(key)
             if not values:
                 continue
-            byyear = values.get(scope, {})
+            byyear = {norm_year(y): v for y, v in (values.get(scope) or {}).items()}
             for ci, year in colyears.items():
                 if year in byyear and byyear[year] not in (None, ""):
                     check_scale(label, scope, year, byyear[year])
@@ -240,110 +346,271 @@ def _row_index(tb, row):
     return 0
 
 
-def fill_puntos(doc, data):
-    puntos = data.get("puntos", {})
-    if not puntos:
+def _first_cell(tb):
+    return tb.cell(0, 0).text.strip().lower() if tb.rows else ""
+
+
+def puntos_tables(doc):
+    """Pares (tabla de puntos fuertes, tabla de puntos débiles) en orden de criterio.
+
+    Se localizan por la celda (0,0) para no depender de la posición de las tablas,
+    que cambia entre versiones de la plantilla."""
+    fuertes = [tb for tb in doc.tables if _first_cell(tb).startswith("puntos fuertes")]
+    debiles = [tb for tb in doc.tables if _first_cell(tb).startswith(("puntos débiles", "puntos debiles"))]
+    if len(fuertes) != N_CRITERIOS or len(debiles) != N_CRITERIOS:
+        print(f"AVISO: la plantilla tiene {len(fuertes)} tablas de puntos fuertes y {len(debiles)} "
+              f"de puntos débiles (se esperaban {N_CRITERIOS}); revisa los criterios rellenados.",
+              file=sys.stderr)
+    return dict(enumerate(zip(fuertes, debiles), start=1))
+
+
+def _accion(a):
+    """Normaliza una acción de mejora: cadena o dict con accion, evidencia, prioridad,
+    responsable, inicio, fin e indicador."""
+    return dict(a) if isinstance(a, dict) else {"accion": str(a)}
+
+
+def _codigo(data, tipo, ref):
+    """Código PF/PD/AM-<centro>-<ref>, solo si el JSON trae `codigo_centro` (centros con
+    varios títulos que lo usan, como la ESI o la ETSIA)."""
+    centro = str(data.get("codigo_centro") or "").strip()
+    return f"{tipo}-{centro}-{ref}" if centro else ""
+
+
+def _rotulo(base, codigo=""):
+    return f"{base} ({codigo}): " if codigo else f"{base}: "
+
+
+def modelo_puntos(data):
+    """Numera los puntos del bloque `puntos`.
+
+    Los fuertes se numeran dentro de cada criterio y llevan delante el curso analizado
+    (se copian luego en la renovación). Los débiles y sus acciones se numeran de forma
+    correlativa en todo el autoinforme, porque todos pasan al plan de mejora."""
+    puntos = data.get("puntos") or {}
+    curso = str((data.get("encabezado") or {}).get("curso", "")).strip()
+    modelo, n_pd, n_am = {}, 0, 0
+    for crit in range(1, N_CRITERIOS + 1):
+        info = puntos.get(str(crit)) or puntos.get(crit) or {}
+        fuertes = []
+        for i, texto in enumerate(info.get("fuertes") or [], 1):
+            base = f"Curso {curso}. Punto fuerte {i}º" if curso else f"Punto fuerte {i}º"
+            fuertes.append((_rotulo(base, _codigo(data, "PF", f"{crit}.{i}")), texto))
+        debiles = []
+        for i, deb in enumerate(info.get("debiles") or [], 1):
+            n_pd += 1
+            brutas = deb.get("acciones") or []
+            acciones = []
+            for k, a in enumerate(brutas, 1):
+                n_am += 1
+                a = _accion(a)
+                ref = f"{crit}.{i}" + (f".{k}" if len(brutas) > 1 else "")
+                a["rotulo"] = _rotulo(f"Acción de mejora {n_am}ª", _codigo(data, "AM", ref))
+                acciones.append(a)
+            debiles.append({
+                "rotulo": _rotulo(f"Punto débil {n_pd}º", _codigo(data, "PD", f"{crit}.{i}")),
+                "texto": deb.get("punto", ""),
+                "acciones": acciones,
+            })
+        modelo[crit] = {"fuertes": fuertes, "debiles": debiles}
+    return modelo
+
+
+def items_accua(data):
+    """Normaliza el bloque `accua`: una entrada por recomendación, con su numeración
+    original y sus acciones. Admite el formato anterior (`fecha`, `accion` en texto)."""
+    accua = data.get("accua") or {}
+    informe = accua.get("informe") or accua.get("fecha", "")
+    out = []
+    for it in accua.get("items") or []:
+        brutas = it.get("acciones")
+        if brutas is None:
+            brutas = [it["accion"]] if it.get("accion") else []
+        acciones = [_accion(a) for a in brutas]
+        if it.get("evidencia") and acciones and "evidencia" not in acciones[0]:
+            acciones[0]["evidencia"] = it["evidencia"]
+        tipo = str(it.get("tipo") or "Recomendación").strip()
+        num = str(it.get("num") or "").strip()
+        out.append({
+            "informe": it.get("informe") or informe,
+            "rotulo": _rotulo(f"{tipo} nº {num}" if num else tipo),
+            "texto": it.get("rec", ""),
+            "acciones": acciones,
+        })
+    return out
+
+
+def _lineas_acciones(acciones):
+    """«Acción de mejora» y «Evidencia» en párrafos distintos, con la etiqueta en negrita."""
+    lineas = []
+    for a in acciones or [{}]:
+        lineas.append([(a.get("rotulo") or "Acción de mejora: ", True),
+                       (a.get("accion") or PENDIENTE, False)])
+        lineas.append([("Evidencia: ", True), (a.get("evidencia") or PENDIENTE, False)])
+    return lineas
+
+
+def _fila_datos(tb, j):
+    """Índice de la fila de datos j (0 = primera tras la cabecera). Si la plantilla no
+    tiene bastantes, clona la primera para conservar su formato."""
+    while len(tb.rows) <= j + 1:
+        tb._tbl.append(deepcopy(tb.rows[1]._tr))
+    return j + 1
+
+
+def _quitar_filas(tb, desde):
+    """Elimina las filas de placeholder que no se han usado."""
+    for row in list(tb.rows)[desde:]:
+        tb._tbl.remove(row._tr)
+
+
+def _tabla_por_cabecera(doc, texto):
+    return next((t for t in doc.tables if t.rows
+                 and texto in " ".join(c.text.lower() for c in t.rows[0].cells)), None)
+
+
+def fill_puntos(doc, modelo):
+    if not any(m["fuertes"] or m["debiles"] for m in modelo.values()):
         return
-    tables = doc.tables
-    for crit, (fi, di) in PUNTOS_TABLES.items():
-        info = puntos.get(str(crit)) or puntos.get(crit)
-        if not info:
+    for crit, (tbf, tbd) in puntos_tables(doc).items():
+        m = modelo.get(crit) or {}
+        if m.get("fuertes") and len(tbf.rows) > 1:
+            set_cell_rich(tbf.cell(1, 0), [[(rot, True), (txt, False)] for rot, txt in m["fuertes"]],
+                          tbf.rows[1])
+        debiles = m.get("debiles") or []
+        if not debiles:
             continue
-        # Fuertes
-        fuertes = info.get("fuertes") or []
-        if fuertes and fi < len(tables):
-            tbf = tables[fi]
-            if "fuerte" in tbf.cell(0, 0).text.lower() and len(tbf.rows) > 1:
-                set_cell_text(tbf.cell(1, 0), "\n".join(f"- {x}" for x in fuertes))
-        # Débiles
-        debiles = info.get("debiles") or []
-        if debiles and di < len(tables):
-            tbd = tables[di]
-            if "débil" in tbd.cell(0, 0).text.lower() or "debil" in tbd.cell(0, 0).text.lower():
-                data_rows = [r for r in range(1, len(tbd.rows))]
-                for j, deb in enumerate(debiles):
-                    punto = deb.get("punto", "")
-                    acciones = deb.get("acciones", [])
-                    accion_txt = "\n".join(f"Acción de mejora nº {k+1}: {a}" for k, a in enumerate(acciones))
-                    if j < len(data_rows):
-                        r = data_rows[j]
-                    else:
-                        tbd.add_row()
-                        r = len(tbd.rows) - 1
-                    set_cell_text(tbd.cell(r, 0), f"Punto débil nº {j+1}: {punto}")
-                    if len(tbd.columns) > 1:
-                        set_cell_text(tbd.cell(r, 1), accion_txt)
-                # limpia filas placeholder no usadas
-                for r in data_rows[len(debiles):]:
-                    for c in range(len(tbd.columns)):
-                        set_cell_text(tbd.cell(r, c), "")
+        for j, deb in enumerate(debiles):
+            r = _fila_datos(tbd, j)
+            set_cell_rich(tbd.cell(r, 0), [[(deb["rotulo"], True), (deb["texto"], False)]], tbd.rows[r])
+            if len(tbd.columns) > 1:
+                lineas = [[(a["rotulo"], True), (a.get("accion") or PENDIENTE, False)]
+                          for a in deb["acciones"]]
+                set_cell_rich(tbd.cell(r, 1), lineas or [[("Acción de mejora: ", True), (PENDIENTE, False)]],
+                              tbd.rows[r])
+        _quitar_filas(tbd, len(debiles) + 1)
 
 
-def fill_accua(doc, data):
-    """Rellena la tabla de recomendaciones de ACCUA (Criterio 2).
+def fill_accua(doc, items):
+    """Rellena la tabla de recomendaciones de ACCUA (Criterio 2): una recomendación por
+    fila, con el informe (fecha y tipo) solo cuando cambia respecto a la fila anterior."""
+    if not items:
+        return
+    tb = _tabla_por_cabecera(doc, "recomendaciones recibidas")
+    if tb is None or len(tb.columns) < 3:
+        print("AVISO: no se ha encontrado la tabla de recomendaciones de ACCUA del Criterio 2.",
+              file=sys.stderr)
+        return
+    previo = None
+    for j, it in enumerate(items):
+        r = _fila_datos(tb, j)
+        row = tb.rows[r]
+        informe = it["informe"] if it["informe"] != previo else ""
+        previo = it["informe"]
+        set_cell_rich(tb.cell(r, 0), [[(informe, False)]], row)
+        set_cell_rich(tb.cell(r, 1), [[(it["rotulo"], True), (it["texto"], False)]], row)
+        set_cell_rich(tb.cell(r, 2), _lineas_acciones(it["acciones"]), row)
+    _quitar_filas(tb, len(items) + 1)
 
-    data['accua'] = {"fecha": "...", "items": [{"rec": "...", "accion": "..."}, ...]}
-    Localiza la tabla por su cabecera ("Recomendaciones recibidas").
+
+def filas_plan(data, accua, modelo):
+    """Filas del plan de mejora, generadas de una sola fuente para que coincidan con las
+    tablas del autoinforme: recomendaciones de ACCUA (mismo orden y texto que en el
+    Criterio 2), puntos débiles de este autoinforme y filas extra de `plan_mejora`
+    (p. ej. puntos débiles no resueltos del plan anterior)."""
+    filas = [{"origen": [[(it["rotulo"], True), (it["texto"], False)]], "acciones": it["acciones"],
+              "ref": it["rotulo"]} for it in accua]
+    for crit in sorted(modelo):
+        for deb in modelo[crit]["debiles"]:
+            filas.append({"origen": [[(deb["rotulo"], True), (deb["texto"], False)]],
+                          "acciones": deb["acciones"], "ref": deb["rotulo"]})
+    for f in data.get("plan_mejora") or []:
+        if any(str(f.get(k, "")).strip() for k in ("origen", "accion", "evidencia")):
+            filas.append({"origen": [[(f.get("origen", ""), False)]], "acciones": [_accion(f)],
+                          "ref": f.get("origen", "")[:40]})
+    return filas
+
+
+def avisar_plan(filas):
+    """Avisa de acciones sin texto o sin evidencia y de fechas que no son MM/AAAA (p. ej.
+    «Permanente» o «Finalizada»)."""
+    for f in filas:
+        ref = f["ref"].strip().rstrip(":")
+        if not f["acciones"] or not all(a.get("accion") for a in f["acciones"]):
+            print(f"AVISO: «{ref}» no tiene acción de mejora; toda recomendación y todo punto "
+                  "débil la necesitan.", file=sys.stderr)
+        elif not all(a.get("evidencia") for a in f["acciones"]):
+            print(f"AVISO: «{ref}» tiene acciones sin evidencia; cada acción lleva la suya "
+                  "(un indicador no es una evidencia).", file=sys.stderr)
+        for a in f["acciones"]:
+            for campo in ("inicio", "fin"):
+                v = str(a.get(campo, "")).strip()
+                if v and not FECHA_RE.match(v):
+                    print(f"AVISO: «{ref}», fecha de {campo} «{v}» no válida: usa MM/AAAA (ninguna "
+                          "acción es «Permanente» ni «Finalizada»; el cierre lo decide ACCUA).",
+                          file=sys.stderr)
+
+
+def fill_plan_mejora(doc, filas):
+    if not filas:
+        return
+    tb = _tabla_por_cabecera(doc, "prioridad")
+    if tb is None:
+        print("AVISO: no se ha encontrado la tabla del plan de mejora (cabecera con "
+              "«Prioridad»).", file=sys.stderr)
+        return
+    for j, f in enumerate(filas):
+        r = _fila_datos(tb, j)
+        row = tb.rows[r]
+        columnas = [f["origen"], _lineas_acciones(f["acciones"])]
+        for campo in CAMPOS_PLAN:
+            vacio = "" if campo == "indicador" else PENDIENTE
+            columnas.append([[(str(a.get(campo) or vacio), False)] for a in f["acciones"] or [{}]])
+        for ci, lineas in enumerate(columnas[:len(tb.columns)]):
+            set_cell_rich(tb.cell(r, ci), lineas, row)
+    _quitar_filas(tb, len(filas) + 1)
+    avisar_plan(filas)
+
+
+def _para_color(p):
+    """Color común de los runs con texto del párrafo, o None si no hay uno solo."""
+    colores = {str(r.font.color.rgb) if r.font.color and r.font.color.type is not None
+               and r.font.color.rgb is not None else None
+               for r in p.runs if r.text.strip()}
+    return colores.pop() if len(colores) == 1 else None
+
+
+def fill_campus(doc, data):
+    """Deja en el criterio 5.1 solo el bloque de bibliotecas del campus del título.
+
+    La plantilla trae un bloque por campus, cada uno con su color de fuente
+    (CAMPUS_COLORES). Se conserva en negro el del campus indicado y se borran los demás.
     """
-    accua = data.get("accua")
-    if not accua or not accua.get("items"):
+    campus = str(data.get("campus", "")).strip().lower()
+    color_campus = CAMPUS_COLORES.get(campus)
+    if not color_campus:
+        print(f"AVISO: 'campus' ausente o no válido ({campus or 'vacío'}); usa uno de "
+              f"{', '.join(CAMPUS_COLORES)}. Los bloques de bibliotecas del 5.1 quedan sin "
+              "recortar.", file=sys.stderr)
         return
-    fecha = accua.get("fecha", "")
-    items = accua["items"]
-    for tb in doc.tables:
-        head = " ".join(c.text.lower() for c in tb.rows[0].cells)
-        if "recomendaciones recibidas" in head:
-            data_rows = list(range(1, len(tb.rows)))
-            for j, it in enumerate(items):
-                if j < len(data_rows):
-                    r = data_rows[j]
-                else:
-                    tb.add_row()
-                    r = len(tb.rows) - 1
-                if len(tb.columns) >= 3:
-                    set_cell_text(tb.cell(r, 0), fecha if j == 0 else "")
-                    set_cell_text(tb.cell(r, 1), it.get("rec", ""))
-                    set_cell_text(tb.cell(r, 2), it.get("accion", ""))
-            for r in data_rows[len(items):]:
-                for c in range(len(tb.columns)):
-                    set_cell_text(tb.cell(r, c), "")
-            break
+    otros = set(CAMPUS_COLORES.values()) - {color_campus}
+    for p in list(doc.paragraphs):
+        color = _para_color(p)
+        if color == color_campus:
+            for r in p.runs:
+                r.font.color.rgb = None
+        elif color in otros:
+            p._element.getparent().remove(p._element)
 
 
-def fill_plan_mejora(doc, data):
-    plan = data.get("plan_mejora", [])
-    if not plan:
-        return
-    tables = doc.tables
-    if PLAN_MEJORA_TABLE >= len(tables):
-        return
-    tb = tables[PLAN_MEJORA_TABLE]
-    if "prioridad" not in " ".join(c.text.lower() for c in tb.rows[0].cells):
-        return
-    data_rows = list(range(1, len(tb.rows)))
-    for j, fila in enumerate(plan):
-        if j < len(data_rows):
-            r = data_rows[j]
-        else:
-            tb.add_row()
-            r = len(tb.rows) - 1
-        cols = tb.columns
-        vals = [
-            fila.get("origen", ""),
-            f"Acción de mejora: {fila.get('accion','')}\nEvidencia: {fila.get('evidencia','')}",
-            fila.get("prioridad", ""),
-            fila.get("responsable", ""),
-            fila.get("inicio", ""),
-            fila.get("fin", ""),
-            fila.get("indicador", ""),
-        ]
-        for ci, v in enumerate(vals):
-            if ci < len(cols):
-                set_cell_text(tb.cell(r, ci), v)
-    # limpia filas placeholder no usadas
-    for r in data_rows[len(plan):]:
-        for ci in range(len(tb.columns)):
-            set_cell_text(tb.cell(r, ci), "")
+def actualizar_enlaces(doc):
+    """Sustituye los hipervínculos obsoletos de la plantilla (ENLACES_VIGENTES)."""
+    for rel in doc.part.rels.values():
+        if not rel.is_external:
+            continue
+        for antiguo, nuevo in ENLACES_VIGENTES.items():
+            if antiguo in rel.target_ref:
+                rel._target = nuevo
 
 
 def main():
@@ -359,10 +626,14 @@ def main():
     doc = docx.Document(args.plantilla)
     fill_header(doc, data.get("encabezado"))
     fill_identity(doc, data.get("identificacion"))
+    fill_campus(doc, data)
+    actualizar_enlaces(doc)
     n = fill_indicators(doc, data)
-    fill_accua(doc, data)
-    fill_puntos(doc, data)
-    fill_plan_mejora(doc, data)
+    modelo = modelo_puntos(data)
+    accua = items_accua(data)
+    fill_accua(doc, accua)
+    fill_puntos(doc, modelo)
+    fill_plan_mejora(doc, filas_plan(data, accua, modelo))
     doc.save(args.salida)
     print(f"OK: {args.salida} | valores de indicadores escritos: {n}")
 

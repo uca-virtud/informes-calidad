@@ -1,9 +1,11 @@
 {
   "encabezado": {
-    "curso": "2024/25",
-    "convocatoria": "2026",
+    "curso": "2025/26",
+    "convocatoria": "2027",
     "titulo": "GRADO EN <DENOMINACIÓN>",
-    "centro": "<Facultad / Escuela>"
+    "centro": "<Facultad / Escuela>",
+    "fecha_elaboracion": "",
+    "fecha_aprobacion": ""
   },
   "identificacion": {
     "Universidad": "Universidad de Cádiz",
@@ -19,23 +21,36 @@
     "En su caso, créditos prácticos obligatorios": "",
     "En su caso, estructuras curriculares específicas": ""
   },
-  "anios": ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25"],
-  "anios_egresados": ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24"],
-  "extraccion": {"entorno": "data.uca.es", "fecha": "2026-03-01"},
+  "campus": "puerto-real",
+  "anios": ["2021-22", "2022-23", "2023-24", "2024-25", "2025-26"],
+  "anios_egresados": ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25"],
+  "extraccion": {"entorno": "data.uca.es", "fecha": "2026-11-01", "fuente": "agregado"},
   "indicadores": {
-    "ISGC-P04-01": {"titulo": {"2020-21": "", "2021-22": "", "2022-23": "", "2023-24": "", "2024-25": ""}, "centro": {}},
+    "ISGC-P04-01": {"titulo": {"2021-22": "", "2022-23": "", "2023-24": "", "2024-25": "", "2025-26": ""}, "centro": {}},
     "ISGC-P04-04": {"titulo": {}, "centro": {}},
     "ISGC-P04-09|Movilidad entrante internacional": {"titulo": {}, "centro": {}},
     "ISGC-P04-09|Movilidad saliente internacional": {"titulo": {}, "centro": {}},
     "ISGC-P07-02": {"titulo": {}, "centro": {}},
     "ISGC-P07-05": {"titulo": {"2023-24": ""}, "centro": {}}
   },
+  "accua": {
+    "informe": "Informe de seguimiento de ACCUA, <DD/MM/AAAA>",
+    "items": [
+      {"num": "<nº original>", "tipo": "Recomendación", "rec": "<texto literal de la recomendación>",
+       "acciones": [{"accion": "", "evidencia": "", "prioridad": "Alta", "responsable": "",
+                     "inicio": "", "fin": "", "indicador": ""}]}
+    ]
+  },
   "puntos": {
     "1": {"fuertes": [], "debiles": []},
-    "6": {"fuertes": [], "debiles": [{"punto": "", "acciones": [""]}]}
+    "6": {"fuertes": [], "debiles": [
+      {"punto": "", "acciones": [{"accion": "", "evidencia": "", "prioridad": "Media",
+                                  "responsable": "", "inicio": "", "fin": "",
+                                  "indicador": ""}]}
+    ]}
   },
   "plan_mejora": [
-    {"origen": "", "accion": "", "evidencia": "", "prioridad": "Alta",
-     "responsable": "", "inicio": "", "fin": "", "indicador": ""}
+    {"origen": "", "accion": "", "evidencia": "",
+     "prioridad": "", "responsable": "", "inicio": "", "fin": "", "indicador": ""}
   ]
 }

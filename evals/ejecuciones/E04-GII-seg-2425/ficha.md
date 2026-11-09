@@ -59,6 +59,26 @@ Media final: 1.43. Bloqueantes: B1. Discrepancias por causa (B): S=7, D=3, I=1, 
 - `skills/uca-informes-calidad/references/estilo-y-ejemplos.md`: 1 frases de GIDIDP-seg-2425 (p. ej. «de eficiencia esta tasa con un valor de»)
 <!-- medir:fin -->
 
+## Valoración de la coordinación (completa `evaluacion.py valoracion`)
+
+<!-- valoracion:inicio -->
+Hojas de valoración recibidas: 1 (2026-10-26).
+
+| Dim. | Coordinación (1-5) | Equivale (0-2) | IA (final) | Diferencia |
+|---|---|---|---|---|
+| D1 | 4 | 1,5 | 2 | -0,5 |
+| D2 | 4 | 1,5 | 2 | -0,5 |
+| D3 | 2 | 0,5 | 1 | -0,5 |
+| D4 | 2 | 0,5 | 1 | -0,5 |
+| D5 | 2 | 0,5 | 1 | -0,5 |
+| D6 | 2 | 0,5 | 2 | -1,5 |
+| D7 | 1 | 0 | 1 | -1 |
+
+Media: coordinación 0,71, IA 1,43 (diferencia -0,72). Esfuerzo (1-5): 1. Global (punto de partida): 4 (1-5). Errores graves según la coordinación: no.
+
+Los comentarios de la coordinación no se versionan: están en `valoracion.json` y en las hojas, solo en local.
+<!-- valoracion:fin -->
+
 ## Pendiente de revisión experta
 
 - Bloqueante B1
@@ -70,6 +90,9 @@ Media final: 1.43. Bloqueantes: B1. Discrepancias por causa (B): S=7, D=3, I=1, 
 - Discrepancia 20 (I): 6.1 Evidencias
 - Discrepancia 4 (I): Identificación administrativa; criterios 2, 3, 4, 5 y 7; Anexo III
 - Discrepancia 12 (H): 6.2/6.3 y 7.6, interpretación de objetivos
+- Coordinación D6: coordinación=0,5, IA=2
+- Coordinación D7: coordinación=0, IA=1
+- Coordinación: no aprecia errores graves y la IA anotó B1
 
 ## Decisión del responsable
 

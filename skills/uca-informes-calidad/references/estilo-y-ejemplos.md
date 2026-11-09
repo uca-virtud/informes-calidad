@@ -13,7 +13,9 @@ elabora la coordinación. Adapta siempre los datos concretos al título en cuest
    frase inicial.
 2. **Narrativa**: explica cómo el título cumple la directriz, citando normativa (con su
    código UCA), la web del título/centro, aplicaciones (GADES, ICARO, GOA, SIRE, CAU,
-   BAU, tfgm.uca.es), rutas del repositorio Colabora, comisiones y actas.
+   BAU, tfgm.uca.es), rutas del repositorio Colabora, comisiones y actas. Las aplicaciones
+   con usuario y contraseña (GADES, ICARO, Campus Virtual) y LinceBI se citan, pero no se
+   enlazan: los evaluadores no tienen acceso.
 3. **Análisis de indicadores** del subcriterio, uno por párrafo (ver micro-formato).
 4. **Remisión a anexos**: "Los valores se recogen en el Anexo I"; tablas en Anexos II-IV.
 
@@ -89,7 +91,8 @@ valor dinámico y que depende de la fecha de extracción.
 
 ## Egresados (P07-05 a 10): cohortes y participación
 
-Analiza en el 7.5 **la cohorte más reciente encuestada** (convocatoria 2026: 2023-24).
+Analiza en el 7.5 **la cohorte más reciente encuestada** (convocatoria 2027:
+previsiblemente 2024-25; compruébalo en LinceBI).
 Advierte siempre que los valores son **por cohorte de egreso** (no por curso académico) y
 señala la **tasa de participación** con el número de encuestas y de egresados: p. ej.
 «corresponden a la cohorte <cohorte>, con una participación del <%>% (<n> encuestas
@@ -102,27 +105,30 @@ Para subcriterios no aplicables al título (p. ej. 4.6 y 5.5 enseñanza híbrida
 es presencial), escribe simplemente «No procede.» tras el enunciado, o elimina el
 apartado según indique la plantilla.
 
-## Codificación de puntos fuertes/débiles y acciones
+## Numeración de puntos fuertes/débiles y acciones
 
-Sigue el esquema del ejemplo real, usando el acrónimo del centro:
+La numeración la pone `rellenar_autoinforme.py`: «Curso <curso>. Punto fuerte nº» dentro
+de cada criterio y los puntos débiles con números correlativos en todo el autoinforme.
+Algunos centros (la ESI y la ETSIA) usan además códigos con su acrónimo; en ellos, indica
+`codigo_centro` en el JSON y el script añade el código entre paréntesis tras el rótulo:
 
-- Punto fuerte: `PF-<CENTRO>-<criterio>.<n>.- <texto>` (p. ej. `PF-ESI-6.1.- La tasa de
-  éxito y de eficiencia se mantienen, por encima de los valores objetivo.`)
-- Punto débil: `PD-<CENTRO>-<criterio>.<n>.- <texto>`
-- Acción de mejora: `AM-<CENTRO>-<criterio>.<n>.- <texto>`
+- Punto fuerte: `Curso 2025-26. Punto fuerte 1º (PF-ESI-6.1): La tasa de éxito y de
+  eficiencia se mantienen por encima de los valores objetivo.`
+- Punto débil: `Punto débil 3º (PD-<CENTRO>-<criterio>.<n>): <texto>`
+- Acción de mejora: `Acción de mejora 3ª (AM-<CENTRO>-<criterio>.<n>): <texto>`
 
-Cada punto débil enlaza con su acción (mismo número). Redacta puntos concretos y
-apoyados en indicadores o hechos del curso analizado. Limita los puntos débiles a los que
-la coordinación asumirá con acción propia (entre 1 y 5 en todo el autoinforme; ver
-`guia-redaccion.md`).
+En el resto de centros no uses códigos. Cada punto débil enlaza con su acción. Redacta
+puntos concretos y apoyados en indicadores o hechos del curso analizado, y declara como
+débiles todos los que tengan evidencia (ver `guia-redaccion.md`).
 
 ## Tabla de recomendaciones ACCUA (Criterio 2)
 
-Reproduce, tal cual, del último informe ACCUA: la **fecha del informe**, cada
-recomendación con su tipo y **numeración original** (`Subsanación 1.1.- …`,
-`Recomendación 2.1.- …`), sin renumerarlas aunque el autoinforme anterior lo haya hecho,
-y, en la tercera columna, la **acción de mejora** que le da respuesta (con evidencia).
-Mantén TODAS las recomendaciones hasta que ACCUA las dé por cerradas.
+Reproduce, literal, del último informe ACCUA: el informe y su **fecha**, y cada
+recomendación, una por fila, con su tipo y **numeración original** (`Recomendación 2.1.-
+…`, `Recomendación de especial seguimiento 6.1.- …`), sin renumerarlas aunque el
+autoinforme anterior lo haya hecho, y la **acción de mejora** que le da respuesta (acción
+y evidencia en líneas separadas). No añadas estados como «en curso». Mantén TODAS las
+recomendaciones hasta que ACCUA las dé por cerradas.
 
 Para la composición de la CGC, remite a su página en la web del título o del centro en
 lugar de enumerar a sus miembros.
@@ -132,7 +138,9 @@ lugar de enumerar a sus miembros.
 `Recomendación ACCUA o punto débil | Acciones de mejora a desarrollar | Prioridad |
 Responsable (uno) | Fecha de inicio | Fecha de finalización | Indicador de seguimiento`.
 Consolida: recomendaciones ACCUA vivas + puntos débiles de este autoinforme + débiles no
-resueltos del plan anterior.
+resueltos del plan anterior. Fechas en MM/AAAA, nunca «Permanente» ni «Finalizada»; en la
+última columna, el indicador con su valor actual. Las recomendaciones ocupan las mismas
+filas, con el mismo texto y las mismas acciones, que en la tabla del criterio 2.
 
 ## Sostenibilidad (7.6)
 

@@ -19,8 +19,10 @@ centro).
 
 ## Criterio 2 — SGC de la UCA
 
-- Política de Calidad de la UCA aprobada por el Consejo de Calidad el 20/04/2022; el
-  `<CENTRO>` aprobó su Política de Calidad y Plan Director en Junta de <fecha> (verificar).
+- Política de Calidad de la UCA: directrices aprobadas el 29-9-2026 y publicadas en el
+  BOUCA (https://ucalidad.uca.es/wp-content/uploads/2026/10/BOUCA-DIRECTRICES-POLITICA-DE-CALIDAD-29-9-26.pdf),
+  que sustituyen a la de 20/04/2022; el `<CENTRO>` aprobó su Política de Calidad y Plan
+  Director en Junta de <fecha> (verificar).
 - SGC versión 3.0 aprobada por Consejo de Gobierno el 28/06/2021 (BOUCA 334), en vigor
   desde 01/10/2021; actualizada a la **versión 3.1** en vigor desde 01/02/2023 (verificar
   la versión vigente en el curso del autoinforme).
@@ -46,7 +48,11 @@ centro).
 
 ## Criterio 5 — Recursos y servicios (adaptar al centro/campus)
 
-- **Biblioteca** del `<CAMPUS>` (datos concretos —m², puestos, fondos— son del campus).
+- **Infraestructura del centro** (5.1, apartado 1): muy breve, a partir del apartado 7
+  (Recursos materiales y servicios) de la última memoria verificada.
+- **Biblioteca** del `<CAMPUS>`: la plantilla trae un bloque por campus; el script
+  conserva el del `campus` del JSON. Los datos concretos (m², puestos, fondos) son del
+  campus.
 - **Campus Virtual** UCA sobre Moodle, mantenido por el Vicerrectorado de Digitalización
   e Infraestructuras; usado por todas las asignaturas del título.
 - **Red wifi** (ucAir general; Eduroam para PDI/PTGAS/estudiantes/visitantes).
