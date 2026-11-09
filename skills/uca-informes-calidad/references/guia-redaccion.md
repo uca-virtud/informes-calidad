@@ -97,6 +97,10 @@ interpretación y en las decisiones de mejora que se derivan.
 - **Negro** = recomendaciones de redacción. Puedes reescribirlas con el contenido real
   del título.
 - **Rojo** = instrucciones de cumplimentación. **Eliminar** antes de presentar.
+  `depurar_instrucciones.py` borra todo el rojo salvo las excepciones que declara en su
+  cabecera (p. ej. el recordatorio de lo que debe estar publicado). Si el Servicio de Gestión
+  de la Calidad pide conservar otro texto en rojo, añádelo como excepción en el script; no lo
+  restaures a mano en el documento.
 - **Azul** = directrices de ACCUA. **Eliminar** antes de presentar.
 - Sustituye todos los marcadores `XXXX`, `xxxx`, `http://xxxxxx.uca.es` por los datos
   reales del título/centro.

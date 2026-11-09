@@ -69,3 +69,7 @@ de `evals/casos/<id>/referencia/`), que está en el repositorio, no en `web/`.
 - El Python del sistema no trae las librerías necesarias y no hay `pdftotext`. Usa un entorno
   virtual temporal con `python-docx` para los scripts de la skill, `pypdf` para leer PDF y
   `tools/evaluacion/requirements.txt` para `evaluacion.py`.
+- Con `python-docx`, `p.runs` no incluye el texto de los hipervínculos: usa `p.text` o recorre
+  `p.iter_inner_content()` para leer el párrafo completo. Para añadir filas a una tabla de la
+  plantilla sin perder el formato, localiza la tabla por el texto de su cabecera en minúsculas
+  y clona el XML de una fila existente.

@@ -287,7 +287,9 @@ Llega semanas después del paso 7, cuando la coordinación devuelve la hoja rell
 detiene el ciclo de IA: la skill puede haber cambiado de versión entretanto. El
 responsable la guarda en `evals/ejecuciones/Enn-<id>/valoracion-coordinacion.xlsx` (con
 sufijo `-1`, `-2`… si valoran varias personas). Ni la hoja ni `valoracion.json` se versionan
-porque contienen comentarios y el rol de quien valora. El orquestador ejecuta
+porque contienen comentarios y el rol de quien valora. La celda del rol (C5) a veces trae
+el nombre de quien valora: trátalo como dato personal y no lo copies a la ficha ni a la web.
+El orquestador ejecuta
 `python tools/evaluacion/evaluacion.py valoracion Enn`, que:
 
 - lee las notas 1-5 de los aspectos 1 a 8, los comentarios, las respuestas Sí/No a «Global»
