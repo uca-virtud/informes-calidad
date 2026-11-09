@@ -17,6 +17,20 @@ informes y se los devuelve con anotaciones para que hagan los cambios pertinente
 Unidad de Calidad valida los informes revisados, los envía a las agencias de calidad
 externas para su evaluación o, si son de seguimiento interno, los archiva.
 
+El proceso es anual y sigue el
+[cronograma de seguimiento](https://ucalidad.uca.es/seguimiento/) del procedimiento P03-1 del
+Sistema de Garantía de Calidad, que no fija días concretos:
+
+| Mes | Responsable | Actuación |
+|---|---|---|
+| Noviembre-diciembre | Coordinación del título | Recabar la información del Sistema de Garantía de Calidad |
+| Enero | Coordinación del título | Elaborar el autoinforme |
+| Febrero | Servicio de Gestión de la Calidad | Revisar el autoinforme |
+| Febrero | Comisión de Garantía de Calidad y Junta de Centro | Aprobar el autoinforme |
+
+El autoinforme del curso anterior corresponde a la convocatoria del año siguiente: el del
+curso 2025/26 se elabora entre noviembre de 2026 y febrero de 2027 (convocatoria 2027).
+
 ## Situación deseada
 
 La Unidad de Calidad deja de enviar plantillas vacías a los coordinadores y les envía

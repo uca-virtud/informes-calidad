@@ -49,12 +49,20 @@ CAMPUS_COLORES = {
     "algeciras": "7030A0",
 }
 
-# Enlaces de la plantilla que el Servicio de Gestión de la Calidad ha dado por obsoletos.
+# Enlaces desfasados de la plantilla, sustituidos por la versión vigente que publica el
+# Servicio de Gestión de la Calidad.
 ENLACES_VIGENTES = {
     # Política de Calidad: directrices aprobadas el 29-9-2026.
     "BOUCA356-16-19.pdf":
         "https://ucalidad.uca.es/wp-content/uploads/2026/10/"
         "BOUCA-DIRECTRICES-POLITICA-DE-CALIDAD-29-9-26.pdf",
+    # Procesos P04 y P07: versiones vigentes publicadas en la página del SGC de los centros.
+    "P04-Procesos-ensenanza_aprendizaje-noviembre-2021.pdf":
+        "https://ucalidad.uca.es/wp-content/uploads/2023/03/"
+        "P04-Procesos-ensenanza_aprendizaje-ENERO-2023.pdf",
+    "2024/12/P07-Resultados_SGCC.pdf":
+        "https://ucalidad.uca.es/wp-content/uploads/2026/07/"
+        "P07-Resultados_SGCC-v3.3.correg.pdf",
 }
 
 
