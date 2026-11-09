@@ -17,7 +17,7 @@ se envía material a la coordinación; todo lo demás lo hacen el orquestador y 
 | `docs/evaluacion/plantilla-cotejo.md` | Formato obligatorio de `cotejo-A.md` y `cotejo-B.md`. |
 | `docs/evaluacion/plantilla-ficha.md` | Ficha de cada ejecución (la crea el script). |
 | `evals/casos/<id>/entrada/` | Lo que recibiría la skill: autoinforme anterior, memoria, informe ACCUA… |
-| `evals/casos/<id>/referencia/autoinforme-humano.*` | Autoinforme presentado por la coordinación. **Nunca** lo ve A al generar. |
+| `evals/casos/<id>/referencia/autoinforme-humano.*` | Autoinforme presentado por la coordinación. **Nunca** lo ve A al generar. No existe en los [casos sin referencia](#casos-sin-referencia). |
 | `evals/casos/<id>/fuentes.json` y `fuentes.md` | Manifiesto que procesa `caso` y procedencia resultante de los documentos (URL, fecha, SHA-256); solo en los casos preparados con `caso`. |
 | `evals/ejecuciones/Enn-<id>/` | Ficha, borrador (`borrador.docx` y `datos.json`), cotejos y métricas de la ejecución y la hoja de valoración (paso 7) para la coordinación. |
 | `evals/historial.md` | Resultados de cada ejecución: tabla (la regenera `medir`), conclusiones, relato de cada ejecución y antecedentes. |
@@ -75,6 +75,11 @@ evaluados. Hay dos formas de preparar el caso:
   - en `evals/casos/<id>/referencia/`: `autoinforme-humano.*`.
 
   Para registrar también la procedencia en `fuentes.md`, ejecuta `caso` con `--sin-descarga`.
+
+Si el autoinforme del curso que se quiere generar aún no está publicado, el caso se prepara
+**sin referencia**: `caso` con `--sin-referencia`, sin documento `autoinforme-humano` en el
+manifiesto. La ejecución la valora solo la coordinación (ver
+[Casos sin referencia](#casos-sin-referencia)).
 
 ## Pasos de una ejecución
 
@@ -277,7 +282,7 @@ apartado «Material» por un enlace, con el mismo formato que las demás filas, 
 | Enlace | Fichero |
 |---|---|
 | Borrador IA (Word) | `evals/ejecuciones/Enn-<id>/borrador.docx` |
-| Autoinforme de la coordinación (PDF) | `evals/casos/<id>/referencia/autoinforme-humano.pdf` (si la referencia no es PDF, se guarda también convertida a PDF con ese nombre) |
+| Autoinforme de la coordinación (PDF) | `evals/casos/<id>/referencia/autoinforme-humano.pdf` (si la referencia no es PDF, se guarda también convertida a PDF con ese nombre; no existe en los casos sin referencia) |
 | Hoja de valoración (Excel) | `evals/ejecuciones/Enn-<id>/rubrica-valoracion.xlsx` |
 | Ficha de la ejecución (Markdown) | `evals/ejecuciones/Enn-<id>/ficha.md` |
 
@@ -306,6 +311,10 @@ El orquestador ejecuta
 - añade a «Pendiente de revisión experta» las dimensiones en las que coordinación e IA
   difieren 1 punto o más, y los desacuerdos entre «Errores graves» y los bloqueantes B1/B2.
   `medir` los conserva si se vuelve a ejecutar.
+
+En los [casos sin referencia](#casos-sin-referencia) no hay `metricas.json`: `valoracion`
+deja «—» en las columnas de la IA y anota como pendiente cualquier «Sí» en «Errores graves»,
+porque no hay cotejo con el que contrastarlo.
 
 Una hoja anterior a la separación de D1 y D2 se acepta con aviso: «Datos» puntúa ambas y no
 hay D6 ni errores graves. En las hojas anteriores a la rúbrica v3, «Global» es una nota 1-5:
@@ -348,6 +357,24 @@ valoración (`docs/evaluacion/rubrica-valoracion.xlsx`) y en «La rúbrica de ev
 Cada convocatoria, la plantilla del autoinforme que publica el Servicio de Calidad se
 incorpora a la skill (`assets/`) antes de la primera ejecución que la use, junto con la guía
 rápida y las recomendaciones de ACCUA vigentes ([`docs/calidad-2026/`](calidad-2026/README.md)).
+
+### Casos sin referencia
+
+Cuando el autoinforme del curso aún no está publicado (p. ej., se genera el del curso en
+marcha), no hay con qué cotejar: la ejecución solo mide lo que valore la coordinación. Se
+prepara con `caso --sin-referencia`, que deja la marca en `fuentes.md`, y a partir de ahí:
+
+| Paso | Qué cambia |
+|---|---|
+| 1 | `nueva` avisa de que se omiten los pasos 3-5 y deja en la ficha «Referencia: ninguna» y «No se mide» en el resultado. |
+| 2 | Igual. |
+| 3-5 | No se hacen: sin autocotejo, sin B y sin `medir` (que se niega a ejecutarse). |
+| 6 | El registro y el resumen al responsable cubren solo la generación (incidencias, `[PENDIENTE]`); no se validan lecciones ni se añaden notas de IA a `web/evaluacion.html`, cuya fila muestra «—» en la nota hasta que llegue la valoración. |
+| 7 | Igual, sin el enlace al autoinforme de la coordinación. |
+| 8 | `valoracion` funciona sin `metricas.json` y añade la fila al historial con «—» en las columnas de la IA. Las lecciones que salgan solo de la coordinación siguen el filtro de admisión habitual. |
+
+Cuando se publique el autoinforme de ese curso, puede prepararse aparte un caso normal con
+él como referencia; el caso sin referencia no se reconvierte.
 
 ## Después de la ejecución: aplicar lecciones
 

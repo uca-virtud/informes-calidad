@@ -3,7 +3,7 @@
 
 Uso (desde la raíz del repositorio):
   python tools/evaluacion/evaluacion.py enlaces <url> [--todos]
-  python tools/evaluacion/evaluacion.py caso <fuentes.json> [--sin-descarga]
+  python tools/evaluacion/evaluacion.py caso <fuentes.json> [--sin-descarga] [--sin-referencia]
   python tools/evaluacion/evaluacion.py nueva <id> [--modelo-a M] [--modelo-b M]
   python tools/evaluacion/evaluacion.py medir <Enn>
   python tools/evaluacion/evaluacion.py valoracion <Enn>
@@ -46,6 +46,9 @@ RE_NUMERO = re.compile(r"(?<![\w.,])-?\d{1,3}(?:\.\d{3})*(?:,\d+)?(?:\.\d+)?(?![
 MARCA_INI, MARCA_FIN = "<!-- medir:inicio -->", "<!-- medir:fin -->"
 MARCA_VAL_INI, MARCA_VAL_FIN = "<!-- valoracion:inicio -->", "<!-- valoracion:fin -->"
 SECCION_VALORACION = "## Valoración de la coordinación (completa `evaluacion.py valoracion`)"
+# Línea que `caso --sin-referencia` escribe en fuentes.md y que `nueva`, `medir` y `valoracion` reconocen.
+MARCA_SIN_REF = ("Sin referencia: el autoinforme de este curso aún no está publicado; "
+                 "la evaluación la hace solo la coordinación (se omiten los pasos 3-5).")
 # Aspecto de la hoja de valoración → claves que puntúa ("Datos" es de la hoja anterior a D1/D2 separados).
 ASPECTOS_HOJA = {"identificación": ["D1"], "indicadores": ["D2"], "datos": ["D1", "D2"], "cobertura": ["D3"],
                  "análisis": ["D4"], "mejora": ["D5"], "recomendaciones": ["D6"], "redacción": ["D7"],
@@ -83,13 +86,23 @@ def version_skill():
 
 # --- nueva -------------------------------------------------------------------
 
-def comprobar_caso(caso):
+def sin_referencia(caso_id):
+    fuentes = CASOS_DIR / caso_id / "fuentes.md"
+    return fuentes.exists() and MARCA_SIN_REF in fuentes.read_text(encoding="utf-8")
+
+
+def comprobar_caso(caso, sin_ref=None):
     base = CASOS_DIR / caso["id"]
     entrada, referencia = base / "entrada", base / "referencia"
+    if sin_ref is None:
+        sin_ref = sin_referencia(caso["id"])
     faltan = [n + ".*" for n in ENTRADA_OBLIGATORIA.get(caso["tipo"], []) if not list(entrada.glob(n + ".*"))]
     if not entrada.is_dir() or not any(entrada.iterdir()):
         faltan.append("entrada/ (vacía)")
-    if not list(referencia.glob("autoinforme-humano.*")):
+    tiene_ref = bool(list(referencia.glob("autoinforme-humano.*")))
+    if sin_ref and tiene_ref:
+        error(f"el caso {caso['id']} es sin referencia pero tiene referencia/autoinforme-humano.*")
+    if not sin_ref and not tiene_ref:
         faltan.append("referencia/autoinforme-humano.*")
     if faltan:
         error(f"al caso {caso['id']} le faltan: {', '.join(faltan)} (en {base})")
@@ -106,6 +119,7 @@ def cmd_nueva(args):
     if caso["conjunto"] == "excluido":
         error(f"{args.id} está excluido: la skill usa textos suyos como ejemplos")
     comprobar_caso(caso)
+    sin_ref = sin_referencia(caso["id"])
     nombre = f"E{siguiente_numero():02d}-{caso['id']}"
     carpeta = EJEC_DIR / nombre
     carpeta.mkdir(parents=True)
@@ -117,21 +131,30 @@ def cmd_nueva(args):
         "<aprendizaje / reserva>": caso["conjunto"], "<AAAA-MM-DD>": date.today().isoformat(),
         "<commit de skills/ y si hay cambios sin commit>": version_skill(),
         "<n>": version_rubrica(), "<modelo>": None,
+        "<referencia>": "ninguna: evaluación solo de la coordinación (pasos 1, 2, 6, 7 y 8)" if sin_ref
+        else "`referencia/autoinforme-humano.*`",
     }
     texto = (DOC_EVAL / "plantilla-ficha.md").read_text(encoding="utf-8")
     for clave, valor in valores.items():
         if valor is not None:
             texto = texto.replace(clave, valor, 1 if clave == "<AAAA-MM-DD>" else -1)
     texto = texto.replace("<modelo>", args.modelo_a, 1).replace("<modelo>", args.modelo_b, 1)
+    if sin_ref:
+        texto = texto.replace(f"{MARCA_INI}\n{MARCA_FIN}",
+                              f"{MARCA_INI}\nNo se mide: caso sin referencia (sin autocotejo, B ni `medir`).\n{MARCA_FIN}")
     (carpeta / "ficha.md").write_text(texto, encoding="utf-8")
     print(f"Creada {carpeta.relative_to(RAIZ)}")
     print(f"  entrada:    {(CASOS_DIR / caso['id'] / 'entrada').relative_to(RAIZ)}")
-    print(f"  referencia: {(CASOS_DIR / caso['id'] / 'referencia').relative_to(RAIZ)} (no se da a A al generar)")
+    if sin_ref:
+        print("AVISO: caso sin referencia. Se omiten los pasos 3-5 (autocotejo, B y `medir`): tras generar el "
+              "borrador, pasa al registro (paso 6) y al material para la coordinación (paso 7).")
+    else:
+        print(f"  referencia: {(CASOS_DIR / caso['id'] / 'referencia').relative_to(RAIZ)} (no se da a A al generar)")
 
 
 # --- caso ----------------------------------------------------------------------
 
-def leer_manifiesto(ruta, sin_descarga):
+def leer_manifiesto(ruta, sin_descarga, sin_ref):
     try:
         man = json.loads(Path(ruta).read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:
@@ -156,8 +179,10 @@ def leer_manifiesto(ruta, sin_descarga):
         error(f"roles desconocidos: {desconocidos}; admitidos: {', '.join(ROLES)}")
     if len(set(roles)) != len(roles):
         error("hay roles repetidos en documentos: elige un único documento por rol")
+    if sin_ref and "autoinforme-humano" in roles:
+        error("con --sin-referencia el manifiesto no puede incluir autoinforme-humano")
     if not sin_descarga:
-        necesarios = ["autoinforme-humano"] + ENTRADA_OBLIGATORIA.get(man["tipo"], [])
+        necesarios = ([] if sin_ref else ["autoinforme-humano"]) + ENTRADA_OBLIGATORIA.get(man["tipo"], [])
         ausentes = [r for r in necesarios if r not in roles]
         if ausentes:
             error(f"faltan documentos obligatorios en el manifiesto: {', '.join(ausentes)}")
@@ -208,11 +233,14 @@ def avisos_pdf(ruta):
     return []
 
 
-def escribir_fuentes(base, man, filas):
+def escribir_fuentes(base, man, filas, sin_ref):
     lineas = [f"# Fuentes del caso {man['id']}", "",
               f"{man['titulo']} · {man['centro']} · {man['tipo']} {man['curso']} (convocatoria {man['convocatoria']})",
-              "", "| Rol | Fichero | URL | Página de origen | Descarga | Tamaño | SHA-256 |",
-              "|---|---|---|---|---|---|---|"]
+              ""]
+    if sin_ref:
+        lineas += [MARCA_SIN_REF, ""]
+    lineas += ["| Rol | Fichero | URL | Página de origen | Descarga | Tamaño | SHA-256 |",
+               "|---|---|---|---|---|---|---|"]
     lineas += ["| " + " | ".join(f) + " |" for f in filas]
     if man.get("notas"):
         lineas += ["", "## Notas", "", man["notas"]]
@@ -277,10 +305,10 @@ def cmd_enlaces(args):
 
 def cmd_caso(args):
     import hashlib
-    man, columnas, documentos = leer_manifiesto(args.manifiesto, args.sin_descarga)
+    man, columnas, documentos = leer_manifiesto(args.manifiesto, args.sin_descarga, args.sin_referencia)
     base = CASOS_DIR / man["id"]
     if args.sin_descarga:
-        comprobar_caso(man)
+        comprobar_caso(man, args.sin_referencia)
     hoy = date.today().isoformat()
     descargas = []
     if not args.sin_descarga:
@@ -307,8 +335,8 @@ def cmd_caso(args):
                 filas.append([rol, str(ruta.relative_to(base)), "aportado a mano", "", hoy,
                               f"{len(datos) / 1024:.0f} KB", hashlib.sha256(datos).hexdigest()])
     base.mkdir(parents=True, exist_ok=True)
-    escribir_fuentes(base, man, filas)
-    comprobar_caso(man)
+    escribir_fuentes(base, man, filas, args.sin_referencia)
+    comprobar_caso(man, args.sin_referencia)
     anadir_fila_csv(man, columnas)
     print(f"Añadido {man['id']} a evals/casos.csv y creado {(base / 'fuentes.md').relative_to(RAIZ)}")
     for aviso in avisos:
@@ -537,8 +565,9 @@ def actualizar_ficha(carpeta, r):
     if not ficha.exists():
         return
     txt = ficha.read_text(encoding="utf-8")
-    txt = re.sub(re.escape(MARCA_INI) + ".*?" + re.escape(MARCA_FIN),
-                 lambda _: f"{MARCA_INI}\n{bloque_resultado(r)}\n{MARCA_FIN}", txt, flags=re.S)
+    if "borrador" in r:
+        txt = re.sub(re.escape(MARCA_INI) + ".*?" + re.escape(MARCA_FIN),
+                     lambda _: f"{MARCA_INI}\n{bloque_resultado(r)}\n{MARCA_FIN}", txt, flags=re.S)
     pend = r["pendientes"] + pendientes_valoracion(carpeta) or ["Nada pendiente."]
     txt = re.sub(r"(## Pendiente de revisión experta\n\n).*?(?=\n## )",
                  lambda m: m.group(1) + "\n".join(f"- {p}" for p in pend) + "\n", txt, flags=re.S)
@@ -554,25 +583,38 @@ def campo_ficha(carpeta, campo):
     return "—"
 
 
+def metricas_sin_referencia():
+    """Sustituye a metricas.json en los casos sin referencia: no hay notas de IA con las que comparar."""
+    return {"sin_referencia": True, "rubrica": "—", "final": {d: None for d in DIMENSIONES}, "media": None,
+            "bloqueantes": [], "pendientes": []}
+
+
+def fila_historial(carpeta, r, v):
+    coord = v["media"] if v else None
+    dif = round(coord - r["media"], 2) if coord is not None and r["media"] is not None else None
+    if "borrador" in r:
+        b, h = r["borrador"], r["referencia"]
+        medidas = [f"{round(100 * b['palabras'] / h['palabras'])} %", f"{b['pd']} / {h['pd']}", b["pendientes"],
+                   f"{r['anexo']['porcentaje']} %" if r["anexo"] else "—", r["causas_b"]["S"]]
+    else:
+        medidas = ["—"] * 5
+    return ([carpeta.name, campo_ficha(carpeta, "Fecha"), campo_ficha(carpeta, "Versión de la skill"),
+             campo_ficha(carpeta, "Modelo A (generador y autocotejo)"), r["rubrica"]]
+            + [nota(r["final"][d]) for d in DIMENSIONES]
+            + [nota(r["media"]), ", ".join(r["bloqueantes"]) or "—"] + medidas
+            + [len(r["pendientes"]) + len(v["pendientes"] if v else []),
+               nota(coord), nota(dif), nota(v["utilidad"].get("Esfuerzo") if v else None),
+               nota(global_valoracion(v) if v else None)])
+
+
 def actualizar_historial():
     filas = []
     for carpeta in sorted(EJEC_DIR.glob("E*-*")):
-        f = carpeta / "metricas.json"
-        if not f.exists():
-            continue
-        r = json.loads(f.read_text(encoding="utf-8"))
-        b, h = r["borrador"], r["referencia"]
-        v = leer_json(carpeta / "valoracion.json")
-        coord = v["media"] if v else None
-        dif = round(coord - r["media"], 2) if v and coord is not None and r["media"] is not None else None
-        filas.append([carpeta.name, campo_ficha(carpeta, "Fecha"), campo_ficha(carpeta, "Versión de la skill"),
-                      campo_ficha(carpeta, "Modelo A (generador y autocotejo)"), r["rubrica"]] + [nota(r["final"][d]) for d in DIMENSIONES]
-                     + [nota(r["media"]), ", ".join(r["bloqueantes"]) or "—",
-                        f"{round(100 * b['palabras'] / h['palabras'])} %", f"{b['pd']} / {h['pd']}",
-                        b["pendientes"], f"{r['anexo']['porcentaje']} %" if r["anexo"] else "—",
-                        r["causas_b"]["S"], len(r["pendientes"]) + len(v["pendientes"] if v else []),
-                        nota(coord), nota(dif), nota(v["utilidad"].get("Esfuerzo") if v else None),
-                        nota(global_valoracion(v) if v else None)])
+        r, v = leer_json(carpeta / "metricas.json"), leer_json(carpeta / "valoracion.json")
+        if r is None and v is not None:
+            r = metricas_sin_referencia()
+        if r is not None:
+            filas.append(fila_historial(carpeta, r, v))
     cab = ["Ejecución", "Fecha", "Skill", "Modelo A", "Rúbrica"] + DIMENSIONES + [
         "Media", "Bloq.", "Extensión", "PD IA/hum.", "[PEND.]", "Anexo I (cota sup.)", "Causas S", "Pend. revisión",
         "Coord.", "Δ coord.−IA", "Esfuerzo (1-5)", "Global"]
@@ -593,6 +635,8 @@ def cmd_medir(args):
     casos = leer_casos()
     if caso_id not in casos:
         error(f"el caso {caso_id} no está en casos.csv")
+    if sin_referencia(caso_id):
+        error(f"el caso {caso_id} no tiene referencia: no se mide; cuando llegue la hoja, usa `valoracion`")
     borrador = carpeta / "borrador.docx"
     refs = list((CASOS_DIR / caso_id / "referencia").glob("autoinforme-humano.*"))
     if not borrador.exists() or not refs:
@@ -724,7 +768,10 @@ def consolidar_valoracion(hojas, metricas):
         if notas_0_2[d] is not None and ia is not None and abs(notas_0_2[d] - ia) >= 1:
             pendientes.append(f"Coordinación {d}: coordinación={decimal(notas_0_2[d])}, IA={decimal(ia)}")
     graves_ia = [b for b in metricas["bloqueantes"] if b in ("B1", "B2")]
-    if graves and not graves_ia:
+    if metricas.get("sin_referencia"):
+        if graves:
+            pendientes.append("Coordinación: señala errores graves (caso sin cotejo de IA con el que contrastarlos)")
+    elif graves and not graves_ia:
         pendientes.append("Coordinación: señala errores graves y la IA no anotó B1 ni B2")
     elif graves is False and graves_ia:
         pendientes.append(f"Coordinación: no aprecia errores graves y la IA anotó {', '.join(graves_ia)}")
@@ -762,6 +809,8 @@ def bloque_valoracion(v, metricas, detalle=False):
         + f"Esfuerzo (1-5): {fmt(v['utilidad']['Esfuerzo'])}. Global (punto de partida): "
         + f"{global_valoracion(v) or '—'}. Errores graves según la coordinación: {graves}.",
     ]
+    if metricas.get("sin_referencia"):
+        partes.append("Caso sin referencia: no hay notas de IA con las que comparar.")
     if not detalle:
         return "\n".join(partes + ["", "Los comentarios de la coordinación no se versionan: están en "
                                    "`valoracion.json` y en las hojas, solo en local."])
@@ -793,7 +842,9 @@ def cmd_valoracion(args):
     carpeta = buscar_ejecucion(args.ejecucion)
     metricas = leer_json(carpeta / "metricas.json")
     if metricas is None:
-        error(f"falta {carpeta.name}/metricas.json: ejecuta antes `medir`")
+        if not sin_referencia(carpeta.name.split("-", 1)[1]):
+            error(f"falta {carpeta.name}/metricas.json: ejecuta antes `medir`")
+        metricas = metricas_sin_referencia()
     rutas = sorted(carpeta.glob("valoracion-coordinacion*.xlsx"))
     if not rutas:
         error(f"no hay valoracion-coordinacion*.xlsx en {carpeta.name}")
@@ -816,6 +867,8 @@ def main():
     c.add_argument("manifiesto", help="p. ej. evals/casos/<id>/fuentes.json")
     c.add_argument("--sin-descarga", action="store_true",
                    help="los documentos ya están copiados a mano en entrada/ y referencia/")
+    c.add_argument("--sin-referencia", action="store_true",
+                   help="aún no hay autoinforme humano: solo evaluará la coordinación (se omiten los pasos 3-5)")
     c.set_defaults(func=cmd_caso)
     n = sub.add_parser("nueva", help="crea la carpeta y la ficha de una ejecución")
     n.add_argument("id")

@@ -43,6 +43,11 @@ distinta.
 - **Referencia** (`autoinforme-humano`): el autoinforme del **último curso publicado** del
   título. Descárgalo a un directorio temporal, lee la portada con `pypdf` y anota el tipo
   (`seguimiento` o `renovación`), el curso (`AAAA-AA`) y la convocatoria (`AAAA`).
+  Si el usuario pide un curso cuyo autoinforme aún no está publicado, el caso va **sin
+  referencia**: no hay `autoinforme-humano`, el `autoinforme-anterior` es el último
+  publicado y la entrada puede incluir todo lo publicado hasta hoy. Confírmalo con el
+  usuario y ejecuta `caso` con `--sin-referencia` (ver
+  [Casos sin referencia](../../../docs/PROCEDIMIENTO.md#casos-sin-referencia)).
 - **Entrada**: solo documentos que la coordinación tenía antes de redactar la referencia;
   nada posterior, o el caso deja de medir la skill:
 
@@ -116,6 +121,8 @@ SHA-256), confirma que el caso está completo y, solo entonces, añade la fila a
 - Si una URL apunta a una página HTML, busca en ella el enlace directo al fichero.
 - Si el usuario aporta a mano algún documento, cópialo con el nombre del rol y ejecuta con
   `--sin-descarga`.
+- En un caso sin referencia, ejecuta con `--sin-referencia` y deja el motivo en `notas`: el
+  script rechaza entonces el rol `autoinforme-humano` y marca el caso en `fuentes.md`.
 - Comunica al usuario los `AVISO` (PDF escaneado o ilegible).
 
 ## Reglas

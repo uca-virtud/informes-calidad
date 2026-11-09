@@ -32,7 +32,7 @@ no se versionan.
 | `docs/calidad-2026/` | Materiales del Servicio de Calidad para la convocatoria 2027: plantilla, guía rápida, recomendaciones de ACCUA y comparativas (ver su `README.md`). Las revisiones comentadas y los censos del PTGAS son *solo locales*. |
 | `docs/peticiones-cartera/` | Peticiones de cartera de los centros y solicitud de la fase 1 al Sistema de Información (modelo de datos e informe de indicadores del Anexo I). *Solo local.* |
 | `evals/casos.csv` | Catálogo de casos de evaluación. |
-| `evals/casos/<id>/` | Por cada caso: documentos de entrada (`entrada/`), autoinforme humano de referencia (`referencia/`) y procedencia de los documentos (`fuentes.json` y `fuentes.md`). |
+| `evals/casos/<id>/` | Por cada caso: documentos de entrada (`entrada/`), autoinforme humano de referencia (`referencia/`, si ya está publicado) y procedencia de los documentos (`fuentes.json` y `fuentes.md`). |
 | `evals/ejecuciones/Enn-<id>/` | Por cada ejecución: ficha, borrador, cotejos, métricas y, si se envió a la coordinación, `rubrica-valoracion.xlsx` (copia de la plantilla `docs/evaluacion/rubrica-valoracion.xlsx`). Las hojas devueltas (`valoracion-coordinacion*.xlsx`) y su consolidación (`valoracion.json`) son *solo locales*. |
 | `evals/historial.md` | Resultados y relato de cada ejecución. *Solo local.* |
 | `samples/` | Autoinformes reales de ejemplo (seguimiento y renovación). *Solo local.* |

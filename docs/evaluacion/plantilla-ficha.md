@@ -12,6 +12,7 @@
 | Tipo y curso | <tipo>, <curso> (convocatoria <convocatoria>) |
 | Seguimiento ACCUA | <sí / no / no consta: se asume sí> |
 | Conjunto | <aprendizaje / reserva> |
+| Referencia | <referencia> |
 | Fecha | <AAAA-MM-DD> |
 | Versión de la skill | <commit de skills/ y si hay cambios sin commit> |
 | Versión de la rúbrica | <n> |
