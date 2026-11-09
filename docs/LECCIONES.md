@@ -23,7 +23,7 @@ v0 y v1 son la skill anterior (`old-skills/`, solo local), por eso no tienen com
 | v5 | `4e6da0d` | + L23-L27 | E07-GH |
 | v6 | `6f9f6cf` | + L11b, L28 | E08-GHUM |
 | v7 | `f759c6e` | + L19b, L23b, L25b, L26b, L27b, L29; correcciones de los scripts (C15, C16) | E09-MEH |
-| v8 | 9f7a4fe | + L30-L38: plantilla de 2027 y materiales del Servicio de Gestión de la Calidad (guía rápida, recomendaciones de ACCUA, informe agregado de LinceBI); refuerzan L9, L13, L15 y L21 | E10 (prevista) |
+| v8 | 9f7a4fe | + L30-L38: plantilla de 2027 y materiales del Servicio de Gestión de la Calidad (guía rápida, recomendaciones de ACCUA, informe agregado de LinceBI); refuerzan L9, L13, L15 y L21 | E10-GH 2025-26 (sin referencia: valoración de la coordinación pendiente) |
 
 Versión vigente: **v8** (commit 9f7a4fe).
 
